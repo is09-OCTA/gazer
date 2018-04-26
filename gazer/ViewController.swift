@@ -22,19 +22,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         sceneView.showsStatistics = false
       
-
-      
-        //sceneView.scene = SCNScene()
-        /*let node = SCNNode()
-        node.geometry = SCNSphere(radius: 3)
-        let material = SCNMaterial()
-        material.diffuse.contents = UIImage(named: "art.scnassets/hosi.png")
-        node.geometry?.materials = [material]
-        node.position = SCNVector3(0,0,-0.5)*/
-      
-      
-      
-      
         sceneView.scene = SCNScene()  //全体ビューのsceneViewに空のシーンを生成
         //let node = SCNNode()  //ノードを生成
         //node.geometry = SCNBox(width: 0.2, height: 0.2, length: 0.2, chamferRadius: 100)  //ノードの形状を一辺が20cmの立方体とする

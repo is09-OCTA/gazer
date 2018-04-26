@@ -11,12 +11,16 @@ import SceneKit
 import ARKit
 import CoreLocation
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate  {
+    
+    var locationManager: CLLocationManager!
 
     @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupLocationManager()
         
       
         sceneView.delegate = self
@@ -31,6 +35,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         node.geometry?.materials = [material]
         node.position = SCNVector3(0,0,-10.0)  //ノードの位置は、カメラを原点として左右:0m 上下:0m 奥行:50cm*/
         sceneView.scene.rootNode.addChildNode(node)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +70,28 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         return node
     }
 */
+    
+    //location
+    func setupLocationManager() {
+        locationManager = CLLocationManager()
+        guard let locationManager = locationManager else { return }
+        locationManager.requestWhenInUseAuthorization()
+        
+        let status = CLLocationManager.authorizationStatus()
+        if status == .authorizedWhenInUse {
+            locationManager.delegate = self
+            locationManager.distanceFilter = 10
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.first
+        let latitude = location?.coordinate.latitude
+        let longitude = location?.coordinate.longitude
+        
+        print("latitude: \(latitude!)\nlongitude: \(longitude!)")
+    }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user

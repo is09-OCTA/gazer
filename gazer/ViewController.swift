@@ -23,12 +23,25 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = false
 
       
-        let scene = SCNScene()
-        sceneView.scene = scene
+        sceneView.scene = SCNScene()
         let node = SCNNode()
+        node.geometry = SCNSphere(radius: 3)
+        let material = SCNMaterial()
+        material.diffuse.contents = UIImage(named: "art.scnassets/hosi.png")
+        node.geometry?.materials = [material]
+        node.position = SCNVector3(0,0,-0.5)
       
       
       
+      
+        /*sceneView.scene = SCNScene()  //全体ビューのsceneViewに空のシーンを生成
+        let node = SCNNode()  //ノードを生成
+        node.geometry = SCNBox(width: 0.2, height: 0.2, length: 0.2, chamferRadius: 0)  //ノードの形状を一辺が20cmの立方体とする
+        let material = SCNMaterial()  //マテリアル(表面)を生成する
+        material.diffuse.contents = UIImage(named: "art.scnassets/brick1.jpeg") //表面はレンガ  diffuse(表面色の設定)
+        node.geometry?.materials = [material]
+        node.position = SCNVector3(0,0,-0.5)  //ノードの位置は、カメラを原点として左右:0m 上下:0m 奥行:50cm*/
+        sceneView.scene.rootNode.addChildNode(node)
     }
     
     override func viewWillAppear(_ animated: Bool) {

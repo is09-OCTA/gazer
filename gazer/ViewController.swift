@@ -26,14 +26,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         sceneView.delegate = self
         sceneView.showsStatistics = false
       
-        sceneView.scene = SCNScene()  //全体ビューのsceneViewに空のシーンを生成
-        //let node = SCNNode()  //ノードを生成
-        //node.geometry = SCNBox(width: 0.2, height: 0.2, length: 0.2, chamferRadius: 100)  //ノードの形状を一辺が20cmの立方体とする
+      
+      
+        sceneView.scene = SCNScene()
         let node = SCNNode(geometry: SCNSphere(radius: 0.05))
-        let material = SCNMaterial()  //マテリアル(表面)を生成する
-        material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png") //表面はレンガ  diffuse(表面色の設定)
+        let material = SCNMaterial()
+        material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
         node.geometry?.materials = [material]
-        node.position = SCNVector3(0,0,-10.0)  //ノードの位置は、カメラを原点として左右:0m 上下:0m 奥行:50cm*/
+        node.position = SCNVector3(0,0,-10.0)
         sceneView.scene.rootNode.addChildNode(node)
         
     }

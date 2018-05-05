@@ -18,20 +18,20 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>Location When In Use Usage Description</key>
+	<string>このアプリケーションは星の表示のため、位置情報を取得します</string>
 	<key>NSCameraUsageDescription</key>
 	<string>This application will use the camera for Augmented Reality.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>このアプリケーションは星の表示のため、位置情報を取得します</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>このアプリケーションは星の表示のため、位置情報を取得します</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>このアプリケーションは星の表示のため、位置情報を取得します</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>このアプリケーションは星の表示のため、位置情報を取得します</string>
-	<key>Location When In Use Usage Description</key>
-	<string>このアプリケーションは星の表示のため、位置情報を取得します</string>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>

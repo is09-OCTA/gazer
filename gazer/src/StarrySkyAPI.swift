@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+func getStar(longitude: double, latitude: double) { // 緯度, 緯度
+    let 
+}

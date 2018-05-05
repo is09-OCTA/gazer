@@ -16,6 +16,7 @@
 		C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C788DA7D209023710006ED25 /* LaunchScreen.storyboard */; };
 		C788DA8A209023720006ED25 /* gazerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA89209023720006ED25 /* gazerTests.swift */; };
 		C788DA95209023720006ED25 /* gazerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA94209023720006ED25 /* gazerUITests.swift */; };
+		C7E7CE69209D81F500F758C7 /* StarrySkyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E7CE68209D81F500F758C7 /* StarrySkyAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		C788DA90209023720006ED25 /* gazerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gazerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C788DA94209023720006ED25 /* gazerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gazerUITests.swift; sourceTree = "<group>"; };
 		C788DA96209023720006ED25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7E7CE68209D81F500F758C7 /* StarrySkyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarrySkyAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		C788DA71209023700006ED25 /* gazer */ = {
 			isa = PBXGroup;
 			children = (
+				C7E7CE67209D80C300F758C7 /* src */,
 				C788DA72209023700006ED25 /* AppDelegate.swift */,
 				C788DA74209023700006ED25 /* art.scnassets */,
 				C788DA76209023700006ED25 /* ViewController.swift */,
@@ -138,6 +141,14 @@
 				C788DA96209023720006ED25 /* Info.plist */,
 			);
 			path = gazerUITests;
+			sourceTree = "<group>";
+		};
+		C7E7CE67209D80C300F758C7 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C7E7CE68209D81F500F758C7 /* StarrySkyAPI.swift */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7E7CE69209D81F500F758C7 /* StarrySkyAPI.swift in Sources */,
 				C788DA77209023700006ED25 /* ViewController.swift in Sources */,
 				C788DA73209023700006ED25 /* AppDelegate.swift in Sources */,
 			);

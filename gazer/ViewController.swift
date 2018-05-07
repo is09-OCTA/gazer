@@ -20,7 +20,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MyLocation().GetLocation()
+        MyLocation().getLocation()
         
       
         sceneView.delegate = self

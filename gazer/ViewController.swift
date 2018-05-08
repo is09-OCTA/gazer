@@ -13,7 +13,7 @@ import CoreLocation
 
 class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate  {
     
-//    var locationManager: CLLocationManager!
+    var locationManager: CLLocationManager!
 
     @IBOutlet var sceneView: ARSCNView!
     
@@ -67,7 +67,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         return node
     }
 */
-    /*
+    
     //location
     func setupLocationManager() {
         locationManager = CLLocationManager()
@@ -89,7 +89,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         
         print("latitude: \(latitude!)\nlongitude: \(longitude!)")
     }
-    */
+    
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user

@@ -21,12 +21,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         super.viewDidLoad()
         
         MyLocation().getLocation()
-        
-      
+    
         sceneView.delegate = self
         sceneView.showsStatistics = false
-      
-      
       
         sceneView.scene = SCNScene()
         let node = SCNNode(geometry: SCNSphere(radius: 0.05))

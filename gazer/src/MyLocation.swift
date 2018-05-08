@@ -9,12 +9,11 @@
 import Foundation
 import CoreLocation
 
-class MyLocation: UIViewController, CLLocationManagerDelegate {
+class MyLocation: NSObject, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager!
     
-    override func GetLocation() {
-        super.GetLocation()
+    func getLocation() {
         setupLocationManager()
     }
     

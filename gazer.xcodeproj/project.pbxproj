@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		235E628820902DF50054ACE2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235E628720902DF50054ACE2 /* CoreLocation.framework */; };
 		23985A2E209D82E200E7455C /* MyLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23985A2D209D82E200E7455C /* MyLocation.swift */; };
+		23F92A5020A12BE40087A231 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F92A4F20A12BE40087A231 /* Camera.swift */; };
 		C788DA73209023700006ED25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA72209023700006ED25 /* AppDelegate.swift */; };
 		C788DA75209023700006ED25 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C788DA74209023700006ED25 /* art.scnassets */; };
 		C788DA77209023700006ED25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA76209023700006ED25 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		235E628720902DF50054ACE2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		23985A2D209D82E200E7455C /* MyLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocation.swift; sourceTree = "<group>"; };
+		23F92A4F20A12BE40087A231 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		C788DA6F209023700006ED25 /* gazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C788DA72209023700006ED25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C788DA74209023700006ED25 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				C7E7CE68209D81F500F758C7 /* StarrySkyAPI.swift */,
 				23985A2D209D82E200E7455C /* MyLocation.swift */,
+				23F92A4F20A12BE40087A231 /* Camera.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7E7CE69209D81F500F758C7 /* StarrySkyAPI.swift in Sources */,
+				23F92A5020A12BE40087A231 /* Camera.swift in Sources */,
 				23985A2E209D82E200E7455C /* MyLocation.swift in Sources */,
 				C788DA77209023700006ED25 /* ViewController.swift in Sources */,
 				C788DA73209023700006ED25 /* AppDelegate.swift in Sources */,

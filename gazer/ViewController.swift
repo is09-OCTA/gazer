@@ -21,6 +21,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         super.viewDidLoad()
         
 //        MyLocation().getLocation()
+//
         
       
         sceneView.delegate = self

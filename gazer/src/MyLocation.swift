@@ -27,6 +27,7 @@ class MyLocation: NSObject, CLLocationManagerDelegate {
         
         let status = CLLocationManager.authorizationStatus()
         if status == .authorizedWhenInUse {
+            print("test5")
             locationManager.delegate = self
             locationManager.distanceFilter = 10
             locationManager.startUpdatingLocation()

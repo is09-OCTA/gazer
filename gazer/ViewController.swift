@@ -20,9 +20,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // MyLocation().getLocation()
-        setupLocationManager()
-    
+        let testLocation = MyLocation()
+        testLocation.setupLocationManager()
+        
         sceneView.delegate = self
         sceneView.showsStatistics = false
       
@@ -68,7 +68,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         return node
     }
 */
-    
+  /*
     //location
     func setupLocationManager() {
         locationManager = CLLocationManager()
@@ -90,7 +90,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         
         print("latitude: \(latitude!)\nlongitude: \(longitude!)")
     }
-    
+    */
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user

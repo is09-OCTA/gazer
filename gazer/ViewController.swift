@@ -36,7 +36,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
       
         let node2 = SCNNode(geometry: SCNSphere(radius: 0.05))
         let material2 = SCNMaterial()
-        material2.diffuse.contents = UIImage(named: "art.scnassets/hosi1.jpg")
+        material2.diffuse.contents = UIImage(named: "art.scnassets/hosi4.jpg")
         node2.geometry?.materials = [material]
         node2.position = SCNVector3(0,6,-10.0)
       

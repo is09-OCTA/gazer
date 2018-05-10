@@ -11,10 +11,31 @@ import SceneKit
 import ARKit
 import CoreLocation
 
-class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate  {
+class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate  {
     
     var locationManager: CLLocationManager!
 
+    // XMLParser のインスタンスを生成
+    var parser = XMLParser()
+    
+    // 今回は item タグ内を取得。item で固定なので Stringクラスでインスタンスを生成
+    var element = String()
+    
+    // 可変な辞書クラスNSMutableDictionary インスタンスを生成
+    var elements = NSMutableDictionary()
+    
+    // enName タグ内の値を格納。値が変わるので、NSMutableString
+    var enNameString = NSMutableString()
+    
+    // distance タグ内の値を格納。値が変わるので、NSMutableString
+    var distanceString = NSMutableString()
+    
+    // rightAscension タグ内の値を格納。値が変わるので、NSMutableString
+    var rightAscensionString = NSMutableString()
+    
+    // celestialDeclination タグ内の値を格納。値が変わるので、NSMutableString
+    var celestialDeclinationString = NSMutableString()
+    
     @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
@@ -43,6 +64,91 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
       
         sceneView.scene.rootNode.addChildNode(node)
         sceneView.scene.rootNode.addChildNode(node2)
+        
+        // xmlを解析(パース)
+        let urlString:String = "http://www.walk-in-starrysky.com/star.do?cmd=detail&hrNo=6134"
+        let url:URL = URL(string:urlString)!
+        parser = XMLParser(contentsOf: url)!
+        parser.delegate = self
+        parser.parse()
+        
+        print(elements)
+    }
+    
+    // 開始タグ
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+        
+        element = elementName
+        
+        if element == "star" {
+            
+            elements = NSMutableDictionary()
+            elements = [:]
+            enNameString = NSMutableString()
+            enNameString = ""
+            distanceString = NSMutableString()
+            distanceString = ""
+            rightAscensionString = NSMutableString()
+            rightAscensionString = ""
+            celestialDeclinationString = NSMutableString()
+            celestialDeclinationString = ""
+        }
+    }
+    
+    // 開始タグと終了タグの間にデータが存在した時
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
+        
+        if element == "enName"{
+            
+            enNameString.append(string)
+            
+        } else if element == "distance"{
+            
+            distanceString.append(string)
+            
+        } else if element == "rightAscension"{
+            
+            rightAscensionString.append(string)
+            
+        } else if element == "celestialDeclination"{
+            
+            celestialDeclinationString.append(string)
+            
+        }
+    }
+    
+    // 終了タグ
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        
+        // 要素 star だったら
+        if elementName == "star"{
+            
+            // enNameString の中身が空でないなら
+            if enNameString != "" {
+                // elementsにキー: title を付与して、titleString をセット
+                elements.setObject(enNameString, forKey: "enName" as NSCopying)
+            }
+            
+            // distanceString の中身が空でないなら
+            if distanceString != "" {
+                // elementsにキー: distance を付与して、 distanceString をセット
+                elements.setObject(distanceString, forKey: "distance" as NSCopying)
+            }
+            
+            // rightAscensionString の中身が空でないなら
+            if rightAscensionString != "" {
+                // elementsにキー: rightAscension を付与して、 rightAscensionString をセット
+                elements.setObject(rightAscensionString, forKey: "rightAscension" as NSCopying)
+            }
+            
+            // celestialDeclinationString の中身が空でないなら
+            if celestialDeclinationString != "" {
+                // elementsにキー: celestialDeclination を付与して、 celestialDeclinationString をセット
+                elements.setObject(celestialDeclinationString, forKey: "celestialDeclination" as NSCopying)
+            }
+            
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

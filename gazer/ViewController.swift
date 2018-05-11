@@ -11,28 +11,171 @@ import SceneKit
 import ARKit
 import CoreLocation
 
-class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate  {
+class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate  {
     
-    var locationManager: CLLocationManager!
-
     @IBOutlet var sceneView: ARSCNView!
+    
+    // 位置情報
+    var locationManager: CLLocationManager!
+    
+    // XMLParser のインスタンスを生成
+    var parser = XMLParser()
+    
+    // 今回は star タグ内を取得。star で固定なので Stringクラスでインスタンスを生成
+    var element = String()
+    
+    // 可変な辞書クラスNSMutableDictionary インスタンスを生成
+    var elements = NSMutableDictionary()
+    
+    /*: 取得したいタグ内の値を格納
+     enName: 星名(英字)
+     visualGradeFrom: 実視等級(少ないほど明るい)
+     distance: 距離   -> z軸
+     direction: 方位(南を0°として西回りに360°まで)   -> x軸
+     altitude: 高度(0°~90°)   -> y軸
+     */
+    
+    var enNameString = NSMutableString()
+    var visualGradeFromString = NSMutableString()
+    var distanceString = NSMutableString()
+    var directionString = NSMutableString()
+    var altitudeString = NSMutableString()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let testLocation = MyLocation()
-        testLocation.setupLocationManager()
-        
         sceneView.delegate = self
         sceneView.showsStatistics = false
+        
+        // 現在地を取得
+        setupLocationManager()
+        
+        /*:
+         現在日時(年月日時分秒)を取得
+         currentDate: 配列
+         [年, 月, 日, 時, 分, 秒]
+         */
+        
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy,MM,dd,HH,mm,ss"
+        format.timeZone   = TimeZone(identifier: "Asia/Tokyo")
+        let currentDate = format.string(from: date).split(separator: ",")
+        
+        // 現在日時、位置情報(仮)を用いてURLを生成
+        let urlString:String = "http://www.walk-in-starrysky.com/star.do?cmd=display&year=\(currentDate[0])&month=\(currentDate[1])&day=\(currentDate[2])&hour=\(currentDate[3])&minute=\(currentDate[4])&second=\(currentDate[5])&latitude=35.710058&longitude=139.810718"
+        let url:URL = URL(string:urlString)!
+        parser = XMLParser(contentsOf: url)!
+        parser.delegate = self
+        parser.parse()
+        
+        print(elements) // test
       
+        // 表示する情報
         sceneView.scene = SCNScene()
         let node = SCNNode(geometry: SCNSphere(radius: 0.05))
         let material = SCNMaterial()
         material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
         node.geometry?.materials = [material]
         node.position = SCNVector3(0,0,-10.0)
+      
+        let node2 = SCNNode(geometry: SCNSphere(radius: 0.05))
+        let material2 = SCNMaterial()
+        material2.diffuse.contents = UIImage(named: "art.scnassets/hosi4.jpg")
+        node2.geometry?.materials = [material]
+        node2.position = SCNVector3(0,6,-10.0)
+      
+        // 表示
         sceneView.scene.rootNode.addChildNode(node)
+        sceneView.scene.rootNode.addChildNode(node2)
+    }
+    
+    // 開始タグ
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+        
+        element = elementName
+        
+        if element == "star" {
+            
+            elements = NSMutableDictionary()
+            elements = [:]
+            
+            enNameString = NSMutableString()
+            enNameString = ""
+            visualGradeFromString = NSMutableString()
+            visualGradeFromString = ""
+            distanceString = NSMutableString()
+            distanceString = ""
+            directionString = NSMutableString()
+            directionString = ""
+            altitudeString = NSMutableString()
+            altitudeString = ""
+        }
+    }
+    
+    // 開始タグと終了タグの間にデータが存在した時
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
+        
+        if element == "enName"{
+            
+            enNameString.append(string)
+            
+        } else if element == "visualGradeFrom"{
+            
+            visualGradeFromString.append(string)
+            
+        } else if element == "distance"{
+            
+            distanceString.append(string)
+            
+        } else if element == "direction"{
+            
+            directionString.append(string)
+            
+        } else if element == "altitude"{
+            
+            altitudeString.append(string)
+            
+        }
+    }
+    
+    // 終了タグ
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        
+        // 要素 star だったら
+        if elementName == "star"{
+            
+            // enNameString の中身が空でないなら
+            if enNameString != "" {
+                // elementsにキー: title を付与して、titleString をセット
+                elements.setObject(enNameString, forKey: "enName" as NSCopying)
+            }
+            
+            // visualGradeFromString の中身が空でないなら
+            if visualGradeFromString != "" {
+                // elementsにキー: visualGradeFrom を付与して、 visualGradeFromString をセット
+                elements.setObject(visualGradeFromString, forKey: "visualGradeFrom" as NSCopying)
+            }
+            
+            // distanceString の中身が空でないなら
+            if distanceString != "" {
+                // elementsにキー: distance を付与して、 distanceString をセット
+                elements.setObject(distanceString, forKey: "distance" as NSCopying)
+            }
+            
+            // directionString の中身が空でないなら
+            if directionString != "" {
+                // elementsにキー: direction を付与して、 directionString をセット
+                elements.setObject(directionString, forKey: "direction" as NSCopying)
+            }
+            
+            // altitudeString の中身が空でないなら
+            if altitudeString != "" {
+                // elementsにキー: altitude を付与して、 altitudeString をセット
+                elements.setObject(altitudeString, forKey: "altitude" as NSCopying)
+            }
+            
+        }
         
     }
     
@@ -68,8 +211,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         return node
     }
 */
-  /*
-    //location
+    
+    // location
     func setupLocationManager() {
         locationManager = CLLocationManager()
         guard let locationManager = locationManager else { return }
@@ -88,10 +231,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         let latitude = location?.coordinate.latitude
         let longitude = location?.coordinate.longitude
         
-        print("latitude: \(latitude!)\nlongitude: \(longitude!)")
+        print("latitude: \(latitude!)\nlongitude: \(longitude!)")   // test
+        
     }
-    */
-    
+
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
         

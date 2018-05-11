@@ -69,7 +69,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         parser.delegate = self
         parser.parse()
         
-        print(elements) // test
+        print(elements) //test
       
         // 表示する情報
         sceneView.scene = SCNScene()

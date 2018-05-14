@@ -41,6 +41,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     var directionString = NSMutableString()
     var altitudeString = NSMutableString()
     
+    var latitudeLocation: Double!
+    var longitudeLocation: Double!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -223,6 +226,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             locationManager.delegate = self
             locationManager.distanceFilter = 10
             locationManager.startUpdatingLocation()
+
+            
         }
     }
     
@@ -231,7 +236,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         let latitude = location?.coordinate.latitude
         let longitude = location?.coordinate.longitude
         
-        print("latitude: \(latitude!)\nlongitude: \(longitude!)")   // test
+        latitudeLocation = latitude
+        longitudeLocation = longitude
+        
+        print("latitude: \(latitudeLocation!)\nlongitude: \(longitudeLocation!)")   // test
         
     }
 

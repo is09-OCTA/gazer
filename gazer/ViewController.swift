@@ -11,6 +11,8 @@ import SceneKit
 import ARKit
 import CoreLocation
 
+
+
 class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate  {
     
     @IBOutlet var sceneView: ARSCNView!
@@ -43,6 +45,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     
     var latitudeLocation: Double!
     var longitudeLocation: Double!
+    var apiURL: URL!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,28 +56,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         
         // 現在地を取得
         setupLocationManager()
-        
-        /*:
-         現在日時(年月日時分秒)を取得
-         currentDate: 配列
-         [年, 月, 日, 時, 分, 秒]
-         */
-        
-        let date = Date()
-        let format = DateFormatter()
-        format.dateFormat = "yyyy,MM,dd,HH,mm,ss"
-        format.timeZone   = TimeZone(identifier: "Asia/Tokyo")
-        let currentDate = format.string(from: date).split(separator: ",")
-        
-        // 現在日時、位置情報(仮)を用いてURLを生成
-        let urlString:String = "http://www.walk-in-starrysky.com/star.do?cmd=display&year=\(currentDate[0])&month=\(currentDate[1])&day=\(currentDate[2])&hour=\(currentDate[3])&minute=\(currentDate[4])&second=\(currentDate[5])&latitude=35&longitude=139&jpName=シリウス"
-        let url:URL = URL(string:urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)!  // 日本語入りStringをURLに変換
-        parser = XMLParser(contentsOf: url)!
-        parser.delegate = self
-        parser.parse()
-        
-        print(elements) // test
-        print(url)      // test
       
         // 表示する情報
         sceneView.scene = SCNScene()
@@ -232,16 +214,47 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         }
     }
     
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.first
         let latitude = location?.coordinate.latitude
         let longitude = location?.coordinate.longitude
         
+        seturl(latiudeLocation: latitude!, longitudeLocation: longitude!)
+        
         latitudeLocation = latitude
         longitudeLocation = longitude
         
-        print("latitude: \(latitudeLocation!)\nlongitude: \(longitudeLocation!)")   // test
+        print("latitude: \(latitude!)\nlongitude: \(longitude!)")   // test
         
+        
+    }
+    
+    func seturl (latiudeLocation: Double, longitudeLocation: Double) {
+        
+        /*:
+         現在日時(年月日時分秒)を取得
+         currentDate: 配列
+         [年, 月, 日, 時, 分, 秒]
+         */
+        
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy,MM,dd,HH,mm,ss"
+        format.timeZone   = TimeZone(identifier: "Asia/Tokyo")
+        let currentDate = format.string(from: date).split(separator: ",")
+        
+        // 現在日時、位置情報(仮)を用いてURLを生成
+        let urlString:String = "http://www.walk-in-starrysky.com/star.do?cmd=display&year=\(currentDate[0])&month=\(currentDate[1])&day=\(currentDate[2])&hour=\(currentDate[3])&minute=\(currentDate[4])&second=\(currentDate[5])&latitude=\(latiudeLocation)&longitude=\(longitudeLocation)&jpName=シリウス"
+        let url:URL = URL(string:urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)!  // 日本語入りStringをURLに変換
+        parser = XMLParser(contentsOf: url)!
+        parser.delegate = self
+        parser.parse()
+        
+        apiURL = url
+        
+        print(elements) // test
+        print(url)      // test
     }
 
     func session(_ session: ARSession, didFailWithError error: Error) {

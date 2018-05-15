@@ -24,6 +24,11 @@
 	<true/>
 	<key>Location When In Use Usage Description</key>
 	<string>このアプリケーションは星の表示のため、位置情報を取得します</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>This application will use the camera for Augmented Reality.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>

@@ -63,13 +63,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         let material = SCNMaterial()
         material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
         node.geometry?.materials = [material]
-        node.position = SCNVector3(0,0,10.0)
+        node.position = SCNVector3(5,-0.5,6.0)
       
         let node2 = SCNNode(geometry: SCNSphere(radius: 0.05))
         let material2 = SCNMaterial()
         material2.diffuse.contents = UIImage(named: "art.scnassets/hosi4.jpg")
         node2.geometry?.materials = [material]
-        node2.position = SCNVector3(0,6,-10.0)
+        node2.position = SCNVector3(88,149,6.0)
       
         // 表示
         sceneView.scene.rootNode.addChildNode(node)

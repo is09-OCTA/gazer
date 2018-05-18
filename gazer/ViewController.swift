@@ -17,6 +17,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     
     @IBOutlet var sceneView: ARSCNView!
     
+    @IBAction func pushCamera(_ sender: Any) {
+        let image = getScreenShot()
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+    }
     // 位置情報
     var locationManager: CLLocationManager!
     
@@ -49,16 +53,18 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         sceneView.delegate = self
         sceneView.showsStatistics = false
         
+        
         // 現在地を取得
         setupLocationManager()
-      
+
         // 表示する情報
-        sceneView.scene = SCNScene()
+        self.sceneView.scene = SCNScene()
         let node = SCNNode(geometry: SCNSphere(radius: 0.05))
         let material = SCNMaterial()
         material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
@@ -72,10 +78,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         node2.position = SCNVector3(88,149,6.0)
       
         // 表示
-        sceneView.scene.rootNode.addChildNode(node)
-        sceneView.scene.rootNode.addChildNode(node2)
+            self.sceneView.scene.rootNode.addChildNode(node)
+            self.sceneView.scene.rootNode.addChildNode(node2)
+        
+        
     }
-    
     // 開始タグ
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
@@ -209,23 +216,26 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             locationManager.delegate = self
             locationManager.distanceFilter = 10
             locationManager.startUpdatingLocation()
+            
+            
 
             
         }
     }
-    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.first
         let latitude = location?.coordinate.latitude
         let longitude = location?.coordinate.longitude
         
-        seturl(latiudeLocation: latitude!, longitudeLocation: longitude!)
+        
         
         latitudeLocation = latitude
         longitudeLocation = longitude
         
-        print("latitude: \(latitude!)\nlongitude: \(longitude!)")   // test
+        seturl(latiudeLocation: latitudeLocation!, longitudeLocation: longitudeLocation!)
+        
+        print("latitude: \(latitudeLocation!)\nlongitude: \(longitudeLocation!)")   // test
         
         
     }
@@ -255,6 +265,20 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         
         print(elements) // test
         print(url)      // test
+    }
+    
+//    Camera
+    private func getScreenShot() -> UIImage? {
+        guard let view = self.view else {
+            return nil
+        }
+        
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
     }
 
     func session(_ session: ARSession, didFailWithError error: Error) {

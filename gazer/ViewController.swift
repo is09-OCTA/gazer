@@ -11,8 +11,6 @@ import SceneKit
 import ARKit
 import CoreLocation
 
-
-
 class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate  {
     
     @IBOutlet var sceneView: ARSCNView!
@@ -21,6 +19,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         let image = getScreenShot()
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
     }
+    
     // 位置情報
     var locationManager: CLLocationManager!
     
@@ -51,14 +50,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     var longitudeLocation: Double!
     var apiURL: URL!
     
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         sceneView.delegate = self
         sceneView.showsStatistics = false
-        
         
         // 現在地を取得
         setupLocationManager()
@@ -69,20 +66,20 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         let material = SCNMaterial()
         material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
         node.geometry?.materials = [material]
-        node.position = SCNVector3(0,0,-10.0)
+        node.position = SCNVector3(5,-0.5,6.0)
       
         let node2 = SCNNode(geometry: SCNSphere(radius: 0.05))
         let material2 = SCNMaterial()
         material2.diffuse.contents = UIImage(named: "art.scnassets/hosi4.jpg")
         node2.geometry?.materials = [material]
-        node2.position = SCNVector3(0,6,-10.0)
+        node2.position = SCNVector3(88,149,6.0)
       
         // 表示
-            self.sceneView.scene.rootNode.addChildNode(node)
-            self.sceneView.scene.rootNode.addChildNode(node2)
-        
+        self.sceneView.scene.rootNode.addChildNode(node)
+        self.sceneView.scene.rootNode.addChildNode(node2)
         
     }
+    
     // 開始タグ
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
@@ -267,7 +264,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         print(url)      // test
     }
     
-//    Camera
+    // Camera
     private func getScreenShot() -> UIImage? {
         guard let view = self.view else {
             return nil
@@ -282,17 +279,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     }
 
     func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-        
     }
     
     func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
     }
     
     func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
     }
 }

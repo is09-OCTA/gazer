@@ -11,10 +11,16 @@ import SceneKit
 import ARKit
 import CoreLocation
 
+
+
 class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate  {
     
     @IBOutlet var sceneView: ARSCNView!
     
+    @IBAction func pushCamera(_ sender: Any) {
+        let image = getScreenShot()
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+    }
     // 位置情報
     var locationManager: CLLocationManager!
     
@@ -43,40 +49,22 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
     
     var latitudeLocation: Double!
     var longitudeLocation: Double!
+    var apiURL: URL!
+    
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         sceneView.delegate = self
         sceneView.showsStatistics = false
         
+        
         // 現在地を取得
         setupLocationManager()
-        
-        /*:
-         現在日時(年月日時分秒)を取得
-         currentDate: 配列
-         [年, 月, 日, 時, 分, 秒]
-         */
-        
-        let date = Date()
-        let format = DateFormatter()
-        format.dateFormat = "yyyy,MM,dd,HH,mm,ss"
-        format.timeZone   = TimeZone(identifier: "Asia/Tokyo")
-        let currentDate = format.string(from: date).split(separator: ",")
-        
-        // 現在日時、位置情報(仮)を用いてURLを生成
-        let urlString:String = "http://www.walk-in-starrysky.com/star.do?cmd=display&year=\(currentDate[0])&month=\(currentDate[1])&day=\(currentDate[2])&hour=\(currentDate[3])&minute=\(currentDate[4])&second=\(currentDate[5])&latitude=35&longitude=139&jpName=シリウス"
-        let url:URL = URL(string:urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)!  // 日本語入りStringをURLに変換
-        parser = XMLParser(contentsOf: url)!
-        parser.delegate = self
-        parser.parse()
-        
-        print(elements) // test
-        print(url)      // test
-      
+
         // 表示する情報
-        sceneView.scene = SCNScene()
+        self.sceneView.scene = SCNScene()
         let node = SCNNode(geometry: SCNSphere(radius: 0.05))
         let material = SCNMaterial()
         material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
@@ -90,10 +78,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         node2.position = SCNVector3(0,6,-10.0)
       
         // 表示
-        sceneView.scene.rootNode.addChildNode(node)
-        sceneView.scene.rootNode.addChildNode(node2)
+            self.sceneView.scene.rootNode.addChildNode(node)
+            self.sceneView.scene.rootNode.addChildNode(node2)
+        
+        
     }
-    
     // 開始タグ
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
@@ -227,6 +216,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
             locationManager.delegate = self
             locationManager.distanceFilter = 10
             locationManager.startUpdatingLocation()
+            
+            
 
             
         }
@@ -237,11 +228,57 @@ class ViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDele
         let latitude = location?.coordinate.latitude
         let longitude = location?.coordinate.longitude
         
+        
+        
         latitudeLocation = latitude
         longitudeLocation = longitude
         
+        seturl(latiudeLocation: latitudeLocation!, longitudeLocation: longitudeLocation!)
+        
         print("latitude: \(latitudeLocation!)\nlongitude: \(longitudeLocation!)")   // test
         
+        
+    }
+    
+    func seturl (latiudeLocation: Double, longitudeLocation: Double) {
+        
+        /*:
+         現在日時(年月日時分秒)を取得
+         currentDate: 配列
+         [年, 月, 日, 時, 分, 秒]
+         */
+        
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy,MM,dd,HH,mm,ss"
+        format.timeZone   = TimeZone(identifier: "Asia/Tokyo")
+        let currentDate = format.string(from: date).split(separator: ",")
+        
+        // 現在日時、位置情報(仮)を用いてURLを生成
+        let urlString:String = "http://www.walk-in-starrysky.com/star.do?cmd=display&year=\(currentDate[0])&month=\(currentDate[1])&day=\(currentDate[2])&hour=\(currentDate[3])&minute=\(currentDate[4])&second=\(currentDate[5])&latitude=\(latiudeLocation)&longitude=\(longitudeLocation)&jpName=シリウス"
+        let url:URL = URL(string:urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)!  // 日本語入りStringをURLに変換
+        parser = XMLParser(contentsOf: url)!
+        parser.delegate = self
+        parser.parse()
+        
+        apiURL = url
+        
+        print(elements) // test
+        print(url)      // test
+    }
+    
+//    Camera
+    private func getScreenShot() -> UIImage? {
+        guard let view = self.view else {
+            return nil
+        }
+        
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
     }
 
     func session(_ session: ARSession, didFailWithError error: Error) {

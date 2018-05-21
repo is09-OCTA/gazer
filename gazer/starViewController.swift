@@ -11,9 +11,16 @@ import SceneKit
 import ARKit
 import CoreLocation
 
-class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate  {
+class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate  {
     
     @IBOutlet var sceneView: ARSCNView!
+    
+    @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
+        let storyboard : UIStoryboard = self.storyboard!
+        let beforeMenu = storyboard.instantiateViewController(withIdentifier:"manu")
+        present(beforeMenu, animated: true, completion: nil)
+    }
+    
 
     @IBAction func pushCamera(_ sender: Any) {
         let image = getScreenShot()

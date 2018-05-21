@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
 
     @IBAction func goStarButton(_ sender: UIButton) {
         performSegue(withIdentifier: "goStar", sender: nil)

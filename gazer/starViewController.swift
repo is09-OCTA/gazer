@@ -15,7 +15,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     @IBOutlet var sceneView: ARSCNView!
     
-    @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
+    @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {//スワイプしたらメニュー画面戻る
         let storyboard : UIStoryboard = self.storyboard!
         let beforeMenu = storyboard.instantiateViewController(withIdentifier:"manu")
         present(beforeMenu, animated: true, completion: nil)

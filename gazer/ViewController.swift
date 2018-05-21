@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController{
 
-    @IBAction func goStarButton(_ sender: UIButton) {
+    @IBAction func goStarButton(_ sender: UIButton) {//Star画面へ
         performSegue(withIdentifier: "goStar", sender: nil)
     }
     override func viewDidLoad() {

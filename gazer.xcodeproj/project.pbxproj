@@ -10,9 +10,10 @@
 		235E628820902DF50054ACE2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235E628720902DF50054ACE2 /* CoreLocation.framework */; };
 		23985A2E209D82E200E7455C /* MyLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23985A2D209D82E200E7455C /* MyLocation.swift */; };
 		23F92A5020A12BE40087A231 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F92A4F20A12BE40087A231 /* Camera.swift */; };
+		B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */; };
 		C788DA73209023700006ED25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA72209023700006ED25 /* AppDelegate.swift */; };
 		C788DA75209023700006ED25 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C788DA74209023700006ED25 /* art.scnassets */; };
-		C788DA77209023700006ED25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA76209023700006ED25 /* ViewController.swift */; };
+		C788DA77209023700006ED25 /* starViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA76209023700006ED25 /* starViewController.swift */; };
 		C788DA7A209023700006ED25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C788DA78209023700006ED25 /* Main.storyboard */; };
 		C788DA7C209023710006ED25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C788DA7B209023710006ED25 /* Assets.xcassets */; };
 		C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C788DA7D209023710006ED25 /* LaunchScreen.storyboard */; };
@@ -41,10 +42,11 @@
 		235E628720902DF50054ACE2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		23985A2D209D82E200E7455C /* MyLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocation.swift; sourceTree = "<group>"; };
 		23F92A4F20A12BE40087A231 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C788DA6F209023700006ED25 /* gazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C788DA72209023700006ED25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C788DA74209023700006ED25 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		C788DA76209023700006ED25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C788DA76209023700006ED25 /* starViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = starViewController.swift; sourceTree = "<group>"; };
 		C788DA79209023700006ED25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C788DA7B209023710006ED25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C788DA7E209023710006ED25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -118,8 +120,9 @@
 				C7E7CE67209D80C300F758C7 /* src */,
 				C788DA72209023700006ED25 /* AppDelegate.swift */,
 				C788DA74209023700006ED25 /* art.scnassets */,
-				C788DA76209023700006ED25 /* ViewController.swift */,
+				C788DA76209023700006ED25 /* starViewController.swift */,
 				C788DA78209023700006ED25 /* Main.storyboard */,
+				B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */,
 				C788DA7B209023710006ED25 /* Assets.xcassets */,
 				C788DA7D209023710006ED25 /* LaunchScreen.storyboard */,
 				C788DA80209023710006ED25 /* Info.plist */,
@@ -291,9 +294,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */,
 				23F92A5020A12BE40087A231 /* Camera.swift in Sources */,
 				23985A2E209D82E200E7455C /* MyLocation.swift in Sources */,
-				C788DA77209023700006ED25 /* ViewController.swift in Sources */,
+				C788DA77209023700006ED25 /* starViewController.swift in Sources */,
 				C788DA73209023700006ED25 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

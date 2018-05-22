@@ -21,7 +21,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         present(beforeMenu, animated: true, completion: nil)
     }
     
-
     @IBAction func pushCamera(_ sender: Any) {
         let image = getScreenShot()
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)

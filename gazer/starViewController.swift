@@ -2,18 +2,30 @@
 //  ViewController.swift
 //  gazer
 //
-//  Created by 佐藤玲 on 2018/05/18.
+//  Created by Keisuke Kitamura on 2018/04/25.
 //  Copyright © 2018年 OCTA. All rights reserved.
 //
 
 import UIKit
+import SceneKit
+import ARKit
+import CoreLocation
 
-class ViewController: UIViewController{
-
-    @IBAction func goStarButton(_ sender: UIButton) {//Star画面へ
-        performSegue(withIdentifier: "goStar", sender: nil)
+class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate  {
+    
+    @IBOutlet var sceneView: ARSCNView!
+    
+    @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {//スワイプしたらメニュー画面戻る
+        let storyboard : UIStoryboard = self.storyboard!
+        let beforeMenu = storyboard.instantiateViewController(withIdentifier:"manu")
+        present(beforeMenu, animated: true, completion: nil)
     }
-<<<<<<< HEAD
+    
+
+    @IBAction func pushCamera(_ sender: Any) {
+        let image = getScreenShot()
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+    }
     
     // 位置情報
     var locationManager: CLLocationManager!
@@ -21,24 +33,23 @@ class ViewController: UIViewController{
     // XMLParser のインスタンスを生成
     var parser = XMLParser()
     
-    // 星の情報を複数保持
-    var rows = NSMutableArray()
-    
     // 今回は star タグ内を取得。star で固定なので Stringクラスでインスタンスを生成
     var element = String()
     
-    // 取得したいタグの中身は変わるので可変クラスでインスタンスを生成
+    // 可変な辞書クラスNSMutableDictionary インスタンスを生成
     var elements = NSMutableDictionary()
     
     /*: 取得したいタグ内の値を格納
      enName: 星名(英字)
      visualGradeFrom: 実視等級(少ないほど明るい)
-     direction: 方位(南を0°として西回りに360°まで)
-     altitude: 高度(0°~90°)
+     distance: 距離   -> z軸
+     direction: 方位(南を0°として西回りに360°まで)   -> x軸
+     altitude: 高度(0°~90°)   -> y軸
      */
     
     var enNameString = NSMutableString()
     var visualGradeFromString = NSMutableString()
+    var distanceString = NSMutableString()
     var directionString = NSMutableString()
     var altitudeString = NSMutableString()
     
@@ -46,17 +57,12 @@ class ViewController: UIViewController{
     var longitudeLocation: Double!
     var apiURL: URL!
     
-=======
->>>>>>> ab65e4a7cb959de7a21b1ee5da0f4296842f32a4
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-<<<<<<< HEAD
         
         sceneView.delegate = self
         sceneView.showsStatistics = false
-        
-        // 初期化
-        rows = []
         
         // 現在地を取得
         setupLocationManager()
@@ -67,13 +73,13 @@ class ViewController: UIViewController{
         let material = SCNMaterial()
         material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
         node.geometry?.materials = [material]
-        node.position = SCNVector3(6.7,8.7,10.1)
+        node.position = SCNVector3(5,-0.5,6.0)
       
         let node2 = SCNNode(geometry: SCNSphere(radius: 0.05))
         let material2 = SCNMaterial()
         material2.diffuse.contents = UIImage(named: "art.scnassets/hosi4.jpg")
         node2.geometry?.materials = [material]
-        node2.position = SCNVector3(-4.7,1.0,8.5)
+        node2.position = SCNVector3(88,149,6.0)
       
         // 表示
         self.sceneView.scene.rootNode.addChildNode(node)
@@ -95,6 +101,8 @@ class ViewController: UIViewController{
             enNameString = ""
             visualGradeFromString = NSMutableString()
             visualGradeFromString = ""
+            distanceString = NSMutableString()
+            distanceString = ""
             directionString = NSMutableString()
             directionString = ""
             altitudeString = NSMutableString()
@@ -112,6 +120,10 @@ class ViewController: UIViewController{
         } else if element == "visualGradeFrom"{
             
             visualGradeFromString.append(string)
+            
+        } else if element == "distance"{
+            
+            distanceString.append(string)
             
         } else if element == "direction"{
             
@@ -132,7 +144,7 @@ class ViewController: UIViewController{
             
             // enNameString の中身が空でないなら
             if enNameString != "" {
-                // elementsにキー: enName を付与して、enNameString をセット
+                // elementsにキー: title を付与して、titleString をセット
                 elements.setObject(enNameString, forKey: "enName" as NSCopying)
             }
             
@@ -140,6 +152,12 @@ class ViewController: UIViewController{
             if visualGradeFromString != "" {
                 // elementsにキー: visualGradeFrom を付与して、 visualGradeFromString をセット
                 elements.setObject(visualGradeFromString, forKey: "visualGradeFrom" as NSCopying)
+            }
+            
+            // distanceString の中身が空でないなら
+            if distanceString != "" {
+                // elementsにキー: distance を付与して、 distanceString をセット
+                elements.setObject(distanceString, forKey: "distance" as NSCopying)
             }
             
             // directionString の中身が空でないなら
@@ -154,9 +172,6 @@ class ViewController: UIViewController{
                 elements.setObject(altitudeString, forKey: "altitude" as NSCopying)
             }
             
-            // rowsの中にelementsを加える
-            rows.add(elements)
-            
         }
         
     }
@@ -166,18 +181,34 @@ class ViewController: UIViewController{
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-=======
 
-        // Do any additional setup after loading the view.
-    }
->>>>>>> ab65e4a7cb959de7a21b1ee5da0f4296842f32a4
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Run the view's session
+        sceneView.session.run(configuration)
     }
     
-<<<<<<< HEAD
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Pause the view's session
+        sceneView.session.pause()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Release any cached data, images, etc that aren't in use.
+    }
+
+    // MARK: - ARSCNViewDelegate
+    
+/*
+    // Override to create and configure nodes for anchors added to the view's session.
+    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+        let node = SCNNode()
+     
+        return node
+    }
+*/
+    
     // location
     func setupLocationManager() {
         locationManager = CLLocationManager()
@@ -189,6 +220,10 @@ class ViewController: UIViewController{
             locationManager.delegate = self
             locationManager.distanceFilter = 10
             locationManager.startUpdatingLocation()
+            
+            
+
+            
         }
     }
     
@@ -197,10 +232,16 @@ class ViewController: UIViewController{
         let latitude = location?.coordinate.latitude
         let longitude = location?.coordinate.longitude
         
+        
+        
         latitudeLocation = latitude
         longitudeLocation = longitude
         
         seturl(latiudeLocation: latitudeLocation!, longitudeLocation: longitudeLocation!)
+        
+        print("latitude: \(latitudeLocation!)\nlongitude: \(longitudeLocation!)")   // test
+        
+        
     }
     
     func seturl (latiudeLocation: Double, longitudeLocation: Double) {
@@ -215,24 +256,19 @@ class ViewController: UIViewController{
         let format = DateFormatter()
         format.dateFormat = "yyyy,MM,dd,HH,mm,ss"
         format.timeZone   = TimeZone(identifier: "Asia/Tokyo")
-        let cDate = format.string(from: date).split(separator: ",")
+        let currentDate = format.string(from: date).split(separator: ",")
         
         // 現在日時、位置情報(仮)を用いてURLを生成
-        let urlString:String = "http://www.walk-in-starrysky.com/star.do?cmd=display&year=\(cDate[0])&month=\(cDate[1])&day=\(cDate[2])&hour=\(cDate[3])&minute=\(cDate[4])&second=\(cDate[5])&latitude=\(latiudeLocation)&longitude=\(longitudeLocation)"
+        let urlString:String = "http://www.walk-in-starrysky.com/star.do?cmd=display&year=\(currentDate[0])&month=\(currentDate[1])&day=\(currentDate[2])&hour=\(currentDate[3])&minute=\(currentDate[4])&second=\(currentDate[5])&latitude=\(latiudeLocation)&longitude=\(longitudeLocation)&jpName=シリウス"
         let url:URL = URL(string:urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)!  // 日本語入りStringをURLに変換
         parser = XMLParser(contentsOf: url)!
         parser.delegate = self
         parser.parse()
         
         apiURL = url
-
-        // URL表示
-        print(url)
         
-        // 取得した星の情報を表示
-        for value in rows {
-            print(value)
-        }
+        print(elements) // test
+        print(url)      // test
     }
     
     // Camera
@@ -257,7 +293,4 @@ class ViewController: UIViewController{
     
     func sessionInterruptionEnded(_ session: ARSession) {
     }
-=======
-
->>>>>>> ab65e4a7cb959de7a21b1ee5da0f4296842f32a4
 }

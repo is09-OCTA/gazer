@@ -10,9 +10,11 @@ import UIKit
 
 class ViewController: UIViewController{
 
-    @IBAction func goStarButton(_ sender: UIButton) {//Star画面へ
+    // STAR画面へ遷移
+    @IBAction func goStarButton(_ sender: UIButton) {
         performSegue(withIdentifier: "goStar", sender: nil)
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +25,5 @@ class ViewController: UIViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
 }

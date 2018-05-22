@@ -21,7 +21,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         present(beforeMenu, animated: true, completion: nil)
     }
     
-
     @IBAction func pushCamera(_ sender: Any) {
         let image = getScreenShot()
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
@@ -33,6 +32,9 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     // XMLParser のインスタンスを生成
     var parser = XMLParser()
     
+    // テーブル内の列を可変な配列クラス(要素数を追加、挿入、削除など変更できる) NSMutableArrayのインスタンスを生成
+    var rows = NSMutableArray()
+    
     // 今回は star タグ内を取得。star で固定なので Stringクラスでインスタンスを生成
     var element = String()
     
@@ -42,14 +44,12 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     /*: 取得したいタグ内の値を格納
      enName: 星名(英字)
      visualGradeFrom: 実視等級(少ないほど明るい)
-     distance: 距離   -> z軸
-     direction: 方位(南を0°として西回りに360°まで)   -> x軸
-     altitude: 高度(0°~90°)   -> y軸
+     direction: 方位(南を0°として西回りに360°まで)
+     altitude: 高度(0°~90°)
      */
     
     var enNameString = NSMutableString()
     var visualGradeFromString = NSMutableString()
-    var distanceString = NSMutableString()
     var directionString = NSMutableString()
     var altitudeString = NSMutableString()
     
@@ -64,6 +64,9 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         sceneView.delegate = self
         sceneView.showsStatistics = false
         
+        // 列の数を初期化
+        rows = []
+        
         // 現在地を取得
         setupLocationManager()
 
@@ -73,13 +76,13 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         let material = SCNMaterial()
         material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
         node.geometry?.materials = [material]
-        node.position = SCNVector3(5,-0.5,6.0)
+        node.position = SCNVector3(0,5,-10.0)
       
         let node2 = SCNNode(geometry: SCNSphere(radius: 0.05))
         let material2 = SCNMaterial()
         material2.diffuse.contents = UIImage(named: "art.scnassets/hosi4.jpg")
         node2.geometry?.materials = [material]
-        node2.position = SCNVector3(88,149,6.0)
+        node2.position = SCNVector3(0,0,-10.0)
       
         // 表示
         self.sceneView.scene.rootNode.addChildNode(node)
@@ -101,8 +104,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             enNameString = ""
             visualGradeFromString = NSMutableString()
             visualGradeFromString = ""
-            distanceString = NSMutableString()
-            distanceString = ""
             directionString = NSMutableString()
             directionString = ""
             altitudeString = NSMutableString()
@@ -120,10 +121,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         } else if element == "visualGradeFrom"{
             
             visualGradeFromString.append(string)
-            
-        } else if element == "distance"{
-            
-            distanceString.append(string)
             
         } else if element == "direction"{
             
@@ -154,12 +151,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
                 elements.setObject(visualGradeFromString, forKey: "visualGradeFrom" as NSCopying)
             }
             
-            // distanceString の中身が空でないなら
-            if distanceString != "" {
-                // elementsにキー: distance を付与して、 distanceString をセット
-                elements.setObject(distanceString, forKey: "distance" as NSCopying)
-            }
-            
             // directionString の中身が空でないなら
             if directionString != "" {
                 // elementsにキー: direction を付与して、 directionString をセット
@@ -171,6 +162,9 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
                 // elementsにキー: altitude を付与して、 altitudeString をセット
                 elements.setObject(altitudeString, forKey: "altitude" as NSCopying)
             }
+            
+            // rowsの中にelementsを加える
+            rows.add(elements)
             
         }
         
@@ -220,10 +214,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             locationManager.delegate = self
             locationManager.distanceFilter = 10
             locationManager.startUpdatingLocation()
-            
-            
-
-            
         }
     }
     
@@ -231,17 +221,12 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         let location = locations.first
         let latitude = location?.coordinate.latitude
         let longitude = location?.coordinate.longitude
-        
-        
-        
+
         latitudeLocation = latitude
         longitudeLocation = longitude
         
         seturl(latiudeLocation: latitudeLocation!, longitudeLocation: longitudeLocation!)
-        
-        print("latitude: \(latitudeLocation!)\nlongitude: \(longitudeLocation!)")   // test
-        
-        
+   
     }
     
     func seturl (latiudeLocation: Double, longitudeLocation: Double) {
@@ -259,7 +244,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         let currentDate = format.string(from: date).split(separator: ",")
         
         // 現在日時、位置情報(仮)を用いてURLを生成
-        let urlString:String = "http://www.walk-in-starrysky.com/star.do?cmd=display&year=\(currentDate[0])&month=\(currentDate[1])&day=\(currentDate[2])&hour=\(currentDate[3])&minute=\(currentDate[4])&second=\(currentDate[5])&latitude=\(latiudeLocation)&longitude=\(longitudeLocation)&jpName=シリウス"
+        let urlString:String = "http://www.walk-in-starrysky.com/star.do?cmd=display&year=\(currentDate[0])&month=\(currentDate[1])&day=\(currentDate[2])&hour=\(currentDate[3])&minute=\(currentDate[4])&second=\(currentDate[5])&latitude=\(latiudeLocation)&longitude=\(longitudeLocation)"
         let url:URL = URL(string:urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)!  // 日本語入りStringをURLに変換
         parser = XMLParser(contentsOf: url)!
         parser.delegate = self
@@ -267,8 +252,13 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         
         apiURL = url
         
-        print(elements) // test
-        print(url)      // test
+        // 作成したURLを表示
+        print(url)
+        
+        // 取得した星の情報を表示
+        for value in rows {
+            print(value)
+        }
     }
     
     // Camera

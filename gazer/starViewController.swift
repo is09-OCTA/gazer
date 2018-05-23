@@ -33,7 +33,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     var parser = XMLParser()
     
     // 星の情報を複数持つ配列クラス
-    var rows = Array<Any>()
+    var rows = NSMutableArray()
     
     // 今回は star タグ内を取得。star で固定なので Stringクラスでインスタンスを生成
     var element = String()
@@ -181,7 +181,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             }
             
             // rowsの中にelementsを加える
-            rows.append(elements)
+            rows.add(elements)
             
         }
         
@@ -271,11 +271,9 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         
         // 作成したURLを表示
         print(url)
-        
-        // 取得した星の情報を表示
-        for value in rows {
-            print(value)
-        }
+
+        print((rows[0] as AnyObject).value(forKey: "altitude") as? String)
+        print((rows[0] as AnyObject).value(forKey: "direction") as? String)
         
         // xyz
         let xyz = getXYZ(altitude: 0.3445289523976158, direction: 95.15499377562779)

@@ -32,8 +32,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     // XMLParser のインスタンスを生成
     var parser = XMLParser()
     
-    // テーブル内の列を可変な配列クラス(要素数を追加、挿入、削除など変更できる) NSMutableArrayのインスタンスを生成
-    var rows = NSMutableArray()
+    // 星の情報を複数持つ配列クラス
+    var rows = Array<Any>()
     
     // 今回は star タグ内を取得。star で固定なので Stringクラスでインスタンスを生成
     var element = String()
@@ -88,6 +88,23 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         self.sceneView.scene.rootNode.addChildNode(node)
         self.sceneView.scene.rootNode.addChildNode(node2)
         
+    }
+    
+    func getXYZ(altitude: Double, direction: Double) -> (x: Decimal, y: Decimal, z: Decimal) {
+        
+        // ラジアン単位に変換
+        // 90° - 高度
+        var sita = Decimal((.pi / 180) * (90 - altitude))
+        // 方位
+        var fai = Decimal((.pi / 180) * direction)
+        // 定数
+        let r = Decimal(10)
+        
+        let z = r * sita.sin() * fai.cos()
+        let x = r * sita.sin() * fai.sin()
+        let y = r * sita.cos()
+        
+        return (x, y, z)
     }
     
     // 開始タグ
@@ -164,7 +181,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             }
             
             // rowsの中にelementsを加える
-            rows.add(elements)
+            rows.append(elements)
             
         }
         
@@ -259,6 +276,12 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         for value in rows {
             print(value)
         }
+        
+        // xyz
+        let xyz = getXYZ(altitude: 0.3445289523976158, direction: 95.15499377562779)
+        print(xyz.x)
+        print(xyz.y)
+        print(xyz.z)
     }
     
     // Camera

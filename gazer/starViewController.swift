@@ -231,6 +231,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             locationManager.delegate = self
             locationManager.distanceFilter = 10
             locationManager.startUpdatingLocation()
+            locationManager.stopUpdatingLocation()
         }
     }
     
@@ -243,7 +244,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         longitudeLocation = longitude
         
         seturl(latiudeLocation: latitudeLocation!, longitudeLocation: longitudeLocation!)
-   
     }
     
     func seturl (latiudeLocation: Double, longitudeLocation: Double) {

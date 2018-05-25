@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		235E628820902DF50054ACE2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235E628720902DF50054ACE2 /* CoreLocation.framework */; };
 		B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */; };
+		C75A04BA20B3D9EA00B0F36C /* decimalExpansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */; };
 		C788DA73209023700006ED25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA72209023700006ED25 /* AppDelegate.swift */; };
 		C788DA75209023700006ED25 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C788DA74209023700006ED25 /* art.scnassets */; };
 		C788DA77209023700006ED25 /* starViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA76209023700006ED25 /* starViewController.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		235E628720902DF50054ACE2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decimalExpansion.swift; sourceTree = "<group>"; };
 		C788DA6F209023700006ED25 /* gazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C788DA72209023700006ED25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C788DA74209023700006ED25 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C75A04B820B3D9C900B0F36C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		C788DA66209023700006ED25 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 		C788DA71209023700006ED25 /* gazer */ = {
 			isa = PBXGroup;
 			children = (
+				C75A04B820B3D9C900B0F36C /* src */,
 				C788DA72209023700006ED25 /* AppDelegate.swift */,
 				C788DA74209023700006ED25 /* art.scnassets */,
 				C788DA76209023700006ED25 /* starViewController.swift */,
@@ -281,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */,
+				C75A04BA20B3D9EA00B0F36C /* decimalExpansion.swift in Sources */,
 				C788DA77209023700006ED25 /* starViewController.swift in Sources */,
 				C788DA73209023700006ED25 /* AppDelegate.swift in Sources */,
 			);

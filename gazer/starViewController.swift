@@ -11,13 +11,14 @@ import SceneKit
 import ARKit
 import CoreLocation
 
-class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate  {
+class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate{
     
     @IBOutlet var sceneView: ARSCNView!
     
     @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {//スワイプしたらメニュー画面戻る
         let storyboard : UIStoryboard = self.storyboard!
         let beforeMenu = storyboard.instantiateViewController(withIdentifier:"manu")
+        beforeMenu.modalTransitionStyle = .flipHorizontal
         present(beforeMenu, animated: true, completion: nil)
     }
     

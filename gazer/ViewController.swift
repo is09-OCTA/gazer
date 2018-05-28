@@ -53,8 +53,8 @@ class ViewController: UIViewController, UIScrollViewDelegate{
         scrollView.bounces = true
         
         // スクロールバーの見た目と余白
-        scrollView.indicatorStyle = .black
-        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        scrollView.indicatorStyle = .white
+        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 0)
         
         // Delegate を設定
         scrollView.delegate = self
@@ -112,7 +112,7 @@ class ViewController: UIViewController, UIScrollViewDelegate{
         //ボタンを押された時のフロー
         starButton.addTarget(self, action: (#selector(ViewController.goStarAction)), for:.touchUpInside)
     }
-
+    //Star画面遷移の関数
     @objc func goStarAction(){
         performSegue(withIdentifier: "goStar", sender: nil)
     }

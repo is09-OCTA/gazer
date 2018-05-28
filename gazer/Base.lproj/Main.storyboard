@@ -13,8 +13,8 @@
         <!--View Controller-->
         <scene sceneID="T3j-mk-y9D">
             <objects>
-                <viewController storyboardIdentifier="manu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k6m-Zo-Mx5" customClass="ViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JYH-Do-Ej2" customClass="UIButton">
+                <viewController storyboardIdentifier="menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k6m-Zo-Mx5" customClass="ViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JYH-Do-Ej2" customClass="View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -63,7 +63,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" numberOfTouchesRequired="2" id="DoZ-45-e9U">
+                <swipeGestureRecognizer direction="right" id="DoZ-45-e9U">
                     <connections>
                         <action selector="retunMenuSwipe:" destination="BV1-FR-VrT" id="sfW-2z-TVh"/>
                     </connections>

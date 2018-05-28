@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate{
+class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControllerDelegate, UIGestureRecognizerDelegate{
 
     //ボタンの横幅、縦幅設定変数
     var buttonWidth:CGFloat = 0
@@ -20,7 +20,7 @@ class ViewController: UIViewController, UIScrollViewDelegate{
     let aquariumButtonImage:UIImage = UIImage(named:"Aquarium_ver 1.1.0")!
     let bookButtonImage:UIImage = UIImage(named:"Book_ver 1.1.0")!
     let mappingButtonImage:UIImage = UIImage(named:"Mapping_ver 1.1.0")!
-    let sceneryButtonImage:UIImage = UIImage(named:"Scenery_ver 1.1.0")!
+    let sceneryButtonImage:UIImage = UIImage(named:"Scenery_ver1.1.0")!
     
     //画面の横幅、縦幅取得する変数
     var screenWidth:CGFloat = 0

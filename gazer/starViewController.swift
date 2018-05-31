@@ -18,7 +18,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {//スワイプしたらメニュー画面戻る
         let storyboard : UIStoryboard = self.storyboard!
         let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
-        beforeMenu.modalTransitionStyle = .flipHorizontal
+        beforeMenu.modalTransitionStyle = .crossDissolve
         present(beforeMenu, animated: true, completion: nil)
     }
     

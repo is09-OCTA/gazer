@@ -20,11 +20,23 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
         beforeMenu.modalTransitionStyle = .crossDissolve
         present(beforeMenu, animated: true, completion: nil)
+        
     }
     
     @IBAction func pushCamera(_ sender: Any) {
         let image = getScreenShot()
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+        
+        let title = "大変です！"
+        let message = "あなたのiPhoneが感染しました！"
+        let messageOk = "OK"
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let okayButton = UIAlertAction(title: messageOk, style: UIAlertActionStyle.cancel, handler: nil)
+        alert.addAction(okayButton)
+        
+        present(alert, animated: true, completion: nil)
+
     }
     
     // 位置情報

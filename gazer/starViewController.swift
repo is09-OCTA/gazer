@@ -27,8 +27,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         let image = getScreenShot()
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
         
-        let title = "大変です！"
-        let message = "あなたのiPhoneが感染しました！"
+        let title = "写真を保存しました。"
+        let message = ""
         let messageOk = "OK"
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)

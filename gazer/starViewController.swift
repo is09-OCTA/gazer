@@ -52,6 +52,24 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     var longitudeLocation: Double!
     var apiURL: URL!
     
+    // Date
+    struct ReqDate {
+        var yyyy: Int
+        var MM: Int
+        var dd: Int
+        var HH: Int
+        var mm: Int
+        var ss: Int
+    }
+    
+    // Area
+    struct ReqArea {
+        var latitude: Double    // 緯度
+        var longitude: Double   // 経度
+        var alfa: Double        // 赤経
+        var delta: Double       // 赤緯
+    }
+        
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -61,7 +79,9 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         
         // 現在地を取得
         setupLocationManager()
-
+        
+        setStar()
+/*
         // 表示する情報
         self.sceneView.scene = SCNScene()
         let node = SCNNode(geometry: SCNSphere(radius: 0.05))
@@ -79,7 +99,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         // 表示
         self.sceneView.scene.rootNode.addChildNode(node)
         self.sceneView.scene.rootNode.addChildNode(node2)
-        
+ */
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -138,10 +158,10 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         latitudeLocation = latitude
         longitudeLocation = longitude
         
-        seturl(latiudeLocation: latitudeLocation!, longitudeLocation: longitudeLocation!)
+        seturl(latitudeLocation: latitudeLocation!, longitudeLocation: longitudeLocation!)
     }
     
-    func seturl (latiudeLocation: Double, longitudeLocation: Double) {
+    func seturl (latitudeLocation: Double, longitudeLocation: Double) {
         
         /*:
          現在日時(年月日時分秒)を取得
@@ -155,6 +175,42 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         format.timeZone   = TimeZone(identifier: "Asia/Tokyo")
         let currentDate = format.string(from: date).split(separator: ",")
         
+        let myDate = ReqDate(
+            yyyy: Int(currentDate[0])!,
+            MM: Int(currentDate[1])!,
+            dd: Int(currentDate[2])!,
+            HH: Int(currentDate[3])!,
+            mm: Int(currentDate[4])!,
+            ss: Int(currentDate[5])!
+        )
+        print(myDate)
+        
+        let myArea = ReqArea(
+            latitude: latitudeLocation,
+            longitude: longitudeLocation,
+            alfa: 0,
+            delta: 0
+        )
+        
+        print(myArea)
+    
+    }
+    
+    //星情報設定&表示
+    func setStar(){
+        var star = [SCNNode]()
+        self.sceneView.scene = SCNScene()
+        for i in 0...10 {
+            // 表示する情報
+            let starNode = SCNNode(geometry: SCNSphere(radius: 0.05))
+            let material = SCNMaterial()
+            material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
+            starNode.geometry?.materials = [material]
+            starNode.position = SCNVector3(0,Double(i),-10.0)
+            star.append(starNode)
+            //表示
+            self.sceneView.scene.rootNode.addChildNode(starNode)
+        }
     }
     
     // Camera

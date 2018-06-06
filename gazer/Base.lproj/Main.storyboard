@@ -43,9 +43,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ux2-AB-gTj">
-                                <rect key="frame" x="158" y="602" width="58" height="58"/>
+                                <rect key="frame" x="134" y="596" width="107" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="camera"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="カメラ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="pushCamera:" destination="BV1-FR-VrT" eventType="touchUpInside" id="dRc-Sb-3O1"/>
                                 </connections>
@@ -74,6 +77,5 @@
     </scenes>
     <resources>
         <image name="Header_ver 1.5.0" width="750" height="100"/>
-        <image name="camera" width="256" height="256"/>
     </resources>
 </document>

@@ -29,20 +29,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         let image = getScreenShot()
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
         
-       SCLAlertView().showSuccess("保存しました！", subTitle: "", closeButtonTitle: "OK")
+       SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
 
-        
-/*
-        let title = "写真を保存しました。"
-        let message = ""
-        let messageOk = "OK"
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let okayButton = UIAlertAction(title: messageOk, style: UIAlertActionStyle.cancel, handler: nil)
-        alert.addAction(okayButton)
-        
-        present(alert, animated: true, completion: nil)
-*/
     }
     
     // 位置情報

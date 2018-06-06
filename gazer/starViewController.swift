@@ -16,7 +16,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     @IBOutlet var sceneView: ARSCNView!
     
-    @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {//スワイプしたらメニュー画面戻る
+    // スワイプしたらメニュー画面戻る
+    @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
         let storyboard : UIStoryboard = self.storyboard!
         let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
         beforeMenu.modalTransitionStyle = .crossDissolve
@@ -249,7 +250,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             locationManager.delegate = self
             locationManager.distanceFilter = 10
             locationManager.startUpdatingLocation()
-            locationManager.stopUpdatingLocation()
+            // locationManager.stopUpdatingLocation()
         }
     }
     
@@ -289,10 +290,9 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         
         // 作成したURLを表示
         print(url)
-
-        print((rows[0] as AnyObject).value(forKey: "altitude") as? String)
-        print((rows[0] as AnyObject).value(forKey: "direction") as? String)
         
+        print(rows)
+
         // xyz
         let xyz = getXYZ(altitude: 0.3445289523976158, direction: 95.15499377562779)
         print(xyz.x)

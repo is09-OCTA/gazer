@@ -1,0 +1,32 @@
+{
+  "stars": [
+    {
+      "hipId": "32349",
+      "enName": "Sirius",
+      "rightAscension": "6.45925",
+      "declination": "-16.42473",
+      "magnitude": "-1.44"
+    },
+    {
+      "hipId": "91262",
+      "enName": "Vega",
+      "rightAscension": "18.365619",
+      "declination": "38.46588",
+      "magnitude": "0.03"
+    },
+    {
+      "hipId": "27989",
+      "enName": "Betelgeuse",
+      "rightAscension": "5.551029",
+      "declination": "7.24253",
+      "magnitude": "0.58"
+    },
+    {
+      "hipId": "37279",
+      "enName": "Procyon",
+      "rightAscension": "7.391854",
+      "declination": "5.1339",
+      "magnitude": "0.34"
+    }
+  ]
+}

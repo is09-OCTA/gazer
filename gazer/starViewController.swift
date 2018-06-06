@@ -47,6 +47,24 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     var longitudeLocation: Double!
     var apiURL: URL!
     
+    // Date
+    struct ReqDate {
+        var yyyy: Int
+        var MM: Int
+        var dd: Int
+        var HH: Int
+        var mm: Int
+        var ss: Int
+    }
+    
+    // Area
+    struct ReqArea {
+        var latitude: Double    // 緯度
+        var longitude: Double   // 経度
+        var alfa: Double        // 赤経
+        var delta: Double       // 赤緯
+    }
+        
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -133,10 +151,10 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         latitudeLocation = latitude
         longitudeLocation = longitude
         
-        seturl(latiudeLocation: latitudeLocation!, longitudeLocation: longitudeLocation!)
+        seturl(latitudeLocation: latitudeLocation!, longitudeLocation: longitudeLocation!)
     }
     
-    func seturl (latiudeLocation: Double, longitudeLocation: Double) {
+    func seturl (latitudeLocation: Double, longitudeLocation: Double) {
         
         /*:
          現在日時(年月日時分秒)を取得
@@ -150,6 +168,25 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         format.timeZone   = TimeZone(identifier: "Asia/Tokyo")
         let currentDate = format.string(from: date).split(separator: ",")
         
+        let myDate = ReqDate(
+            yyyy: Int(currentDate[0])!,
+            MM: Int(currentDate[1])!,
+            dd: Int(currentDate[2])!,
+            HH: Int(currentDate[3])!,
+            mm: Int(currentDate[4])!,
+            ss: Int(currentDate[5])!
+        )
+        print(myDate)
+        
+        let myArea = ReqArea(
+            latitude: latitudeLocation,
+            longitude: longitudeLocation,
+            alfa: 0,
+            delta: 0
+        )
+        
+        print(myArea)
+    
     }
     
     // Camera

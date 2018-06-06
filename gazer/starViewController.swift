@@ -69,7 +69,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     var latitudeLocation: Double!
     var longitudeLocation: Double!
     var apiURL: URL!
-     var star = [SCNNode]()
     
     override func viewDidLoad() {
         
@@ -84,8 +83,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         // 現在地を取得
         setupLocationManager()
         
-//        setStar()
-
+        setStar()
+/*
         // 表示する情報
         self.sceneView.scene = SCNScene()
         let node = SCNNode(geometry: SCNSphere(radius: 0.05))
@@ -103,6 +102,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         // 表示
         self.sceneView.scene.rootNode.addChildNode(node)
         self.sceneView.scene.rootNode.addChildNode(node2)
+ */
     }
     
     func getXYZ(altitude: Double, direction: Double) -> (x: Decimal, y: Decimal, z: Decimal) {
@@ -299,16 +299,18 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     //星情報設定&表示
     func setStar(){
+        var star = [SCNNode]()
         self.sceneView.scene = SCNScene()
         for i in 0...10 {
             // 表示する情報
-            star.append(SCNNode(geometry: SCNSphere(radius: 0.05)))
+            let starNode = SCNNode(geometry: SCNSphere(radius: 0.05))
             let material = SCNMaterial()
             material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
-            star[i].geometry?.materials = [material]
-            star[i].position = SCNVector3(0,5,-10.0)
+            starNode.geometry?.materials = [material]
+            starNode.position = SCNVector3(0,Double(i),-10.0)
+            star.append(starNode)
             //表示
-            self.sceneView.scene.rootNode.addChildNode(star[i])
+            self.sceneView.scene.rootNode.addChildNode(starNode)
         }
     }
     

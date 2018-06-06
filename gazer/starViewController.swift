@@ -43,30 +43,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     // 位置情報
     var locationManager: CLLocationManager!
     
-    // XMLParser のインスタンスを生成
-    var parser = XMLParser()
-    
-    // 星の情報を複数持つ配列クラス
-    var rows = NSMutableArray()
-    
-    // 今回は star タグ内を取得。star で固定なので Stringクラスでインスタンスを生成
-    var element = String()
-    
-    // 可変な辞書クラスNSMutableDictionary インスタンスを生成
-    var elements = NSMutableDictionary()
-    
-    /*: 取得したいタグ内の値を格納
-     enName: 星名(英字)
-     visualGradeFrom: 実視等級(少ないほど明るい)
-     direction: 方位(南を0°として西回りに360°まで)
-     altitude: 高度(0°~90°)
-     */
-    
-    var enNameString = NSMutableString()
-    var visualGradeFromString = NSMutableString()
-    var directionString = NSMutableString()
-    var altitudeString = NSMutableString()
-    
     var latitudeLocation: Double!
     var longitudeLocation: Double!
     var apiURL: URL!
@@ -77,9 +53,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         
         sceneView.delegate = self
         sceneView.showsStatistics = false
-        
-        // 列の数を初期化
-        rows = []
         
         // 現在地を取得
         setupLocationManager()
@@ -101,103 +74,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         // 表示
         self.sceneView.scene.rootNode.addChildNode(node)
         self.sceneView.scene.rootNode.addChildNode(node2)
-        
-    }
-    
-    func getXYZ(altitude: Double, direction: Double) -> (x: Decimal, y: Decimal, z: Decimal) {
-        
-        // ラジアン単位に変換
-        // 90° - 高度
-        var sita = Decimal((.pi / 180) * (90 - altitude))
-        // 方位
-        var fai = Decimal((.pi / 180) * direction)
-        // 定数
-        let r = Decimal(10)
-        
-        let z = r * sita.sin() * fai.cos()
-        let x = r * sita.sin() * fai.sin()
-        let y = r * sita.cos()
-        
-        return (x, y, z)
-    }
-    
-    // 開始タグ
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        
-        element = elementName
-        
-        if element == "star" {
-            
-            elements = NSMutableDictionary()
-            elements = [:]
-            
-            enNameString = NSMutableString()
-            enNameString = ""
-            visualGradeFromString = NSMutableString()
-            visualGradeFromString = ""
-            directionString = NSMutableString()
-            directionString = ""
-            altitudeString = NSMutableString()
-            altitudeString = ""
-        }
-    }
-    
-    // 開始タグと終了タグの間にデータが存在した時
-    func parser(_ parser: XMLParser, foundCharacters string: String) {
-        
-        if element == "enName"{
-            
-            enNameString.append(string)
-            
-        } else if element == "visualGradeFrom"{
-            
-            visualGradeFromString.append(string)
-            
-        } else if element == "direction"{
-            
-            directionString.append(string)
-            
-        } else if element == "altitude"{
-            
-            altitudeString.append(string)
-            
-        }
-    }
-    
-    // 終了タグ
-    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        
-        // 要素 star だったら
-        if elementName == "star"{
-            
-            // enNameString の中身が空でないなら
-            if enNameString != "" {
-                // elementsにキー: title を付与して、titleString をセット
-                elements.setObject(enNameString, forKey: "enName" as NSCopying)
-            }
-            
-            // visualGradeFromString の中身が空でないなら
-            if visualGradeFromString != "" {
-                // elementsにキー: visualGradeFrom を付与して、 visualGradeFromString をセット
-                elements.setObject(visualGradeFromString, forKey: "visualGradeFrom" as NSCopying)
-            }
-            
-            // directionString の中身が空でないなら
-            if directionString != "" {
-                // elementsにキー: direction を付与して、 directionString をセット
-                elements.setObject(directionString, forKey: "direction" as NSCopying)
-            }
-            
-            // altitudeString の中身が空でないなら
-            if altitudeString != "" {
-                // elementsにキー: altitude を付与して、 altitudeString をセット
-                elements.setObject(altitudeString, forKey: "altitude" as NSCopying)
-            }
-            
-            // rowsの中にelementsを加える
-            rows.add(elements)
-            
-        }
         
     }
     
@@ -274,25 +150,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         format.timeZone   = TimeZone(identifier: "Asia/Tokyo")
         let currentDate = format.string(from: date).split(separator: ",")
         
-        // 現在日時、位置情報(仮)を用いてURLを生成
-        let urlString:String = "http://www.walk-in-starrysky.com/star.do?cmd=display&year=\(currentDate[0])&month=\(currentDate[1])&day=\(currentDate[2])&hour=\(currentDate[3])&minute=\(currentDate[4])&second=\(currentDate[5])&latitude=\(latiudeLocation)&longitude=\(longitudeLocation)"
-        let url:URL = URL(string:urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!)!  // 日本語入りStringをURLに変換
-        parser = XMLParser(contentsOf: url)!
-        parser.delegate = self
-        parser.parse()
-        
-        apiURL = url
-        
-        // 作成したURLを表示
-        print(url)
-        
-        print(rows)
-
-        // xyz
-        let xyz = getXYZ(altitude: 0.3445289523976158, direction: 95.15499377562779)
-        print(xyz.x)
-        print(xyz.y)
-        print(xyz.z)
     }
     
     // Camera

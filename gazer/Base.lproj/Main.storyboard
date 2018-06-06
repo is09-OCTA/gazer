@@ -42,10 +42,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ux2-AB-gTj">
-                                <rect key="frame" x="164" y="617" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ux2-AB-gTj">
+                                <rect key="frame" x="158" y="602" width="58" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" image="camera"/>
                                 <connections>
                                     <action selector="pushCamera:" destination="BV1-FR-VrT" eventType="touchUpInside" id="dRc-Sb-3O1"/>
                                 </connections>
@@ -74,5 +74,6 @@
     </scenes>
     <resources>
         <image name="Header_ver 1.5.0" width="750" height="100"/>
+        <image name="camera" width="256" height="256"/>
     </resources>
 </document>

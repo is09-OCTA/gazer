@@ -10,11 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControllerDelegate, UIGestureRecognizerDelegate{
 
-    //ボタンの横幅、縦幅設定変数
+    // ボタンの横幅、縦幅設定変数
     var buttonWidth:CGFloat = 0
     var buttonHeight:CGFloat = 0
     
-    //ボタン画像の読み込み
+    // ボタン画像の読み込み
     let starButtonImage:UIImage = UIImage(named: "Star_ver 1.3.7")!
     let zooButtonImage:UIImage = UIImage(named: "Zoo_ver 1.1.0")!
     let aquariumButtonImage:UIImage = UIImage(named:"Aquarium_ver 1.1.0")!
@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     let mappingButtonImage:UIImage = UIImage(named:"Mapping_ver 1.1.0")!
     let sceneryButtonImage:UIImage = UIImage(named:"Scenery_ver1.1.0")!
     
-    //画面の横幅、縦幅取得する変数
+    // 画面の横幅、縦幅取得する変数
     var screenWidth:CGFloat = 0
     var screenHeight:CGFloat = 0
     
@@ -30,20 +30,20 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //ボタンの横幅、縦幅設定
+        // ボタンの横幅、縦幅設定
         buttonWidth = 375
         buttonHeight = 200
         
-        //画面の横幅、縦幅の取得
+        // 画面の横幅、縦幅の取得
         screenWidth = view.frame.width
         screenHeight = view.frame.height
         
         
-        //scrollViewの作成
+        // scrollViewの作成
         let scrollView = UIScrollView()
         
         // 表示窓のサイズと位置を設定
-        //scrollView.frame.size = CGSize(width: screenWidth, height: screenHeight)
+        // scrollView.frame.size = CGSize(width: screenWidth, height: screenHeight)
         scrollView.frame = CGRect(x:0,y:50,width:screenWidth,height:screenHeight)
         
         // 中身の大きさを設定
@@ -61,7 +61,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         
         // ScrollViewの中身
         
-        //StarButton
+        // StarButton
         let starButton = UIButton()
         starButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
         starButton.setImage(starButtonImage, for: UIControlState())
@@ -69,39 +69,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         scrollView.addSubview(starButton)
         self.view.addSubview(scrollView)
         
-        //zooButton
-        let zooButton = UIButton()
-        zooButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
-        zooButton.setImage(zooButtonImage, for: UIControlState())
-        zooButton.center = CGPoint(x: screenWidth/2, y: 300)
-        scrollView.addSubview(zooButton)
-        self.view.addSubview(scrollView)
-        
-        //aquariumButton
-        let aquariumButton = UIButton()
-        aquariumButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
-        aquariumButton.setImage(aquariumButtonImage, for: UIControlState())
-        aquariumButton.center = CGPoint(x: screenWidth/2, y: 500)
-        scrollView.addSubview(aquariumButton)
-        self.view.addSubview(scrollView)
-        
-        //bookButton
-        let bookButton = UIButton()
-        bookButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
-        bookButton.setImage(bookButtonImage, for: UIControlState())
-        bookButton.center = CGPoint(x: screenWidth/2, y: 700)
-        scrollView.addSubview(bookButton)
-        self.view.addSubview(scrollView)
-        
-        //mappingButton
-        let mappingButton = UIButton()
-        mappingButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
-        mappingButton.setImage(mappingButtonImage, for: UIControlState())
-        mappingButton.center = CGPoint(x: screenWidth/2, y: 900)
-        scrollView.addSubview(mappingButton)
-        self.view.addSubview(scrollView)
-        
-        //sceneryButton
+        // sceneryButton
         let sceneryButton = UIButton()
         sceneryButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
         sceneryButton.setImage(sceneryButtonImage, for: UIControlState())
@@ -109,10 +77,42 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         scrollView.addSubview(sceneryButton)
         self.view.addSubview(scrollView)
         
-        //ボタンを押された時のフロー
+        // aquariumButton
+        let aquariumButton = UIButton()
+        aquariumButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
+        aquariumButton.setImage(aquariumButtonImage, for: UIControlState())
+        aquariumButton.center = CGPoint(x: screenWidth/2, y: 500)
+        scrollView.addSubview(aquariumButton)
+        self.view.addSubview(scrollView)
+        
+        // zooButton
+        let zooButton = UIButton()
+        zooButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
+        zooButton.setImage(zooButtonImage, for: UIControlState())
+        zooButton.center = CGPoint(x: screenWidth/2, y: 300)
+        scrollView.addSubview(zooButton)
+        self.view.addSubview(scrollView)
+        
+        // bookButton
+        let bookButton = UIButton()
+        bookButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
+        bookButton.setImage(bookButtonImage, for: UIControlState())
+        bookButton.center = CGPoint(x: screenWidth/2, y: 700)
+        scrollView.addSubview(bookButton)
+        self.view.addSubview(scrollView)
+        
+        // mappingButton
+        let mappingButton = UIButton()
+        mappingButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
+        mappingButton.setImage(mappingButtonImage, for: UIControlState())
+        mappingButton.center = CGPoint(x: screenWidth/2, y: 900)
+        scrollView.addSubview(mappingButton)
+        self.view.addSubview(scrollView)
+        
+        // ボタンを押された時のフロー
         starButton.addTarget(self, action: (#selector(ViewController.goStarAction)), for:.touchUpInside)
     }
-    //Star画面遷移の関数
+    // Star画面遷移の関数
     @objc func goStarAction(){
         performSegue(withIdentifier: "goStar", sender: nil)
     }

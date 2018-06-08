@@ -13,6 +13,7 @@ import CoreLocation
 import SCLAlertView
 
 class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate{
+
     
     @IBOutlet var sceneView: ARSCNView!
     

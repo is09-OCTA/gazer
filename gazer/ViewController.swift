@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControllerDelegate, UIGestureRecognizerDelegate{
 
     // ボタンの横幅、縦幅設定変数
@@ -38,7 +39,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         screenWidth = view.frame.width
         screenHeight = view.frame.height
         
-        
         // scrollViewの作成
         let scrollView = UIScrollView()
         
@@ -58,9 +58,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         
         // Delegate を設定
         scrollView.delegate = self
+    
         
         // ScrollViewの中身
-        
         // StarButton
         let starButton = UIButton()
         starButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)

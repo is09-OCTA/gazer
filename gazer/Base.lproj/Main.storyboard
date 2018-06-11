@@ -18,12 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Header_ver 1.5.0" translatesAutoresizingMaskIntoConstraints="NO" id="FKr-PS-Wh9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header_ver 1.5.0" translatesAutoresizingMaskIntoConstraints="NO" id="FKr-PS-Wh9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="rzm-Yf-gdE"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FKr-PS-Wh9" firstAttribute="top" secondItem="JYH-Do-Ej2" secondAttribute="top" id="Tv5-qh-JRL"/>
+                            <constraint firstItem="FKr-PS-Wh9" firstAttribute="trailing" secondItem="l1E-aa-egg" secondAttribute="trailing" id="b9a-Bg-KWU"/>
+                            <constraint firstItem="FKr-PS-Wh9" firstAttribute="leading" secondItem="l1E-aa-egg" secondAttribute="leading" id="ofR-ZL-OuF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="l1E-aa-egg"/>
                     </view>
                     <connections>
@@ -42,9 +49,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ux2-AB-gTj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ux2-AB-gTj">
                                 <rect key="frame" x="147" y="578" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Ddq-JI-j8b"/>
+                                    <constraint firstAttribute="height" constant="80" id="b3E-T1-OEU"/>
+                                </constraints>
                                 <state key="normal" image="cameraVer1.2.0">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -55,6 +65,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="4Yh-VM-yRr" firstAttribute="bottom" secondItem="ux2-AB-gTj" secondAttribute="bottom" constant="9" id="aVC-hj-sWc"/>
+                            <constraint firstItem="4Yh-VM-yRr" firstAttribute="trailing" secondItem="ux2-AB-gTj" secondAttribute="trailing" constant="148" id="cMt-pA-RgR"/>
+                            <constraint firstItem="ux2-AB-gTj" firstAttribute="leading" secondItem="4Yh-VM-yRr" secondAttribute="leading" constant="147" id="pWd-6a-scf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4Yh-VM-yRr"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="DoZ-45-e9U" appends="YES" id="dzN-T8-yNy"/>

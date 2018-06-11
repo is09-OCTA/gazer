@@ -10,8 +10,10 @@ import UIKit
 import SceneKit
 import ARKit
 import CoreLocation
+import SCLAlertView
 
 class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate{
+
     
     @IBOutlet var sceneView: ARSCNView!
     
@@ -28,15 +30,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         let image = getScreenShot()
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
         
-        let title = "写真を保存しました。"
-        let message = ""
-        let messageOk = "OK"
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let okayButton = UIAlertAction(title: messageOk, style: UIAlertActionStyle.cancel, handler: nil)
-        alert.addAction(okayButton)
-        
-        present(alert, animated: true, completion: nil)
+       SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
 
     }
     

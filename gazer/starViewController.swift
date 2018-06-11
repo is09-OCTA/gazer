@@ -11,6 +11,7 @@ import SceneKit
 import ARKit
 import CoreLocation
 import SCLAlertView
+// import WSCoachMarksView
 
 class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate{
 
@@ -62,8 +63,20 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     }
         
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+/*
+        let f = self.view.bounds
+        let arrCouach = [
+            [ "rect"    :  CGRect(x:f.width - 84 , y:f.height - 38 , width:64, height:30),
+              "caption" :  "（メッセージを個々に記入）",
+              "shape"   : "square",
+              ],
+            ]
+        let couach: WSCoachMarksView = WSCoachMarksView(frame: self.view.bounds, coachMarks: arrCouach)
+        couach.maskColor = UIColor(white: 0.0, alpha: 0.65)
+        self.view.addSubview(couach)
+        couach.start()
+ */
         
         sceneView.delegate = self
         sceneView.showsStatistics = false

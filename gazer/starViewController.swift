@@ -40,7 +40,9 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     var latitudeLocation: Double!
     var longitudeLocation: Double!
     var apiURL: URL!
-    
+    //星のサンプル座標
+    let starPosition:[[Double]] = [[1,2,3],[4,5,6],[7,8,9],]
+
     // Date
     struct ReqDate {
         var yyyy: Int
@@ -69,26 +71,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         // 現在地を取得
         setupLocationManager()
         
-        setStar()
-/*
-        // 表示する情報
-        self.sceneView.scene = SCNScene()
-        let node = SCNNode(geometry: SCNSphere(radius: 0.05))
-        let material = SCNMaterial()
-        material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
-        node.geometry?.materials = [material]
-        node.position = SCNVector3(0,5,-10.0)
-      
-        let node2 = SCNNode(geometry: SCNSphere(radius: 0.05))
-        let material2 = SCNMaterial()
-        material2.diffuse.contents = UIImage(named: "art.scnassets/hosi4.jpg")
-        node2.geometry?.materials = [material]
-        node2.position = SCNVector3(0,0,-10.0)
-      
-        // 表示
-        self.sceneView.scene.rootNode.addChildNode(node)
-        self.sceneView.scene.rootNode.addChildNode(node2)
- */
+        //星表示
+        setStar(starPosition: starPosition)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -186,16 +170,16 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     }
     
     //星情報設定&表示
-    func setStar(){
+    func setStar(starPosition: [[Double]]) -> Void {
         var star = [SCNNode]()
         self.sceneView.scene = SCNScene()
-        for i in 0...10 {
+        for i in 0...2 {
             // 表示する情報
             let starNode = SCNNode(geometry: SCNSphere(radius: 0.05))
             let material = SCNMaterial()
             material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
             starNode.geometry?.materials = [material]
-            starNode.position = SCNVector3(0,Double(i),-10.0)
+            starNode.position = SCNVector3(starPosition[i][0],starPosition[i][1],starPosition[i][2])
             star.append(starNode)
             //表示
             self.sceneView.scene.rootNode.addChildNode(starNode)

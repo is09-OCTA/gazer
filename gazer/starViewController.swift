@@ -42,7 +42,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     var longitudeLocation: Double!
     var apiURL: URL!
     //星のサンプル座標
-    let starPosition:[[Double]] = [[3,3,-10],[-2,-4,-10],[0,0,-10],]
+    let starPosition:[[Double]] = [[0,0,-10],[-0.3,1,-10],[-0.4,2,-10],[-1.5,3,-10],[-0.7,-0.7,-10],[0.1,-2,-10],[1.5,-1.6,-10]]
 
     // Date
     struct ReqDate {

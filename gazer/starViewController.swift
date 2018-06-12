@@ -42,7 +42,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     var longitudeLocation: Double!
     var apiURL: URL!
     //星のサンプル座標
-    let starPosition:[[Double]] = [[3,3,-10],[-2,-4,-10],[0,0,-10],]
+    let starPosition:[[Double]] = [[0,0,-10],[-0.3,1,-10],[-0.4,2,-10],[-1.5,3,-10],[-0.7,-0.7,-10],[0.1,-2,-10],[1.5,-1.6,-10]]
 
     // Date
     struct ReqDate {
@@ -116,7 +116,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
 
@@ -212,13 +212,13 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     func setStar(starPosition: [[Double]]) -> Void {
         var star = [SCNNode]()
         self.sceneView.scene = SCNScene()
-        for i in 0...2 {
+        for (index,element) in starPosition.enumerated() {
             // 表示する情報
             let starNode = SCNNode(geometry: SCNSphere(radius: 0.05))
             let material = SCNMaterial()
             material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
             starNode.geometry?.materials = [material]
-            starNode.position = SCNVector3(starPosition[i][0],starPosition[i][1],starPosition[i][2])
+            starNode.position = SCNVector3(element[0],element[1],element[2])
             star.append(starNode)
             //表示
             self.sceneView.scene.rootNode.addChildNode(starNode)
@@ -230,7 +230,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         guard let view = self.view else {
             return nil
         }
-        
+
         UIGraphicsBeginImageContext(view.frame.size)
         view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()

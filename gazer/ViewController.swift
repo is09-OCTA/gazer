@@ -15,13 +15,17 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     var buttonWidth:CGFloat = 0
     var buttonHeight:CGFloat = 0
     
+    // gazerヘッダー高さ
+    var gazerHedder:CGFloat = 0
+    
     // ボタン画像の読み込み
-    let starButtonImage:UIImage = UIImage(named: "Star_ver 1.3.7")!
-    let zooButtonImage:UIImage = UIImage(named: "Zoo_ver 1.1.0")!
-    let aquariumButtonImage:UIImage = UIImage(named:"Aquarium_ver 1.1.0")!
-    let bookButtonImage:UIImage = UIImage(named:"Book_ver 1.1.0")!
-    let mappingButtonImage:UIImage = UIImage(named:"Mapping_ver 1.1.0")!
-    let sceneryButtonImage:UIImage = UIImage(named:"Scenery_ver1.1.0")!
+    let starButtonImage:UIImage = UIImage(named: "Star_ver 1.3.8")!
+    let mappingButtonImage:UIImage = UIImage(named:"Mapping_ver 1.2.0")!
+    let aquariumButtonImage:UIImage = UIImage(named:"Aquarium_ver 1.2.0")!
+    let zooButtonImage:UIImage = UIImage(named: "Zoo_ver 1.2.0")!
+//    let bookButtonImage:UIImage = UIImage(named:"Book_ver 1.1.0")!
+//    let sceneryButtonImage:UIImage = UIImage(named:"Scenery_ver1.1.0")!
+
     
     // 画面の横幅、縦幅取得する変数
     var screenWidth:CGFloat = 0
@@ -35,6 +39,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         buttonWidth = 375
         buttonHeight = 200
         
+        // gazerヘッダー高さ
+        gazerHedder = 50
+        
         // 画面の横幅、縦幅の取得
         screenWidth = view.frame.width
         screenHeight = view.frame.height
@@ -44,13 +51,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         
         // 表示窓のサイズと位置を設定
         // scrollView.frame.size = CGSize(width: screenWidth, height: screenHeight)
-        scrollView.frame = CGRect(x:0,y:50,width:screenWidth,height:screenHeight)
+        scrollView.frame = CGRect(x:0,y:gazerHedder,width:screenWidth,height:screenHeight)
         
         // 中身の大きさを設定
-        scrollView.contentSize = CGSize(width: buttonWidth, height: buttonHeight*6)
+        scrollView.contentSize = CGSize(width: buttonWidth, height: gazerHedder+buttonHeight*6)
         
         // スクロールの跳ね返り
-        scrollView.bounces = true
+        scrollView.bounces = false
         
         // スクロールバーの見た目と余白
         scrollView.indicatorStyle = .white
@@ -69,12 +76,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         scrollView.addSubview(starButton)
         self.view.addSubview(scrollView)
         
-        // sceneryButton
-        let sceneryButton = UIButton()
-        sceneryButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
-        sceneryButton.setImage(sceneryButtonImage, for: UIControlState())
-        sceneryButton.center = CGPoint(x: screenWidth/2, y: 1100)
-        scrollView.addSubview(sceneryButton)
+        // mappingButton
+        let mappingButton = UIButton()
+        mappingButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
+        mappingButton.setImage(mappingButtonImage, for: UIControlState())
+        mappingButton.center = CGPoint(x: screenWidth/2, y: 300)
+        scrollView.addSubview(mappingButton)
         self.view.addSubview(scrollView)
         
         // aquariumButton
@@ -89,26 +96,26 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         let zooButton = UIButton()
         zooButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
         zooButton.setImage(zooButtonImage, for: UIControlState())
-        zooButton.center = CGPoint(x: screenWidth/2, y: 300)
+        zooButton.center = CGPoint(x: screenWidth/2, y: 700)
         scrollView.addSubview(zooButton)
         self.view.addSubview(scrollView)
-        
+/*
         // bookButton
         let bookButton = UIButton()
         bookButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
         bookButton.setImage(bookButtonImage, for: UIControlState())
-        bookButton.center = CGPoint(x: screenWidth/2, y: 700)
+        bookButton.center = CGPoint(x: screenWidth/2, y: 900)
         scrollView.addSubview(bookButton)
         self.view.addSubview(scrollView)
         
-        // mappingButton
-        let mappingButton = UIButton()
-        mappingButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
-        mappingButton.setImage(mappingButtonImage, for: UIControlState())
-        mappingButton.center = CGPoint(x: screenWidth/2, y: 900)
-        scrollView.addSubview(mappingButton)
+        // sceneryButton
+        let sceneryButton = UIButton()
+        sceneryButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
+        sceneryButton.setImage(sceneryButtonImage, for: UIControlState())
+        sceneryButton.center = CGPoint(x: screenWidth/2, y: 1100)
+        scrollView.addSubview(sceneryButton)
         self.view.addSubview(scrollView)
-        
+*/
         // ボタンを押された時のフロー
         starButton.addTarget(self, action: (#selector(ViewController.goStarAction)), for:.touchUpInside)
     }

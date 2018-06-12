@@ -19,10 +19,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     var gazerHedder:CGFloat = 0
     
     // ボタン画像の読み込み
-    let starButtonImage:UIImage = UIImage(named: "Star_ver 1.3.8")!
-    let mappingButtonImage:UIImage = UIImage(named:"Mapping_ver 1.2.0")!
-    let aquariumButtonImage:UIImage = UIImage(named:"Aquarium_ver 1.2.0")!
-    let zooButtonImage:UIImage = UIImage(named: "Zoo_ver 1.2.0")!
+    let starButtonImage:UIImage = UIImage(named: "StarVer1.3.8")!
+    let mappingButtonImage:UIImage = UIImage(named:"MappingVer1.2.0")!
+    let aquariumButtonImage:UIImage = UIImage(named:"AquariumVer1.2.0")!
+    let zooButtonImage:UIImage = UIImage(named: "ZooVer1.2.0")!
 //    let bookButtonImage:UIImage = UIImage(named:"Book_ver 1.1.0")!
 //    let sceneryButtonImage:UIImage = UIImage(named:"Scenery_ver1.1.0")!
 

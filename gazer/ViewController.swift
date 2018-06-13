@@ -53,8 +53,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         // scrollView.frame.size = CGSize(width: screenWidth, height: screenHeight)
         scrollView.frame = CGRect(x:0,y:gazerHedder,width:screenWidth,height:screenHeight)
         
-        // 中身の大きさを設定
-        scrollView.contentSize = CGSize(width: buttonWidth, height: gazerHedder+buttonHeight*6)
+        // スクロール中身の大きさを設定
+        scrollView.contentSize = CGSize(width: buttonWidth, height: gazerHedder+buttonHeight*4)
         
         // スクロールの跳ね返り
         scrollView.bounces = false

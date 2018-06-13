@@ -119,7 +119,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         // ボタンを押された時のフロー
         starButton.addTarget(self, action: (#selector(ViewController.goStarAction)), for:.touchUpInside)
     }
-    // Star画面遷移の関数
+    // Star画面遷移
     @objc func goStarAction(){
         performSegue(withIdentifier: "goStar", sender: nil)
     }

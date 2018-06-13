@@ -84,6 +84,32 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         // 現在地を取得
         setupLocationManager()
         
+        // json(仮)
+        struct Star: Codable {
+            
+            let hipId: Int
+            let enName: String
+            let rightAscension: Double
+            let declination: Double
+            let magnitude: Double
+            
+        }
+        
+        let jsonString = """
+        {
+            "hipId": 32349,
+            "enName": "Sirius",
+            "rightAscension": 6.45925,
+            "declination": -16.42473,
+            "magnitude": -1.44
+        }
+        
+
+        """
+        
+        let star = try! JSONDecoder().decode(Star.self, from: jsonString.data(using: .utf8)!)
+        print(star)
+        
         //星表示
         setStar(starPosition: starPosition)
     }

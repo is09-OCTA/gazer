@@ -23,10 +23,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     let mappingButtonImage:UIImage = UIImage(named:"MappingVer1.2.0")!
     let aquariumButtonImage:UIImage = UIImage(named:"AquariumVer1.2.0")!
     let zooButtonImage:UIImage = UIImage(named: "ZooVer1.2.0")!
-//    let bookButtonImage:UIImage = UIImage(named:"Book_ver 1.1.0")!
-//    let sceneryButtonImage:UIImage = UIImage(named:"Scenery_ver1.1.0")!
-    
-    
+
     // 画面の横幅、縦幅取得する変数
     var screenWidth:CGFloat = 0
     var screenHeight:CGFloat = 0
@@ -50,7 +47,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         let scrollView = UIScrollView()
         
         // 表示窓のサイズと位置を設定
-        // scrollView.frame.size = CGSize(width: screenWidth, height: screenHeight)
+        scrollView.frame.size = CGSize(width: screenWidth, height: screenHeight)
         scrollView.frame = CGRect(x:0,y:gazerHedder,width:screenWidth,height:screenHeight)
         
         // スクロール中身の大きさを設定
@@ -62,67 +59,46 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         // スクロールバーの見た目と余白
         scrollView.indicatorStyle = .white
         scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 0)
+    
+        // ビュー追加
+        view.addSubview(scrollView)
         
         // Delegate を設定
         scrollView.delegate = self
     
-        
         // ScrollViewの中身
         // StarButton
         let starButton = UIButton(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight))
         starButton.setImage(starButtonImage, for: UIControlState())
+        starButton.center = CGPoint(x: screenWidth/2, y: 100)
         starButton.layer.cornerRadius = starButton.frame.size.width * 0.1
         starButton.clipsToBounds = true
-        starButton.center = CGPoint(x: screenWidth/2, y: 100)
         scrollView.addSubview(starButton)
-        self.view.addSubview(scrollView)
-        
-        
-        
         
         // mappingButton
         let mappingButton = UIButton(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight))
         mappingButton.setImage(mappingButtonImage, for: UIControlState())
+        mappingButton.center = CGPoint(x: screenWidth/2, y: 300+10)
         mappingButton.layer.cornerRadius = mappingButton.frame.size.width * 0.1
         mappingButton.clipsToBounds = true
-        mappingButton.center = CGPoint(x: screenWidth/2, y: 300+10)
         scrollView.addSubview(mappingButton)
-        self.view.addSubview(scrollView)
         
         // aquariumButton
         let aquariumButton = UIButton(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight))
         aquariumButton.setImage(aquariumButtonImage, for: UIControlState())
+        aquariumButton.center = CGPoint(x: screenWidth/2, y: 500+20)
         aquariumButton.layer.cornerRadius = aquariumButton.frame.size.width * 0.1
         aquariumButton.clipsToBounds = true
-        aquariumButton.center = CGPoint(x: screenWidth/2, y: 500+20)
         scrollView.addSubview(aquariumButton)
-        self.view.addSubview(scrollView)
         
         // zooButton
         let zooButton = UIButton(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight))
         zooButton.setImage(zooButtonImage, for: UIControlState())
+        zooButton.center = CGPoint(x: screenWidth/2, y: 700+30)
         zooButton.layer.cornerRadius = zooButton.frame.size.width * 0.1
         zooButton.clipsToBounds = true
-        zooButton.center = CGPoint(x: screenWidth/2, y: 700+30)
         scrollView.addSubview(zooButton)
-        self.view.addSubview(scrollView)
-/*
-        // bookButton
-        let bookButton = UIButton()
-        bookButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
-        bookButton.setImage(bookButtonImage, for: UIControlState())
-        bookButton.center = CGPoint(x: screenWidth/2, y: 900)
-        scrollView.addSubview(bookButton)
-        self.view.addSubview(scrollView)
-        
-        // sceneryButton
-        let sceneryButton = UIButton()
-        sceneryButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
-        sceneryButton.setImage(sceneryButtonImage, for: UIControlState())
-        sceneryButton.center = CGPoint(x: screenWidth/2, y: 1100)
-        scrollView.addSubview(sceneryButton)
-        self.view.addSubview(scrollView)
-*/
+
         // ボタンを押された時のフロー
         starButton.addTarget(self, action: (#selector(ViewController.goStarAction)), for:.touchUpInside)
     }

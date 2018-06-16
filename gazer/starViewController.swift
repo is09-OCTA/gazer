@@ -14,7 +14,6 @@ import SCLAlertView
 // import WSCoachMarksView
 
 class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate{
-
     
     @IBOutlet var sceneView: ARSCNView!
     
@@ -41,7 +40,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     var latitudeLocation: Double!
     var longitudeLocation: Double!
     var apiURL: URL!
-    //星のサンプル座標
+    
+    //星のサンプル座標(北斗七星)
     let starPosition:[[Double]] = [[0,0,-10],[-0.3,1,-10],[-0.4,2,-10],[-1.5,3,-10],[-0.7,-0.7,-10],[0.1,-2,-10],[1.5,-1.6,-10]]
 
     // Date
@@ -61,6 +61,22 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         var alfa: Double        // 赤経
         var delta: Double       // 赤緯
     }
+    
+    // 星の構造体
+    struct Star {
+        let hipId: Int
+        let enName: String
+        let rightAscension: Double
+        let declination: Double
+        let magnitude: Double
+    }
+    
+    // 星のデータ配列
+    let stars: [Star] = [
+        (Star(hipId: 32349, enName: "Sirius", rightAscension: 6.45925, declination: -16.42473, magnitude: -1.44)),
+        (Star(hipId: 27989, enName: "Betelgeuse", rightAscension: 5.551029, declination: 7.24253, magnitude: 0.58)),
+        (Star(hipId: 37279, enName: "Procyon", rightAscension: 7.391854, declination: 5.1339, magnitude: 0.34))
+    ]
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,33 +100,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         // 現在地を取得
         setupLocationManager()
         
-        // json(仮)
-        struct Star: Codable {
-            
-            let hipId: Int
-            let enName: String
-            let rightAscension: Double
-            let declination: Double
-            let magnitude: Double
-            
-        }
-        
-        let jsonString = """
-        {
-            "hipId": 32349,
-            "enName": "Sirius",
-            "rightAscension": 6.45925,
-            "declination": -16.42473,
-            "magnitude": -1.44
-        }
-        
-
-        """
-        
-        let star = try! JSONDecoder().decode(Star.self, from: jsonString.data(using: .utf8)!)
-        print(star)
-        
-        //星表示
+        // 星表示
         setStar(starPosition: starPosition)
     }
     
@@ -208,7 +198,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     }
     
-    //星情報設定&表示
+    // 星情報設定&表示
     func setStar(starPosition: [[Double]]) -> Void {
         var star = [SCNNode]()
         self.sceneView.scene = SCNScene()
@@ -220,7 +210,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             starNode.geometry?.materials = [material]
             starNode.position = SCNVector3(element[0],element[1],element[2])
             star.append(starNode)
-            //表示
+            // 表示
             self.sceneView.scene.rootNode.addChildNode(starNode)
         }
     }

@@ -64,18 +64,20 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     // 星の構造体
     struct Star {
-        let hipId: Int
-        let enName: String
-        let rightAscension: Double
-        let declination: Double
-        let magnitude: Double
+        let hipId: Int              // ヒッパルコス星表
+        let enName: String          // 英語名
+        let jpName: String          // 日本語名
+        let rightAscension: Double  // 赤経
+        let declination: Double     // 赤緯
+        let magnitude: Double       // 等級
+        let details: String          // 詳細説明
     }
     
     // 星のデータ配列
     let stars: [Star] = [
-        (Star(hipId: 32349, enName: "Sirius", rightAscension: 6.45925, declination: -16.42473, magnitude: -1.44)),
-        (Star(hipId: 27989, enName: "Betelgeuse", rightAscension: 5.551029, declination: 7.24253, magnitude: 0.58)),
-        (Star(hipId: 37279, enName: "Procyon", rightAscension: 7.391854, declination: 5.1339, magnitude: 0.34))
+        (Star(hipId: 32349, enName: "Sirius", jpName: "シリウス", rightAscension: 6.45925, declination: -16.42473, magnitude: -1.44, details: "詳細説明")),
+        (Star(hipId: 27989, enName: "Betelgeuse", jpName: "ベテルギウス", rightAscension: 5.551029, declination: 7.24253, magnitude: 0.58, details: "詳細説明")),
+        (Star(hipId: 37279, enName: "Procyon", jpName: "プロキオン", rightAscension: 7.391854, declination: 5.1339, magnitude: 0.34, details: "詳細説明"))
     ]
         
     override func viewDidLoad() {
@@ -96,6 +98,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         
         sceneView.delegate = self
         sceneView.showsStatistics = false
+        
+        print(stars)
         
         // 現在地を取得
         setupLocationManager()

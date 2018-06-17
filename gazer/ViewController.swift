@@ -24,7 +24,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     let aquariumButtonImage:UIImage = UIImage(named:"AquariumVer1.2.0")!
     let zooButtonImage:UIImage = UIImage(named: "ZooVer1.2.0")!
 
-    // 画面の横幅、縦幅取得する変数
+    // 画面の横幅、縦幅
     var screenWidth:CGFloat = 0
     var screenHeight:CGFloat = 0
     
@@ -36,34 +36,34 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         buttonWidth = 360
         buttonHeight = 200
         
-        // gazerヘッダー高さ
+        // gazerヘッダー縦幅
         gazerHedder = 50
         
         // 画面の横幅、縦幅の取得
         screenWidth = view.frame.width
         screenHeight = view.frame.height
         
-        // scrollViewの作成
+        // scrollViewの生成
         let scrollView = UIScrollView()
         
         // 表示窓のサイズと位置を設定
         scrollView.frame.size = CGSize(width: screenWidth, height: screenHeight)
         scrollView.frame = CGRect(x:0,y:gazerHedder,width:screenWidth,height:screenHeight)
         
-        // スクロール中身の大きさを設定
+        // scrollView中身の大きさを設定
         scrollView.contentSize = CGSize(width: buttonWidth, height: gazerHedder+buttonHeight * 4 + 80)
         
-        // スクロールの跳ね返り
+        // scrollViewの跳ね返り
         scrollView.bounces = true
         
-        // スクロールバーの見た目と余白
+        // Barの見た目と余白
         scrollView.indicatorStyle = .white
         scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 0)
     
-        // ビュー追加
+        // View追加
         view.addSubview(scrollView)
         
-        // Delegate を設定
+        // Delegateを設定
         scrollView.delegate = self
     
         // ScrollViewの中身

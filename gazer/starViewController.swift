@@ -41,8 +41,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     var longitudeLocation: Double!
     var apiURL: URL!
     
-    //星のサンプル座標(北斗七星)
-    let starPosition:[[Double]] = [[0,0,-10],[-0.3,1,-10],[-0.4,2,-10],[-1.5,3,-10],[-0.7,-0.7,-10],[0.1,-2,-10],[1.5,-1.6,-10]]
+    // 星のサンプル座標(北斗七星)
+    // let starPosition:[[Double]] = [[0,0,-10],[-0.3,1,-10],[-0.4,2,-10],[-1.5,3,-10],[-0.7,-0.7,-10],[0.1,-2,-10],[1.5,-1.6,-10]]
 
     // Date
     struct ReqDate {
@@ -61,6 +61,10 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         var alfa: Double        // 赤経
         var delta: Double       // 赤緯
     }
+    
+    // 定数
+    let PI = 3.14159265358979
+    let RAD = 180 / 3.14159265358979
     
     // 星の構造体
     struct Star {
@@ -99,13 +103,11 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         sceneView.delegate = self
         sceneView.showsStatistics = false
         
-        print(stars)
-        
         // 現在地を取得
         setupLocationManager()
         
-        // 星表示
-        setStar(starPosition: starPosition)
+        // 星表示(仮)
+        // setStar(starPosition: starPosition)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -189,7 +191,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             mm: Int(currentDate[4])!,
             ss: Int(currentDate[5])!
         )
-        print(myDate)
         
         let myArea = ReqArea(
             latitude: latitudeLocation,
@@ -197,8 +198,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             alfa: 0,
             delta: 0
         )
-        
-        print(myArea)
+    
+        setStar(starPosition: getStarInfo(date: myDate, area: myArea))
     
     }
     
@@ -231,6 +232,108 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         UIGraphicsEndImageContext()
         
         return image
+    }
+    
+    // getStarInfo
+    func getStarInfo(date: ReqDate, area: ReqArea) -> [[Double]] {
+        let date = date
+        var area = area
+        
+        var starsLocation: [[Double]] = []
+        var starsXYZ: [[Double]] = []
+        
+        for (i, value) in stars.enumerated() {
+            area.alfa = value.rightAscension
+            area.delta = value.declination
+            
+            // 高度、方位に変換
+            starsLocation.append(hcCalc(date: date, area: area))
+            starsXYZ.append(getXYZ(altitude: starsLocation[i][1], direction: starsLocation[i][0]))
+        }
+        
+        return starsXYZ
+    }
+    
+    // hcCalc
+    func hcCalc(date: ReqDate, area: ReqArea) -> Array<Double> {
+        let HH = Double(date.HH / 24)
+        let mm = Double(date.mm / 1440)
+        let ss = Double(date.ss / 86400)
+        let mjd = calcMJD(yyyy: date.yyyy, MM: date.MM, dd: date.dd) + HH + mm + ss - 0.375
+        
+        let d = 0.671262 + 1.002737909 * (mjd - 40000) + area.longitude / 360
+        let lst = 2 * PI * (d - floor(d))
+        
+        let slat = sin(area.latitude / RAD)
+        let clat = cos(area.latitude / RAD)
+        let ra = 15 * area.alfa / RAD
+        let dc = area.delta / RAD
+        let ha = lst - ra
+        let xs = sin(dc) * slat + cos(dc) * clat * cos(ha)
+        var h = asin(xs)
+        let s = cos(dc) * sin(ha)
+        let c = cos(dc) * slat * cos(ha) - sin(dc) * clat
+        var a: Double
+        
+        if c < 0 {
+            a = atan(s / c) + PI
+        } else if (c > 0 && s <= 0) {
+            a = atan(s / c) + 2 * PI
+        } else {
+            a = atan(s / c)
+        }
+        if h == 0 {
+            h = 0.00001
+        }
+        
+        a = a * RAD
+        h = h * RAD
+        let rt = tan((h + 8.6 / (h + 4.4)) / RAD)
+        h = h + 0.0167 / rt
+        let sa = "" + String(a)
+        let sh = "" + String(h)
+        
+        let direction = sa[..<sa.index(sa.startIndex, offsetBy: 7)]
+        let altitude = sh[..<sh.index(sh.startIndex, offsetBy: 6)]
+        
+        return [Double(direction)!, Double(altitude)!]
+        
+    }
+    
+    // calcMJD
+    func calcMJD(yyyy: Int, MM: Int, dd: Int) -> Double {
+        var y: Int
+        var m: Int
+        
+        if MM <= 2 {
+            y = yyyy - 1
+            m = MM + 12
+        } else {
+            y = yyyy
+            m = MM
+        }
+        
+        var ret = floor(365.25 * Double(y)) + floor(Double(y) / 400) - floor(Double(y) / 100)
+        let tmp = floor(30.59 * (Double(m) - 2)) * Double(dd)
+        ret = ret + (tmp - 678912)
+        
+        return ret
+    }
+    
+    // getXYZ
+    func getXYZ(altitude: Double, direction: Double) -> Array<Double> {
+        var xyz: [Double] = [0, 0, 0]
+        
+        let theta = (90 - altitude) * (PI / 180)
+        let phi = direction * (PI / 180)
+        let r = 10.0
+        
+        xyz[2] = r * sin(theta) * cos(phi)
+        xyz[0] = r * sin(theta) * sin(phi)
+        xyz[1] = r * cos(theta)
+        
+        return xyz
+        
     }
 
     func session(_ session: ARSession, didFailWithError error: Error) {

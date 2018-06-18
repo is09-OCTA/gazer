@@ -10,6 +10,7 @@
 		09E610C2A13CBB0FDFD880FF /* Pods_gazer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */; };
 		235E628820902DF50054ACE2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235E628720902DF50054ACE2 /* CoreLocation.framework */; };
 		B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */; };
+		C70E7AA520D77FF900255FD3 /* AquariumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */; };
 		C75A04BA20B3D9EA00B0F36C /* decimalExpansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */; };
 		C788DA73209023700006ED25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA72209023700006ED25 /* AppDelegate.swift */; };
 		C788DA75209023700006ED25 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C788DA74209023700006ED25 /* art.scnassets */; };
@@ -46,6 +47,7 @@
 		8AC02151997CBC19E35D75DF /* Pods-gazer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gazer.release.xcconfig"; path = "Pods/Target Support Files/Pods-gazer/Pods-gazer.release.xcconfig"; sourceTree = "<group>"; };
 		B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumViewController.swift; sourceTree = "<group>"; };
 		C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decimalExpansion.swift; sourceTree = "<group>"; };
 		C788DA6F209023700006ED25 /* gazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C788DA72209023700006ED25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				C788DA74209023700006ED25 /* art.scnassets */,
 				C788DA76209023700006ED25 /* starViewController.swift */,
 				C788DA78209023700006ED25 /* Main.storyboard */,
+				C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */,
 				B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */,
 				C788DA7B209023710006ED25 /* Assets.xcassets */,
 				C788DA7D209023710006ED25 /* LaunchScreen.storyboard */,
@@ -358,6 +361,7 @@
 			files = (
 				B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */,
 				C75A04BA20B3D9EA00B0F36C /* decimalExpansion.swift in Sources */,
+				C70E7AA520D77FF900255FD3 /* AquariumViewController.swift in Sources */,
 				C788DA77209023700006ED25 /* starViewController.swift in Sources */,
 				C788DA73209023700006ED25 /* AppDelegate.swift in Sources */,
 			);

@@ -7,29 +7,43 @@
 //
 
 import UIKit
+import ARKit
+import SceneKit
 
-class AquariumViewController: UIViewController {
+class AquariumViewController: UIViewController, ARSCNViewDelegate {
 
+    @IBOutlet var sceneView: ARSCNView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        sceneView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let configuration = ARWorldTrackingConfiguration()
+        
+        sceneView.session.run(configuration)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        sceneView.session.pause()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func session(_ session: ARSession, didFailWithError error: Error) {
     }
-    */
-
+    
+    func sessionWasInterrupted(_ session: ARSession) {
+    }
+    
+    func sessionInterruptionEnded(_ session: ARSession) {
+    }
 }

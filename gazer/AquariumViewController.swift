@@ -24,6 +24,7 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate {
         super.viewWillAppear(animated)
         
         let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .vertical
         
         sceneView.session.run(configuration)
     }
@@ -46,4 +47,51 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate {
     
     func sessionInterruptionEnded(_ session: ARSession) {
     }
+    
+    // 平面検知時に呼び出される
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        print("didAdd")
+        
+        guard let planeAnchor = anchor as? ARPlaneAnchor else {
+            print("Error: This anchor is not ARPlaneAnchor. [\(#function)]")
+            return
+        }
+        
+        let planeGeometory = SCNPlane(width: CGFloat(planeAnchor.extent.x),
+                                      height: CGFloat(planeAnchor.extent.z))
+        
+        planeGeometory.materials.first?.diffuse.contents = UIColor.white
+        
+        let geometryPlaneNode = SCNNode(geometry: planeGeometory)
+        
+        geometryPlaneNode.simdPosition = float3(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
+        
+        geometryPlaneNode.eulerAngles.x = -.pi / 2
+        
+        geometryPlaneNode.opacity = 0.8
+        
+        node.addChildNode(geometryPlaneNode)
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        print("didUpdate")
+        
+        guard let planeAnchor = anchor as? ARPlaneAnchor else {
+            print("Error: This anchor is not ARPlaneAnchor. [\(#function)]")
+            return
+        }
+        
+        guard let geometryPlaneNode = node.childNodes.first,
+            let planeGeometory = geometryPlaneNode.geometry as? SCNPlane else {
+                print("Error: SCNPlane node is not found. [\(#function)]")
+                return
+        }
+        
+        geometryPlaneNode.simdPosition = float3(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
+        
+        planeGeometory.width = CGFloat(planeAnchor.extent.x)
+        planeGeometory.height = CGFloat(planeAnchor.extent.z)
+    }
+    
+    
 }

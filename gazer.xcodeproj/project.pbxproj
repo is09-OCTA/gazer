@@ -20,7 +20,6 @@
 		C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C788DA7D209023710006ED25 /* LaunchScreen.storyboard */; };
 		C788DA8A209023720006ED25 /* gazerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA89209023720006ED25 /* gazerTests.swift */; };
 		C788DA95209023720006ED25 /* gazerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA94209023720006ED25 /* gazerUITests.swift */; };
-		C7F0DCC220C778E900C8B354 /* API in Resources */ = {isa = PBXBuildFile; fileRef = C7F0DCC120C778E800C8B354 /* API */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +62,6 @@
 		C788DA90209023720006ED25 /* gazerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gazerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C788DA94209023720006ED25 /* gazerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gazerUITests.swift; sourceTree = "<group>"; };
 		C788DA96209023720006ED25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C7F0DCC120C778E800C8B354 /* API */ = {isa = PBXFileReference; lastKnownFileType = folder; path = API; sourceTree = "<group>"; };
 		E675FB51F971A5FE35ABCC72 /* Pods-gazer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gazer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gazer/Pods-gazer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +115,6 @@
 		C75A04B820B3D9C900B0F36C /* src */ = {
 			isa = PBXGroup;
 			children = (
-				C7F0DCC120C778E800C8B354 /* API */,
 				C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */,
 			);
 			path = src;
@@ -294,7 +291,6 @@
 				C788DA75209023700006ED25 /* art.scnassets in Resources */,
 				C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */,
 				C788DA7C209023710006ED25 /* Assets.xcassets in Resources */,
-				C7F0DCC220C778E900C8B354 /* API in Resources */,
 				C788DA7A209023700006ED25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

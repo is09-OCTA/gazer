@@ -18,6 +18,10 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate {
         super.viewDidLoad()
         
         sceneView.delegate = self
+        
+        let scene = SCNScene(named: "art.scnassets/test.scn")!
+        
+        sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,6 +96,5 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate {
         planeGeometory.width = CGFloat(planeAnchor.extent.x)
         planeGeometory.height = CGFloat(planeAnchor.extent.z)
     }
-    
     
 }

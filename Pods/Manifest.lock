@@ -1,16 +1,20 @@
 PODS:
   - SCLAlertView (0.8)
+  - WSCoachMarksView (0.2)
 
 DEPENDENCIES:
   - SCLAlertView
+  - WSCoachMarksView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - SCLAlertView
+    - WSCoachMarksView
 
 SPEC CHECKSUMS:
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  WSCoachMarksView: d1653c058c8289a300ddf28af9dd49eb659c9c42
 
-PODFILE CHECKSUM: 92c425c9c7e57e49179f2734986c767fb401f9f4
+PODFILE CHECKSUM: 9b431f653d1f804f21f71c5d3d1f5dbaafe8a55c
 
 COCOAPODS: 1.5.3

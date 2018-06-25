@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:gazer/art.scnassets/test.scn">
+   </FileRef>
+   <FileRef
       location = "group:gazer.xcodeproj">
    </FileRef>
    <FileRef

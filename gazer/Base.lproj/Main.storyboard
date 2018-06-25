@@ -35,11 +35,30 @@
                     </view>
                     <connections>
                         <segue destination="BV1-FR-VrT" kind="show" identifier="goStar" id="F4s-BC-sWf"/>
+                        <segue destination="JWj-Yo-mM5" kind="show" identifier="goAquarium" id="eUg-UU-Dsp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GCg-n5-pbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-650.39999999999998" y="125.4872563718141"/>
+            <point key="canvasLocation" x="-857" y="93"/>
+        </scene>
+        <!--Aquarium View Controller-->
+        <scene sceneID="3p2-0i-4nb">
+            <objects>
+                <viewController storyboardIdentifier="aquarium" id="JWj-Yo-mM5" customClass="AquariumViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="view" id="i7M-HV-b38" customClass="ARSCNView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="150-qW-kF6"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="i7M-HV-b38" id="EJJ-lh-D8H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pCa-Yj-eBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="481"/>
         </scene>
         <!--Star View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -86,7 +105,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="124.58770614692655"/>
+            <point key="canvasLocation" x="137" y="-175"/>
         </scene>
     </scenes>
     <resources>

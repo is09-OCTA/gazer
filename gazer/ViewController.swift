@@ -141,10 +141,16 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
 
         // ボタンを押された時のフロー
         starButton.addTarget(self, action: (#selector(ViewController.goStarAction)), for:.touchUpInside)
+        aquariumButton.addTarget(self, action: (#selector(ViewController.goAquariumAction)), for:.touchUpInside)
     }
     // Star画面遷移
     @objc func goStarAction(){
         performSegue(withIdentifier: "goStar", sender: nil)
+    }
+    
+    // Aquarium画面遷移
+    @objc func goAquariumAction(){
+        performSegue(withIdentifier: "goAquarium", sender: nil)
     }
 
 }

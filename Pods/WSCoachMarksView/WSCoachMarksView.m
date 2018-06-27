@@ -158,6 +158,14 @@ static const BOOL kEnableContinueLabel = YES;
                          // Go to the first coach mark
                          [self goToCoachMarkIndexed:0];
                      }];
+    
+    UIImage *img = [UIImage imageNamed:@"yubi2.png"];
+    
+    // UIImageView 初期化
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:img];
+    [imageView setCenter:CGPointMake(375/2, 300)];
+    // UIImageViewのインスタンスをビューに追加
+    [self addSubview:imageView];
 }
 
 - (void)goToCoachMarkIndexed:(NSInteger)index {

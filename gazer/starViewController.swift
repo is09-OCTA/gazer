@@ -17,6 +17,9 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     @IBOutlet var sceneView: ARSCNView!
     
+    
+    var swipeView = UIImageView()
+
     // スワイプしたらメニュー画面戻る
     @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
         let storyboard : UIStoryboard = self.storyboard!
@@ -129,17 +132,12 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             let couach: WSCoachMarksView = WSCoachMarksView(frame: self.view.bounds, coachMarks: arrCouach)
             couach.maskColor = UIColor(white: 0.0, alpha: 0.65)
             self.view.addSubview(couach)
-            
-            let yubiImage:UIImage = UIImage(named: "yubi")!
-            let swipeView = UIImageView(image: yubiImage)
-            swipeView.center = CGPoint(x: 375/2, y: 300)
-            self.view.addSubview(swipeView)
+
             couach.start()
             
             // 2回目以降の起動では「firstLaunch」のkeyをfalseに
             ud.set(false, forKey: "firstLaunch")
         }
-        
         
         super.viewWillAppear(animated)
 
@@ -374,4 +372,5 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     func sessionInterruptionEnded(_ session: ARSession) {
     }
+    
 }

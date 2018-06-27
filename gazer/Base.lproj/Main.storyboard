@@ -73,6 +73,7 @@
                         <viewLayoutGuide key="safeArea" id="4Yh-VM-yRr"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="DoZ-45-e9U" appends="YES" id="dzN-T8-yNy"/>
+                            <outletCollection property="gestureRecognizers" destination="eLR-Sv-NXP" appends="YES" id="SEA-0K-qIe"/>
                         </connections>
                     </view>
                     <connections>
@@ -85,6 +86,7 @@
                         <action selector="retunMenuSwipe:" destination="BV1-FR-VrT" id="sfW-2z-TVh"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <tapGestureRecognizer id="eLR-Sv-NXP"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="124.58770614692655"/>
         </scene>

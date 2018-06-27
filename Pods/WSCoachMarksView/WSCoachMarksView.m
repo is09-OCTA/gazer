@@ -158,12 +158,13 @@ static const BOOL kEnableContinueLabel = YES;
                          // Go to the first coach mark
                          [self goToCoachMarkIndexed:0];
                      }];
-    
+    // 画面サイズ取得
+    CGRect r1 = [[UIScreen mainScreen] bounds];
+    // 画像取得
     UIImage *img = [UIImage imageNamed:@"yubi2.png"];
-    
     // UIImageView 初期化
     UIImageView *imageView = [[UIImageView alloc] initWithImage:img];
-    [imageView setCenter:CGPointMake(375/2, 300)];
+    [imageView setCenter:CGPointMake(r1.size.width/2, r1.size.height/2)];
     // UIImageViewのインスタンスをビューに追加
     [self addSubview:imageView];
 }

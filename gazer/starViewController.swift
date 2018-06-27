@@ -124,7 +124,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             
             // 初回起動時の処理
             let arrCouach = [
-                [ "rect"    :  CGRect(x:0 , y:175 , width:375 , height:250),
+                [ "rect"    :  CGRect(x:0 , y:175 , width:375 , height:300),
                   "caption" :  "右にスワイプすると、　　メニューに戻れます",
                   "shape"   : "square",
                   ],

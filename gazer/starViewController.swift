@@ -16,9 +16,6 @@ import WSCoachMarksView
 class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate{
     
     @IBOutlet var sceneView: ARSCNView!
-    
-    
-    var swipeView = UIImageView()
 
     // スワイプしたらメニュー画面戻る
     @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {

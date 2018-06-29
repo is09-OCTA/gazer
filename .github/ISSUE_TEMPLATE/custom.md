@@ -4,7 +4,6 @@ about: Describe this issue template's purpose here.
 
 ---
 
-<!-- 不具合のテンプレート -->
 # 概要
 # 再現手順
 # 修正しないとどう困るか

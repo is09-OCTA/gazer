@@ -83,7 +83,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         (Star(hipId: 37279, enName: "Procyon", jpName: "プロキオン", rightAscension: 7.391854, declination: 5.1339, magnitude: 0.34, details: "詳細説明")),
         (Star(hipId: 32349, enName: "Sirius", jpName: "シリウス", rightAscension: 6.45925, declination: -16.42473, magnitude: -1.44, details: "詳細説明"))
     ]
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 /*
@@ -208,10 +208,31 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         var star = [SCNNode]()
         self.sceneView.scene = SCNScene()
         for (index,element) in starPosition.enumerated() {
+            
             // 表示する情報
             let starNode = SCNNode(geometry: SCNSphere(radius: 0.05))
             let material = SCNMaterial()
-            material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
+            let starRight = floor(stars[index].magnitude)
+            print(starRight)
+            if starRight == 0 {
+                material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
+                print("test0")
+            }else if starRight == 1 {
+                material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
+                print("test1")
+            }else if starRight == 2 {
+                material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
+                print("test2")
+            }else if starRight == 3 {
+                material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
+                print("test3")
+            }else if starRight == 4 {
+                material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
+                print("test4")
+            }else{
+                material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
+                print("test5")
+            }
             starNode.geometry?.materials = [material]
             starNode.position = SCNVector3(element[0],element[1],element[2])
             star.append(starNode)

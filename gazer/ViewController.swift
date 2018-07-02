@@ -40,7 +40,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         // 表示窓のサイズと位置を設定
         scrollView.frame.size = CGSize(width: screenWidth, height: screenHeight)
         scrollView.frame = CGRect(x:0,y:gazerHedder,width:screenWidth,height:screenHeight)
-        // scrollView中身の大きさを設定
+        // scrollView中身の大きさを設定　
         scrollView.contentSize = CGSize(width: buttonWidth, height: gazerHedder+buttonHeight * 4.5)
         // scrollViewの跳ね返り
         scrollView.bounces = true

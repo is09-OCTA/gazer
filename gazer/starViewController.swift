@@ -211,7 +211,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         
         // coachMarks表示
         //一度だけ実行したい処理メソッド
-        
         //初回起動判定
         let ud = UserDefaults.standard
         if ud.bool(forKey: "firstLaunch") {

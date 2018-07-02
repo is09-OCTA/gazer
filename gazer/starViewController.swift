@@ -42,7 +42,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     var apiURL: URL!
     
     // 星のサンプル座標(北斗七星)
-    // let starPosition:[[Double]] = [[0,0,-10],[-0.3,1,-10],[-0.4,2,-10],[-1.5,3,-10],[-0.7,-0.7,-10],[0.1,-2,-10],[1.5,-1.6,-10]]
+    //let starPosition:[[Double]] = [[0,0,-10],[-0.3,1,-10],[-0.4,2,-10],[-1.5,3,-10],[-0.7,-0.7,-10],[0.1,-2,-10],[1.5,-1.6,-10]]
 
     // Date
     struct ReqDate {
@@ -107,7 +107,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         setupLocationManager()
         
         // 星表示(仮)
-        // setStar(starPosition: starPosition)
+        //setStar(starPosition: starPosition)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -217,6 +217,14 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             star.append(starNode)
             // 表示
             self.sceneView.scene.rootNode.addChildNode(starNode)
+            
+            let str = "StarName"
+            let depth:CGFloat = 0.01
+            let text = SCNText(string: str, extrusionDepth: depth)
+            text.font = UIFont(name: "HiraginoSans-W3", size: 0.2);
+            let textNode = SCNNode(geometry: text)
+            textNode.position = SCNVector3(0,0,-5)
+            sceneView.scene.rootNode.addChildNode(textNode)
         }
     }
     

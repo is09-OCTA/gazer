@@ -139,7 +139,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     @objc func goStarAction(sender: UIButton){
         let animation = CASpringAnimation(keyPath: "transform.scale")
         animation.duration = 2.0
-        animation.fromValue = 1.1
+        animation.fromValue = 1.04
         animation.toValue = 1.0
         animation.mass = 1.0
         animation.initialVelocity = 10.0
@@ -154,7 +154,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     @objc func goMappingAction(sender: UIButton){
         let animation = CASpringAnimation(keyPath: "transform.scale")
         animation.duration = 2.0
-        animation.fromValue = 1.1
+        animation.fromValue = 1.04
         animation.toValue = 1.0
         animation.mass = 1.0
         animation.initialVelocity = 10.0
@@ -170,7 +170,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     @objc func goAquariumAction(sender: UIButton){
         let animation = CASpringAnimation(keyPath: "transform.scale")
         animation.duration = 2.0
-        animation.fromValue = 1.1
+        animation.fromValue = 1.04
         animation.toValue = 1.0
         animation.mass = 1.0
         animation.initialVelocity = 10.0
@@ -185,7 +185,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     @objc func goZooAction(sender: UIButton){
         let animation = CASpringAnimation(keyPath: "transform.scale")
         animation.duration = 2.0
-        animation.fromValue = 1.1
+        animation.fromValue = 1.04
         animation.toValue = 1.0
         animation.mass = 1.0
         animation.initialVelocity = 10.0

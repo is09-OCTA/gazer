@@ -42,7 +42,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     var apiURL: URL!
     
     // 星のサンプル座標(北斗七星)
-    // let starPosition:[[Double]] = [[0,0,-10],[-0.3,1,-10],[-0.4,2,-10],[-1.5,3,-10],[-0.7,-0.7,-10],[0.1,-2,-10],[1.5,-1.6,-10]]
+    //let starPosition:[[Double]] = [[0,0,-10],[-0.3,1,-10],[-0.4,2,-10],[-1.5,3,-10],[-0.7,-0.7,-10],[0.1,-2,-10],[1.5,-1.6,-10]]
 
     // Date
     struct ReqDate {
@@ -204,7 +204,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         setupLocationManager()
         
         // 星表示(仮)
-        // setStar(starPosition: starPosition)
+        //setStar(starPosition: starPosition)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -357,6 +357,20 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             star.append(starNode)
             // 表示
             self.sceneView.scene.rootNode.addChildNode(starNode)
+            
+            let str = stars[index].jpName
+            let depth:CGFloat = 0.01
+            let text = SCNText(string: str, extrusionDepth: depth)
+            text.font = UIFont(name: "HiraginoSans-W3", size: 0.15);
+            let textNode = SCNNode(geometry: text)
+            let (min, max) = (textNode.boundingBox)
+            let x = CGFloat(max.x - min.x)
+            let y = CGFloat(max.y - min.y)
+            textNode.position = SCNVector3((element[0] - Double(x)),element[1],element[2])
+            //let camera = sceneView.pointOfView
+            textNode.eulerAngles = SCNVector3(x: -0.649544954, y: -1.52549818, z: 0.0369868912)
+            //textNode.eulerAngles = camera.eulerAngles// カメラのオイラー角と同じにする
+            sceneView.scene.rootNode.addChildNode(textNode)
         }
     }
     

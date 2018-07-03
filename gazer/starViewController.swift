@@ -81,7 +81,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     let stars: [Star] = [
         (Star(hipId: 27989, enName: "Betelgeuse", jpName: "ベテルギウス", rightAscension: 5.551029, declination: 7.24253, magnitude: 0.58, details: "詳細説明")),
         (Star(hipId: 37279, enName: "Procyon", jpName: "プロキオン", rightAscension: 7.391854, declination: 5.1339, magnitude: 0.34, details: "詳細説明")),
-        (Star(hipId: 32349, enName: "Sirius", jpName: "シリウス", rightAscension: 6.45925, declination: -16.42473, magnitude: -1.44, details: "詳細説明"))
+        (Star(hipId: 32349, enName: "Sirius", jpName: "シリウス", rightAscension: 6.45925, declination: -16.42473, magnitude: -1.44, details: "詳細説明")),
     ]
         
     override func viewDidLoad() {
@@ -218,12 +218,18 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             // 表示
             self.sceneView.scene.rootNode.addChildNode(starNode)
             
-            let str = "StarName"
+            let str = stars[index].jpName
             let depth:CGFloat = 0.01
             let text = SCNText(string: str, extrusionDepth: depth)
-            text.font = UIFont(name: "HiraginoSans-W3", size: 0.2);
+            text.font = UIFont(name: "HiraginoSans-W3", size: 0.15);
             let textNode = SCNNode(geometry: text)
-            textNode.position = SCNVector3(0,0,-5)
+            let (min, max) = (textNode.boundingBox)
+            let x = CGFloat(max.x - min.x)
+            let y = CGFloat(max.y - min.y)
+            textNode.position = SCNVector3((element[0] - Double(x)),element[1],element[2])
+            //let camera = sceneView.pointOfView
+            textNode.eulerAngles = SCNVector3(x: -0.649544954, y: -1.52549818, z: 0.0369868912)
+            //textNode.eulerAngles = camera.eulerAngles// カメラのオイラー角と同じにする
             sceneView.scene.rootNode.addChildNode(textNode)
         }
     }

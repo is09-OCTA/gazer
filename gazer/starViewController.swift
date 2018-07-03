@@ -180,7 +180,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         (Star(hipId: 113881, enName: "Scheat", jpName: "シェアト", rightAscension: 23.34633, declination: 28.4568, magnitude: 2.42, details: "" )),
         (Star(hipId: 113963, enName: "Markab", jpName: "マルカブ", rightAscension: 23.44562, declination: 15.12193, magnitude: 2.49, details: "" ))
     ]
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 /*
@@ -275,7 +275,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             locationManager.delegate = self
             locationManager.distanceFilter = 10
             locationManager.startUpdatingLocation()
-            //locationManager.stopUpdatingLocation()
+            locationManager.stopUpdatingLocation()
         }
     }
     
@@ -329,10 +329,29 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         var star = [SCNNode]()
         self.sceneView.scene = SCNScene()
         for (index,element) in starPosition.enumerated() {
+            
             // 表示する情報
             let starNode = SCNNode(geometry: SCNSphere(radius: 1))
             let material = SCNMaterial()
-            material.diffuse.contents = UIImage(named: "art.scnassets/hoshi.png")
+            let starRight = floor(stars[index].magnitude)
+            print(starRight)
+            print(stars[index].jpName)
+            if starRight <= 1 {
+                material.diffuse.contents = UIImage(named: "art.scnassets/1等星.png")
+                print("1等星")
+            }else if starRight == 2 {
+                material.diffuse.contents = UIImage(named: "art.scnassets/2等星.png")
+                print("2等星")
+            }else if starRight == 3 {
+                material.diffuse.contents = UIImage(named: "art.scnassets/3等星.png")
+                print("3等星")
+            }else if starRight == 4 {
+                material.diffuse.contents = UIImage(named: "art.scnassets/4等星.png")
+                print("4等星")
+            }else{
+                material.diffuse.contents = UIImage(named: "art.scnassets/5等星.png")
+                print("5等星")
+            }
             starNode.geometry?.materials = [material]
             starNode.position = SCNVector3(element[0],element[1],element[2])
             star.append(starNode)

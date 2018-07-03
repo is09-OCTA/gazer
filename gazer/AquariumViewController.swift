@@ -20,7 +20,6 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         
         let scene = SCNScene(named: "art.scnassets/test.scn")!
-        
         sceneView.scene = scene
     }
     
@@ -61,10 +60,12 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate {
             return
         }
         
+        let scene = SCNScene(named: "art.scnassets/test.scn")!
+        
         let planeGeometory = SCNPlane(width: CGFloat(planeAnchor.extent.x),
                                       height: CGFloat(planeAnchor.extent.z))
         
-        planeGeometory.materials.first?.diffuse.contents = UIColor.white
+        planeGeometory.materials.first?.diffuse.contents = UIColor.blue
         
         let geometryPlaneNode = SCNNode(geometry: planeGeometory)
         

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ADB25428630BFC98F8360B84C26A6771"
-               BuildableName = "SCLAlertView.framework"
-               BlueprintName = "SCLAlertView"
+               BlueprintIdentifier = "230937BE4AEA3A832908448F2333439E"
+               BuildableName = "WSCoachMarksView.framework"
+               BlueprintName = "WSCoachMarksView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ADB25428630BFC98F8360B84C26A6771"
-            BuildableName = "SCLAlertView.framework"
-            BlueprintName = "SCLAlertView"
+            BlueprintIdentifier = "230937BE4AEA3A832908448F2333439E"
+            BuildableName = "WSCoachMarksView.framework"
+            BlueprintName = "WSCoachMarksView"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

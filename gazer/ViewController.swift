@@ -11,58 +11,44 @@ import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControllerDelegate, UIGestureRecognizerDelegate{
 
-    // ボタンの横幅、縦幅設定変数
-    var buttonWidth:CGFloat = 0
-    var buttonHeight:CGFloat = 0
+    // ボタンの横幅、縦幅設定定数
+    let buttonWidth:CGFloat = UIScreen.main.bounds.size.width * 0.9
+    let buttonHeight:CGFloat = UIScreen.main.bounds.size.width * 1.08
+
+    // ボタン配置変数
+    var prevButton:CGFloat = 20
     
     // gazerヘッダー高さ
-    var gazerHedder:CGFloat = 0
+    let gazerHedder:CGFloat = 50
     
     // ボタン画像の読み込み
-    let starButtonImage:UIImage = UIImage(named: "StarVer1.3.8")!
-    let mappingButtonImage:UIImage = UIImage(named:"MappingVer1.2.0")!
-    let aquariumButtonImage:UIImage = UIImage(named:"AquariumVer1.2.0")!
-    let zooButtonImage:UIImage = UIImage(named: "ZooVer1.2.0")!
+    let starButtonImage:UIImage = UIImage(named: "sample08")!
+    let mappingButtonImage:UIImage = UIImage(named:"sample08")!
+    let aquariumButtonImage:UIImage = UIImage(named:"sample08")!
+    let zooButtonImage:UIImage = UIImage(named: "sample08")!
 
     // 画面の横幅、縦幅
-    var screenWidth:CGFloat = 0
-    var screenHeight:CGFloat = 0
+    let screenWidth:CGFloat = UIScreen.main.bounds.size.width
+    let screenHeight:CGFloat = UIScreen.main.bounds.size.height
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // ボタンの横幅、縦幅設定
-        buttonWidth = 360
-        buttonHeight = 200
-        
-        // gazerヘッダー縦幅
-        gazerHedder = 50
-        
-        // 画面の横幅、縦幅の取得
-        screenWidth = view.frame.width
-        screenHeight = view.frame.height
-        
         // scrollViewの生成
         let scrollView = UIScrollView()
-        
         // 表示窓のサイズと位置を設定
         scrollView.frame.size = CGSize(width: screenWidth, height: screenHeight)
         scrollView.frame = CGRect(x:0,y:gazerHedder,width:screenWidth,height:screenHeight)
-        
-        // scrollView中身の大きさを設定
-        scrollView.contentSize = CGSize(width: buttonWidth, height: gazerHedder+buttonHeight * 4 + 80)
-        
+        // scrollView中身の大きさを設定　
+        scrollView.contentSize = CGSize(width: buttonWidth, height: gazerHedder+buttonHeight * 4.5)
         // scrollViewの跳ね返り
         scrollView.bounces = true
-        
         // Barの見た目と余白
         scrollView.indicatorStyle = .white
         scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 0)
-    
         // View追加
         view.addSubview(scrollView)
-        
         // Delegateを設定
         scrollView.delegate = self
     
@@ -71,7 +57,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         // starButton
         // 影表示用のビュー
         let starShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
-        starShadowView.center = CGPoint(x: screenWidth / 2, y: 100)
+        prevButton += buttonHeight / 2
+        starShadowView.center = CGPoint(x: screenWidth / 2, y: prevButton)
         starShadowView.layer.shadowColor = UIColor.black.cgColor
         starShadowView.layer.shadowOpacity = 0.5
         starShadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
@@ -85,11 +72,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         starShadowView.addSubview(starButton)
         // 影表示+画像ボタンのビューを乗せる
         scrollView.addSubview(starShadowView)
-        
+ 
         // mappingButton
         // 影表示用のビュー
         let mappingShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
-        mappingShadowView.center = CGPoint(x: screenWidth / 2, y: 300 + 20)
+        prevButton += buttonHeight * 1.1
+        mappingShadowView.center = CGPoint(x: screenWidth / 2, y: prevButton)
         mappingShadowView.layer.shadowColor = UIColor.black.cgColor
         mappingShadowView.layer.shadowOpacity = 0.5
         mappingShadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
@@ -103,11 +91,12 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         mappingShadowView.addSubview(mappingButton)
         // 影表示+画像ボタンのビューを乗せる
         scrollView.addSubview(mappingShadowView)
-        
+
         // aquariumButton
         // 影表示用のビュー
         let aquariumShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
-        aquariumShadowView.center = CGPoint(x: screenWidth / 2, y: 500 + 40)
+        prevButton += buttonHeight * 1.1
+        aquariumShadowView.center = CGPoint(x: screenWidth / 2, y: prevButton)
         aquariumShadowView.layer.shadowColor = UIColor.black.cgColor
         aquariumShadowView.layer.shadowOpacity = 0.5
         aquariumShadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
@@ -124,7 +113,8 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         
         // zooButton
         let zooShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
-        zooShadowView.center = CGPoint(x: screenWidth / 2, y: 700 + 60)
+        prevButton += buttonHeight * 1.1
+        zooShadowView.center = CGPoint(x: screenWidth / 2, y: prevButton)
         zooShadowView.layer.shadowColor = UIColor.black.cgColor
         zooShadowView.layer.shadowOpacity = 0.5
         zooShadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
@@ -141,10 +131,18 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
 
         // ボタンを押された時のフロー
         starButton.addTarget(self, action: (#selector(ViewController.goStarAction)), for:.touchUpInside)
+        aquariumButton.addTarget(self, action: (#selector(ViewController.goAquariumAction)), for:.touchUpInside)
+ 
     }
+    
     // Star画面遷移
     @objc func goStarAction(){
         performSegue(withIdentifier: "goStar", sender: nil)
+    }
+    
+    // Aquarium画面遷移
+    @objc func goAquariumAction(){
+        performSegue(withIdentifier: "goAquarium", sender: nil)
     }
 
 }

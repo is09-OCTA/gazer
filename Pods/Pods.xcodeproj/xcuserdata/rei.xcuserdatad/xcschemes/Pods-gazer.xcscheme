@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4D78BCE124B8E2EC116DFD501511C2BD"
+               BlueprintIdentifier = "B24563B521420DBA9E2B9453BCD41CCE"
                BuildableName = "Pods_gazer.framework"
                BlueprintName = "Pods-gazer"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4D78BCE124B8E2EC116DFD501511C2BD"
+            BlueprintIdentifier = "B24563B521420DBA9E2B9453BCD41CCE"
             BuildableName = "Pods_gazer.framework"
             BlueprintName = "Pods-gazer"
             ReferencedContainer = "container:Pods.xcodeproj">

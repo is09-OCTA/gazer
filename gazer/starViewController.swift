@@ -275,7 +275,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             locationManager.delegate = self
             locationManager.distanceFilter = 10
             locationManager.startUpdatingLocation()
-            locationManager.stopUpdatingLocation()
+            //locationManager.stopUpdatingLocation()
         }
     }
     
@@ -319,9 +319,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             alfa: 0,
             delta: 0
         )
-    
+        
         setStar(starPosition: getStarInfo(date: myDate, area: myArea))
-    
     }
     
     // 星情報設定&表示
@@ -334,23 +333,16 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             let starNode = SCNNode(geometry: SCNSphere(radius: 1))
             let material = SCNMaterial()
             let starRight = floor(stars[index].magnitude)
-            print(starRight)
-            print(stars[index].jpName)
             if starRight <= 1 {
                 material.diffuse.contents = UIImage(named: "art.scnassets/1等星.png")
-                print("1等星")
             }else if starRight == 2 {
                 material.diffuse.contents = UIImage(named: "art.scnassets/2等星.png")
-                print("2等星")
             }else if starRight == 3 {
                 material.diffuse.contents = UIImage(named: "art.scnassets/3等星.png")
-                print("3等星")
             }else if starRight == 4 {
                 material.diffuse.contents = UIImage(named: "art.scnassets/4等星.png")
-                print("4等星")
             }else{
                 material.diffuse.contents = UIImage(named: "art.scnassets/5等星.png")
-                print("5等星")
             }
             starNode.geometry?.materials = [material]
             starNode.position = SCNVector3(element[0],element[1],element[2])
@@ -358,18 +350,21 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             // 表示
             self.sceneView.scene.rootNode.addChildNode(starNode)
             
+            let camera = sceneView.pointOfView
             let str = stars[index].jpName
             let depth:CGFloat = 0.01
             let text = SCNText(string: str, extrusionDepth: depth)
-            text.font = UIFont(name: "HiraginoSans-W3", size: 0.15);
+            text.font = UIFont(name: "HiraginoSans-W3", size: 5)
             let textNode = SCNNode(geometry: text)
             let (min, max) = (textNode.boundingBox)
             let x = CGFloat(max.x - min.x)
             let y = CGFloat(max.y - min.y)
+            let v = element[3] * (Double.pi / 180)
+            let z = element[4] * (Double.pi / -180)
             textNode.position = SCNVector3((element[0] - Double(x)),element[1],element[2])
-            //let camera = sceneView.pointOfView
-            textNode.eulerAngles = SCNVector3(x: -0.649544954, y: -1.52549818, z: 0.0369868912)
-            //textNode.eulerAngles = camera.eulerAngles// カメラのオイラー角と同じにする
+            textNode.eulerAngles = SCNVector3(0,z,0)
+            
+            print("textNode",textNode.eulerAngles)
             sceneView.scene.rootNode.addChildNode(textNode)
         }
     }
@@ -476,7 +471,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     // getXYZ
     func getXYZ(altitude: Double, direction: Double) -> Array<Double> {
-        var xyz: [Double] = [0, 0, 0]
+        var xyz: [Double] = [0, 0, 0, 0, 0]
         
         let theta = (90 - altitude) * (PI / 180)
         let phi = direction * (PI / 180)
@@ -485,6 +480,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         xyz[2] = r * sin(theta) * cos(phi)
         xyz[0] = r * sin(theta) * sin(phi)
         xyz[1] = r * cos(theta)
+        xyz[3] = altitude
+        xyz[4] = direction
         
         return xyz
         

@@ -18,9 +18,6 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate {
         super.viewDidLoad()
         
         sceneView.delegate = self
-        
-        let scene = SCNScene(named: "art.scnassets/test.scn")!
-        sceneView.scene = scene
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,49 +50,22 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate {
     
     // 平面検知時に呼び出される
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        print("didAdd")
+        print("垂直検知")
         
-        guard let planeAnchor = anchor as? ARPlaneAnchor else {
-            print("Error: This anchor is not ARPlaneAnchor. [\(#function)]")
-            return
-        }
+        let waterTankNode = collada2SCNNode(filepath: "art.scnassets/test.scn")
         
-        let scene = SCNScene(named: "art.scnassets/test.scn")!
-        
-        let planeGeometory = SCNPlane(width: CGFloat(planeAnchor.extent.x),
-                                      height: CGFloat(planeAnchor.extent.z))
-        
-        planeGeometory.materials.first?.diffuse.contents = UIColor.blue
-        
-        let geometryPlaneNode = SCNNode(geometry: planeGeometory)
-        
-        geometryPlaneNode.simdPosition = float3(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
-        
-        geometryPlaneNode.eulerAngles.x = -.pi / 2
-        
-        geometryPlaneNode.opacity = 0.8
-        
-        node.addChildNode(geometryPlaneNode)
+        node.addChildNode(waterTankNode)
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        print("didUpdate")
+    // collada2SCNNode
+    func collada2SCNNode(filepath: String) -> SCNNode {
+        let node = SCNNode()
+        let scene = SCNScene(named: filepath)
+        let nodeArray = scene!.rootNode.childNodes
         
-        guard let planeAnchor = anchor as? ARPlaneAnchor else {
-            print("Error: This anchor is not ARPlaneAnchor. [\(#function)]")
-            return
+        for childNode in nodeArray {
+            node.addChildNode(childNode as SCNNode)
         }
-        
-        guard let geometryPlaneNode = node.childNodes.first,
-            let planeGeometory = geometryPlaneNode.geometry as? SCNPlane else {
-                print("Error: SCNPlane node is not found. [\(#function)]")
-                return
-        }
-        
-        geometryPlaneNode.simdPosition = float3(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
-        
-        planeGeometory.width = CGFloat(planeAnchor.extent.x)
-        planeGeometory.height = CGFloat(planeAnchor.extent.z)
+        return node
     }
-    
 }

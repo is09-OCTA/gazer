@@ -360,9 +360,19 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             let x = CGFloat(max.x - min.x)
             let y = CGFloat(max.y - min.y)
             let v = element[3] * (Double.pi / 180)
-            let z = element[4] * (Double.pi / -180)
+            if 0...45 ~= element[4] || 315...360 ~= element[4] {
+                let z = 180 * (Double.pi / 180)
+                textNode.eulerAngles = SCNVector3(0,z,0)
+            }else if 45...135 ~= element[4] {
+                let z = 90 * (Double.pi / -180)
+                textNode.eulerAngles = SCNVector3(0,z,0)
+            }else if 135...225 ~= element[4] {
+                textNode.eulerAngles = SCNVector3(0,0,0)
+            }else if 225...315 ~= element[4] {
+                let z = 90 * (Double.pi / 180)
+                textNode.eulerAngles = SCNVector3(0,z,0)
+            }
             textNode.position = SCNVector3((element[0] - Double(x)),element[1],element[2])
-            textNode.eulerAngles = SCNVector3(0,z,0)
             
             print("textNode",textNode.eulerAngles)
             sceneView.scene.rootNode.addChildNode(textNode)

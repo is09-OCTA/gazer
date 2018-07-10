@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControllerDelegate, UIGestureRecognizerDelegate{
 
     // ボタンの横幅、縦幅設定定数
@@ -22,10 +21,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     let gazerHedder:CGFloat = 50
     
     // ボタン画像の読み込み
-    let starButtonImage:UIImage = UIImage(named: "sample08")!
-    let mappingButtonImage:UIImage = UIImage(named:"sample08")!
-    let aquariumButtonImage:UIImage = UIImage(named:"sample08")!
-    let zooButtonImage:UIImage = UIImage(named: "sample08")!
+    let starButtonImage:UIImage = UIImage(named: "StarButton002")!
+    let mappingButtonImage:UIImage = UIImage(named:"ZooButton001")!
+    let aquariumButtonImage:UIImage = UIImage(named:"AquariumButton007")!
+    let zooButtonImage:UIImage = UIImage(named: "ZooButton001")!
 
     // 画面の横幅、縦幅
     let screenWidth:CGFloat = UIScreen.main.bounds.size.width
@@ -131,18 +130,72 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
 
         // ボタンを押された時のフロー
         starButton.addTarget(self, action: (#selector(ViewController.goStarAction)), for:.touchUpInside)
+        mappingButton.addTarget(self, action: (#selector(ViewController.goMappingAction)), for:.touchUpInside)
         aquariumButton.addTarget(self, action: (#selector(ViewController.goAquariumAction)), for:.touchUpInside)
- 
+        zooButton.addTarget(self, action: (#selector(ViewController.goZooAction)), for:.touchUpInside)
     }
     
     // Star画面遷移
-    @objc func goStarAction(){
+    @objc func goStarAction(sender: UIButton){
+        let animation = CASpringAnimation(keyPath: "transform.scale")
+        animation.duration = 2.0
+        animation.fromValue = 1.04
+        animation.toValue = 1.0
+        animation.mass = 1.0
+        animation.initialVelocity = 10.0
+        animation.damping = 3.0
+        animation.stiffness = 200.0
+        sender.layer.add(animation, forKey: nil)
+
         performSegue(withIdentifier: "goStar", sender: nil)
     }
     
-    // Aquarium画面遷移
-    @objc func goAquariumAction(){
-        performSegue(withIdentifier: "goAquarium", sender: nil)
+    // Mapping画面遷移
+    @objc func goMappingAction(sender: UIButton){
+        let animation = CASpringAnimation(keyPath: "transform.scale")
+        animation.duration = 2.0
+        animation.fromValue = 1.04
+        animation.toValue = 1.0
+        animation.mass = 1.0
+        animation.initialVelocity = 10.0
+        animation.damping = 3.0
+        animation.stiffness = 200.0
+        sender.layer.add(animation, forKey: nil)
+        
+       // performSegue(withIdentifier: "goMapping", sender: nil)
     }
 
+    
+    // Aquarium画面遷移
+    @objc func goAquariumAction(sender: UIButton){
+        let animation = CASpringAnimation(keyPath: "transform.scale")
+        animation.duration = 2.0
+        animation.fromValue = 1.04
+        animation.toValue = 1.0
+        animation.mass = 1.0
+        animation.initialVelocity = 10.0
+        animation.damping = 3.0
+        animation.stiffness = 200.0
+        sender.layer.add(animation, forKey: nil)
+        
+        performSegue(withIdentifier: "goAquarium", sender: nil)
+    }
+    
+    // Zoo画面遷移
+    @objc func goZooAction(sender: UIButton){
+        let animation = CASpringAnimation(keyPath: "transform.scale")
+        animation.duration = 2.0
+        animation.fromValue = 1.04
+        animation.toValue = 1.0
+        animation.mass = 1.0
+        animation.initialVelocity = 10.0
+        animation.damping = 3.0
+        animation.stiffness = 200.0
+        sender.layer.add(animation, forKey: nil)
+        
+        // performSegue(withIdentifier: "goZoo", sender: nil)
+    }
+
+    
+    
 }

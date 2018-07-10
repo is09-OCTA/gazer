@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "136851A62EDECD962D8CE6E07BE988C9"
-               BuildableName = "Pods_gazer.framework"
-               BlueprintName = "Pods-gazer"
+               BlueprintIdentifier = "EAA82D31ED9C8467BA6C4239A02CACD1"
+               BuildableName = "WSCoachMarksView.framework"
+               BlueprintName = "WSCoachMarksView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "136851A62EDECD962D8CE6E07BE988C9"
-            BuildableName = "Pods_gazer.framework"
-            BlueprintName = "Pods-gazer"
+            BlueprintIdentifier = "EAA82D31ED9C8467BA6C4239A02CACD1"
+            BuildableName = "WSCoachMarksView.framework"
+            BlueprintName = "WSCoachMarksView"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

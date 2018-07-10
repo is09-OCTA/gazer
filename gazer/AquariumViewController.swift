@@ -55,46 +55,13 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         print("垂直検知")
         
-      //  let waterTankNode = collada2SCNNode(filepath: "art.scnassets/test.scn")
+        let waterTankNode = collada2SCNNode(filepath: "art.scnassets/test.scn")
+
+        let sharkNode = collada2SCNNode(filepath: "art.scnassets/Correctshark002.4.scn")
         
-      //  node.addChildNode(waterTankNode)
+        node.addChildNode(waterTankNode)
         
-        // .daeファイルの読み込み
-        let maruScene = SCNScene(named: "art.scnassets/test.dae")!
-        // 読み込んだ.daeファイルのマテリアルを指定して、ノードを作成
-        let maruNode = maruScene.rootNode.childNode(withName: "tankuMaru", recursively: true)
-        // SCNodeのscaleとpositionの編集
-        // カメラの中心位置から左に1m、下に2m、奥行きを2mずらして表示
-        maruNode?.position = SCNVector3 (-1,-2,-2)
-        
-        // ピッチを10度、ヨーを-5度、ロールを0度回転。
-        // maruNode?.eulerAngles = SCNVector3(10 * (Float.pi / 180), -5 * (Float.pi / 180), 0)
-        
-        //3Dモデルの実サイズに対して1/3倍のスケールで表示。
-        maruNode?.scale = SCNVector3(0.3,0.3,0.3)
-        
-        // 取得したノードをシーンに追加
-        self.sceneView.scene.rootNode.addChildNode(maruNode!)
-        
-        // オムニライト
-        let lightNode = SCNNode()
-        lightNode.light = SCNLight()
-        lightNode.light!.type = .omni
-        lightNode.position = SCNVector3(x: 0, y: 10, z: 10)
-        
-        // アンビエントライト
-        let ambientLightNode = SCNNode()
-        ambientLightNode.light = SCNLight()
-        ambientLightNode.light!.type = .ambient
-        ambientLightNode.light!.color = UIColor.darkGray
-        self.sceneView.scene.rootNode.addChildNode(lightNode)
-        
-        // カメラ
-        let cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 10)
-        self.sceneView.scene.rootNode.addChildNode(lightNode)
-        
+        node.addChildNode(sharkNode)
         
     }
     

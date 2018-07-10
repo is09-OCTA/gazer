@@ -21,10 +21,10 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     let gazerHedder:CGFloat = 50
     
     // ボタン画像の読み込み
-    let starButtonImage:UIImage = UIImage(named: "sample08")!
-    let mappingButtonImage:UIImage = UIImage(named:"sample08")!
-    let aquariumButtonImage:UIImage = UIImage(named:"sample08")!
-    let zooButtonImage:UIImage = UIImage(named: "sample08")!
+    let starButtonImage:UIImage = UIImage(named: "StarButton002")!
+    let mappingButtonImage:UIImage = UIImage(named:"ZooButton001")!
+    let aquariumButtonImage:UIImage = UIImage(named:"AquariumButton007")!
+    let zooButtonImage:UIImage = UIImage(named: "ZooButton001")!
 
     // 画面の横幅、縦幅
     let screenWidth:CGFloat = UIScreen.main.bounds.size.width

@@ -18,6 +18,9 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate {
         super.viewDidLoad()
         
         sceneView.delegate = self
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,8 +56,13 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate {
         print("垂直検知")
         
         let waterTankNode = collada2SCNNode(filepath: "art.scnassets/test.scn")
+
+        let sharkNode = collada2SCNNode(filepath: "art.scnassets/Correctshark002.4.scn")
         
         node.addChildNode(waterTankNode)
+        
+        node.addChildNode(sharkNode)
+        
     }
     
     // collada2SCNNode

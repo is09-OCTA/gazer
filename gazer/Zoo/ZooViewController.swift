@@ -33,12 +33,6 @@ class ZooViewController: UIViewController, ARSCNViewDelegate {
     //現実座標取得
     let hitTestResult = sceneView.hitTest(location, types: .existingPlane)
     if let result = hitTestResult.first {
-      /*let geometry = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
-      let material = SCNMaterial()
-      material.diffuse.contents = UIColor.darkGray
-      geometry.materials = [material]*/
-      
-      //let node = SCNNode(geometry: geometry)
       let node = ZooViewController.collada2SCNNode(filepath: "art.scnassets/Lion.scn")
       node.position = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
       sceneView.scene.rootNode.addChildNode(node)

@@ -30,18 +30,30 @@ class ZooViewController: UIViewController, ARSCNViewDelegate {
   @objc func tapView(sender: UITapGestureRecognizer) {
     // sceneView上でタップした座標を検出
     let location = sender.location(in: sceneView)
-    
+    //現実座標取得
     let hitTestResult = sceneView.hitTest(location, types: .existingPlane)
     if let result = hitTestResult.first {
-      let geometry = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
+      /*let geometry = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
       let material = SCNMaterial()
       material.diffuse.contents = UIColor.darkGray
-      geometry.materials = [material]
+      geometry.materials = [material]*/
       
-      let node = SCNNode(geometry: geometry)
+      //let node = SCNNode(geometry: geometry)
+      let node = ZooViewController.collada2SCNNode(filepath: "art.scnassets/Lion.scn")
       node.position = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
       sceneView.scene.rootNode.addChildNode(node)
     }
+  }
+  //collada2SCNNode
+  class func collada2SCNNode(filepath:String) -> SCNNode {
+    let node = SCNNode()
+    let scene = SCNScene(named: filepath)
+    let nodeArray = scene!.rootNode.childNodes
+    
+    for childNode in nodeArray {
+      node.addChildNode(childNode as SCNNode)
+    }
+    return node
   }
   
   override func viewWillAppear(_ animated: Bool) {

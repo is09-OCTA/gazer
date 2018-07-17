@@ -162,7 +162,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         animation.stiffness = 200.0
         sender.layer.add(animation, forKey: nil)
         
-       // performSegue(withIdentifier: "goMapping", sender: nil)
+       performSegue(withIdentifier: "goMapping", sender: nil)
     }
 
     
@@ -193,7 +193,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         animation.stiffness = 200.0
         sender.layer.add(animation, forKey: nil)
         
-        // performSegue(withIdentifier: "goZoo", sender: nil)
+        performSegue(withIdentifier: "goZoo", sender: nil)
     }
 
     

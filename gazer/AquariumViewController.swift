@@ -18,9 +18,6 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate {
         super.viewDidLoad()
         
         sceneView.delegate = self
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,13 +52,16 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         print("垂直検知")
         
-        let waterTankNode = collada2SCNNode(filepath: "art.scnassets/test.scn")
-
-        let sharkNode = collada2SCNNode(filepath: "art.scnassets/Correctshark002.4.scn")
+        let randomNum = arc4random_uniform(2)
+        var waterTankNode = collada2SCNNode(filepath: "art.scnassets/test.scn")
+        
+        if randomNum == 0 {
+            waterTankNode = collada2SCNNode(filepath: "art.scnassets/test.scn")
+        } else {
+            waterTankNode = collada2SCNNode(filepath: "art.scnassets/test2.scn")
+        }
         
         node.addChildNode(waterTankNode)
-        
-        node.addChildNode(sharkNode)
         
     }
     

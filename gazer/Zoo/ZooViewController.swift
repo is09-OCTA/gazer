@@ -18,13 +18,38 @@ class ZooViewController: UIViewController, ARSCNViewDelegate {
     super.viewDidLoad()
     
     sceneView.delegate = self
+    // 特徴点表示
+    sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints
+    let scene = SCNScene()
+    sceneView.scene = scene
+    // tapアクション追加
+    let gesture = UITapGestureRecognizer(target: self, action: #selector(tapView))
+    sceneView.addGestureRecognizer(gesture)
+  }
+  
+  @objc func tapView(sender: UITapGestureRecognizer) {
+    // sceneView上でタップした座標を検出
+    let location = sender.location(in: sceneView)
+    
+    let hitTestResult = sceneView.hitTest(location, types: .existingPlane)
+    if let result = hitTestResult.first {
+      let geometry = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
+      let material = SCNMaterial()
+      material.diffuse.contents = UIColor.darkGray
+      geometry.materials = [material]
+      
+      let node = SCNNode(geometry: geometry)
+      node.position = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
+      sceneView.scene.rootNode.addChildNode(node)
+    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
     let configuration = ARWorldTrackingConfiguration()
-    
+    //平面検出
+    configuration.planeDetection = .horizontal
     sceneView.session.run(configuration)
   }
   

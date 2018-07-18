@@ -79,7 +79,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
         if(node.geometry == nil){
           let plane = SCNPlane()
           plane.width = imageAnchor.referenceImage.physicalSize.width
-          plane.height = (imageAnchor.referenceImage.physicalSize.height) * 2
+          plane.height = (imageAnchor.referenceImage.physicalSize.height) * 1.8
           node.geometry = plane
         }
         
@@ -111,7 +111,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     
     let material = SCNMaterial()
     material.diffuse.contents = skScene
-    material.transparency = 0.7
+    material.transparency = 0.5
     return material
   }
   

@@ -61,7 +61,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     let ciImage = CIImage.init(cvPixelBuffer: cuptureImage)
     let filter:CIFilter = CIFilter(name: "CIColorMonochrome")!
     filter.setValue(ciImage, forKey: kCIInputImageKey)
-    filter.setValue(CIColor(red: 0.75, green: 0.75, blue: 0.75), forKey: "inputColor")
+    filter.setValue(CIColor(red: 0.3, green: 0.3, blue: 0.3), forKey: "inputColor")
     filter.setValue(1.0, forKey: "inputIntensity")
     
     //　CIImage を CGImage に変換して背景に適応

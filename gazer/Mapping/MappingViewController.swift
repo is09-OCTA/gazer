@@ -84,12 +84,12 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
           plane.height = (imageAnchor.referenceImage.physicalSize.height) * 1.8
           let videoNode = SCNNode()
           videoNode.geometry = plane
-          let videoMaterial = self.createMaterial(videoUrl: videoVideoUrl, alpha: 0.5)
+          let videoMaterial = self.createMaterial(videoUrl: videoVideoUrl, alpha: 0.5,angle: 0.0)
           videoNode.geometry?.firstMaterial = videoMaterial
           node.addChildNode(videoNode as SCNNode)
           
           let rockNode = MappingViewController.collada2SCNNode(filepath: "art.scnassets/Mossy Rock - stump.scn")
-          let rockMaterial = self.createMaterial(videoUrl: rockVideoUrl, alpha: 1.0)
+          let rockMaterial = self.createMaterial(videoUrl: rockVideoUrl, alpha: 1.0,angle: 90.0)
           rockNode.childNodes[0].geometry?.firstMaterial = rockMaterial
           node.addChildNode(rockNode as SCNNode)
           
@@ -103,7 +103,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     }
   }
   
-  func createMaterial(videoUrl: URL,alpha: Float) -> SCNMaterial {
+  func createMaterial(videoUrl: URL,alpha: Float,angle: Float) -> SCNMaterial {
     // AVPlayerを生成する
     let avPlayer = AVPlayer(url: videoUrl)
     // SKSceneを生成する
@@ -114,6 +114,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     skNode.position = CGPoint(x: skScene.size.width / 2.0, y: skScene.size.height / 2.0)
     skNode.size = skScene.size
     skNode.yScale = -1.0 // 座標系を上下逆にする
+    skNode.zRotation = CGFloat(angle)
     skNode.play() // 再生開始
     // SKSceneに、SKVideoNodeを追加する
     skScene.addChild(skNode)

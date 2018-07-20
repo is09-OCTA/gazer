@@ -79,14 +79,18 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
           let plane = SCNPlane()
           // ビデオのURL
           let videoVideoUrl = Bundle.main.url(forResource: "default", withExtension: "mp4")!
+          let rockVideoUrl = Bundle.main.url(forResource: "block", withExtension: "mp4")!
           plane.width = imageAnchor.referenceImage.physicalSize.width
           plane.height = (imageAnchor.referenceImage.physicalSize.height) * 1.8
           let videoNode = SCNNode()
           videoNode.geometry = plane
-          videoNode.geometry?.firstMaterial = self.createMaterial(videoUrl: videoVideoUrl)
+          let videoMaterial = self.createMaterial(videoUrl: videoVideoUrl, alpha: 0.5)
+          videoNode.geometry?.firstMaterial = videoMaterial
           node.addChildNode(videoNode as SCNNode)
           
           let rockNode = MappingViewController.collada2SCNNode(filepath: "art.scnassets/Mossy Rock - stump.scn")
+          let rockMaterial = self.createMaterial(videoUrl: rockVideoUrl, alpha: 1.0)
+          rockNode.childNodes[0].geometry?.firstMaterial = rockMaterial
           node.addChildNode(rockNode as SCNNode)
           
         }
@@ -99,7 +103,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     }
   }
   
-  func createMaterial(videoUrl: URL) -> SCNMaterial {
+  func createMaterial(videoUrl: URL,alpha: Float) -> SCNMaterial {
     // AVPlayerを生成する
     let avPlayer = AVPlayer(url: videoUrl)
     // SKSceneを生成する
@@ -116,7 +120,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     
     let material = SCNMaterial()
     material.diffuse.contents = skScene
-    material.transparency = 0.5
+    material.transparency = CGFloat(alpha)
     return material
   }
   

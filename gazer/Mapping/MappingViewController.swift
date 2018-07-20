@@ -24,7 +24,6 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     
     // Create a new scene
     let scene = SCNScene()
-    //sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
     
     // Set the scene to the view
     sceneView.scene = scene
@@ -51,7 +50,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     super.didReceiveMemoryWarning()
   }
   
-  
+  //背景を暗くする
   func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
     guard let cuptureImage = sceneView.session.currentFrame?.capturedImage else {
       return
@@ -72,19 +71,27 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
       sceneView.scene.background.contents = cgImage
     }
   }
-  
+  //画像認識
   func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
     DispatchQueue.main.async {
       if let imageAnchor = anchor as? ARImageAnchor{
         if(node.geometry == nil){
           let plane = SCNPlane()
+          // ビデオのURL
+          let videoVideoUrl = Bundle.main.url(forResource: "default", withExtension: "mp4")!
           plane.width = imageAnchor.referenceImage.physicalSize.width
           plane.height = (imageAnchor.referenceImage.physicalSize.height) * 1.8
-          node.geometry = plane
+          let videoNode = SCNNode()
+          videoNode.geometry = plane
+          videoNode.geometry?.firstMaterial = self.createMaterial(videoUrl: videoVideoUrl)
+          node.addChildNode(videoNode as SCNNode)
+          
+          let rockNode = MappingViewController.collada2SCNNode(filepath: "art.scnassets/Mossy Rock - stump.scn")
+          node.addChildNode(rockNode as SCNNode)
+          
         }
         
         node.simdTransform = imageAnchor.transform
-        node.geometry?.firstMaterial = self.createMaterial()
         node.eulerAngles.x = 0
         //原点の移動
         node.pivot = SCNMatrix4MakeTranslation(0.0, -0.5, 0.0)
@@ -92,9 +99,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     }
   }
   
-  func createMaterial() -> SCNMaterial {
-    // ビデオのURL
-    let videoUrl = Bundle.main.url(forResource: "default", withExtension: "mp4")!
+  func createMaterial(videoUrl: URL) -> SCNMaterial {
     // AVPlayerを生成する
     let avPlayer = AVPlayer(url: videoUrl)
     // SKSceneを生成する
@@ -115,7 +120,17 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     return material
   }
   
-  
+  //collada2SCNNode
+  public class func collada2SCNNode(filepath:String) -> SCNNode {
+    let node = SCNNode()
+    let scene = SCNScene(named: filepath)
+    let nodeArray = scene!.rootNode.childNodes
+    
+    for childNode in nodeArray {
+      node.addChildNode(childNode as SCNNode)
+    }
+    return node
+  }
   
   func session(_ session: ARSession, didFailWithError error: Error) {
   }

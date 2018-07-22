@@ -78,7 +78,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
         if(node.geometry == nil){
           let plane = SCNPlane()
           // ビデオのURL
-          let videoVideoUrl = Bundle.main.url(forResource: "default", withExtension: "mp4")!
+          let videoVideoUrl = Bundle.main.url(forResource: "main", withExtension: "mp4")!
           let rockVideoUrl = Bundle.main.url(forResource: "RockMaterial2", withExtension: "mp4")!
           plane.width = imageAnchor.referenceImage.physicalSize.width
           plane.height = (imageAnchor.referenceImage.physicalSize.height) * 1.8

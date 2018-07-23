@@ -16,7 +16,7 @@
                 <viewControllerPlaceholder storyboardName="Mapping" id="Qm5-wr-7rt" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tu6-Wq-I3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-793" y="-458"/>
+            <point key="canvasLocation" x="-337" y="-463"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="T3j-mk-y9D">
@@ -43,14 +43,22 @@
                     </view>
                     <connections>
                         <segue destination="BV1-FR-VrT" kind="show" identifier="goStar" id="F4s-BC-sWf"/>
-                        <segue destination="JWj-Yo-mM5" kind="show" identifier="goAquarium" id="eUg-UU-Dsp"/>
                         <segue destination="Qm5-wr-7rt" kind="show" identifier="goMapping" id="VDc-WT-fgh"/>
                         <segue destination="SIL-9F-TvK" kind="show" identifier="goZoo" id="36C-p9-wrl"/>
+                        <segue destination="AEc-jH-PMb" kind="show" identifier="goAquarium" id="caG-qV-Utp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GCg-n5-pbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-857" y="93"/>
+        </scene>
+        <!--Aquarium-->
+        <scene sceneID="fs5-TX-hC2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Aquarium" id="AEc-jH-PMb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wh0-vt-bU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-138" y="286"/>
         </scene>
         <!--Zoo-->
         <scene sceneID="Rfw-QQ-LgT">
@@ -59,24 +67,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fpz-7T-r9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-648" y="694"/>
-        </scene>
-        <!--Aquarium View Controller-->
-        <scene sceneID="3p2-0i-4nb">
-            <objects>
-                <viewController storyboardIdentifier="aquarium" id="JWj-Yo-mM5" customClass="AquariumViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="view" id="i7M-HV-b38" customClass="ARSCNView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="150-qW-kF6"/>
-                    </view>
-                    <connections>
-                        <outlet property="sceneView" destination="i7M-HV-b38" id="EJJ-lh-D8H"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pCa-Yj-eBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="137" y="481"/>
         </scene>
         <!--Star View Controller-->
         <scene sceneID="tXr-a1-R10">

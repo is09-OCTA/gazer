@@ -15,6 +15,7 @@
 		8D4FC93E20FD8E9000A924E4 /* MappingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */; };
 		B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */; };
 		C70E7AA520D77FF900255FD3 /* AquariumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */; };
+		C7109F7A20FDB732009161A7 /* Aquarium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7109F7920FDB732009161A7 /* Aquarium.storyboard */; };
 		C75A04BA20B3D9EA00B0F36C /* decimalExpansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */; };
 		C788DA73209023700006ED25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA72209023700006ED25 /* AppDelegate.swift */; };
 		C788DA75209023700006ED25 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C788DA74209023700006ED25 /* art.scnassets */; };
@@ -55,6 +56,7 @@
 		B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumViewController.swift; sourceTree = "<group>"; };
+		C7109F7920FDB732009161A7 /* Aquarium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Aquarium.storyboard; sourceTree = "<group>"; };
 		C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decimalExpansion.swift; sourceTree = "<group>"; };
 		C788DA6F209023700006ED25 /* gazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C788DA72209023700006ED25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,15 @@
 			path = Mapping;
 			sourceTree = "<group>";
 		};
+		C7109F7820FDB661009161A7 /* Aquarium */ = {
+			isa = PBXGroup;
+			children = (
+				C7109F7920FDB732009161A7 /* Aquarium.storyboard */,
+				C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */,
+			);
+			path = Aquarium;
+			sourceTree = "<group>";
+		};
 		C75A04B820B3D9C900B0F36C /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +182,7 @@
 		C788DA71209023700006ED25 /* gazer */ = {
 			isa = PBXGroup;
 			children = (
+				C7109F7820FDB661009161A7 /* Aquarium */,
 				8D4FC93A20FD8D7C00A924E4 /* Mapping */,
 				8D4FC93920FD8D7500A924E4 /* Zoo */,
 				C75A04B820B3D9C900B0F36C /* src */,
@@ -178,7 +190,6 @@
 				C788DA74209023700006ED25 /* art.scnassets */,
 				C788DA76209023700006ED25 /* starViewController.swift */,
 				C788DA78209023700006ED25 /* Main.storyboard */,
-				C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */,
 				B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */,
 				C788DA7B209023710006ED25 /* Assets.xcassets */,
 				C788DA7D209023710006ED25 /* LaunchScreen.storyboard */,
@@ -319,6 +330,7 @@
 				C788DA75209023700006ED25 /* art.scnassets in Resources */,
 				8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */,
 				C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */,
+				C7109F7A20FDB732009161A7 /* Aquarium.storyboard in Resources */,
 				C788DA7C209023710006ED25 /* Assets.xcassets in Resources */,
 				8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */,
 				C788DA7A209023700006ED25 /* Main.storyboard in Resources */,
@@ -571,13 +583,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = URT7G4TP66;
+				DEVELOPMENT_TEAM = LLR2Y6RVR8;
 				INFOPLIST_FILE = gazer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-seiya";
+				PRODUCT_BUNDLE_IDENTIFIER = com.octa.gazer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -593,13 +605,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = URT7G4TP66;
+				DEVELOPMENT_TEAM = LLR2Y6RVR8;
 				INFOPLIST_FILE = gazer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-seiya";
+				PRODUCT_BUNDLE_IDENTIFIER = com.octa.gazer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

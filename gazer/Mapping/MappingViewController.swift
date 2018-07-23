@@ -11,9 +11,10 @@ import ARKit
 import SceneKit
 import AVFoundation
 
-class MappingViewController: UIViewController, ARSCNViewDelegate {
+class MappingViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate {
   
   @IBOutlet var sceneView: ARSCNView!
+  var audioPlayer: AVAudioPlayer!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -99,6 +100,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
         node.eulerAngles.x = 0
         //原点の移動
         node.pivot = SCNMatrix4MakeTranslation(0.0, -0.5, 0.0)
+        self.playSound(name: "sound")
       }
     }
   }
@@ -126,6 +128,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   }
   
   //collada2SCNNode
+  //scnファイルをnode化
   public class func collada2SCNNode(filepath:String) -> SCNNode {
     let node = SCNNode()
     let scene = SCNScene(named: filepath)
@@ -135,6 +138,25 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
       node.addChildNode(childNode as SCNNode)
     }
     return node
+  }
+  //サウンド再生メソッド
+  func playSound(name: String) {
+    guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+      print("音源ファイルが見つかりません")
+      return
+    }
+    
+    do {
+      // AVAudioPlayerのインスタンス化
+      audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+      
+      // AVAudioPlayerのデリゲートをセット
+      audioPlayer.delegate = self
+      
+      // 音声の再生
+      audioPlayer.play()
+    } catch {
+    }
   }
   
   func session(_ session: ARSession, didFailWithError error: Error) {

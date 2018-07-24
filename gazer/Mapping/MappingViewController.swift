@@ -61,7 +61,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerD
     let ciImage = CIImage.init(cvPixelBuffer: cuptureImage)
     let filter:CIFilter = CIFilter(name: "CIColorMonochrome")!
     filter.setValue(ciImage, forKey: kCIInputImageKey)
-    filter.setValue(CIColor(red: 0.3, green: 0.3, blue: 0.3), forKey: "inputColor")
+    filter.setValue(CIColor(red: 0.0, green: 0.0, blue: 0.0), forKey: "inputColor")
     filter.setValue(1.0, forKey: "inputIntensity")
     
     // CIImage を CGImage に変換して背景に適応
@@ -85,7 +85,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerD
           plane.height = (imageAnchor.referenceImage.physicalSize.height) * 1.8
           let videoNode = SCNNode()
           videoNode.geometry = plane
-          let videoMaterial = self.createMaterial(videoUrl: videoVideoUrl, alpha: 0.5,angle: 0.0)
+          let videoMaterial = self.createMaterial(videoUrl: videoVideoUrl, alpha: 0.7,angle: 0.0)
           videoNode.geometry?.firstMaterial = videoMaterial
           node.addChildNode(videoNode as SCNNode)
           
@@ -95,7 +95,11 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerD
           node.addChildNode(rockNode as SCNNode)
           
         }
-        
+        let lightNode = SCNNode()
+        lightNode.light = SCNLight()
+        lightNode.light?.type = .ambient
+        lightNode.position = SCNVector3(x:0, y:10, z:1)
+        node.addChildNode(lightNode as SCNNode)
         node.simdTransform = imageAnchor.transform
         node.eulerAngles.x = 0
         // 原点の移動

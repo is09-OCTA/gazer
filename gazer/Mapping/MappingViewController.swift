@@ -51,7 +51,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerD
     super.didReceiveMemoryWarning()
   }
   
-  //背景を暗くする
+  // 背景を暗くする
   func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
     guard let cuptureImage = sceneView.session.currentFrame?.capturedImage else {
       return
@@ -64,15 +64,15 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerD
     filter.setValue(CIColor(red: 0.3, green: 0.3, blue: 0.3), forKey: "inputColor")
     filter.setValue(1.0, forKey: "inputIntensity")
     
-    //　CIImage を CGImage に変換して背景に適応
-    //　カメラ画像はホーム右のランドスケープの状態で画像が渡されるため、CGImagePropertyOrientation(rawValue: 6) でポートレートで正しい向きに表示されるよう変換
+    // CIImage を CGImage に変換して背景に適応
+    // カメラ画像はホーム右のランドスケープの状態で画像が渡されるため、CGImagePropertyOrientation(rawValue: 6) でポートレートで正しい向きに表示されるよう変換
     let context = CIContext()
     let result = filter.outputImage!.oriented(CGImagePropertyOrientation(rawValue: 6)!)
     if let cgImage = context.createCGImage(result, from: result.extent) {
       sceneView.scene.background.contents = cgImage
     }
   }
-  //画像認識
+  // 画像認識
   func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
     DispatchQueue.main.async {
       if let imageAnchor = anchor as? ARImageAnchor{
@@ -98,13 +98,13 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerD
         
         node.simdTransform = imageAnchor.transform
         node.eulerAngles.x = 0
-        //原点の移動
+        // 原点の移動
         node.pivot = SCNMatrix4MakeTranslation(0.0, -0.5, 0.0)
         self.playSound(name: "sound")
       }
     }
   }
-  
+  // オブジェクト用の動画 materialを生成
   func createMaterial(videoUrl: URL,alpha: Float,angle: Float) -> SCNMaterial {
     // AVPlayerを生成する
     let avPlayer = AVPlayer(url: videoUrl)
@@ -127,8 +127,8 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerD
     return material
   }
   
-  //collada2SCNNode
-  //scnファイルをnode化
+  // collada2SCNNode
+  // scnファイルをnode化
   public class func collada2SCNNode(filepath:String) -> SCNNode {
     let node = SCNNode()
     let scene = SCNScene(named: filepath)
@@ -139,7 +139,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerD
     }
     return node
   }
-  //サウンド再生メソッド
+  // サウンド再生メソッド
   func playSound(name: String) {
     guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
       print("音源ファイルが見つかりません")

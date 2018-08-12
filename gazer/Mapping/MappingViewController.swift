@@ -77,43 +77,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerD
       sceneView.scene.background.contents = cgImage
     }
   }
-  // 画像認識
-  /*func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-    DispatchQueue.main.async {
-      if let imageAnchor = anchor as? ARImageAnchor{
-        if(node.geometry == nil){
-          let plane = SCNPlane()
-          // ビデオのURL
-          let videoVideoUrl = Bundle.main.url(forResource: "main", withExtension: "mp4")!
-          let rockVideoUrl = Bundle.main.url(forResource: "RockMaterial2", withExtension: "mp4")!
-          plane.width = imageAnchor.referenceImage.physicalSize.width
-          plane.height = (imageAnchor.referenceImage.physicalSize.height) * 3.0
-          let videoNode = SCNNode()
-          videoNode.geometry = plane
-          let videoMaterial = self.createMaterial(videoUrl: videoVideoUrl, alpha: 0.7,angle: 0.0)
-          videoNode.geometry?.firstMaterial = videoMaterial
-          node.addChildNode(videoNode as SCNNode)
-          
-          let rockNode = MappingViewController.collada2SCNNode(filepath: "art.scnassets/Mossy Rock - stump.scn")
-          let rockMaterial = self.createMaterial(videoUrl: rockVideoUrl, alpha: 1.0,angle: 90.0)
-          rockNode.childNodes[0].geometry?.firstMaterial = rockMaterial
-          node.addChildNode(rockNode as SCNNode)
-          
-        }
-        //ライト
-        /*let lightNode = SCNNode()
-        lightNode.light = SCNLight()
-        lightNode.light?.type = .ambient
-        lightNode.position = SCNVector3(x:0, y:10, z:1)
-        node.addChildNode(lightNode as SCNNode)*/
-        node.simdTransform = imageAnchor.transform
-        node.eulerAngles.x = 0
-        // 原点の移動
-        node.pivot = SCNMatrix4MakeTranslation(0.0, 1.0, 0.0)
-        self.playSound(name: "sound")
-      }
-    }
-  }*/
+  
   
   
   func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
@@ -132,53 +96,10 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerD
       plane.height = (imageAnchor.referenceImage.physicalSize.height) * 2.1
       node.simdTransform = imageAnchor.transform
       node.eulerAngles.x = 0
+      // 原点の移動
       node.pivot = SCNMatrix4MakeTranslation(0.0, 0.7, 0.0)
     }
   }
-  
-  /*func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-    DispatchQueue.main.async {
-      if let imageAnchor = anchor as? ARImageAnchor {
-        if(node.geometry == nil){
-          let plane = SCNPlane()
-          // ビデオのURL
-          let videoVideoUrl = Bundle.main.url(forResource: "main", withExtension: "mp4")!
-          let rockVideoUrl = Bundle.main.url(forResource: "RockMaterial2", withExtension: "mp4")!
-          plane.width = imageAnchor.referenceImage.physicalSize.width
-          plane.height = (imageAnchor.referenceImage.physicalSize.height) * 2.0
-          let videoNode = SCNNode()
-          videoNode.geometry = plane
-          videoNode.rotation = SCNVector4(1, 0, 0, -(0.5 * Double.pi))
-          let videoMaterial = self.createMaterial(videoUrl: videoVideoUrl, alpha: 0.7,angle: 0.0)
-          videoNode.geometry?.firstMaterial = videoMaterial
-          node.addChildNode(videoNode as SCNNode)
-          
-          /*let rockNode = MappingViewController.collada2SCNNode(filepath: "art.scnassets/Mossy Rock - stump.scn")
-          rockNode.rotation = SCNVector4(1, 0, 0, -(0.5 * Double.pi))
-          let rockMaterial = self.createMaterial(videoUrl: rockVideoUrl, alpha: 1.0,angle: 90.0)
-          rockNode.childNodes[0].geometry?.firstMaterial = rockMaterial
-          node.addChildNode(rockNode as SCNNode)*/
-          
-        }
-        //ライト
-        let lightNode = SCNNode()
-        lightNode.light = SCNLight()
-        lightNode.light?.type = .ambient
-        lightNode.position = SCNVector3(x:0, y:10, z:1)
-        
-        
-        node.addChildNode(lightNode as SCNNode)
-        node.simdTransform = imageAnchor.transform
-        //座標を合わせる
-        //node.eulerAngles.x = -.pi / 2
-        node.eulerAngles.x = 0
-        //node.rotation = SCNVector4(0, 1, 0, 0.25 * Double.pi)
-        // 原点の移動
-        node.pivot = SCNMatrix4MakeTranslation(0.0, 1.5, 0.0)
-        self.playSound(name: "sound")
-      }
-    }
-  }*/
   
   func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
     DispatchQueue.main.async {
@@ -212,9 +133,6 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerD
         
         node.simdTransform = imageAnchor.transform
         node.eulerAngles.x = 0
-        //node.rotation = SCNVector4(0, 1, 0, 0.25 * Double.pi)
-        // 原点の移動
-        //node.pivot = SCNMatrix4MakeTranslation(0.0, 1.0, 0.0)
         self.playSound(name: "sound")
       }
     }

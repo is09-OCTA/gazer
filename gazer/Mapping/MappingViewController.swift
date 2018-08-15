@@ -107,7 +107,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerD
         if(node.geometry == nil){
           let plane = SCNPlane()
           // ビデオのURL
-          let videoVideoUrl = Bundle.main.url(forResource: "main3", withExtension: "mp4")!
+          let videoVideoUrl = Bundle.main.url(forResource: "main5", withExtension: "mp4")!
           let rockVideoUrl = Bundle.main.url(forResource: "RockMaterial2", withExtension: "mp4")!
           plane.width = imageAnchor.referenceImage.physicalSize.width
           plane.height = (imageAnchor.referenceImage.physicalSize.height) * 2.1

@@ -108,7 +108,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerD
           let plane = SCNPlane()
           // ビデオのURL
           let videoVideoUrl = Bundle.main.url(forResource: "main5", withExtension: "mp4")!
-          let rockVideoUrl = Bundle.main.url(forResource: "RockMaterial2", withExtension: "mp4")!
+          let rockVideoUrl = Bundle.main.url(forResource: "RockMaterial3", withExtension: "mp4")!
           plane.width = imageAnchor.referenceImage.physicalSize.width
           plane.height = (imageAnchor.referenceImage.physicalSize.height) * 2.1
           let videoNode = SCNNode()
@@ -137,6 +137,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerD
       }
     }
   }
+  
   
   // オブジェクト用の動画 materialを生成
   func createMaterial(videoUrl: URL,alpha: Float,angle: Float) -> SCNMaterial {

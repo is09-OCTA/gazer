@@ -12,8 +12,9 @@ import ARKit
 import CoreLocation
 import SCLAlertView
 import WSCoachMarksView
+import AVFoundation
 
-class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate{
+class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate, AVAudioPlayerDelegate{
     
     @IBOutlet var sceneView: ARSCNView!
 
@@ -23,7 +24,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
         beforeMenu.modalTransitionStyle = .crossDissolve
         present(beforeMenu, animated: true, completion: nil)
-        
+        audioPlayer.stop()
     }
     
     @IBAction func pushCamera(_ sender: Any) {
@@ -34,12 +35,19 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
 
     }
     
+    //音楽インスタンス宣言
+    var audioPlayer: AVAudioPlayer!
+
+    
     // 位置情報
     var locationManager: CLLocationManager!
     
     var latitudeLocation: Double!
     var longitudeLocation: Double!
     var apiURL: URL!
+    
+    //textNode
+    var textNode: SCNNode?
     
     // 星のサンプル座標(北斗七星)
     //let starPosition:[[Double]] = [[0,0,-10],[-0.3,1,-10],[-0.4,2,-10],[-1.5,3,-10],[-0.7,-0.7,-10],[0.1,-2,-10],[1.5,-1.6,-10]]
@@ -183,6 +191,9 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // mp3音声(SOUND.mp3)の再生
+        playSound(name: "STAR_BGM")
 /*
         let f = self.view.bounds
         let arrCouach = [
@@ -205,6 +216,29 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         
         // 星表示(仮)
         //setStar(starPosition: starPosition)
+    }
+    
+    //音楽再生
+    func playSound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+        
+        do {
+            // AVAudioPlayerのインスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            
+            // AVAudioPlayerのデリゲートをセット
+            audioPlayer.delegate = self
+            
+            //ループ設定
+            audioPlayer.numberOfLoops = -1
+            
+            // 音声の再生
+            audioPlayer.play()
+        } catch {
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -350,32 +384,38 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             // 表示
             self.sceneView.scene.rootNode.addChildNode(starNode)
             
-            let camera = sceneView.pointOfView
             let str = stars[index].jpName
             let depth:CGFloat = 0.01
             let text = SCNText(string: str, extrusionDepth: depth)
             text.font = UIFont(name: "HiraginoSans-W3", size: 5)
-            let textNode = SCNNode(geometry: text)
-            let (min, max) = (textNode.boundingBox)
+            textNode = SCNNode(geometry: text)
+            let (min, max) = (textNode?.boundingBox)!
             let x = CGFloat(max.x - min.x)
             let y = CGFloat(max.y - min.y)
-            let v = element[3] * (Double.pi / 180)
+            
+            if let camera = sceneView.pointOfView {
+                
+                textNode?.rotation = camera.rotation
+                print(textNode)
+            }
+           /* let v = element[3] * (Double.pi / 180)
             if 0...45 ~= element[4] || 315...360 ~= element[4] {
                 let z = 180 * (Double.pi / 180)
-                textNode.eulerAngles = SCNVector3(0,z,0)
+                textNode?.eulerAngles = SCNVector3(0,z,0)
             }else if 45...135 ~= element[4] {
                 let z = 90 * (Double.pi / -180)
-                textNode.eulerAngles = SCNVector3(0,z,0)
+                textNode?.eulerAngles = SCNVector3(0,z,0)
             }else if 135...225 ~= element[4] {
-                textNode.eulerAngles = SCNVector3(0,0,0)
+                textNode?.eulerAngles = SCNVector3(0,0,0)
             }else if 225...315 ~= element[4] {
                 let z = 90 * (Double.pi / 180)
-                textNode.eulerAngles = SCNVector3(0,z,0)
+                textNode?.eulerAngles = SCNVector3(0,z,0)
             }
-            textNode.position = SCNVector3((element[0] - Double(x)),element[1],element[2])
+ */
+            textNode?.position = SCNVector3((element[0] - Double(x)),element[1],element[2])
             
-            print("textNode",textNode.eulerAngles)
-            sceneView.scene.rootNode.addChildNode(textNode)
+            print("textNode",textNode?.eulerAngles)
+            sceneView.scene.rootNode.addChildNode(textNode!)
         }
     }
     
@@ -496,6 +536,14 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         return xyz
         
     }
+    
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        if let camera = sceneView.pointOfView {
+            
+            textNode?.rotation = camera.rotation
+            print(textNode)
+        }
+    }
 
     func session(_ session: ARSession, didFailWithError error: Error) {
     }
@@ -505,5 +553,4 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     func sessionInterruptionEnded(_ session: ARSession) {
     }
-    
 }

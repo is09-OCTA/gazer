@@ -9,18 +9,46 @@
 import UIKit
 import ARKit
 import SceneKit
+import AVFoundation
 
-class AquariumViewController: UIViewController, ARSCNViewDelegate {
+class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate{
 
     @IBOutlet var sceneView: ARSCNView!
+    
+    //音楽インスタンス宣言
+    var audioPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         sceneView.delegate = self
         
+        // mp3音声(SOUND.mp3)の再生
+        playSound(name: "AQUA_BGM")
         
+    }
+    
+    //音楽再生
+    func playSound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
         
+        do {
+            // AVAudioPlayerのインスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            
+            // AVAudioPlayerのデリゲートをセット
+            audioPlayer.delegate = self
+            
+            //ループ設定
+            audioPlayer.numberOfLoops = -1
+            
+            // 音声の再生
+            audioPlayer.play()
+        } catch {
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

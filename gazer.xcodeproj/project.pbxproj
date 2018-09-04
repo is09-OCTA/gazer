@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		09E610C2A13CBB0FDFD880FF /* Pods_gazer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */; };
 		235E628820902DF50054ACE2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235E628720902DF50054ACE2 /* CoreLocation.framework */; };
+		2369C270213E3DC5005C3E23 /* STAR_BGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2369C26F213E3DC5005C3E23 /* STAR_BGM.mp3 */; };
+		2369C272213E3F13005C3E23 /* AQUA_BGM.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2369C271213E3F13005C3E23 /* AQUA_BGM.mp3 */; };
 		8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */; };
 		8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */; };
 		8D4FC93C20FD8E0400A924E4 /* ZooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */; };
@@ -46,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		235E628720902DF50054ACE2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2369C26F213E3DC5005C3E23 /* STAR_BGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = STAR_BGM.mp3; path = ../../Downloads/STAR_BGM.mp3; sourceTree = "<group>"; };
+		2369C271213E3F13005C3E23 /* AQUA_BGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = AQUA_BGM.mp3; path = ../../../Downloads/AQUA_BGM.mp3; sourceTree = "<group>"; };
 		528B2B857C8684EC0C142CDD /* Pods_gazerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4886E88D8C79D7F80446BC /* Pods_gazerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC02151997CBC19E35D75DF /* Pods-gazer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gazer.release.xcconfig"; path = "Pods/Target Support Files/Pods-gazer/Pods-gazer.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 			children = (
 				C7109F7920FDB732009161A7 /* Aquarium.storyboard */,
 				C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */,
+				2369C271213E3F13005C3E23 /* AQUA_BGM.mp3 */,
 			);
 			path = Aquarium;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 				C788DA7B209023710006ED25 /* Assets.xcassets */,
 				C788DA7D209023710006ED25 /* LaunchScreen.storyboard */,
 				C788DA80209023710006ED25 /* Info.plist */,
+				2369C26F213E3DC5005C3E23 /* STAR_BGM.mp3 */,
 			);
 			path = gazer;
 			sourceTree = "<group>";
@@ -327,7 +333,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2369C272213E3F13005C3E23 /* AQUA_BGM.mp3 in Resources */,
 				C788DA75209023700006ED25 /* art.scnassets in Resources */,
+				2369C270213E3DC5005C3E23 /* STAR_BGM.mp3 in Resources */,
 				8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */,
 				C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */,
 				C7109F7A20FDB732009161A7 /* Aquarium.storyboard in Resources */,

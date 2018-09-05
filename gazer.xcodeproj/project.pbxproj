@@ -48,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		235E628720902DF50054ACE2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2369C279213F8535005C3E23 /* AQUA_BGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AQUA_BGM.mp3; sourceTree = "<group>"; };
+		2369C27B213F8543005C3E23 /* STAR_BGM.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = STAR_BGM.mp3; sourceTree = "<group>"; };
 		528B2B857C8684EC0C142CDD /* Pods_gazerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4886E88D8C79D7F80446BC /* Pods_gazerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC02151997CBC19E35D75DF /* Pods-gazer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gazer.release.xcconfig"; path = "Pods/Target Support Files/Pods-gazer/Pods-gazer.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				C7109F7920FDB732009161A7 /* Aquarium.storyboard */,
 				C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */,
+				2369C279213F8535005C3E23 /* AQUA_BGM.mp3 */,
 			);
 			path = Aquarium;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				C788DA7B209023710006ED25 /* Assets.xcassets */,
 				C788DA7D209023710006ED25 /* LaunchScreen.storyboard */,
 				C788DA80209023710006ED25 /* Info.plist */,
+				2369C27B213F8543005C3E23 /* STAR_BGM.mp3 */,
 			);
 			path = gazer;
 			sourceTree = "<group>";
@@ -336,6 +340,8 @@
 				C788DA7C209023710006ED25 /* Assets.xcassets in Resources */,
 				8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */,
 				C788DA7A209023700006ED25 /* Main.storyboard in Resources */,
+				2369C27C213F8543005C3E23 /* STAR_BGM.mp3 in Resources */,
+				2369C27A213F8535005C3E23 /* AQUA_BGM.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

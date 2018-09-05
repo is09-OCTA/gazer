@@ -24,7 +24,7 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
         sceneView.delegate = self
         
         //BGM再生
-        playSound(name: "AQUA_BGM")
+        playSound(name: "art.scnassets/AQUA_BGM")
     }
     
     override func viewWillAppear(_ animated: Bool) {

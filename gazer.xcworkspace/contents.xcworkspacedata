@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:gazer/gif"
+      name = "gif">
+      <FileRef
+         location = "group:zoo_ver1.gif">
+      </FileRef>
+      <FileRef
+         location = "group:aquarium_ver5.gif">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:gazer.xcodeproj">
    </FileRef>

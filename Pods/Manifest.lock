@@ -1,24 +1,24 @@
 PODS:
-  - GestureRecognizerClosures (4.0.1)
   - SCLAlertView (0.8)
+  - SwiftGifOrigin (1.6.1)
   - WSCoachMarksView (0.2)
 
 DEPENDENCIES:
-  - GestureRecognizerClosures
   - SCLAlertView
+  - SwiftGifOrigin
   - WSCoachMarksView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - GestureRecognizerClosures
     - SCLAlertView
+    - SwiftGifOrigin
     - WSCoachMarksView
 
 SPEC CHECKSUMS:
-  GestureRecognizerClosures: 1a13c2b6ec7b3a9c304387d5cb14b7fc5faf700a
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
   WSCoachMarksView: d1653c058c8289a300ddf28af9dd49eb659c9c42
 
-PODFILE CHECKSUM: 50a99ce409eb68ae7fee64b2eb4f6e3c0d88038b
+PODFILE CHECKSUM: 322c8787e845d4fed08a0d6f2fe3ab3f811eacb6
 
 COCOAPODS: 1.5.3

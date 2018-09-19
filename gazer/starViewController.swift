@@ -12,8 +12,9 @@ import ARKit
 import CoreLocation
 import SCLAlertView
 import WSCoachMarksView
+import AVFoundation
 
-class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate{
+class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate, AVAudioPlayerDelegate{
     
     @IBOutlet var sceneView: ARSCNView!
 
@@ -23,7 +24,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
         beforeMenu.modalTransitionStyle = .crossDissolve
         present(beforeMenu, animated: true, completion: nil)
-        
+        audioPlayer.stop()
     }
     
     @IBAction func pushCamera(_ sender: Any) {
@@ -33,6 +34,9 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
        SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
 
     }
+    
+    //音楽インスタンス
+    var audioPlayer: AVAudioPlayer!
     
     // 位置情報
     var locationManager: CLLocationManager!
@@ -773,6 +777,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 /*
         let f = self.view.bounds
         let arrCouach = [
@@ -795,6 +800,9 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         
         // 星表示(仮)
         //setStar(starPosition: starPosition)
+
+        //BGM再生
+        playSound(name: "STAR_BGM")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -853,6 +861,28 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         return node
     }
 */
+    //BGM
+    func playSound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+        
+        do {
+            // AVAudioPlayerのインスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            
+            // AVAudioPlayerのデリゲートをセット
+            audioPlayer.delegate = self
+            
+            //ループ再生
+            audioPlayer.numberOfLoops = -1
+            
+            // 音声の再生
+            audioPlayer.play()
+        } catch {
+        }
+    }
     
     // location
     func setupLocationManager() {

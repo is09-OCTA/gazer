@@ -23,7 +23,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     
     // ボタン画像の読み込み
     let starButtonImage:UIImage = UIImage(named: "StarButton002")!
-    let mappingButtonImage:UIImage = UIImage(named:"ZooButton001")!
+    let mappingButtonImage:UIImage = UIImage(named:"PMappingVer1.0.0")!
     let aquariumButtonImage:UIImage = UIImage(named:"AquariumButton007")!
     let zooButtonImage:UIImage = UIImage(named: "ZooButton001")!
     
@@ -70,7 +70,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         starShadowView.layer.shadowRadius = 5
         // 画像ボタン
         let starButton = UIButton(frame: starShadowView.bounds)
-        starButton.setBackgroundImage(zooButtonGifImage, for: [])
+        starButton.setBackgroundImage(starButtonImage, for: [])
         starButton.layer.cornerRadius = 12
         starButton.layer.masksToBounds = true
         // 影表示用のビューに画像ボタンを乗せる
@@ -89,7 +89,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         mappingShadowView.layer.shadowRadius = 5
         // 画像ボタン
         let mappingButton = UIButton(frame: mappingShadowView.bounds)
-        mappingButton.setBackgroundImage(zooButtonGifImage, for: [])
+        mappingButton.setBackgroundImage(mappingButtonImage, for: [])
         mappingButton.layer.cornerRadius = 12
         mappingButton.layer.masksToBounds = true
         // 影表示用のビューに画像ボタンを乗せる
@@ -108,7 +108,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         aquariumShadowView.layer.shadowRadius = 5
         // 画像ボタン
         let aquariumButton = UIButton(frame: aquariumShadowView.bounds)
-        aquariumButton.setBackgroundImage(zooButtonGifImage, for: [])
+        aquariumButton.setBackgroundImage(aquariumButtonGifImage, for: [])
         aquariumButton.layer.cornerRadius = 12
         aquariumButton.layer.masksToBounds = true
         // 影表示用のビューに画像ボタンを乗せる

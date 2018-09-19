@@ -20,6 +20,7 @@
 		B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */; };
 		C70E7AA520D77FF900255FD3 /* AquariumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */; };
 		C72D19D02151FCD20079C65D /* gif in Resources */ = {isa = PBXBuildFile; fileRef = C72D19CF2151FCD20079C65D /* gif */; };
+		C72D19D321520E450079C65D /* Aquarium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72D19D221520E450079C65D /* Aquarium.storyboard */; };
 		C75A04BA20B3D9EA00B0F36C /* decimalExpansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */; };
 		C788DA73209023700006ED25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA72209023700006ED25 /* AppDelegate.swift */; };
 		C788DA75209023700006ED25 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C788DA74209023700006ED25 /* art.scnassets */; };
@@ -66,8 +67,8 @@
 		B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumViewController.swift; sourceTree = "<group>"; };
-		C7109F7920FDB732009161A7 /* Aquarium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Aquarium.storyboard; sourceTree = "<group>"; };
 		C72D19CF2151FCD20079C65D /* gif */ = {isa = PBXFileReference; lastKnownFileType = folder; name = gif; path = ../../../../Desktop/gif; sourceTree = "<group>"; };
+		C72D19D221520E450079C65D /* Aquarium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Aquarium.storyboard; sourceTree = "<group>"; };
 		C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decimalExpansion.swift; sourceTree = "<group>"; };
 		C788DA6F209023700006ED25 /* gazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C788DA72209023700006ED25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,7 +159,7 @@
 		C7109F7820FDB661009161A7 /* Aquarium */ = {
 			isa = PBXGroup;
 			children = (
-				C7109F7920FDB732009161A7 /* Aquarium.storyboard */,
+				C72D19D221520E450079C65D /* Aquarium.storyboard */,
 				C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */,
 				2369C279213F8535005C3E23 /* AQUA_BGM.mp3 */,
 			);
@@ -348,6 +349,7 @@
 				C788DA75209023700006ED25 /* art.scnassets in Resources */,
 				8D7316E6212562DC00C8B476 /* RockMaterial3.mp4 in Resources */,
 				8D674B6B2105696E002A4627 /* sound.mp3 in Resources */,
+				C72D19D321520E450079C65D /* Aquarium.storyboard in Resources */,
 				8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */,
 				8D674B672104B7DF002A4627 /* RockMaterial2.mp4 in Resources */,
 				C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */,

@@ -24,7 +24,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
         beforeMenu.modalTransitionStyle = .crossDissolve
         present(beforeMenu, animated: true, completion: nil)
-        audioPlayer.stop()
+        // audioPlayer.stop()
     }
     
     @IBAction func pushCamera(_ sender: Any) {

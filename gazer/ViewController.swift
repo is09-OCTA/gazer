@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftGifOrigin
 
 class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControllerDelegate, UIGestureRecognizerDelegate{
 
@@ -25,6 +26,11 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     let mappingButtonImage:UIImage = UIImage(named:"ZooButton001")!
     let aquariumButtonImage:UIImage = UIImage(named:"AquariumButton007")!
     let zooButtonImage:UIImage = UIImage(named: "ZooButton001")!
+    
+    let starButtonGifImage = UIImage.gif(name:"gif/aquarium_ver5")
+    let mappingButtonGifImage = UIImage.gif(name:"gif/aquarium_ver5")
+    let zooButtonGifImage = UIImage.gif(name:"gif/zoo_ver1")
+    let aquariumButtonGifImage = UIImage.gif(name:"gif/aquarium_ver5")
 
     // 画面の横幅、縦幅
     let screenWidth:CGFloat = UIScreen.main.bounds.size.width
@@ -39,7 +45,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         // 表示窓のサイズと位置を設定
         scrollView.frame.size = CGSize(width: screenWidth, height: screenHeight)
         scrollView.frame = CGRect(x:0,y:gazerHedder,width:screenWidth,height:screenHeight)
-        // scrollView中身の大きさを設定　
+        // scrollView中身の大きさを設定
         scrollView.contentSize = CGSize(width: buttonWidth, height: gazerHedder+buttonHeight * 4.5)
         // scrollViewの跳ね返り
         scrollView.bounces = true
@@ -50,7 +56,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         view.addSubview(scrollView)
         // Delegateを設定
         scrollView.delegate = self
-    
+        
         // ScrollViewの中身
         
         // starButton
@@ -64,14 +70,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         starShadowView.layer.shadowRadius = 5
         // 画像ボタン
         let starButton = UIButton(frame: starShadowView.bounds)
-        starButton.setBackgroundImage(starButtonImage, for: [])
+        starButton.setBackgroundImage(zooButtonGifImage, for: [])
         starButton.layer.cornerRadius = 12
         starButton.layer.masksToBounds = true
         // 影表示用のビューに画像ボタンを乗せる
         starShadowView.addSubview(starButton)
         // 影表示+画像ボタンのビューを乗せる
         scrollView.addSubview(starShadowView)
- 
+        
         // mappingButton
         // 影表示用のビュー
         let mappingShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
@@ -83,14 +89,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         mappingShadowView.layer.shadowRadius = 5
         // 画像ボタン
         let mappingButton = UIButton(frame: mappingShadowView.bounds)
-        mappingButton.setBackgroundImage(mappingButtonImage, for: [])
+        mappingButton.setBackgroundImage(zooButtonGifImage, for: [])
         mappingButton.layer.cornerRadius = 12
         mappingButton.layer.masksToBounds = true
         // 影表示用のビューに画像ボタンを乗せる
         mappingShadowView.addSubview(mappingButton)
         // 影表示+画像ボタンのビューを乗せる
         scrollView.addSubview(mappingShadowView)
-
+        
         // aquariumButton
         // 影表示用のビュー
         let aquariumShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
@@ -102,7 +108,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         aquariumShadowView.layer.shadowRadius = 5
         // 画像ボタン
         let aquariumButton = UIButton(frame: aquariumShadowView.bounds)
-        aquariumButton.setBackgroundImage(aquariumButtonImage, for: [])
+        aquariumButton.setBackgroundImage(zooButtonGifImage, for: [])
         aquariumButton.layer.cornerRadius = 12
         aquariumButton.layer.masksToBounds = true
         // 影表示用のビューに画像ボタンを乗せる
@@ -120,14 +126,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         zooShadowView.layer.shadowRadius = 5
         // 画像ボタン
         let zooButton = UIButton(frame: zooShadowView.bounds)
-        zooButton.setBackgroundImage(zooButtonImage, for: [])
+        zooButton.setBackgroundImage(zooButtonGifImage, for: [])
         zooButton.layer.cornerRadius = 12
         zooButton.layer.masksToBounds = true
         // 影表示用のビューに画像ボタンを乗せる
         zooShadowView.addSubview(zooButton)
         // 影表示+画像ボタンのビューを乗せる
         scrollView.addSubview(zooShadowView)
-
+        
         // ボタンを押された時のフロー
         starButton.addTarget(self, action: (#selector(ViewController.goStarAction)), for:.touchUpInside)
         mappingButton.addTarget(self, action: (#selector(ViewController.goMappingAction)), for:.touchUpInside)

@@ -13,7 +13,10 @@
 		8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */; };
 		8D4FC93C20FD8E0400A924E4 /* ZooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */; };
 		8D4FC93E20FD8E9000A924E4 /* MappingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */; };
-		B13777AA2142BE5000FA80C5 /* gif in Resources */ = {isa = PBXBuildFile; fileRef = B13777A92142BE4F00FA80C5 /* gif */; };
+		8D520BD421247958007A6C40 /* main5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D520BD321247958007A6C40 /* main5.mp4 */; };
+		8D674B672104B7DF002A4627 /* RockMaterial2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D674B662104B7DF002A4627 /* RockMaterial2.mp4 */; };
+		8D674B6B2105696E002A4627 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D674B6A2105696E002A4627 /* sound.mp3 */; };
+		8D7316E6212562DC00C8B476 /* RockMaterial3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D7316E5212562DC00C8B476 /* RockMaterial3.mp4 */; };
 		B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */; };
 		C70E7AA520D77FF900255FD3 /* AquariumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */; };
 		C7109F7A20FDB732009161A7 /* Aquarium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7109F7920FDB732009161A7 /* Aquarium.storyboard */; };
@@ -56,7 +59,10 @@
 		8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mapping.storyboard; sourceTree = "<group>"; };
 		8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooViewController.swift; sourceTree = "<group>"; };
 		8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingViewController.swift; sourceTree = "<group>"; };
-		B13777A92142BE4F00FA80C5 /* gif */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gif; sourceTree = "<group>"; };
+		8D520BD321247958007A6C40 /* main5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = main5.mp4; sourceTree = "<group>"; };
+		8D674B662104B7DF002A4627 /* RockMaterial2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = RockMaterial2.mp4; sourceTree = "<group>"; };
+		8D674B6A2105696E002A4627 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
+		8D7316E5212562DC00C8B476 /* RockMaterial3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = RockMaterial3.mp4; sourceTree = "<group>"; };
 		B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +144,10 @@
 		8D4FC93A20FD8D7C00A924E4 /* Mapping */ = {
 			isa = PBXGroup;
 			children = (
+				8D7316E5212562DC00C8B476 /* RockMaterial3.mp4 */,
+				8D520BD321247958007A6C40 /* main5.mp4 */,
+				8D674B6A2105696E002A4627 /* sound.mp3 */,
+				8D674B662104B7DF002A4627 /* RockMaterial2.mp4 */,
 				8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */,
 				8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */,
 			);
@@ -335,10 +345,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C788DA75209023700006ED25 /* art.scnassets in Resources */,
-				B13777AA2142BE5000FA80C5 /* gif in Resources */,
+				8D7316E6212562DC00C8B476 /* RockMaterial3.mp4 in Resources */,
+				8D674B6B2105696E002A4627 /* sound.mp3 in Resources */,
 				8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */,
+				8D674B672104B7DF002A4627 /* RockMaterial2.mp4 in Resources */,
 				C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */,
-				C7109F7A20FDB732009161A7 /* Aquarium.storyboard in Resources */,
+				8D520BD421247958007A6C40 /* main5.mp4 in Resources */,
 				C788DA7C209023710006ED25 /* Assets.xcassets in Resources */,
 				8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */,
 				C788DA7A209023700006ED25 /* Main.storyboard in Resources */,

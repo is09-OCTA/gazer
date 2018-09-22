@@ -12,8 +12,15 @@ import SceneKit
 
 class ZooViewController: UIViewController, ARSCNViewDelegate {
   
-  @IBOutlet var sceneView: ARSCNView!
-  
+    @IBOutlet weak var sceneView: ARSCNView!
+    
+    @IBAction func openButton(_ sender: UIButton) {
+        let modalViewController = storyboard?.instantiateViewController(withIdentifier: "ModalViewController")
+        modalViewController?.modalPresentationStyle = .custom
+        modalViewController?.transitioningDelegate = self as UIViewControllerTransitioningDelegate
+        present(modalViewController!, animated: true, completion: nil)
+    }
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -78,4 +85,10 @@ class ZooViewController: UIViewController, ARSCNViewDelegate {
   
   func sessionInterruptionEnded(_ session: ARSession) {
   }
+}
+
+extension ZooViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return CustomPresentationController(presentedViewController: presented, presenting: presenting)
+    }
 }

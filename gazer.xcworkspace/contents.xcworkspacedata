@@ -2,19 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/kesk/Project/octa/gazer/gazer/Zoo/ZooModalViewController.swift">
-   </FileRef>
-   <Group
-      location = "group:gazer/gif"
-      name = "gif">
-      <FileRef
-         location = "group:zoo_ver1.gif">
-      </FileRef>
-      <FileRef
-         location = "group:aquarium_ver5.gif">
-      </FileRef>
-   </Group>
-   <FileRef
       location = "group:gazer.xcodeproj">
    </FileRef>
    <FileRef

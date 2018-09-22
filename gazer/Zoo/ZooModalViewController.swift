@@ -1,8 +1,9 @@
 //
 //  ZooModalViewController.swift
-//  
+//  gazer
 //
 //  Created by Keisuke Kitamura on 2018/09/22.
+//  Copyright © 2018年 OCTA. All rights reserved.
 //
 
 import UIKit
@@ -14,11 +15,6 @@ class ZooModalViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 
     /*
@@ -26,7 +22,7 @@ class ZooModalViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
+        // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
     */

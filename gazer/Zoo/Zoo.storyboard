@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="188" y="142.57871064467767"/>
         </scene>
-        <!--View Controller-->
+        <!--Zoo Modal View Controller-->
         <scene sceneID="bj0-yh-fkM">
             <objects>
-                <viewController storyboardIdentifier="ModalViewController" id="9KX-r4-d7m" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModalViewController" id="9KX-r4-d7m" customClass="ZooModalViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hUe-iZ-lQp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

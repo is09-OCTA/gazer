@@ -104,6 +104,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="button" destination="ux2-AB-gTj" id="Pom-G8-JLH"/>
                         <outlet property="sceneView" destination="RtJ-HJ-1VU" id="1Ep-Ue-0oG"/>
                     </connections>
                 </viewController>

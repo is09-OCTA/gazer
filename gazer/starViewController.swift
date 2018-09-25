@@ -26,12 +26,15 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         present(beforeMenu, animated: true, completion: nil)
         // audioPlayer.stop()
     }
+    @IBOutlet weak var button: UIButton!
     
     @IBAction func pushCamera(_ sender: Any) {
+        button.isHidden = true
         let image = getScreenShot()
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
         
        SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
+        button.isHidden = false
 
     }
     

@@ -17,16 +17,41 @@
                     <view key="view" contentMode="scaleToFill" id="Qtx-ul-9MV" customClass="ARSCNView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7E-Vm-WP4">
+                                <rect key="frame" x="147" y="578" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Ttd-6G-CW5"/>
+                                    <constraint firstAttribute="width" constant="80" id="ePP-eR-Xhn"/>
+                                </constraints>
+                                <state key="normal" image="cameraVer1.2.0">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushCamera:" destination="OqQ-DJ-pfP" eventType="touchUpInside" id="WoW-le-fki"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e7E-Vm-WP4" firstAttribute="top" secondItem="1ft-A7-cjb" secondAttribute="top" constant="558" id="DIG-BJ-pK1"/>
+                            <constraint firstItem="e7E-Vm-WP4" firstAttribute="leading" secondItem="1ft-A7-cjb" secondAttribute="leading" constant="147" id="ac1-eh-0kd"/>
+                            <constraint firstItem="1ft-A7-cjb" firstAttribute="trailing" secondItem="e7E-Vm-WP4" secondAttribute="trailing" constant="148" id="gGf-9M-9wp"/>
+                            <constraint firstItem="1ft-A7-cjb" firstAttribute="bottom" secondItem="e7E-Vm-WP4" secondAttribute="bottom" constant="9" id="sOE-mv-VXj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1ft-A7-cjb"/>
                     </view>
                     <connections>
+                        <outlet property="button" destination="e7E-Vm-WP4" id="bHb-JW-OAF"/>
                         <outlet property="sceneView" destination="Qtx-ul-9MV" id="Cj8-9F-BY0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNl-9K-hJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="93"/>
+            <point key="canvasLocation" x="100" y="92.203898050974516"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cameraVer1.2.0" width="128" height="128"/>
+    </resources>
 </document>

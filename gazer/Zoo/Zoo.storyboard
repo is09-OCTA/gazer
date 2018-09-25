@@ -17,10 +17,32 @@
                     <view key="view" contentMode="scaleToFill" id="tzH-tv-4em" customClass="ARSCNView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkq-rZ-sxf">
+                                <rect key="frame" x="147" y="578" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="HE7-77-7QQ"/>
+                                    <constraint firstAttribute="width" constant="80" id="oGW-99-8kU"/>
+                                </constraints>
+                                <state key="normal" image="cameraVer1.2.0">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushCamera:" destination="31F-TK-1mo" eventType="touchUpInside" id="7i2-dp-Bf3"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nYB-Yg-QEv" firstAttribute="trailing" secondItem="rkq-rZ-sxf" secondAttribute="trailing" constant="148" id="3A6-8A-gWc"/>
+                            <constraint firstItem="rkq-rZ-sxf" firstAttribute="top" secondItem="nYB-Yg-QEv" secondAttribute="top" constant="558" id="42k-Df-FEd"/>
+                            <constraint firstItem="nYB-Yg-QEv" firstAttribute="bottom" secondItem="rkq-rZ-sxf" secondAttribute="bottom" constant="9" id="BY2-7T-fzg"/>
+                            <constraint firstItem="rkq-rZ-sxf" firstAttribute="leading" secondItem="nYB-Yg-QEv" secondAttribute="leading" constant="147" id="eo8-LY-ofh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nYB-Yg-QEv"/>
                     </view>
                     <connections>
+                        <outlet property="button" destination="rkq-rZ-sxf" id="8dw-a0-RyP"/>
                         <outlet property="sceneView" destination="tzH-tv-4em" id="noP-ps-i42"/>
                     </connections>
                 </viewController>
@@ -29,4 +51,7 @@
             <point key="canvasLocation" x="188" y="143"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cameraVer1.2.0" width="128" height="128"/>
+    </resources>
 </document>

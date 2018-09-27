@@ -18,8 +18,6 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
     
     let zebraGifImage = UIImage.gif(name:"gif/Zebra.gif")
     
-//    let yellow    = UIColor(red: 255.0, green: 204.0, blue: 0, alpha: 1.0)
-    
     // ボタン配置変数
     var prevButton:CGFloat = 20
     
@@ -31,12 +29,6 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
     let width:CGFloat = UIScreen.main.bounds.size.width
     let height:CGFloat = UIScreen.main.bounds.size.height
     
-    @IBOutlet weak var backmenu: UIButton!
-    
-    @IBAction func backmenuButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,7 +39,6 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
         scrollView.frame = self.view.frame
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
-//        scrollView.backgroundColor = UIColor.yellow
         
         //scrollViewのサイズ。4ページなので、画面幅 × 3をしている。
         scrollView.contentSize = CGSize(width: CGFloat(page) * width, height: 0)
@@ -160,7 +151,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
         pageControl = UIPageControl()
         
         //pageControlの位置とサイズを設定
-        pageControl.frame = CGRect(x:0, y:height - 50, width:width, height:50)
+        pageControl.frame = CGRect(x:0, y:height - 100, width:width, height:50)
         
         //背景色の設定
         pageControl.backgroundColor = UIColor.black
@@ -173,11 +164,6 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
         
         
         self.view.addSubview(pageControl)
-        
-        // viewの中身
-
-        
-        
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

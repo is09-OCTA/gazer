@@ -16,7 +16,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
 
     let zebraImage:UIImage = UIImage(named:"Zebra")!
     
-    let zebraGifImage = UIImage.gif(name:"../gif/Zebra.gif")
+    let zebraGifImage = UIImage.gif(name:"ZooGif/Zebra.gif")
     
     // ボタン配置変数
     var prevButton:CGFloat = 20
@@ -144,6 +144,28 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 
                 
                 
+            }else if i == 1{
+                
+                //Zebra
+                //label.text = "Zebra"
+                //scrollView.addSubview(label)
+                // 影表示用のビュー
+                let zebraShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth + 50, height: buttonHeight ))
+                prevButton = buttonHeight / 2 + 250
+                zebraShadowView.center = CGPoint(x: width  / 2 - 100, y: prevButton - 150)
+                zebraShadowView.layer.shadowColor = UIColor.black.cgColor
+                zebraShadowView.layer.shadowOpacity = 0.5
+                zebraShadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
+                zebraShadowView.layer.shadowRadius = 5
+                // 画像ボタン
+                let zebraButton = UIButton(frame: zebraShadowView.bounds)
+                zebraButton.setBackgroundImage(zebraGifImage, for: [])
+                zebraButton.layer.cornerRadius = 12
+                zebraButton.layer.masksToBounds = true
+                // 影表示用のビューに画像ボタンを乗せる
+                zebraShadowView.addSubview(zebraButton)
+                // 影表示+画像ボタンのビューを乗せる
+                scrollView.addSubview(zebraShadowView)
             }
         }
         

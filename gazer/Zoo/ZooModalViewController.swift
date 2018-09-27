@@ -10,7 +10,7 @@ import UIKit
 import SwiftGifOrigin
 
 class ZooModalViewController: UIViewController, UIScrollViewDelegate {
-    
+
     private var pageControl: UIPageControl!
     private var scrollView: UIScrollView!
 
@@ -175,12 +175,9 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
         //pageControlの位置とサイズを設定
         pageControl.frame = CGRect(x:0, y:height - 100, width:width, height:50)
         
-        //背景色の設定
-        pageControl.backgroundColor = UIColor.white
-        
         // インジケータの色合い
-        pageControl.currentPageIndicatorTintColor = UIColor.black
-        pageControl.pageIndicatorTintColor = UIColor.gray
+        pageControl.currentPageIndicatorTintColor = UIColor.init(red: 56/255, green: 151/255, blue: 240/255, alpha: 1.0)
+        pageControl.pageIndicatorTintColor = UIColor.init(red: 219/255, green: 219/255, blue: 219/255, alpha: 1.0)
         
         //ページ数の設定
         pageControl.numberOfPages = page

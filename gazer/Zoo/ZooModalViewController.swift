@@ -154,7 +154,11 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
         pageControl.frame = CGRect(x:0, y:height - 100, width:width, height:50)
         
         //背景色の設定
-        pageControl.backgroundColor = UIColor.black
+        pageControl.backgroundColor = UIColor.white
+        
+        // インジケータの色合い
+        pageControl.currentPageIndicatorTintColor = UIColor.black
+        pageControl.pageIndicatorTintColor = UIColor.gray
         
         //ページ数の設定
         pageControl.numberOfPages = page

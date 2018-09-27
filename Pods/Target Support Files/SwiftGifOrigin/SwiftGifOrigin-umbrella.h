@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double GestureRecognizerClosuresVersionNumber;
-FOUNDATION_EXPORT const unsigned char GestureRecognizerClosuresVersionString[];
+FOUNDATION_EXPORT double SwiftGifOriginVersionNumber;
+FOUNDATION_EXPORT const unsigned char SwiftGifOriginVersionString[];
 

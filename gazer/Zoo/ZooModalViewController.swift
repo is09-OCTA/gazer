@@ -14,16 +14,16 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
     private var pageControl: UIPageControl!
     private var scrollView: UIScrollView!
 
-    let zebraImage:UIImage = UIImage(named:"Zebra")!
-    
-    let zebraGifImage = UIImage.gif(name:"ZooGif/Zebra.gif")
+    let zebraImage:UIImage = UIImage(named:"ZooImage/Zebra")!
+    let unicornImage:UIImage = UIImage(named:"ZooImage/Unicorn")!
+
     
     // ボタン配置変数
     var prevButton:CGFloat = 20
     
     // ボタンの横幅、縦幅設定定数
-    let buttonWidth:CGFloat = 100
-    let buttonHeight:CGFloat = 100
+    let buttonWidth:CGFloat = 160
+    let buttonHeight:CGFloat = 160
     
     // 画面の横幅、縦幅
     let width:CGFloat = UIScreen.main.bounds.size.width
@@ -60,7 +60,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 //label.text = "Zebra"
                 //scrollView.addSubview(label)
                 // 影表示用のビュー
-                let zebraShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth + 50, height: buttonHeight ))
+                let zebraShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
                 prevButton = buttonHeight / 2 + 250
                 zebraShadowView.center = CGPoint(x: width  / 2 - 100, y: prevButton - 150)
                 zebraShadowView.layer.shadowColor = UIColor.black.cgColor
@@ -69,7 +69,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 zebraShadowView.layer.shadowRadius = 5
                 // 画像ボタン
                 let zebraButton = UIButton(frame: zebraShadowView.bounds)
-                zebraButton.setBackgroundImage(zebraGifImage, for: [])
+                zebraButton.setBackgroundImage(zebraImage, for: [])
                 zebraButton.layer.cornerRadius = 12
                 zebraButton.layer.masksToBounds = true
                 // 影表示用のビューに画像ボタンを乗せる
@@ -81,7 +81,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 //label.text = "Unicorn"
                 //scrollView.addSubview(label)
                 // 影表示用のビュー
-                let unicornShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth + 50, height: buttonHeight ))
+                let unicornShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
                 prevButton = buttonHeight / 2 + 250
                 unicornShadowView.center = CGPoint(x: width  / 2 + 90, y: prevButton - 150)
                 unicornShadowView.layer.shadowColor = UIColor.black.cgColor
@@ -90,7 +90,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 unicornShadowView.layer.shadowRadius = 5
                 // 画像ボタン
                 let unicornButton = UIButton(frame: unicornShadowView.bounds)
-                unicornButton.setBackgroundImage(zebraImage, for: [])
+                unicornButton.setBackgroundImage(unicornImage, for: [])
                 unicornButton.layer.cornerRadius = 12
                 unicornButton.layer.masksToBounds = true
                 // 影表示用のビューに画像ボタンを乗せる
@@ -103,7 +103,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 //label.text = "Sheep"
                 //scrollView.addSubview(label)
                 // 影表示用のビュー
-                let sheepShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth + 50, height: buttonHeight ))
+                let sheepShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
                 prevButton = buttonHeight / 2 + 250
                 sheepShadowView.center = CGPoint(x: width  / 2 - 100, y: prevButton + 100)
                 sheepShadowView.layer.shadowColor = UIColor.black.cgColor
@@ -125,7 +125,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 //label.text = "Hippopotamus"
                 //scrollView.addSubview(label)
                 // 影表示用のビュー
-                let HippopotamusShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth + 50, height: buttonHeight ))
+                let HippopotamusShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
                 prevButton = buttonHeight / 2 + 250
                 HippopotamusShadowView.center = CGPoint(x: width  / 2 + 90, y: prevButton + 100)
                 HippopotamusShadowView.layer.shadowColor = UIColor.black.cgColor
@@ -145,12 +145,12 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 
                 
             }else if i == 1{
-                
+/*
                 //Zebra
                 //label.text = "Zebra"
                 //scrollView.addSubview(label)
                 // 影表示用のビュー
-                let zebraShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth + 50, height: buttonHeight ))
+                let zebraShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
                 prevButton = buttonHeight / 2 + 250
                 zebraShadowView.center = CGPoint(x: width  / 2 - 100, y: prevButton - 150)
                 zebraShadowView.layer.shadowColor = UIColor.black.cgColor
@@ -159,13 +159,14 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 zebraShadowView.layer.shadowRadius = 5
                 // 画像ボタン
                 let zebraButton = UIButton(frame: zebraShadowView.bounds)
-                zebraButton.setBackgroundImage(zebraGifImage, for: [])
+                zebraButton.setBackgroundImage(gorillaGifImage, for: [])
                 zebraButton.layer.cornerRadius = 12
                 zebraButton.layer.masksToBounds = true
                 // 影表示用のビューに画像ボタンを乗せる
                 zebraShadowView.addSubview(zebraButton)
                 // 影表示+画像ボタンのビューを乗せる
                 scrollView.addSubview(zebraShadowView)
+*/
             }
         }
         
@@ -173,7 +174,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
         pageControl = UIPageControl()
         
         //pageControlの位置とサイズを設定
-        pageControl.frame = CGRect(x:0, y:height - 100, width:width, height:50)
+        pageControl.frame = CGRect(x:0, y:height - 110, width:width, height:50)
         
         // インジケータの色合い
         pageControl.currentPageIndicatorTintColor = UIColor.init(red: 56/255, green: 151/255, blue: 240/255, alpha: 1.0)
@@ -197,6 +198,5 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
             pageControl.currentPage = Int(scrollView.contentOffset.x / scrollView.frame.width)
         }
     }
-
 
 }

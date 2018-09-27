@@ -10,7 +10,7 @@ import UIKit
 import SwiftGifOrigin
 
 class ZooModalViewController: UIViewController, UIScrollViewDelegate {
-    
+
     private var pageControl: UIPageControl!
     private var scrollView: UIScrollView!
 

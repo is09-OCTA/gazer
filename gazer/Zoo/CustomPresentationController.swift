@@ -43,7 +43,7 @@ class CustomPresentationController: UIPresentationController {
         }
     }
     
-    let margin = (x: CGFloat(10), y: CGFloat(220.0))
+    let margin = (x: CGFloat(0), y: CGFloat(60))
     // 子のコンテナサイズを返す
     override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
         return CGSize(width: parentSize.width - margin.x, height: parentSize.height - margin.y)
@@ -56,7 +56,7 @@ class CustomPresentationController: UIPresentationController {
         let childContentSize = size(forChildContentContainer: presentedViewController, withParentContainerSize: containerBounds.size)
         presentedViewFrame.size = childContentSize
         presentedViewFrame.origin.x = margin.x / 2.0
-        presentedViewFrame.origin.y = margin.y / 2.0
+        presentedViewFrame.origin.y = margin.y
         
         return presentedViewFrame
     }
@@ -66,6 +66,7 @@ class CustomPresentationController: UIPresentationController {
         overlayView.frame = containerView!.bounds
         presentedView?.frame = frameOfPresentedViewInContainerView
         presentedView?.layer.cornerRadius = 10
+        presentedView?.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         presentedView?.clipsToBounds = true
     }
     

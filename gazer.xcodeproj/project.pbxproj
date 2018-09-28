@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		09E610C2A13CBB0FDFD880FF /* Pods_gazer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */; };
-		2356AAD9215DC30400EAA4E8 /* aqua_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2356AAD8215DC30400EAA4E8 /* aqua_bgm.mp3 */; };
-		2356AADB215DC3B700EAA4E8 /* star_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2356AADA215DC3B700EAA4E8 /* star_bgm.mp3 */; };
 		235E628820902DF50054ACE2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235E628720902DF50054ACE2 /* CoreLocation.framework */; };
 		8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */; };
 		8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */; };
@@ -52,8 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2356AAD8215DC30400EAA4E8 /* aqua_bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = aqua_bgm.mp3; sourceTree = "<group>"; };
-		2356AADA215DC3B700EAA4E8 /* star_bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = star_bgm.mp3; sourceTree = "<group>"; };
 		235E628720902DF50054ACE2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		528B2B857C8684EC0C142CDD /* Pods_gazerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4886E88D8C79D7F80446BC /* Pods_gazerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +157,6 @@
 		C7109F7820FDB661009161A7 /* Aquarium */ = {
 			isa = PBXGroup;
 			children = (
-				2356AAD8215DC30400EAA4E8 /* aqua_bgm.mp3 */,
 				C72D19D221520E450079C65D /* Aquarium.storyboard */,
 				C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */,
 			);
@@ -214,7 +209,6 @@
 				C788DA7B209023710006ED25 /* Assets.xcassets */,
 				C788DA7D209023710006ED25 /* LaunchScreen.storyboard */,
 				C788DA80209023710006ED25 /* Info.plist */,
-				2356AADA215DC3B700EAA4E8 /* star_bgm.mp3 */,
 			);
 			path = gazer;
 			sourceTree = "<group>";
@@ -349,7 +343,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C788DA75209023700006ED25 /* art.scnassets in Resources */,
-				2356AADB215DC3B700EAA4E8 /* star_bgm.mp3 in Resources */,
 				8D7316E6212562DC00C8B476 /* RockMaterial3.mp4 in Resources */,
 				8D674B6B2105696E002A4627 /* sound.mp3 in Resources */,
 				C72D19D321520E450079C65D /* Aquarium.storyboard in Resources */,
@@ -360,7 +353,6 @@
 				C788DA7C209023710006ED25 /* Assets.xcassets in Resources */,
 				C72D19E821523F120079C65D /* gif in Resources */,
 				8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */,
-				2356AAD9215DC30400EAA4E8 /* aqua_bgm.mp3 in Resources */,
 				C788DA7A209023700006ED25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,10 +17,31 @@
                     <view key="view" contentMode="scaleToFill" id="70m-a5-hCs" customClass="ARSCNView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sq6-5f-7Mm">
+                                <rect key="frame" x="147" y="578" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="5MN-JH-t6h"/>
+                                    <constraint firstAttribute="width" constant="80" id="wCl-Ll-fYU"/>
+                                </constraints>
+                                <state key="normal" image="cameraVer1.2.0">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushCamera:" destination="sbu-jk-AGC" eventType="touchUpInside" id="4Af-bW-dxU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gPH-NV-cAn" firstAttribute="trailing" secondItem="sq6-5f-7Mm" secondAttribute="trailing" constant="148" id="AMJ-VT-VFS"/>
+                            <constraint firstItem="sq6-5f-7Mm" firstAttribute="leading" secondItem="gPH-NV-cAn" secondAttribute="leading" constant="147" id="S2P-f1-anY"/>
+                            <constraint firstItem="gPH-NV-cAn" firstAttribute="bottom" secondItem="sq6-5f-7Mm" secondAttribute="bottom" constant="9" id="tnT-ez-rlG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gPH-NV-cAn"/>
                     </view>
                     <connections>
+                        <outlet property="button" destination="sq6-5f-7Mm" id="v9G-Yu-Pxe"/>
                         <outlet property="sceneView" destination="70m-a5-hCs" id="u8W-2L-hWZ"/>
                     </connections>
                 </viewController>
@@ -29,4 +50,7 @@
             <point key="canvasLocation" x="158" y="136"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cameraVer1.2.0" width="128" height="128"/>
+    </resources>
 </document>

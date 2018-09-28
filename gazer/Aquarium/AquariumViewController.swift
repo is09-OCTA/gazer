@@ -10,10 +10,22 @@ import UIKit
 import ARKit
 import SceneKit
 import AVFoundation
+import SCLAlertView
 
 class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate{
 
     @IBOutlet var sceneView: ARSCNView!
+    
+    @IBOutlet weak var button: UIButton!
+    
+    @IBAction func pushCamera(_ sender: Any) {
+        button.isHidden = true //ボタン非表示
+        let image = getScreenShot()
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+        
+        SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
+        button.isHidden = false //ボタン表示
+    }
     
     //音楽インスタンス
     var audioPlayer: AVAudioPlayer!
@@ -23,8 +35,8 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
         
         sceneView.delegate = self
         
-        //BGM再生
-        playSound(name: "AQUA_BGM")
+        //BGM再生a
+        playSound(name: "aqua_bgm")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,5 +117,19 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
             audioPlayer.play()
         } catch {
         }
+    }
+    
+    // Camera
+    private func getScreenShot() -> UIImage? {
+        guard let view = self.view else {
+            return nil
+        }
+        
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
     }
 }

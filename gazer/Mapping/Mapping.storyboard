@@ -21,8 +21,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sq6-5f-7Mm">
                                 <rect key="frame" x="147" y="578" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="SC0-00-SS2"/>
-                                    <constraint firstAttribute="height" constant="80" id="iUF-fR-WFF"/>
+                                    <constraint firstAttribute="height" constant="80" id="5MN-JH-t6h"/>
+                                    <constraint firstAttribute="width" constant="80" id="wCl-Ll-fYU"/>
                                 </constraints>
                                 <state key="normal" image="cameraVer1.2.0">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,10 +34,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gPH-NV-cAn" firstAttribute="bottom" secondItem="sq6-5f-7Mm" secondAttribute="bottom" constant="9" id="MjX-eT-u9Q"/>
-                            <constraint firstItem="sq6-5f-7Mm" firstAttribute="leading" secondItem="gPH-NV-cAn" secondAttribute="leading" constant="147" id="ZpI-La-Gsv"/>
-                            <constraint firstItem="sq6-5f-7Mm" firstAttribute="top" secondItem="gPH-NV-cAn" secondAttribute="top" constant="558" id="eYg-cP-5Lp"/>
-                            <constraint firstItem="gPH-NV-cAn" firstAttribute="trailing" secondItem="sq6-5f-7Mm" secondAttribute="trailing" constant="148" id="oAz-lv-bGY"/>
+                            <constraint firstItem="gPH-NV-cAn" firstAttribute="trailing" secondItem="sq6-5f-7Mm" secondAttribute="trailing" constant="148" id="AMJ-VT-VFS"/>
+                            <constraint firstItem="sq6-5f-7Mm" firstAttribute="leading" secondItem="gPH-NV-cAn" secondAttribute="leading" constant="147" id="S2P-f1-anY"/>
+                            <constraint firstItem="gPH-NV-cAn" firstAttribute="bottom" secondItem="sq6-5f-7Mm" secondAttribute="bottom" constant="9" id="tnT-ez-rlG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gPH-NV-cAn"/>
                     </view>

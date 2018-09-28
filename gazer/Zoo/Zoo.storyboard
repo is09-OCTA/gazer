@@ -21,8 +21,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkq-rZ-sxf">
                                 <rect key="frame" x="147" y="578" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="HE7-77-7QQ"/>
-                                    <constraint firstAttribute="width" constant="80" id="oGW-99-8kU"/>
+                                    <constraint firstAttribute="width" constant="80" id="fX6-ue-E8w"/>
+                                    <constraint firstAttribute="height" constant="80" id="zRG-p3-ESK"/>
                                 </constraints>
                                 <state key="normal" image="cameraVer1.2.0">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,10 +34,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="nYB-Yg-QEv" firstAttribute="trailing" secondItem="rkq-rZ-sxf" secondAttribute="trailing" constant="148" id="3A6-8A-gWc"/>
-                            <constraint firstItem="rkq-rZ-sxf" firstAttribute="top" secondItem="nYB-Yg-QEv" secondAttribute="top" constant="558" id="42k-Df-FEd"/>
-                            <constraint firstItem="nYB-Yg-QEv" firstAttribute="bottom" secondItem="rkq-rZ-sxf" secondAttribute="bottom" constant="9" id="BY2-7T-fzg"/>
-                            <constraint firstItem="rkq-rZ-sxf" firstAttribute="leading" secondItem="nYB-Yg-QEv" secondAttribute="leading" constant="147" id="eo8-LY-ofh"/>
+                            <constraint firstItem="nYB-Yg-QEv" firstAttribute="trailing" secondItem="rkq-rZ-sxf" secondAttribute="trailing" constant="148" id="E1u-4D-nKb"/>
+                            <constraint firstItem="nYB-Yg-QEv" firstAttribute="bottom" secondItem="rkq-rZ-sxf" secondAttribute="bottom" constant="9" id="Mjh-e5-Gi6"/>
+                            <constraint firstItem="rkq-rZ-sxf" firstAttribute="leading" secondItem="nYB-Yg-QEv" secondAttribute="leading" constant="147" id="XvB-44-kOc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nYB-Yg-QEv"/>
                     </view>

@@ -43,7 +43,7 @@ class CustomPresentationController: UIPresentationController {
         }
     }
     
-    let margin = (x: CGFloat(0), y: CGFloat(UIScreen.main.bounds.size.height / 2.8))
+    let margin = (x: CGFloat(0), y: CGFloat(UIScreen.main.bounds.size.height * (3.5 / 10)))
     // 子のコンテナサイズを返す
     override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
         return CGSize(width: parentSize.width - margin.x, height: parentSize.height - margin.y)

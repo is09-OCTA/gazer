@@ -16,6 +16,9 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
 
     let zebraImage:UIImage = UIImage(named:"ZooImage/Zebra")!
     let unicornImage:UIImage = UIImage(named:"ZooImage/Unicorn")!
+    let sheepImage:UIImage = UIImage(named: "ZooImage/Sheep")!
+    let hippopotamusImage:UIImage = UIImage(named: "ZooImage/Hippopotamus")!
+    let sheepImage:UIImage = UIImage(named: "ZooImage/Sheep")!
 
     
     // ボタン配置変数

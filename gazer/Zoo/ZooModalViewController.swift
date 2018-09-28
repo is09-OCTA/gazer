@@ -22,8 +22,8 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
     var prevButton:CGFloat = 20
     
     // ボタンの横幅、縦幅設定定数
-    let buttonWidth:CGFloat = 160
-    let buttonHeight:CGFloat = 160
+    let buttonWidth:CGFloat = 180
+    let buttonHeight:CGFloat = 180
     
     // 画面の横幅、縦幅
     let width:CGFloat = UIScreen.main.bounds.size.width
@@ -55,14 +55,14 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
             
             
             if i == 0{
-                
+
                 //Zebra
                 //label.text = "Zebra"
                 //scrollView.addSubview(label)
                 // 影表示用のビュー
                 let zebraShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
                 prevButton = buttonHeight / 2 + 250
-                zebraShadowView.center = CGPoint(x: width  / 2 - 100, y: prevButton - 150)
+                zebraShadowView.center = CGPoint(x: width  / 2 - 95, y: prevButton - 240)
                 zebraShadowView.layer.shadowColor = UIColor.black.cgColor
                 zebraShadowView.layer.shadowOpacity = 0.5
                 zebraShadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
@@ -76,14 +76,14 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 zebraShadowView.addSubview(zebraButton)
                 // 影表示+画像ボタンのビューを乗せる
                 scrollView.addSubview(zebraShadowView)
-                
+
                 //Unicorn
                 //label.text = "Unicorn"
                 //scrollView.addSubview(label)
                 // 影表示用のビュー
                 let unicornShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
                 prevButton = buttonHeight / 2 + 250
-                unicornShadowView.center = CGPoint(x: width  / 2 + 90, y: prevButton - 150)
+                unicornShadowView.center = CGPoint(x: width  / 2 + 95, y: prevButton - 240)
                 unicornShadowView.layer.shadowColor = UIColor.black.cgColor
                 unicornShadowView.layer.shadowOpacity = 0.5
                 unicornShadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
@@ -105,7 +105,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 // 影表示用のビュー
                 let sheepShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
                 prevButton = buttonHeight / 2 + 250
-                sheepShadowView.center = CGPoint(x: width  / 2 - 100, y: prevButton + 100)
+                sheepShadowView.center = CGPoint(x: width  / 2 - 95, y: prevButton - 55)
                 sheepShadowView.layer.shadowColor = UIColor.black.cgColor
                 sheepShadowView.layer.shadowOpacity = 0.5
                 sheepShadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
@@ -127,7 +127,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 // 影表示用のビュー
                 let HippopotamusShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
                 prevButton = buttonHeight / 2 + 250
-                HippopotamusShadowView.center = CGPoint(x: width  / 2 + 90, y: prevButton + 100)
+                HippopotamusShadowView.center = CGPoint(x: width  / 2 + 95, y: prevButton - 55)
                 HippopotamusShadowView.layer.shadowColor = UIColor.black.cgColor
                 HippopotamusShadowView.layer.shadowOpacity = 0.5
                 HippopotamusShadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
@@ -141,6 +141,40 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 HippopotamusShadowView.addSubview(HippopotamusButton)
                 // 影表示+画像ボタンのビューを乗せる
                 scrollView.addSubview(HippopotamusShadowView)
+/*
+                let button1 = UIButton()
+                button1.frame = CGRect(x:0, y:0,
+                                      width:buttonWidth, height:buttonHeight)
+                prevButton = buttonHeight / 2 + 250
+                button1.center = CGPoint(x: width  / 2 - 95, y: prevButton - 240)
+                button1.setBackgroundImage(zebraImage, for: [])
+                scrollView.addSubview(button1)
+                
+                let button2 = UIButton()
+                button2.frame = CGRect(x:0, y:0,
+                                       width:buttonWidth, height:buttonHeight)
+                prevButton = buttonHeight / 2 + 250
+                button2.center = CGPoint(x: width  / 2 + 95, y: prevButton - 240)
+                button2.setBackgroundImage(zebraImage, for: [])
+                scrollView.addSubview(button2)
+                
+                let button3 = UIButton()
+                button3.frame = CGRect(x:0, y:0,
+                                       width:buttonWidth, height:buttonHeight)
+                prevButton = buttonHeight / 2 + 250
+                button3.center = CGPoint(x: width  / 2 - 95, y: prevButton - 50)
+                button3.setBackgroundImage(zebraImage, for: [])
+                scrollView.addSubview(button3)
+                
+                let button4 = UIButton()
+                button4.frame = CGRect(x:0, y:0,
+                                       width:buttonWidth, height:buttonHeight)
+                prevButton = buttonHeight / 2 + 250
+                button4.center = CGPoint(x: width  / 2 + 95, y: prevButton - 50)
+                button4.setBackgroundImage(zebraImage, for: [])
+                scrollView.addSubview(button4)
+                
+*/
                 
                 
                 
@@ -174,7 +208,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
         pageControl = UIPageControl()
         
         //pageControlの位置とサイズを設定
-        pageControl.frame = CGRect(x:0, y:height - 110, width:width, height:50)
+        pageControl.frame = CGRect(x:0, y:height - 170, width:width, height:50)
         
         // インジケータの色合い
         pageControl.currentPageIndicatorTintColor = UIColor.init(red: 56/255, green: 151/255, blue: 240/255, alpha: 1.0)

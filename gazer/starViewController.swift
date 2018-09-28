@@ -806,7 +806,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         //setStar(starPosition: starPosition)
 
         //BGM再生
-        playSound(name: "STAR_BGM")
+        playSound(name: "star_bgm")
     }
     
     override func viewWillAppear(_ animated: Bool) {

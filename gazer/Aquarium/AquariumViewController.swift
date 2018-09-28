@@ -35,7 +35,7 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
         
         sceneView.delegate = self
         
-        //BGM再生
+        //BGM再生a
         playSound(name: "aqua_bgm")
     }
     

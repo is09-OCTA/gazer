@@ -27,6 +27,15 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
         button.isHidden = false //ボタン表示
     }
     
+    // スワイプしたらメニュー画面戻る
+    @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
+        beforeMenu.modalTransitionStyle = .crossDissolve
+        present(beforeMenu, animated: true, completion: nil)
+        audioPlayer.stop()
+    }
+    
     //音楽インスタンス
     var audioPlayer: AVAudioPlayer!
     

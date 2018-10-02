@@ -33,12 +33,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="nYB-Yg-QEv" firstAttribute="trailing" secondItem="rkq-rZ-sxf" secondAttribute="trailing" constant="148" id="E1u-4D-nKb"/>
                             <constraint firstItem="nYB-Yg-QEv" firstAttribute="bottom" secondItem="rkq-rZ-sxf" secondAttribute="bottom" constant="9" id="Mjh-e5-Gi6"/>
                             <constraint firstItem="rkq-rZ-sxf" firstAttribute="leading" secondItem="nYB-Yg-QEv" secondAttribute="leading" constant="147" id="XvB-44-kOc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nYB-Yg-QEv"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="6eG-2U-qqv" appends="YES" id="V3t-tn-Dsy"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="button" destination="rkq-rZ-sxf" id="8dw-a0-RyP"/>
@@ -46,6 +50,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="da6-Nm-gjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="6eG-2U-qqv">
+                    <connections>
+                        <action selector="retunMenuSwipe:" destination="31F-TK-1mo" id="RJ7-Ef-tld"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="188" y="143"/>
         </scene>

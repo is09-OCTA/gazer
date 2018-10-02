@@ -25,6 +25,14 @@ class ZooViewController: UIViewController, ARSCNViewDelegate {
         SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
         button.isHidden = false //ボタン表示
     }
+    
+    // スワイプしたらメニュー画面戻る
+    @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
+        beforeMenu.modalTransitionStyle = .crossDissolve
+        present(beforeMenu, animated: true, completion: nil)
+    }
   
   override func viewDidLoad() {
     super.viewDidLoad()

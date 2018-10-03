@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		013259D21396CE9B8E7A51E44641C62A /* WSCoachMarksView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC372966044BDCC0E1774569507BB81 /* WSCoachMarksView-dummy.m */; };
-		02271DA857CBD2626E80CAC4037EFED2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12992E853CAE14F2102525E0D84ADAB5 /* Foundation.framework */; };
 		18B0C3B79BB25AD76EE0D062FCBA01EB /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE43808BB7698980A40DD02C50A8C6 /* SCLExtensions.swift */; };
 		20D477AD716620BE5A68EE4E372DD639 /* SwiftGifOrigin-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFBEC203A917715CD518D3B968F4C9F /* SwiftGifOrigin-dummy.m */; };
-		2B4C7CD012ED3ED43A12ABA4352D3B22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12992E853CAE14F2102525E0D84ADAB5 /* Foundation.framework */; };
 		3D8C1B1036894A66C0A4CE202FDBACB3 /* WSCoachMarksView.h in Headers */ = {isa = PBXBuildFile; fileRef = 729E18DC5E317B5BFBA9798EA14C1CF8 /* WSCoachMarksView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		475C0E8A75DB63400E8B96499CE2690F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138FC2FD8C7A4E1183F234A0D2F30D46 /* Foundation.framework */; };
+		490A405BB7FB4ECCB626E11FBB81C3A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138FC2FD8C7A4E1183F234A0D2F30D46 /* Foundation.framework */; };
 		54CAEBF87688B0FD584C059E72372C50 /* Pods-gazer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 26A83ABFF7EBA9309C578F48B853253F /* Pods-gazer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		59A08ED7D3A67AAA4B96FD67589A38D3 /* SwiftGifOrigin-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C5CCDB877502A27162966ED1924F520 /* SwiftGifOrigin-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B2B9A39D6434143A7F83474A32B6E5D /* Pods-gazer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B10ABE9F969AB7CCC68740060189621 /* Pods-gazer-dummy.m */; };
-		695B081D5073671D3688D52005183447 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12992E853CAE14F2102525E0D84ADAB5 /* Foundation.framework */; };
+		5E7F2815C7AFF7F15EFB9911C3325D0A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3283FBA53A4CB3268613A207DF79EF /* CoreGraphics.framework */; };
 		78E7DC1E075A22242CC0CD0F860C7CA7 /* SCLAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B815F806118B576DF4DE2724F0ED4984 /* SCLAlertView-dummy.m */; };
 		7C7DB3FC9E89A1983901BEE47EB2A040 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451D1EF2FE51D9A7F69547BAE34B185 /* SCLAlertView.swift */; };
-		822BBD8BD7A7215F845DF2BE02F4C6BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 409899CE1143F81E8130E2069D59605B /* CoreGraphics.framework */; };
-		8B714F8932BB41140C684AE0783EC52F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7BDB2580B244756CFA046131516EF2 /* QuartzCore.framework */; };
 		981C906E92A13683A0D7E5A7A19994EA /* WSCoachMarksView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 43060311C70AE73C1C3F70EF0ADA814C /* WSCoachMarksView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AF7E9F3110255F6E33C6A1FB35354304 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E5085C7580DD7B2E44D55A172B12C /* UIImage+Gif.swift */; };
+		B5A78873CE4A45076B25387E9A589B65 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138FC2FD8C7A4E1183F234A0D2F30D46 /* Foundation.framework */; };
+		BBFD8D9263D5A6B7A0EAE7C7FA7F9902 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF35D3E58A7DB2E4AEE747C629DEFD98 /* QuartzCore.framework */; };
 		C824E1A0C768F3DDF3889DD6D22CE0BA /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70112CE0A6C91EB7FDD8023E8542BB8E /* WSCoachMarksView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		D9414730D2B5D9806ECE4A72CCD66F69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12992E853CAE14F2102525E0D84ADAB5 /* Foundation.framework */; };
 		F3F93EC607895438F177D05706483973 /* SCLAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FBE416A8BC974F757C0DA2EEF3B01AAE /* SCLAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5A90703FF4B35C05D4DA27B0D83D944 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 138FC2FD8C7A4E1183F234A0D2F30D46 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,7 @@
 /* Begin PBXFileReference section */
 		02AACC7AF90B16B98C1E922A74FD6821 /* Pods-gazer-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-gazer-frameworks.sh"; sourceTree = "<group>"; };
 		0BF6EA95F3A918FB074850CB45543958 /* SCLAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SCLAlertView.framework; path = SCLAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		12992E853CAE14F2102525E0D84ADAB5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		138FC2FD8C7A4E1183F234A0D2F30D46 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		171AD0939ED4B9504517CC8D5F92E481 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		184A8F5B955DF306B078F6ED1E6AE8B2 /* WSCoachMarksView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WSCoachMarksView.modulemap; sourceTree = "<group>"; };
 		1B10ABE9F969AB7CCC68740060189621 /* Pods-gazer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-gazer-dummy.m"; sourceTree = "<group>"; };
@@ -66,14 +66,12 @@
 		318AE84E7D2DA038B9691E478FF0F4E6 /* WSCoachMarksView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WSCoachMarksView-prefix.pch"; sourceTree = "<group>"; };
 		3E0FDBC880B1FBFD4C3ACB4302C18AFE /* Pods_gazer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_gazer.framework; path = "Pods-gazer.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EC372966044BDCC0E1774569507BB81 /* WSCoachMarksView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WSCoachMarksView-dummy.m"; sourceTree = "<group>"; };
-		409899CE1143F81E8130E2069D59605B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		43060311C70AE73C1C3F70EF0ADA814C /* WSCoachMarksView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WSCoachMarksView-umbrella.h"; sourceTree = "<group>"; };
 		4451D1EF2FE51D9A7F69547BAE34B185 /* SCLAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLAlertView.swift; path = SCLAlertView/SCLAlertView.swift; sourceTree = "<group>"; };
 		469E5085C7580DD7B2E44D55A172B12C /* UIImage+Gif.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Gif.swift"; path = "SwiftGifCommon/UIImage+Gif.swift"; sourceTree = "<group>"; };
 		49F5E93DA12BB57776A48EB0D6F82A4D /* Pods-gazer-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-gazer-resources.sh"; sourceTree = "<group>"; };
 		5A55CB6F5298C5104C24D14EF218621D /* Pods-gazer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-gazer-acknowledgements.plist"; sourceTree = "<group>"; };
 		5C5CCDB877502A27162966ED1924F520 /* SwiftGifOrigin-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftGifOrigin-umbrella.h"; sourceTree = "<group>"; };
-		5F7BDB2580B244756CFA046131516EF2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		70112CE0A6C91EB7FDD8023E8542BB8E /* WSCoachMarksView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WSCoachMarksView.m; sourceTree = "<group>"; };
 		729E18DC5E317B5BFBA9798EA14C1CF8 /* WSCoachMarksView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WSCoachMarksView.h; sourceTree = "<group>"; };
 		753F712926F158A500CCC029CB04D68E /* SwiftGifOrigin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftGifOrigin.framework; path = SwiftGifOrigin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,12 +83,14 @@
 		B0CE43808BB7698980A40DD02C50A8C6 /* SCLExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLExtensions.swift; path = SCLAlertView/SCLExtensions.swift; sourceTree = "<group>"; };
 		B815F806118B576DF4DE2724F0ED4984 /* SCLAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SCLAlertView-dummy.m"; sourceTree = "<group>"; };
 		BECE5C2BE35156199CD3E43B15F12A5C /* SwiftGifOrigin-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftGifOrigin-prefix.pch"; sourceTree = "<group>"; };
+		BF3283FBA53A4CB3268613A207DF79EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		C116430C9A975F7BED53C1B5C7D7C669 /* WSCoachMarksView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WSCoachMarksView.framework; path = WSCoachMarksView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB47D294CBFF03C33E433B56F88D4685 /* SCLAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-prefix.pch"; sourceTree = "<group>"; };
 		CD8C9A7E0188C7201D3F2309F2BCE51F /* Pods-gazer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gazer.release.xcconfig"; sourceTree = "<group>"; };
 		CDFBEC203A917715CD518D3B968F4C9F /* SwiftGifOrigin-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftGifOrigin-dummy.m"; sourceTree = "<group>"; };
 		DA2BD80468D075494A103CCD1EFE00DD /* Pods-gazer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gazer.debug.xcconfig"; sourceTree = "<group>"; };
 		E2EAC852A23FAEEFD665BD02614EE493 /* Pods-gazer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-gazer-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EF35D3E58A7DB2E4AEE747C629DEFD98 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		FAB670C8562BCEE2DB59A3C92D7C4A22 /* WSCoachMarksView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WSCoachMarksView.xcconfig; sourceTree = "<group>"; };
 		FADA5832F1AB403E27B05CBEAC35AB4C /* SCLAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SCLAlertView.modulemap; sourceTree = "<group>"; };
 		FBE416A8BC974F757C0DA2EEF3B01AAE /* SCLAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-umbrella.h"; sourceTree = "<group>"; };
@@ -101,9 +101,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				822BBD8BD7A7215F845DF2BE02F4C6BF /* CoreGraphics.framework in Frameworks */,
-				D9414730D2B5D9806ECE4A72CCD66F69 /* Foundation.framework in Frameworks */,
-				8B714F8932BB41140C684AE0783EC52F /* QuartzCore.framework in Frameworks */,
+				5E7F2815C7AFF7F15EFB9911C3325D0A /* CoreGraphics.framework in Frameworks */,
+				490A405BB7FB4ECCB626E11FBB81C3A8 /* Foundation.framework in Frameworks */,
+				BBFD8D9263D5A6B7A0EAE7C7FA7F9902 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				695B081D5073671D3688D52005183447 /* Foundation.framework in Frameworks */,
+				F5A90703FF4B35C05D4DA27B0D83D944 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02271DA857CBD2626E80CAC4037EFED2 /* Foundation.framework in Frameworks */,
+				475C0E8A75DB63400E8B96499CE2690F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B4C7CD012ED3ED43A12ABA4352D3B22 /* Foundation.framework in Frameworks */,
+				B5A78873CE4A45076B25387E9A589B65 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +137,7 @@
 		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5A4DBD434EA75DD3EDD3494C46AE6968 /* iOS */,
+				FD92CD7E99B357F5177CA66425200790 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -184,16 +184,6 @@
 				C116430C9A975F7BED53C1B5C7D7C669 /* WSCoachMarksView.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		5A4DBD434EA75DD3EDD3494C46AE6968 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				409899CE1143F81E8130E2069D59605B /* CoreGraphics.framework */,
-				12992E853CAE14F2102525E0D84ADAB5 /* Foundation.framework */,
-				5F7BDB2580B244756CFA046131516EF2 /* QuartzCore.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		5D7175CBF6EDB89DE279A6A5BE579B53 /* Support Files */ = {
@@ -282,6 +272,16 @@
 			);
 			name = SwiftGifOrigin;
 			path = SwiftGifOrigin;
+			sourceTree = "<group>";
+		};
+		FD92CD7E99B357F5177CA66425200790 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				BF3283FBA53A4CB3268613A207DF79EF /* CoreGraphics.framework */,
+				138FC2FD8C7A4E1183F234A0D2F30D46 /* Foundation.framework */,
+				EF35D3E58A7DB2E4AEE747C629DEFD98 /* QuartzCore.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,7 +501,11 @@
 				INFOPLIST_FILE = "Target Support Files/SwiftGifOrigin/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SwiftGifOrigin/SwiftGifOrigin.modulemap";
 				PRODUCT_MODULE_NAME = SwiftGifOrigin;
 				PRODUCT_NAME = SwiftGifOrigin;
@@ -534,7 +538,11 @@
 				INFOPLIST_FILE = "Target Support Files/WSCoachMarksView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/WSCoachMarksView/WSCoachMarksView.modulemap";
 				PRODUCT_MODULE_NAME = WSCoachMarksView;
 				PRODUCT_NAME = WSCoachMarksView;
@@ -686,7 +694,11 @@
 				INFOPLIST_FILE = "Target Support Files/SwiftGifOrigin/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SwiftGifOrigin/SwiftGifOrigin.modulemap";
 				PRODUCT_MODULE_NAME = SwiftGifOrigin;
 				PRODUCT_NAME = SwiftGifOrigin;
@@ -719,7 +731,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-gazer/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-gazer/Pods-gazer.modulemap";
 				OTHER_LDFLAGS = "";
@@ -754,7 +770,11 @@
 				INFOPLIST_FILE = "Target Support Files/SCLAlertView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SCLAlertView/SCLAlertView.modulemap";
 				PRODUCT_MODULE_NAME = SCLAlertView;
 				PRODUCT_NAME = SCLAlertView;
@@ -787,7 +807,11 @@
 				INFOPLIST_FILE = "Target Support Files/SCLAlertView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SCLAlertView/SCLAlertView.modulemap";
 				PRODUCT_MODULE_NAME = SCLAlertView;
 				PRODUCT_NAME = SCLAlertView;
@@ -820,7 +844,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-gazer/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-gazer/Pods-gazer.modulemap";
 				OTHER_LDFLAGS = "";
@@ -855,7 +883,11 @@
 				INFOPLIST_FILE = "Target Support Files/WSCoachMarksView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/WSCoachMarksView/WSCoachMarksView.modulemap";
 				PRODUCT_MODULE_NAME = WSCoachMarksView;
 				PRODUCT_NAME = WSCoachMarksView;

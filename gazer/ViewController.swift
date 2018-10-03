@@ -108,7 +108,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         aquariumShadowView.layer.shadowRadius = 5
         // 画像ボタン
         let aquariumButton = UIButton(frame: aquariumShadowView.bounds)
-        aquariumButton.setBackgroundImage(aquariumButtonGifImage, for: [])
+        aquariumButton.setBackgroundImage(aquariumButtonImage, for: [])
         aquariumButton.layer.cornerRadius = 12
         aquariumButton.layer.masksToBounds = true
         // 影表示用のビューに画像ボタンを乗せる
@@ -126,7 +126,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         zooShadowView.layer.shadowRadius = 5
         // 画像ボタン
         let zooButton = UIButton(frame: zooShadowView.bounds)
-        zooButton.setBackgroundImage(zooButtonGifImage, for: [])
+        zooButton.setBackgroundImage(zooButtonImage, for: [])
         zooButton.layer.cornerRadius = 12
         zooButton.layer.masksToBounds = true
         // 影表示用のビューに画像ボタンを乗せる

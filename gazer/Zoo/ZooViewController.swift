@@ -35,13 +35,18 @@ class ZooViewController: UIViewController, ARSCNViewDelegate {
     }
     
     @objc func tapView(sender: UITapGestureRecognizer) {
+        
+        // AppDelegateのインスタンスを取得
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let filepath = appDelegate.path
+        
         // sceneView上でタップした座標を検出
         let location = sender.location(in: sceneView)
         //現実座標取得
         let hitTestResult = sceneView.hitTest(location, types: .existingPlane)
         //アンラップ
         if let result = hitTestResult.first {
-            let node = ZooViewController.collada2SCNNode(filepath: "art.scnassets/Lion.scn")
+            let node = ZooViewController.collada2SCNNode(filepath: filepath)
             node.position = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
             sceneView.scene.rootNode.addChildNode(node)
         }

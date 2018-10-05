@@ -9,10 +9,33 @@
 import UIKit
 import ARKit
 import SceneKit
+import SCLAlertView
 
 class ZooViewController: UIViewController, ARSCNViewDelegate {
   
     @IBOutlet weak var sceneView: ARSCNView!
+    
+    @IBOutlet weak var button: UIButton!
+    
+    @IBAction func pushCamera(_ sender: Any) {
+        button.isHidden = true //ボタン非表示
+        let image = getScreenShot()
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+        
+        SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
+        button.isHidden = false //ボタン表示
+    }
+    
+    // スワイプしたらメニュー画面戻る
+    @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
+        beforeMenu.modalTransitionStyle = .crossDissolve
+        present(beforeMenu, animated: true, completion: nil)
+    }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
     @IBAction func openButton(_ sender: UIButton) {
         let modalViewController = storyboard?.instantiateViewController(withIdentifier: "ModalViewController")
@@ -82,6 +105,20 @@ class ZooViewController: UIViewController, ARSCNViewDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // Camera
+    private func getScreenShot() -> UIImage? {
+        guard let view = self.view else {
+            return nil
+        }
+        
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
     }
     
     func session(_ session: ARSession, didFailWithError error: Error) {

@@ -45,7 +45,7 @@
                         <segue destination="BV1-FR-VrT" kind="show" identifier="goStar" id="F4s-BC-sWf"/>
                         <segue destination="Qm5-wr-7rt" kind="show" identifier="goMapping" id="VDc-WT-fgh"/>
                         <segue destination="SIL-9F-TvK" kind="show" identifier="goZoo" id="36C-p9-wrl"/>
-                        <segue destination="AEc-jH-PMb" kind="show" identifier="goAquarium" id="caG-qV-Utp"/>
+                        <segue destination="coz-ez-pcA" kind="show" identifier="goAquarium" id="MgM-3m-iNQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GCg-n5-pbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -53,12 +53,12 @@
             <point key="canvasLocation" x="-857" y="93"/>
         </scene>
         <!--Aquarium-->
-        <scene sceneID="fs5-TX-hC2">
+        <scene sceneID="Szt-QM-hwF">
             <objects>
-                <viewControllerPlaceholder storyboardName="Aquarium" id="AEc-jH-PMb" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wh0-vt-bU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Aquarium" id="coz-ez-pcA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="27E-9D-hfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-138" y="286"/>
+            <point key="canvasLocation" x="-247" y="201"/>
         </scene>
         <!--Zoo-->
         <scene sceneID="Rfw-QQ-LgT">

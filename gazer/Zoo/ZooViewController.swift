@@ -33,9 +33,6 @@ class ZooViewController: UIViewController, ARSCNViewDelegate {
         beforeMenu.modalTransitionStyle = .crossDissolve
         present(beforeMenu, animated: true, completion: nil)
     }
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
     
     @IBAction func openButton(_ sender: UIButton) {
         let modalViewController = storyboard?.instantiateViewController(withIdentifier: "ModalViewController")
@@ -43,10 +40,10 @@ class ZooViewController: UIViewController, ARSCNViewDelegate {
         modalViewController?.transitioningDelegate = self as UIViewControllerTransitioningDelegate
         present(modalViewController!, animated: true, completion: nil)
     }
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         sceneView.delegate = self
         // 特徴点表示
         sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints

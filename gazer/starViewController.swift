@@ -12,8 +12,9 @@ import ARKit
 import CoreLocation
 import SCLAlertView
 import AVFoundation
+import EAIntroView
 
-class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate, AVAudioPlayerDelegate{
+class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate, AVAudioPlayerDelegate, EAIntroDelegate{
     
     @IBOutlet var sceneView: ARSCNView!
 

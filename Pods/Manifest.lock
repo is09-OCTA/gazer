@@ -1,16 +1,24 @@
 PODS:
+  - EAIntroView (2.12.0):
+    - EARestrictedScrollView (~> 1.1.0)
+  - EARestrictedScrollView (1.1.0)
   - SCLAlertView (0.8)
 
 DEPENDENCIES:
+  - EAIntroView
   - SCLAlertView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - EAIntroView
+    - EARestrictedScrollView
     - SCLAlertView
 
 SPEC CHECKSUMS:
+  EAIntroView: 249559079ddfdbe80e5bcb755c04c3b964b2ac27
+  EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
 
-PODFILE CHECKSUM: 56ed39b7f78fe05dd49a77c4ccb7839f59623288
+PODFILE CHECKSUM: b8f9f24c5e8e6694d48768f11382cd884c8a8c24
 
 COCOAPODS: 1.5.3

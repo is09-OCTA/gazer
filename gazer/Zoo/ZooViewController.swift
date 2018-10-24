@@ -10,8 +10,9 @@ import UIKit
 import ARKit
 import SceneKit
 import SCLAlertView
+import EAIntroView
 
-class ZooViewController: UIViewController, ARSCNViewDelegate {
+class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
   
     @IBOutlet weak var sceneView: ARSCNView!
     
@@ -43,6 +44,8 @@ class ZooViewController: UIViewController, ARSCNViewDelegate {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        zooIntroView()
     
         sceneView.delegate = self
         // 特徴点表示
@@ -102,6 +105,52 @@ class ZooViewController: UIViewController, ARSCNViewDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // EAIntroView
+    func zooIntroView(){
+        // １ページ目
+        let firstIntro = EAIntroPage()
+        firstIntro.title = "ようこそ！"
+        firstIntro.desc = """
+        画面を注視しながらの歩行は大変危険です。
+        画面をタップすると次のページに移ります。
+        """
+        firstIntro.descPositionY = self.view.bounds.size.height/1.5
+        firstIntro.bgColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+        
+        // ２ページ目
+        let secondIntro = EAIntroPage()
+        secondIntro.title = "メニューに戻りたいときは？"
+        secondIntro.desc = """
+        右にスワイプすると戻れます
+        """
+        secondIntro.bgImage = UIImage(named:"introSecond")
+        
+        // 3ページ目
+        let thirdIntro = EAIntroPage()
+        thirdIntro.title = "動物をだすには？"
+        thirdIntro.desc = """
+        平面をタップすると動物が出現します
+        """
+        thirdIntro.bgImage = UIImage(named: "introThird")
+        
+        // フォント設定
+        firstIntro.titleFont = UIFont(name: "HelveticaNeue-Bold", size: 45)
+        firstIntro.descFont = UIFont(name:"HelveticaNeue-Light",size:15)
+        secondIntro.descFont = UIFont(name:"HelveticaNeue-Light",size:15)
+        secondIntro.titleFont = UIFont(name: "HelveticaNeue-Bold", size: 20)
+        thirdIntro.descFont = UIFont(name:"HelveticaNeue-Light",size:15)
+        thirdIntro.titleFont = UIFont(name: "HelveticaNeue-Bold", size: 20)
+        
+        let introView = EAIntroView(frame: self.view.bounds, andPages: [firstIntro,secondIntro,thirdIntro])
+        // スキップ
+        introView?.skipButton.setTitle("スキップ", for: UIControl.State.normal)
+        introView?.delegate = self
+        // タップで次へ進む
+        introView?.tapToNext = true
+        // 画面立ち上げ
+        introView?.show(in: self.view, animateDuration: 1.0)
     }
     
     // Camera

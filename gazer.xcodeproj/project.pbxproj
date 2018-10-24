@@ -35,7 +35,6 @@
 		C788DA8A209023720006ED25 /* gazerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA89209023720006ED25 /* gazerTests.swift */; };
 		C788DA95209023720006ED25 /* gazerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA94209023720006ED25 /* gazerUITests.swift */; };
 		C7B940B62156113B00AC34FE /* ZooModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B940B52156113B00AC34FE /* ZooModalViewController.swift */; };
-		C7B940B82156125900AC34FE /* gif in Resources */ = {isa = PBXBuildFile; fileRef = C7B940B72156125900AC34FE /* gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +92,6 @@
 		C788DA94209023720006ED25 /* gazerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gazerUITests.swift; sourceTree = "<group>"; };
 		C788DA96209023720006ED25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7B940B52156113B00AC34FE /* ZooModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooModalViewController.swift; sourceTree = "<group>"; };
-		C7B940B72156125900AC34FE /* gif */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gif; sourceTree = "<group>"; };
 		E675FB51F971A5FE35ABCC72 /* Pods-gazer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gazer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gazer/Pods-gazer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,7 +217,6 @@
 				8D4FC93A20FD8D7C00A924E4 /* Mapping */,
 				C75A04B820B3D9C900B0F36C /* src */,
 				C788DA72209023700006ED25 /* AppDelegate.swift */,
-				C7B940B72156125900AC34FE /* gif */,
 				C788DA74209023700006ED25 /* art.scnassets */,
 				C788DA76209023700006ED25 /* starViewController.swift */,
 				C788DA78209023700006ED25 /* Main.storyboard */,
@@ -372,7 +369,6 @@
 				B1D11250215CCD2700B8FBCD /* ZooImage in Resources */,
 				C745865B216727CE000A4FC6 /* ZooModel in Resources */,
 				C788DA7C209023710006ED25 /* Assets.xcassets in Resources */,
-				C7B940B82156125900AC34FE /* gif in Resources */,
 				8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */,
 				2356AADF215DC8A800EAA4E8 /* aqua_bgm.mp3 in Resources */,
 				C788DA7A209023700006ED25 /* Main.storyboard in Resources */,
@@ -422,12 +418,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-gazer/Pods-gazer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/WSCoachMarksView/WSCoachMarksView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WSCoachMarksView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

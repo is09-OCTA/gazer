@@ -11,7 +11,6 @@ import SceneKit
 import ARKit
 import CoreLocation
 import SCLAlertView
-import WSCoachMarksView
 import AVFoundation
 
 class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate, AVAudioPlayerDelegate{
@@ -782,19 +781,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     override func viewDidLoad() {
         super.viewDidLoad()
         
-/*
-        let f = self.view.bounds
-        let arrCouach = [
-            [ "rect"    :  CGRect(x:f.width - 84 , y:f.height - 38 , width:64, height:30),
-              "caption" :  "（メッセージを個々に記入）",
-              "shape"   : "square",
-              ],
-            ]
-        let couach: WSCoachMarksView = WSCoachMarksView(frame: self.view.bounds, coachMarks: arrCouach)
-        couach.maskColor = UIColor(white: 0.0, alpha: 0.65)
-        self.view.addSubview(couach)
-        couach.start()
- */
+        
         
         sceneView.delegate = self
         sceneView.showsStatistics = false
@@ -810,29 +797,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        // coachMarks表示
-        //一度だけ実行したい処理メソッド
-        //初回起動判定
-        let ud = UserDefaults.standard
-        if ud.bool(forKey: "firstLaunch") {
-            
-            // 初回起動時の処理
-            let arrCouach = [
-                [ "rect"    :  CGRect(x:0 , y:175 , width:375 , height:300),
-                  "caption" :  "右にスワイプすると、　　メニューに戻れます",
-                  "shape"   : "square",
-                  ],
-                ]
-            let couach: WSCoachMarksView = WSCoachMarksView(frame: self.view.bounds, coachMarks: arrCouach)
-            couach.maskColor = UIColor(white: 0.0, alpha: 0.65)
-            self.view.addSubview(couach)
-
-            couach.start()
-            
-            // 2回目以降の起動では「firstLaunch」のkeyをfalseに
-            ud.set(false, forKey: "firstLaunch")
-        }
         
         super.viewWillAppear(animated)
 

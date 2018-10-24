@@ -11,10 +11,10 @@ import SceneKit
 import ARKit
 import CoreLocation
 import SCLAlertView
-import WSCoachMarksView
 import AVFoundation
+import EAIntroView
 
-class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate, AVAudioPlayerDelegate{
+class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate, AVAudioPlayerDelegate, EAIntroDelegate{
     
     @IBOutlet var sceneView: ARSCNView!
 
@@ -782,19 +782,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     override func viewDidLoad() {
         super.viewDidLoad()
         
-/*
-        let f = self.view.bounds
-        let arrCouach = [
-            [ "rect"    :  CGRect(x:f.width - 84 , y:f.height - 38 , width:64, height:30),
-              "caption" :  "（メッセージを個々に記入）",
-              "shape"   : "square",
-              ],
-            ]
-        let couach: WSCoachMarksView = WSCoachMarksView(frame: self.view.bounds, coachMarks: arrCouach)
-        couach.maskColor = UIColor(white: 0.0, alpha: 0.65)
-        self.view.addSubview(couach)
-        couach.start()
- */
+        starIntroView()
         
         sceneView.delegate = self
         sceneView.showsStatistics = false
@@ -810,29 +798,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        // coachMarks表示
-        //一度だけ実行したい処理メソッド
-        //初回起動判定
-        let ud = UserDefaults.standard
-        if ud.bool(forKey: "firstLaunch") {
-            
-            // 初回起動時の処理
-            let arrCouach = [
-                [ "rect"    :  CGRect(x:0 , y:175 , width:375 , height:300),
-                  "caption" :  "右にスワイプすると、　　メニューに戻れます",
-                  "shape"   : "square",
-                  ],
-                ]
-            let couach: WSCoachMarksView = WSCoachMarksView(frame: self.view.bounds, coachMarks: arrCouach)
-            couach.maskColor = UIColor(white: 0.0, alpha: 0.65)
-            self.view.addSubview(couach)
-
-            couach.start()
-            
-            // 2回目以降の起動では「firstLaunch」のkeyをfalseに
-            ud.set(false, forKey: "firstLaunch")
-        }
         
         super.viewWillAppear(animated)
 
@@ -865,6 +830,43 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         return node
     }
 */
+    // EAIntroView
+    func starIntroView(){
+        // １ページ目
+        let firstIntro = EAIntroPage()
+        firstIntro.title = "ようこそ！"
+        firstIntro.desc = """
+        画面を注視しながらの歩行は大変危険です。
+        画面をタップすると次のページに移ります。
+        """
+        firstIntro.descPositionY = self.view.bounds.size.height/1.5
+        firstIntro.bgColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+        
+        // ２ページ目
+        let secondIntro = EAIntroPage()
+        secondIntro.title = "メニューに戻りたいときは？"
+        secondIntro.desc = """
+        右にスワイプすると戻れます
+        """
+        secondIntro.bgImage = UIImage(named:"introSecond")
+        
+        // フォント設定
+        firstIntro.titleFont = UIFont(name: "HelveticaNeue-Bold", size: 45)
+        firstIntro.descFont = UIFont(name:"HelveticaNeue-Light",size:15)
+        secondIntro.descFont = UIFont(name:"HelveticaNeue-Light",size:15)
+        secondIntro.titleFont = UIFont(name: "HelveticaNeue-Bold", size: 20)
+        
+        
+        let introView = EAIntroView(frame: self.view.bounds, andPages: [firstIntro,secondIntro])
+        // スキップ
+        introView?.skipButton.setTitle("スキップ", for: UIControl.State.normal)
+        introView?.delegate = self
+        // タップで次へ進む
+        introView?.tapToNext = true
+        // 画面立ち上げ
+        introView?.show(in: self.view, animateDuration: 1.0)
+    }
+    
     //BGM
     func playSound(name: String) {
         guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {

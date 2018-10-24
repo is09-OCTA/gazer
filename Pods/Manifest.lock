@@ -1,24 +1,24 @@
 PODS:
+  - EAIntroView (2.12.0):
+    - EARestrictedScrollView (~> 1.1.0)
+  - EARestrictedScrollView (1.1.0)
   - SCLAlertView (0.8)
-  - SwiftGifOrigin (1.6.1)
-  - WSCoachMarksView (0.2)
 
 DEPENDENCIES:
+  - EAIntroView
   - SCLAlertView
-  - SwiftGifOrigin
-  - WSCoachMarksView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - EAIntroView
+    - EARestrictedScrollView
     - SCLAlertView
-    - SwiftGifOrigin
-    - WSCoachMarksView
 
 SPEC CHECKSUMS:
+  EAIntroView: 249559079ddfdbe80e5bcb755c04c3b964b2ac27
+  EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
-  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
-  WSCoachMarksView: d1653c058c8289a300ddf28af9dd49eb659c9c42
 
-PODFILE CHECKSUM: 322c8787e845d4fed08a0d6f2fe3ab3f811eacb6
+PODFILE CHECKSUM: b8f9f24c5e8e6694d48768f11382cd884c8a8c24
 
 COCOAPODS: 1.5.3

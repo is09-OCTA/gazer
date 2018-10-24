@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftGifOrigin
 
 class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControllerDelegate, UIGestureRecognizerDelegate{
 
@@ -26,11 +25,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     let mappingButtonImage:UIImage = UIImage(named:"PMappingVer1.0.0")!
     let aquariumButtonImage:UIImage = UIImage(named:"AquariumButton007")!
     let zooButtonImage:UIImage = UIImage(named: "ZooButton001")!
-    
-    let starButtonGifImage = UIImage.gif(name:"gif/aquarium_ver5")
-    let mappingButtonGifImage = UIImage.gif(name:"gif/aquarium_ver5")
-    let zooButtonGifImage = UIImage.gif(name:"gif/zoo_ver1")
-    let aquariumButtonGifImage = UIImage.gif(name:"gif/aquarium_ver5")
 
     // 画面の横幅、縦幅
     let screenWidth:CGFloat = UIScreen.main.bounds.size.width

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftGifOrigin
 
 class ZooModalViewController: UIViewController, UIScrollViewDelegate {
 

@@ -1,24 +1,20 @@
 PODS:
   - SCLAlertView (0.8)
-  - SwiftGifOrigin (1.6.1)
   - WSCoachMarksView (0.2)
 
 DEPENDENCIES:
   - SCLAlertView
-  - SwiftGifOrigin
   - WSCoachMarksView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - SCLAlertView
-    - SwiftGifOrigin
     - WSCoachMarksView
 
 SPEC CHECKSUMS:
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
-  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
   WSCoachMarksView: d1653c058c8289a300ddf28af9dd49eb659c9c42
 
-PODFILE CHECKSUM: 322c8787e845d4fed08a0d6f2fe3ab3f811eacb6
+PODFILE CHECKSUM: ff6b1c1b1121336b7c002ec40b81dd98ea7e6e12
 
 COCOAPODS: 1.5.3

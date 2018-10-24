@@ -6,7 +6,7 @@ target 'gazer' do
   use_frameworks!
   pod'SCLAlertView'
   pod'WSCoachMarksView'
-  pod'SwiftGifOrigin'
+  # pod'SwiftGifOrigin'
 
   # Pods for gazer
 

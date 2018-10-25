@@ -930,6 +930,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             locationManager.distanceFilter = 10
             locationManager.startUpdatingLocation()
             //locationManager.stopUpdatingLocation()
+//            test
         }
     }
     

@@ -38,7 +38,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         button.isHidden = false //ボタン表示
 
     }
-    
+
     //音楽インスタンス
     var audioPlayer: AVAudioPlayer!
     
@@ -830,6 +830,34 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         return node
     }
 */
+    
+    func setExposureTargetBias(_ bias: Float,
+                               completionHandler handler: ((CMTime) -> Void)? = nil){
+        return;
+    }
+
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        
+        // ARKit 設定時にカメラからの画像が空で渡されるのでその場合は処理しない
+        guard let cuptureImage = sceneView.session.currentFrame?.capturedImage else {
+            return
+        }
+        
+        // PixelBuffer を CIImage に変換しフィルターをかける
+        let ciImage = CIImage.init(cvPixelBuffer: cuptureImage)
+        let filter:CIFilter = CIFilter(name: "CIDotScreen")!
+        filter.setValue(ciImage, forKey: kCIInputImageKey)
+        
+        //　CIImage を CGImage に変換して背景に適応
+        //　カメラ画像はホーム右のランドスケープの状態で画像が渡されるため、CGImagePropertyOrientation(rawValue: 6) でポートレートで正しい向きに表示されるよう変換
+        let context = CIContext()
+        let result = filter.outputImage!.oriented(CGImagePropertyOrientation(rawValue: 6)!)
+        if let cgImage = context.createCGImage(result, from: result.extent) {
+            sceneView.scene.background.contents = cgImage
+        }
+        
+    }
+    
     // EAIntroView
     func starIntroView(){
         // １ページ目
@@ -976,7 +1004,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             // 表示
             self.sceneView.scene.rootNode.addChildNode(starNode)
             
-            let camera = sceneView.pointOfView
+//            let camera = sceneView.pointOfView
             let str = stars[index].jpName
             let depth:CGFloat = 0.01
             let text = SCNText(string: str, extrusionDepth: depth)
@@ -984,8 +1012,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             let textNode = SCNNode(geometry: text)
             let (min, max) = (textNode.boundingBox)
             let x = CGFloat(max.x - min.x)
-            let y = CGFloat(max.y - min.y)
-            let v = element[3] * (Double.pi / 180)
+//            let y = CGFloat(max.y - min.y)
+//            let v = element[3] * (Double.pi / 180)
             if 0...45 ~= element[4] || 315...360 ~= element[4] {
                 let z = 180 * (Double.pi / 180)
                 textNode.eulerAngles = SCNVector3(0,z,0)
@@ -1000,7 +1028,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             }
             textNode.position = SCNVector3((element[0] - Double(x)),element[1],element[2])
             
-            print("textNode",textNode.eulerAngles)
+//            print("textNode",textNode.eulerAngles)
             sceneView.scene.rootNode.addChildNode(textNode)
         }
     }

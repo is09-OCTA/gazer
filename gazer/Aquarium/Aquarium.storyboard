@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OqQ-DJ-pfP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OqQ-DJ-pfP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,12 +19,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7E-Vm-WP4">
-                                <rect key="frame" x="147" y="578" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="8nf-ar-cuu"/>
-                                    <constraint firstAttribute="height" constant="80" id="Mcb-EJ-4Va"/>
-                                </constraints>
-                                <state key="normal" image="cameraVer1.2.0">
+                                <rect key="frame" x="162" y="587" width="50" height="50"/>
+                                <state key="normal" image="cameraButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -35,9 +31,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="1ft-A7-cjb" firstAttribute="bottom" secondItem="e7E-Vm-WP4" secondAttribute="bottom" constant="9" id="ZbT-ho-SFC"/>
-                            <constraint firstItem="1ft-A7-cjb" firstAttribute="trailing" secondItem="e7E-Vm-WP4" secondAttribute="trailing" constant="148" id="ibT-SA-d19"/>
-                            <constraint firstItem="e7E-Vm-WP4" firstAttribute="leading" secondItem="1ft-A7-cjb" secondAttribute="leading" constant="147" id="pdr-DD-YyS"/>
+                            <constraint firstItem="1ft-A7-cjb" firstAttribute="bottom" secondItem="e7E-Vm-WP4" secondAttribute="bottom" constant="30" id="0M8-pY-1ml"/>
+                            <constraint firstItem="1ft-A7-cjb" firstAttribute="trailing" secondItem="e7E-Vm-WP4" secondAttribute="trailing" constant="163" id="WtV-XT-fsv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1ft-A7-cjb"/>
                         <connections>
@@ -60,6 +55,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cameraVer1.2.0" width="128" height="128"/>
+        <image name="cameraButton" width="50" height="50"/>
     </resources>
 </document>

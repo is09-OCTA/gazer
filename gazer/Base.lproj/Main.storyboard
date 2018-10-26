@@ -78,6 +78,10 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ux2-AB-gTj">
                                 <rect key="frame" x="162" y="587" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7qt-Jf-vwd"/>
+                                    <constraint firstAttribute="width" constant="50" id="PLr-tO-VvM"/>
+                                </constraints>
                                 <state key="normal" image="cameraButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -89,8 +93,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="4Yh-VM-yRr" firstAttribute="trailing" secondItem="ux2-AB-gTj" secondAttribute="trailing" constant="163" id="aOT-wn-aKY"/>
-                            <constraint firstItem="4Yh-VM-yRr" firstAttribute="bottom" secondItem="ux2-AB-gTj" secondAttribute="bottom" constant="30" id="gpI-Pv-9Od"/>
+                            <constraint firstItem="4Yh-VM-yRr" firstAttribute="trailing" secondItem="ux2-AB-gTj" secondAttribute="trailing" constant="163" id="2kM-cs-2Wl"/>
+                            <constraint firstItem="4Yh-VM-yRr" firstAttribute="bottom" secondItem="ux2-AB-gTj" secondAttribute="bottom" constant="30" id="r8L-PO-Qmd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Yh-VM-yRr"/>
                         <connections>
@@ -116,6 +120,6 @@
     </scenes>
     <resources>
         <image name="Header_ver 1.5.0" width="750" height="100"/>
-        <image name="cameraButton" width="50" height="50"/>
+        <image name="cameraButton" width="150" height="150"/>
     </resources>
 </document>

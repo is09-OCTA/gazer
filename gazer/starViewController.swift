@@ -845,7 +845,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         
         // PixelBuffer を CIImage に変換しフィルターをかける
         let ciImage = CIImage.init(cvPixelBuffer: cuptureImage)
-        let filter:CIFilter = CIFilter(name: "CIDotScreen")!
+        let filter:CIFilter = CIFilter(name: "CIAffineClamp")!
         filter.setValue(ciImage, forKey: kCIInputImageKey)
         
         //　CIImage を CGImage に変換して背景に適応

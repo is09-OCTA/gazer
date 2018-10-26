@@ -20,6 +20,10 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sq6-5f-7Mm">
                                 <rect key="frame" x="162" y="587" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="GeL-QW-Ddu"/>
+                                    <constraint firstAttribute="height" constant="50" id="xh8-1s-G4J"/>
+                                </constraints>
                                 <state key="normal" image="cameraButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -55,6 +59,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cameraButton" width="50" height="50"/>
+        <image name="cameraButton" width="150" height="150"/>
     </resources>
 </document>

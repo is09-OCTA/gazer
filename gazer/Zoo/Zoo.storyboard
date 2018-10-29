@@ -22,21 +22,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIs-gv-2a8">
-                                <rect key="frame" x="16" y="617" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="動物選択"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIs-gv-2a8">
+                                <rect key="frame" x="16" y="587" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="LEI-7D-8uZ"/>
+                                    <constraint firstAttribute="height" constant="50" id="aBY-VM-8pB"/>
+                                </constraints>
+                                <state key="normal" image="animalMenu2"/>
                                 <connections>
                                     <action selector="openButton:" destination="31F-TK-1mo" eventType="touchUpInside" id="tOg-QT-LEI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkq-rZ-sxf">
-                                <rect key="frame" x="147" y="578" width="80" height="80"/>
+                                <rect key="frame" x="162" y="587" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="fX6-ue-E8w"/>
-                                    <constraint firstAttribute="height" constant="80" id="zRG-p3-ESK"/>
+                                    <constraint firstAttribute="height" constant="50" id="15y-5E-iK0"/>
+                                    <constraint firstAttribute="width" constant="50" id="QWC-hd-H4t"/>
                                 </constraints>
-                                <state key="normal" image="cameraVer1.2.0">
+                                <state key="normal" image="cameraButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -47,9 +50,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="nYB-Yg-QEv" firstAttribute="trailing" secondItem="rkq-rZ-sxf" secondAttribute="trailing" constant="148" id="E1u-4D-nKb"/>
-                            <constraint firstItem="nYB-Yg-QEv" firstAttribute="bottom" secondItem="rkq-rZ-sxf" secondAttribute="bottom" constant="9" id="Mjh-e5-Gi6"/>
-                            <constraint firstItem="rkq-rZ-sxf" firstAttribute="leading" secondItem="nYB-Yg-QEv" secondAttribute="leading" constant="147" id="XvB-44-kOc"/>
+                            <constraint firstItem="nYB-Yg-QEv" firstAttribute="trailing" secondItem="rkq-rZ-sxf" secondAttribute="trailing" constant="163" id="I1d-gv-5wF"/>
+                            <constraint firstItem="BIs-gv-2a8" firstAttribute="leading" secondItem="nYB-Yg-QEv" secondAttribute="leading" constant="16" id="YXz-bI-A5k"/>
+                            <constraint firstItem="nYB-Yg-QEv" firstAttribute="bottom" secondItem="rkq-rZ-sxf" secondAttribute="bottom" constant="30" id="ccy-td-WXD"/>
+                            <constraint firstItem="nYB-Yg-QEv" firstAttribute="bottom" secondItem="BIs-gv-2a8" secondAttribute="bottom" constant="30" id="fZX-oD-BLU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nYB-Yg-QEv"/>
                         <connections>
@@ -57,9 +61,9 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="button" destination="rkq-rZ-sxf" id="8dw-a0-RyP"/>
                         <outlet property="sceneView" destination="5GT-1R-Cc9" id="iho-X4-dgs"/>
                         <segue destination="9KX-r4-d7m" kind="presentation" id="nik-wX-JF3"/>
-                        <outlet property="button" destination="rkq-rZ-sxf" id="8dw-a0-RyP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="da6-Nm-gjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -89,6 +93,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cameraVer1.2.0" width="128" height="128"/>
+        <image name="animalMenu2" width="150" height="150"/>
+        <image name="cameraButton" width="150" height="150"/>
     </resources>
 </document>

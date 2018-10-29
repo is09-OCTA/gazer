@@ -61,7 +61,8 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="button" destination="rkq-rZ-sxf" id="8dw-a0-RyP"/>
+                        <outlet property="animalButton" destination="BIs-gv-2a8" id="by7-EL-kHJ"/>
+                        <outlet property="cameraButton" destination="rkq-rZ-sxf" id="UFI-tR-8jJ"/>
                         <outlet property="sceneView" destination="5GT-1R-Cc9" id="iho-X4-dgs"/>
                         <segue destination="9KX-r4-d7m" kind="presentation" id="nik-wX-JF3"/>
                     </connections>

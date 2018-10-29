@@ -16,15 +16,19 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
   
     @IBOutlet weak var sceneView: ARSCNView!
     
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var animalButton: UIButton!
     
     @IBAction func pushCamera(_ sender: Any) {
-        button.isHidden = true //ボタン非表示
+        cameraButton.isHidden = true //ボタン非表示
+        animalButton.isHidden = true
+        
         let image = getScreenShot()
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
         
         SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
-        button.isHidden = false //ボタン表示
+        cameraButton.isHidden = false //ボタン表示
+        animalButton.isHidden = false
     }
     
     // スワイプしたらメニュー画面戻る

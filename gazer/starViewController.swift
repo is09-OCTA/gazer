@@ -845,8 +845,9 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         
         // PixelBuffer を CIImage に変換しフィルターをかける
         let ciImage = CIImage.init(cvPixelBuffer: cuptureImage)
-        let filter:CIFilter = CIFilter(name: "CIAffineClamp")!
+        let filter:CIFilter = CIFilter(name: "CIColorControls")!
         filter.setValue(ciImage, forKey: kCIInputImageKey)
+        filter.setValue(-0.2, forKey: kCIInputBrightnessKey)
         
         //　CIImage を CGImage に変換して背景に適応
         //　カメラ画像はホーム右のランドスケープの状態で画像が渡されるため、CGImagePropertyOrientation(rawValue: 6) でポートレートで正しい向きに表示されるよう変換

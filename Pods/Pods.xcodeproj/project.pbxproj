@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		026A5260B865C230F2A1A083E08C7907 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9ED8CC89B2802F21F028ABB2A216D5A /* Foundation.framework */; };
 		0F0680093D16B2E2DC34021FC2DB1F4A /* SCLAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AD32D7C2E8B7667ACB6ACC78BCF9EE8 /* SCLAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0FA2DBA2BFD9F183F4C1FDC58087B728 /* SCLAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1179BDEDC8E6E7802EE7D86A135C01 /* SCLAlertView-dummy.m */; };
-		282AB76495B526B5CFE619D88A5860A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E56F42BB48D77D056DA933BC0C3F555 /* Foundation.framework */; };
 		32D5DC7F6890B5795B4D326089D5727C /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B16B2D99C174DB373979BDC963B324D /* SCLAlertView.swift */; };
 		342FD0CF5A19992200CDCD679F2D71C6 /* EAIntroView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7806EF595600F7E2898A7364CD306 /* EAIntroView-dummy.m */; };
 		35843D6B720611CD4E0BB4372C6E521A /* EAIntroPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 542396CCCEE2115385632464DA1866D3 /* EAIntroPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3734E2F8F68A6F617075A21C58E1654B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9ED8CC89B2802F21F028ABB2A216D5A /* Foundation.framework */; };
 		3C375F130838866610BB247AE8F61EB0 /* Pods-gazer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 26A83ABFF7EBA9309C578F48B853253F /* Pods-gazer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49A40958B574F4AA0622B86E3DAA19F5 /* EARestrictedScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E74F4AF5D25C0BDA551E9BBA41E0520 /* EARestrictedScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E89828A9263BAFC69EABE925DFD0CA9 /* Pods-gazer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B10ABE9F969AB7CCC68740060189621 /* Pods-gazer-dummy.m */; };
 		4EA4A852D1D8C36A63ED5E157029EC06 /* EAIntroView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C00D67ED4C8A6CA94ACDFD30E133F01 /* EAIntroView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		501396162015F7B2D3D6629BFB27F7C9 /* EAIntroView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1735D314BDD9EB19F7C60EC5B0295778 /* EAIntroView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		550CBF696142B6AB372CF515B8198047 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9ED8CC89B2802F21F028ABB2A216D5A /* Foundation.framework */; };
 		599EC797D93F4BEB8EC9C246DBC36125 /* EARestrictedScrollView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 74B94CC0172FF9048824A6FD3B2F3F01 /* EARestrictedScrollView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5DB99A73EEE5C0AE02955B3906043BF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E56F42BB48D77D056DA933BC0C3F555 /* Foundation.framework */; };
-		6194D195FCD9253BBD2C640AD48A6532 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E56F42BB48D77D056DA933BC0C3F555 /* Foundation.framework */; };
+		7B6286C6C9613011C52D866043C9EBC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9ED8CC89B2802F21F028ABB2A216D5A /* Foundation.framework */; };
 		C41EB9232CC9C9A7A1D5A6F221D1EDB4 /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F5AE8487E6024ABF4A174FCD9E7B7 /* EAIntroPage.m */; };
 		CCD230BC815C775651F2054A0DAE32E7 /* EARestrictedScrollView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD18F8F7D2FA46D47DF128466ECCA02 /* EARestrictedScrollView-dummy.m */; };
 		EA705D6826863CE9297E92D5673EEDCE /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 426EC58A75726FF57750AB34A6E536BE /* EAIntroView.m */; };
 		EABBB2F663609893680E5B6F1622F5E6 /* EARestrictedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4F997DC748B389E41214445696D92 /* EARestrictedScrollView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		F288717F599960530F5BDE7B853E88C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E56F42BB48D77D056DA933BC0C3F555 /* Foundation.framework */; };
 		F3B8870A51612FE16508BA9448362CB9 /* EARestrictedScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1F131CC468F5D32B261BC052AEE9EF1 /* EARestrictedScrollView.framework */; };
 		FD254DEDD577A911AA0C34FF45D682CC /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB2C330E5965799C3E5C9E7920F17E /* SCLExtensions.swift */; };
 /* End PBXBuildFile section */
@@ -90,9 +90,9 @@
 		74B94CC0172FF9048824A6FD3B2F3F01 /* EARestrictedScrollView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EARestrictedScrollView-umbrella.h"; sourceTree = "<group>"; };
 		8AA06A988DF61216DEFCAF6DDDCD4A07 /* EAIntroView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EAIntroView.xcconfig; sourceTree = "<group>"; };
 		8AA4F997DC748B389E41214445696D92 /* EARestrictedScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EARestrictedScrollView.m; path = EARestrictedScrollView/EARestrictedScrollView.m; sourceTree = "<group>"; };
-		8E56F42BB48D77D056DA933BC0C3F555 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A6318E9D020F310AE59A7182C81B60DC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9ED8CC89B2802F21F028ABB2A216D5A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		B1F131CC468F5D32B261BC052AEE9EF1 /* EARestrictedScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EARestrictedScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34654BF337A6A65CD14A521E1E650DB /* EAIntroView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EAIntroView.framework; path = EAIntroView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F7806EF595600F7E2898A7364CD306 /* EAIntroView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EAIntroView-dummy.m"; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DB99A73EEE5C0AE02955B3906043BF6 /* Foundation.framework in Frameworks */,
+				026A5260B865C230F2A1A083E08C7907 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3B8870A51612FE16508BA9448362CB9 /* EARestrictedScrollView.framework in Frameworks */,
-				6194D195FCD9253BBD2C640AD48A6532 /* Foundation.framework in Frameworks */,
+				3734E2F8F68A6F617075A21C58E1654B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F288717F599960530F5BDE7B853E88C7 /* Foundation.framework in Frameworks */,
+				550CBF696142B6AB372CF515B8198047 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				282AB76495B526B5CFE619D88A5860A4 /* Foundation.framework in Frameworks */,
+				7B6286C6C9613011C52D866043C9EBC5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				B1F131CC468F5D32B261BC052AEE9EF1 /* EARestrictedScrollView.framework */,
-				FB03058B372C5D7927F57E698CED30CA /* iOS */,
+				7DC49BBF91D8707DC7FA990BD5E31C12 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -208,6 +208,14 @@
 				B8D5C35916F04E031B61B54775FD843E /* Products */,
 				1E3E409EA21B3E343DFCDA987F70AC24 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		7DC49BBF91D8707DC7FA990BD5E31C12 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A9ED8CC89B2802F21F028ABB2A216D5A /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		8CDF11D35F66090EFDF0FEDBFAEA728A /* Support Files */ = {
@@ -286,14 +294,6 @@
 			);
 			name = SCLAlertView;
 			path = SCLAlertView;
-			sourceTree = "<group>";
-		};
-		FB03058B372C5D7927F57E698CED30CA /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				8E56F42BB48D77D056DA933BC0C3F555 /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -524,7 +524,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-gazer/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-gazer/Pods-gazer.modulemap";
 				OTHER_LDFLAGS = "";
@@ -559,7 +563,11 @@
 				INFOPLIST_FILE = "Target Support Files/EARestrictedScrollView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/EARestrictedScrollView/EARestrictedScrollView.modulemap";
 				PRODUCT_MODULE_NAME = EARestrictedScrollView;
 				PRODUCT_NAME = EARestrictedScrollView;
@@ -590,7 +598,11 @@
 				INFOPLIST_FILE = "Target Support Files/EARestrictedScrollView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/EARestrictedScrollView/EARestrictedScrollView.modulemap";
 				PRODUCT_MODULE_NAME = EARestrictedScrollView;
 				PRODUCT_NAME = EARestrictedScrollView;
@@ -622,7 +634,11 @@
 				INFOPLIST_FILE = "Target Support Files/EAIntroView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/EAIntroView/EAIntroView.modulemap";
 				PRODUCT_MODULE_NAME = EAIntroView;
 				PRODUCT_NAME = EAIntroView;
@@ -654,7 +670,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-gazer/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-gazer/Pods-gazer.modulemap";
 				OTHER_LDFLAGS = "";
@@ -810,7 +830,11 @@
 				INFOPLIST_FILE = "Target Support Files/SCLAlertView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SCLAlertView/SCLAlertView.modulemap";
 				PRODUCT_MODULE_NAME = SCLAlertView;
 				PRODUCT_NAME = SCLAlertView;
@@ -843,7 +867,11 @@
 				INFOPLIST_FILE = "Target Support Files/EAIntroView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/EAIntroView/EAIntroView.modulemap";
 				PRODUCT_MODULE_NAME = EAIntroView;
 				PRODUCT_NAME = EAIntroView;
@@ -875,7 +903,11 @@
 				INFOPLIST_FILE = "Target Support Files/SCLAlertView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SCLAlertView/SCLAlertView.modulemap";
 				PRODUCT_MODULE_NAME = SCLAlertView;
 				PRODUCT_NAME = SCLAlertView;

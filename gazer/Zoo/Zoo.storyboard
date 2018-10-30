@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="31F-TK-1mo">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,15 +15,15 @@
             <objects>
                 <viewController id="31F-TK-1mo" customClass="ZooViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tzH-tv-4em" customClass="ARSCNView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5GT-1R-Cc9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="902"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIs-gv-2a8">
-                                <rect key="frame" x="16" y="587" width="50" height="50"/>
+                                <rect key="frame" x="16" y="656" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="LEI-7D-8uZ"/>
                                     <constraint firstAttribute="height" constant="50" id="aBY-VM-8pB"/>
@@ -34,7 +34,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkq-rZ-sxf">
-                                <rect key="frame" x="162" y="587" width="50" height="50"/>
+                                <rect key="frame" x="201" y="656" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="15y-5E-iK0"/>
                                     <constraint firstAttribute="width" constant="50" id="QWC-hd-H4t"/>
@@ -74,14 +74,14 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="188" y="142.57871064467767"/>
+            <point key="canvasLocation" x="186.95652173913044" y="141.96428571428569"/>
         </scene>
         <!--Zoo Modal View Controller-->
         <scene sceneID="bj0-yh-fkM">
             <objects>
                 <viewController storyboardIdentifier="ModalViewController" id="9KX-r4-d7m" customClass="ZooModalViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hUe-iZ-lQp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -94,7 +94,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="animalMenu2" width="150" height="150"/>
-        <image name="cameraButton" width="150" height="150"/>
+        <image name="animalMenu2" width="75" height="75"/>
+        <image name="cameraButton" width="75" height="75"/>
     </resources>
 </document>

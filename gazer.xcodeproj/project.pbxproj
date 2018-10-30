@@ -22,6 +22,8 @@
 		B1D11250215CCD2700B8FBCD /* ZooImage in Resources */ = {isa = PBXBuildFile; fileRef = B1D1124F215CCD2700B8FBCD /* ZooImage */; };
 		B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */; };
 		C70E7AA520D77FF900255FD3 /* AquariumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */; };
+		C724D1212188191A0063139F /* AquariumModel in Resources */ = {isa = PBXBuildFile; fileRef = C724D120218819190063139F /* AquariumModel */; };
+		C724D123218819420063139F /* FishModel in Resources */ = {isa = PBXBuildFile; fileRef = C724D122218819420063139F /* FishModel */; };
 		C72D19D321520E450079C65D /* Aquarium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72D19D221520E450079C65D /* Aquarium.storyboard */; };
 		C72D1A2E2155E3440079C65D /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D1A2D2155E3440079C65D /* CustomPresentationController.swift */; };
 		C745865B216727CE000A4FC6 /* ZooModel in Resources */ = {isa = PBXBuildFile; fileRef = C745865A216727CE000A4FC6 /* ZooModel */; };
@@ -73,6 +75,8 @@
 		B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumViewController.swift; sourceTree = "<group>"; };
+		C724D120218819190063139F /* AquariumModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AquariumModel; sourceTree = "<group>"; };
+		C724D122218819420063139F /* FishModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FishModel; sourceTree = "<group>"; };
 		C72D19D221520E450079C65D /* Aquarium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Aquarium.storyboard; sourceTree = "<group>"; };
 		C72D1A2D2155E3440079C65D /* CustomPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
 		C745865A216727CE000A4FC6 /* ZooModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZooModel; sourceTree = "<group>"; };
@@ -171,7 +175,9 @@
 		C7109F7820FDB661009161A7 /* Aquarium */ = {
 			isa = PBXGroup;
 			children = (
+				C724D120218819190063139F /* AquariumModel */,
 				2356AADE215DC8A800EAA4E8 /* aqua_bgm.mp3 */,
+				C724D122218819420063139F /* FishModel */,
 				C72D19D221520E450079C65D /* Aquarium.storyboard */,
 				C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */,
 			);
@@ -360,10 +366,12 @@
 				C788DA75209023700006ED25 /* art.scnassets in Resources */,
 				2356AAE1215DC8BC00EAA4E8 /* star_bgm.mp3 in Resources */,
 				8D7316E6212562DC00C8B476 /* RockMaterial3.mp4 in Resources */,
+				C724D1212188191A0063139F /* AquariumModel in Resources */,
 				8D674B6B2105696E002A4627 /* sound.mp3 in Resources */,
 				C72D19D321520E450079C65D /* Aquarium.storyboard in Resources */,
 				8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */,
 				8D674B672104B7DF002A4627 /* RockMaterial2.mp4 in Resources */,
+				C724D123218819420063139F /* FishModel in Resources */,
 				C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */,
 				8D520BD421247958007A6C40 /* main5.mp4 in Resources */,
 				B1D11250215CCD2700B8FBCD /* ZooImage in Resources */,

@@ -111,46 +111,28 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
         super.didReceiveMemoryWarning()
     }
     
+    
     // EAIntroView
     func zooIntroView(){
         // １ページ目
         let firstIntro = EAIntroPage()
-        firstIntro.title = "ようこそ！"
-        firstIntro.desc = """
-        画面を注視しながらの歩行は大変危険です。
-        画面をタップすると次のページに移ります。
-        """
-        firstIntro.descPositionY = self.view.bounds.size.height/1.5
-        firstIntro.bgColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+        firstIntro.alpha = 0.9
+        switch (UIScreen.main.nativeBounds.height) {
+        case 2436:
+            firstIntro.bgImage = UIImage(named:"wtAnimal10")
+            break
+        default:
+            firstIntro.bgImage = UIImage(named:"wtAnimal")
+            break
+        }
         
-        // ２ページ目
-        let secondIntro = EAIntroPage()
-        secondIntro.title = "メニューに戻りたいときは？"
-        secondIntro.desc = """
-        右にスワイプすると戻れます
-        """
-        secondIntro.bgImage = UIImage(named:"introSecond")
+        let introView = EAIntroView(frame: self.view.bounds, andPages: [firstIntro])
         
-        // 3ページ目
-        let thirdIntro = EAIntroPage()
-        thirdIntro.title = "動物をだすには？"
-        thirdIntro.desc = """
-        平面をタップすると動物が出現します
-        """
-        thirdIntro.bgImage = UIImage(named: "introThird")
-        
-        // フォント設定
-        firstIntro.titleFont = UIFont(name: "HelveticaNeue-Bold", size: 45)
-        firstIntro.descFont = UIFont(name:"HelveticaNeue-Light",size:15)
-        secondIntro.descFont = UIFont(name:"HelveticaNeue-Light",size:15)
-        secondIntro.titleFont = UIFont(name: "HelveticaNeue-Bold", size: 20)
-        thirdIntro.descFont = UIFont(name:"HelveticaNeue-Light",size:15)
-        thirdIntro.titleFont = UIFont(name: "HelveticaNeue-Bold", size: 20)
-        
-        let introView = EAIntroView(frame: self.view.bounds, andPages: [firstIntro,secondIntro,thirdIntro])
-        // スキップ
-        introView?.skipButton.setTitle("スキップ", for: UIControl.State.normal)
+        // スキップボタン、ページコントロールを不可視化
+        introView?.skipButton.setTitle("", for: UIControl.State.normal)
         introView?.delegate = self
+        introView?.pageControlY = -300
+        
         // タップで次へ進む
         introView?.tapToNext = true
         // 画面立ち上げ

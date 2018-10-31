@@ -401,6 +401,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
         // AppDelegateのインスタンスを取得
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.path = "ZooModel/\(String(sender.title(for: .disabled)!)).scn"
+        self.dismiss(animated: true, completion: nil)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

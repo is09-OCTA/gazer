@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="31F-TK-1mo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="31F-TK-1mo">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,13 +46,26 @@
                                     <action selector="pushCamera:" destination="31F-TK-1mo" eventType="touchUpInside" id="7i2-dp-Bf3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6M-YQ-cDB">
+                                <rect key="frame" x="348" y="656" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NrR-8K-U7u"/>
+                                    <constraint firstAttribute="width" constant="50" id="kZ8-iG-bFV"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="objectOpenButton:" destination="31F-TK-1mo" eventType="touchUpInside" id="Sm5-aX-QZv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="nYB-Yg-QEv" firstAttribute="trailing" secondItem="q6M-YQ-cDB" secondAttribute="trailing" constant="16" id="Ho3-xp-YsK"/>
                             <constraint firstItem="nYB-Yg-QEv" firstAttribute="trailing" secondItem="rkq-rZ-sxf" secondAttribute="trailing" constant="163" id="I1d-gv-5wF"/>
                             <constraint firstItem="BIs-gv-2a8" firstAttribute="leading" secondItem="nYB-Yg-QEv" secondAttribute="leading" constant="16" id="YXz-bI-A5k"/>
                             <constraint firstItem="nYB-Yg-QEv" firstAttribute="bottom" secondItem="rkq-rZ-sxf" secondAttribute="bottom" constant="30" id="ccy-td-WXD"/>
+                            <constraint firstItem="nYB-Yg-QEv" firstAttribute="bottom" secondItem="q6M-YQ-cDB" secondAttribute="bottom" constant="30" id="crA-fE-rbq"/>
                             <constraint firstItem="nYB-Yg-QEv" firstAttribute="bottom" secondItem="BIs-gv-2a8" secondAttribute="bottom" constant="30" id="fZX-oD-BLU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nYB-Yg-QEv"/>
@@ -65,6 +78,7 @@
                         <outlet property="cameraButton" destination="rkq-rZ-sxf" id="UFI-tR-8jJ"/>
                         <outlet property="sceneView" destination="5GT-1R-Cc9" id="iho-X4-dgs"/>
                         <segue destination="9KX-r4-d7m" kind="presentation" id="nik-wX-JF3"/>
+                        <segue destination="qcl-iZ-tmZ" kind="presentation" id="2qN-8E-q2H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="da6-Nm-gjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -74,12 +88,27 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="186.95652173913044" y="141.96428571428569"/>
+            <point key="canvasLocation" x="186.95652173913044" y="141.84782608695653"/>
+        </scene>
+        <!--Object Modal View Controller-->
+        <scene sceneID="HzY-id-arX">
+            <objects>
+                <viewController storyboardIdentifier="ObjectModalViewController" id="qcl-iZ-tmZ" customClass="ObjectModalViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QJ0-gr-Os3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rkM-ji-tBJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="873-zO-AkA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1045" y="560"/>
         </scene>
         <!--Zoo Modal View Controller-->
         <scene sceneID="bj0-yh-fkM">
             <objects>
-                <viewController storyboardIdentifier="ModalViewController" id="9KX-r4-d7m" customClass="ZooModalViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ZooModalViewController" id="9KX-r4-d7m" customClass="ZooModalViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hUe-iZ-lQp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdS-Mn-28X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946" y="143"/>
+            <point key="canvasLocation" x="1045" y="-139"/>
         </scene>
     </scenes>
     <resources>

@@ -21,6 +21,7 @@
 		8D674B6B2105696E002A4627 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D674B6A2105696E002A4627 /* sound.mp3 */; };
 		8D7316E6212562DC00C8B476 /* RockMaterial3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D7316E5212562DC00C8B476 /* RockMaterial3.mp4 */; };
 		B1D11250215CCD2700B8FBCD /* ZooImage in Resources */ = {isa = PBXBuildFile; fileRef = B1D1124F215CCD2700B8FBCD /* ZooImage */; };
+		B1D79970218A9FBF00E28D55 /* ObjectModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D7996F218A9FBF00E28D55 /* ObjectModalViewController.swift */; };
 		B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */; };
 		C70E7AA520D77FF900255FD3 /* AquariumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */; };
 		C724D123218819420063139F /* FishModel in Resources */ = {isa = PBXBuildFile; fileRef = C724D122218819420063139F /* FishModel */; };
@@ -73,6 +74,7 @@
 		8D674B6A2105696E002A4627 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
 		8D7316E5212562DC00C8B476 /* RockMaterial3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = RockMaterial3.mp4; sourceTree = "<group>"; };
 		B1D1124F215CCD2700B8FBCD /* ZooImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZooImage; sourceTree = "<group>"; };
+		B1D7996F218A9FBF00E28D55 /* ObjectModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModalViewController.swift; sourceTree = "<group>"; };
 		B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */,
 				C72D1A2D2155E3440079C65D /* CustomPresentationController.swift */,
 				8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */,
+				B1D7996F218A9FBF00E28D55 /* ObjectModalViewController.swift */,
 				C745865A216727CE000A4FC6 /* ZooModel */,
 				B1D1124F215CCD2700B8FBCD /* ZooImage */,
 			);
@@ -447,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C72D1A2E2155E3440079C65D /* CustomPresentationController.swift in Sources */,
+				B1D79970218A9FBF00E28D55 /* ObjectModalViewController.swift in Sources */,
 				B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */,
 				C75A04BA20B3D9EA00B0F36C /* decimalExpansion.swift in Sources */,
 				C70E7AA520D77FF900255FD3 /* AquariumViewController.swift in Sources */,
@@ -637,7 +641,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-rei";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-re";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -659,7 +663,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-rei";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-re";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

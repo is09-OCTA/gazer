@@ -40,11 +40,20 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
     }
     
     @IBAction func openButton(_ sender: UIButton) {
-        let modalViewController = storyboard?.instantiateViewController(withIdentifier: "ModalViewController")
+        let modalViewController = storyboard?.instantiateViewController(withIdentifier: "ZooModalViewController")
         modalViewController?.modalPresentationStyle = .custom
         modalViewController?.transitioningDelegate = self as UIViewControllerTransitioningDelegate
         present(modalViewController!, animated: true, completion: nil)
     }
+    
+    @IBAction func objectOpenButton(_ sender: UIButton) {
+        let modalViewController = storyboard?.instantiateViewController(withIdentifier: "ObjectModalViewController")
+        modalViewController?.modalPresentationStyle = .custom
+        modalViewController?.transitioningDelegate = self as UIViewControllerTransitioningDelegate
+        present(modalViewController!, animated: true, completion: nil)
+    }
+    
+    
   
     override func viewDidLoad() {
         super.viewDidLoad()

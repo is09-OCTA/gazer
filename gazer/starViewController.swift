@@ -213,7 +213,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     func setupLocationManager() {
         locationManager = CLLocationManager()
         guard let locationManager = locationManager else { return }
-        locationManager.requestWhenInUseAuthorization()
+        //locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
         
         let status = CLLocationManager.authorizationStatus()
         if status == .authorizedWhenInUse {

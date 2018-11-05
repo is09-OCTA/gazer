@@ -20,6 +20,8 @@
 		8D674B672104B7DF002A4627 /* RockMaterial2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D674B662104B7DF002A4627 /* RockMaterial2.mp4 */; };
 		8D674B6B2105696E002A4627 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D674B6A2105696E002A4627 /* sound.mp3 */; };
 		8D7316E6212562DC00C8B476 /* RockMaterial3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D7316E5212562DC00C8B476 /* RockMaterial3.mp4 */; };
+		B1246649218FE5C300782D31 /* ObjectImage in Resources */ = {isa = PBXBuildFile; fileRef = B1246648218FE5C300782D31 /* ObjectImage */; };
+		B12C3B7A218FDF4A00B5EFE3 /* ObjectModel in Resources */ = {isa = PBXBuildFile; fileRef = B12C3B79218FDF4900B5EFE3 /* ObjectModel */; };
 		B1D11250215CCD2700B8FBCD /* ZooImage in Resources */ = {isa = PBXBuildFile; fileRef = B1D1124F215CCD2700B8FBCD /* ZooImage */; };
 		B1D79970218A9FBF00E28D55 /* ObjectModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D7996F218A9FBF00E28D55 /* ObjectModalViewController.swift */; };
 		B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */; };
@@ -73,6 +75,8 @@
 		8D674B662104B7DF002A4627 /* RockMaterial2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = RockMaterial2.mp4; sourceTree = "<group>"; };
 		8D674B6A2105696E002A4627 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
 		8D7316E5212562DC00C8B476 /* RockMaterial3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = RockMaterial3.mp4; sourceTree = "<group>"; };
+		B1246648218FE5C300782D31 /* ObjectImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ObjectImage; sourceTree = "<group>"; };
+		B12C3B79218FDF4900B5EFE3 /* ObjectModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ObjectModel; sourceTree = "<group>"; };
 		B1D1124F215CCD2700B8FBCD /* ZooImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZooImage; sourceTree = "<group>"; };
 		B1D7996F218A9FBF00E28D55 /* ObjectModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModalViewController.swift; sourceTree = "<group>"; };
 		B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +155,9 @@
 		8D4FC93920FD8D7500A924E4 /* Zoo */ = {
 			isa = PBXGroup;
 			children = (
+				B12C3B79218FDF4900B5EFE3 /* ObjectModel */,
 				C7B940B52156113B00AC34FE /* ZooModalViewController.swift */,
+				B1246648218FE5C300782D31 /* ObjectImage */,
 				8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */,
 				C72D1A2D2155E3440079C65D /* CustomPresentationController.swift */,
 				8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */,
@@ -369,7 +375,9 @@
 				C788DA75209023700006ED25 /* art.scnassets in Resources */,
 				2356AAE1215DC8BC00EAA4E8 /* star_bgm.mp3 in Resources */,
 				8D7316E6212562DC00C8B476 /* RockMaterial3.mp4 in Resources */,
+				B1246649218FE5C300782D31 /* ObjectImage in Resources */,
 				8D674B6B2105696E002A4627 /* sound.mp3 in Resources */,
+				B12C3B7A218FDF4A00B5EFE3 /* ObjectModel in Resources */,
 				C72D19D321520E450079C65D /* Aquarium.storyboard in Resources */,
 				8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */,
 				8D674B672104B7DF002A4627 /* RockMaterial2.mp4 in Resources */,

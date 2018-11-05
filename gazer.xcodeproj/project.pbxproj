@@ -28,6 +28,7 @@
 		C72D1A2E2155E3440079C65D /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D1A2D2155E3440079C65D /* CustomPresentationController.swift */; };
 		C745865B216727CE000A4FC6 /* ZooModel in Resources */ = {isa = PBXBuildFile; fileRef = C745865A216727CE000A4FC6 /* ZooModel */; };
 		C75A04BA20B3D9EA00B0F36C /* decimalExpansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */; };
+		C7691FC721900280000B6D5C /* AquariumModel in Resources */ = {isa = PBXBuildFile; fileRef = C7691FC621900280000B6D5C /* AquariumModel */; };
 		C788DA73209023700006ED25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA72209023700006ED25 /* AppDelegate.swift */; };
 		C788DA75209023700006ED25 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C788DA74209023700006ED25 /* art.scnassets */; };
 		C788DA77209023700006ED25 /* starViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA76209023700006ED25 /* starViewController.swift */; };
@@ -81,6 +82,7 @@
 		C72D1A2D2155E3440079C65D /* CustomPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
 		C745865A216727CE000A4FC6 /* ZooModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZooModel; sourceTree = "<group>"; };
 		C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decimalExpansion.swift; sourceTree = "<group>"; };
+		C7691FC621900280000B6D5C /* AquariumModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AquariumModel; sourceTree = "<group>"; };
 		C788DA6F209023700006ED25 /* gazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C788DA72209023700006ED25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C788DA74209023700006ED25 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		C7109F7820FDB661009161A7 /* Aquarium */ = {
 			isa = PBXGroup;
 			children = (
+				C7691FC621900280000B6D5C /* AquariumModel */,
 				2356AADE215DC8A800EAA4E8 /* aqua_bgm.mp3 */,
 				C724D122218819420063139F /* FishModel */,
 				C72D19D221520E450079C65D /* Aquarium.storyboard */,
@@ -364,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C788DA75209023700006ED25 /* art.scnassets in Resources */,
+				C7691FC721900280000B6D5C /* AquariumModel in Resources */,
 				2356AAE1215DC8BC00EAA4E8 /* star_bgm.mp3 in Resources */,
 				8D7316E6212562DC00C8B476 /* RockMaterial3.mp4 in Resources */,
 				8D674B6B2105696E002A4627 /* sound.mp3 in Resources */,
@@ -631,13 +635,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = APV6HHN9C6;
+				DEVELOPMENT_TEAM = LLR2Y6RVR8;
 				INFOPLIST_FILE = gazer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-rei";
+				PRODUCT_BUNDLE_IDENTIFIER = com.octa.gazer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -653,13 +657,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = APV6HHN9C6;
+				DEVELOPMENT_TEAM = LLR2Y6RVR8;
 				INFOPLIST_FILE = gazer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-rei";
+				PRODUCT_BUNDLE_IDENTIFIER = com.octa.gazer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

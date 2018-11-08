@@ -44,6 +44,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     // 位置情報
     var locationManager: CLLocationManager!
+    var myHedingLabel:UILabel!
     
     var latitudeLocation: Double!
     var longitudeLocation: Double!
@@ -93,6 +94,21 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
 
         //BGM再生
         playSound(name: "star_bgm")
+        
+//        方位1
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            
+            // Specifies the minimum amount of change in degrees needed for a heading service update (default: 1 degree)
+            locationManager.headingFilter = 100
+            
+            // Specifies a physical device orientation from which heading calculation should be referenced
+            locationManager.headingOrientation = .portrait
+            
+            locationManager.startUpdatingHeading()
+            locationManager.startUpdatingLocation()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -213,19 +229,34 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     func setupLocationManager() {
         locationManager = CLLocationManager()
         guard let locationManager = locationManager else { return }
-        //locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
+        locationManager.requestWhenInUseAuthorization()
         
         let status = CLLocationManager.authorizationStatus()
         if status == .authorizedWhenInUse {
             locationManager.delegate = self
             locationManager.distanceFilter = 10
             locationManager.startUpdatingLocation()
+            locationManager.stopUpdatingHeading()
             //locationManager.stopUpdatingLocation()
-//            test
+        }
+    }
+//    方位2
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted, .denied:
+            break
+        case .authorizedAlways, .authorizedWhenInUse:
+            break
         }
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        //self.textField.text = "".appendingFormat("%.2f", newHeading.magneticHeading)
+        print(newHeading.magneticHeading)
+    }
+//    方位2ここまで
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.first
         let latitude = location?.coordinate.latitude

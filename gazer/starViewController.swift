@@ -101,7 +101,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             locationManager.delegate = self
             
             // Specifies the minimum amount of change in degrees needed for a heading service update (default: 1 degree)
-            locationManager.headingFilter = 100
+            locationManager.headingFilter = 1
             
             // Specifies a physical device orientation from which heading calculation should be referenced
             locationManager.headingOrientation = .portrait

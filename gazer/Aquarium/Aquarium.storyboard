@@ -1,32 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="48W-7c-T1l">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OqQ-DJ-pfP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Aquarium View Controller-->
-        <scene sceneID="Lbg-dR-FbA">
+        <scene sceneID="tqR-df-Ymx">
             <objects>
-                <viewController storyboardIdentifier="aquarium" id="48W-7c-T1l" customClass="AquariumViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="view" id="GzV-w8-0q2" customClass="ARSCNView">
+                <viewController id="OqQ-DJ-pfP" customClass="AquariumViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qtx-ul-9MV" customClass="ARSCNView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7E-Vm-WP4">
+                                <rect key="frame" x="162" y="587" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Dy4-YT-Ycy"/>
+                                    <constraint firstAttribute="height" constant="50" id="FoA-We-PYL"/>
+                                </constraints>
+                                <state key="normal" image="cameraButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushCamera:" destination="OqQ-DJ-pfP" eventType="touchUpInside" id="WoW-le-fki"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="jM4-YG-uzy"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="1ft-A7-cjb" firstAttribute="bottom" secondItem="e7E-Vm-WP4" secondAttribute="bottom" constant="30" id="0M8-pY-1ml"/>
+                            <constraint firstItem="1ft-A7-cjb" firstAttribute="trailing" secondItem="e7E-Vm-WP4" secondAttribute="trailing" constant="163" id="WtV-XT-fsv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1ft-A7-cjb"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5Th-fo-B6c" appends="YES" id="jyf-La-Al0"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="sceneView" destination="GzV-w8-0q2" id="j1v-bD-U8k"/>
+                        <outlet property="button" destination="e7E-Vm-WP4" id="bHb-JW-OAF"/>
+                        <outlet property="sceneView" destination="Qtx-ul-9MV" id="Cj8-9F-BY0"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8pH-iq-6wi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uNl-9K-hJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="5Th-fo-B6c">
+                    <connections>
+                        <action selector="retunMenuSwipe:" destination="OqQ-DJ-pfP" id="nXc-nj-kqz"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="137" y="481"/>
+            <point key="canvasLocation" x="100" y="92.203898050974516"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cameraButton" width="150" height="150"/>
+    </resources>
 </document>

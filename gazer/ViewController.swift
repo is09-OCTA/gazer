@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     
     // ボタン画像の読み込み
     let starButtonImage:UIImage = UIImage(named: "StarButton002")!
-    let mappingButtonImage:UIImage = UIImage(named:"ZooButton001")!
+    let mappingButtonImage:UIImage = UIImage(named:"PMappingVer1.0.0")!
     let aquariumButtonImage:UIImage = UIImage(named:"AquariumButton007")!
     let zooButtonImage:UIImage = UIImage(named: "ZooButton001")!
 
@@ -39,7 +39,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         // 表示窓のサイズと位置を設定
         scrollView.frame.size = CGSize(width: screenWidth, height: screenHeight)
         scrollView.frame = CGRect(x:0,y:gazerHedder,width:screenWidth,height:screenHeight)
-        // scrollView中身の大きさを設定　
+        // scrollView中身の大きさを設定
         scrollView.contentSize = CGSize(width: buttonWidth, height: gazerHedder+buttonHeight * 4.5)
         // scrollViewの跳ね返り
         scrollView.bounces = true
@@ -50,7 +50,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         view.addSubview(scrollView)
         // Delegateを設定
         scrollView.delegate = self
-    
+        
         // ScrollViewの中身
         
         // starButton
@@ -71,7 +71,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         starShadowView.addSubview(starButton)
         // 影表示+画像ボタンのビューを乗せる
         scrollView.addSubview(starShadowView)
- 
+        
         // mappingButton
         // 影表示用のビュー
         let mappingShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
@@ -90,7 +90,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         mappingShadowView.addSubview(mappingButton)
         // 影表示+画像ボタンのビューを乗せる
         scrollView.addSubview(mappingShadowView)
-
+        
         // aquariumButton
         // 影表示用のビュー
         let aquariumShadowView = UIView(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight ))
@@ -127,7 +127,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
         zooShadowView.addSubview(zooButton)
         // 影表示+画像ボタンのビューを乗せる
         scrollView.addSubview(zooShadowView)
-
+        
         // ボタンを押された時のフロー
         starButton.addTarget(self, action: (#selector(ViewController.goStarAction)), for:.touchUpInside)
         mappingButton.addTarget(self, action: (#selector(ViewController.goMappingAction)), for:.touchUpInside)

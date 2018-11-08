@@ -3,168 +3,165 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11DB506F0B73525DDBB30E2B80802CAA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65E433A68C225D6FF6B2CE970853F1D /* QuartzCore.framework */; };
-		22D7EB066F5BC57C4D51AD93B5FD788F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
-		262CF8BB9931BA27D5257FA6AC03AFE2 /* UIBarButtonItem+Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A186DCC2962962222A0B79BBEAA3F /* UIBarButtonItem+Closures.swift */; };
-		37C0C276DAA02F43C3EAEA4DB9CB6CDA /* Pods-gazer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B10ABE9F969AB7CCC68740060189621 /* Pods-gazer-dummy.m */; };
-		3BFD3119A7299DE304ADD56157753211 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89163E94743FDDD60913C47150E225B /* UIKit.framework */; };
-		41ED0FA6AC3DFC8C6E5911F6B10CE395 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
-		4D44EB995B5FC1131F6EA47B9B98BAEC /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D411D8903661EC1AFDF58C3100B5C60 /* SCLAlertView.swift */; };
-		5A77F51572A9A369654AF69500D83AF6 /* UIView+Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF64AEB5D00328E0B39037EBB01D3E52 /* UIView+Closures.swift */; };
-		5CDF0D520333A0A7D8439627E7BD7E72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C473026796F8AFAA2ECD5A761494CE /* CoreGraphics.framework */; };
-		7E921C6D32BF2505E4D2BEEA7E2BEDEE /* Pods-gazer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 26A83ABFF7EBA9309C578F48B853253F /* Pods-gazer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F1473A99ACF025E482E63164EB7C94C /* ClosureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB7801CD02E36B13CA43980970583D7 /* ClosureHandler.swift */; };
-		87CC55A6CD9EC375D0C12F57DE5BD7A1 /* SCLAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D13E68A1C95E94C72673EC6FEB71F1D /* SCLAlertView-dummy.m */; };
-		8AE20ED244F996DE6A7D92BDF1412F61 /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE78F396C9A0DDE610855CD70F480FDD /* WSCoachMarksView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		948ECB2115794B61C682E36F2CF81E4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
-		95DCB0B0EAC6626E89B6BA4B7DF1018C /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15633E1C261C459B91E87D276FDF6AA1 /* SCLExtensions.swift */; };
-		9EE320796AD15FEFCAD5D8FFA20C8D6B /* GestureRecognizerClosures-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D992C039F6B01030B5D010C8C1CAD2F6 /* GestureRecognizerClosures-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A801326BAE795E04176A48C7EFE67C4F /* GestureRecognizerClosures-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B16CF502FE97A953F4157A05BE9043 /* GestureRecognizerClosures-dummy.m */; };
-		C9048268B2A880372E4DAFC493045DBC /* WSCoachMarksView.h in Headers */ = {isa = PBXBuildFile; fileRef = CE1B477D68327B1A6A9239777E03268D /* WSCoachMarksView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D138DAC7FD74BB2BA6ADF1DEADF5BB2F /* WSCoachMarksView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7EE4F87B8A361961288ACDCB46955D4 /* WSCoachMarksView-dummy.m */; };
-		D4A9C25D83A6D70D7EC15DF26345F92D /* WSCoachMarksView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CBC33D2E5B4460E50F6C245CFFDDA01 /* WSCoachMarksView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DFBDA68F9B32F75AF861B23D45FFE6B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */; };
-		E084E5F68C68B9B8EC8A44521D00125A /* SCLAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D8F35DB2C676EAB540EE87329DE565C /* SCLAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E36F0BFB2A545CC55C4A1ED72C0C65E1 /* UIControl+Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315398C0C873A3720DFC56B8FA481F2D /* UIControl+Closures.swift */; };
-		E903E7401E4D0A6BDF9C23B25E76A5EB /* GestureClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6271BE6804A7E120905DB8D145B63E0 /* GestureClosure.swift */; };
-		FCA1786B8EC30696D96139D34B395C15 /* UIGestureRecognizer+Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE0B6CE55AA00B2765ADA7CD8671D8B /* UIGestureRecognizer+Closures.swift */; };
+		0F0680093D16B2E2DC34021FC2DB1F4A /* SCLAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AD32D7C2E8B7667ACB6ACC78BCF9EE8 /* SCLAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FA2DBA2BFD9F183F4C1FDC58087B728 /* SCLAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1179BDEDC8E6E7802EE7D86A135C01 /* SCLAlertView-dummy.m */; };
+		282AB76495B526B5CFE619D88A5860A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E56F42BB48D77D056DA933BC0C3F555 /* Foundation.framework */; };
+		32D5DC7F6890B5795B4D326089D5727C /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B16B2D99C174DB373979BDC963B324D /* SCLAlertView.swift */; };
+		342FD0CF5A19992200CDCD679F2D71C6 /* EAIntroView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7806EF595600F7E2898A7364CD306 /* EAIntroView-dummy.m */; };
+		35843D6B720611CD4E0BB4372C6E521A /* EAIntroPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 542396CCCEE2115385632464DA1866D3 /* EAIntroPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C375F130838866610BB247AE8F61EB0 /* Pods-gazer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 26A83ABFF7EBA9309C578F48B853253F /* Pods-gazer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49A40958B574F4AA0622B86E3DAA19F5 /* EARestrictedScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E74F4AF5D25C0BDA551E9BBA41E0520 /* EARestrictedScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E89828A9263BAFC69EABE925DFD0CA9 /* Pods-gazer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B10ABE9F969AB7CCC68740060189621 /* Pods-gazer-dummy.m */; };
+		4EA4A852D1D8C36A63ED5E157029EC06 /* EAIntroView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C00D67ED4C8A6CA94ACDFD30E133F01 /* EAIntroView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		501396162015F7B2D3D6629BFB27F7C9 /* EAIntroView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1735D314BDD9EB19F7C60EC5B0295778 /* EAIntroView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		599EC797D93F4BEB8EC9C246DBC36125 /* EARestrictedScrollView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 74B94CC0172FF9048824A6FD3B2F3F01 /* EARestrictedScrollView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DB99A73EEE5C0AE02955B3906043BF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E56F42BB48D77D056DA933BC0C3F555 /* Foundation.framework */; };
+		6194D195FCD9253BBD2C640AD48A6532 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E56F42BB48D77D056DA933BC0C3F555 /* Foundation.framework */; };
+		C41EB9232CC9C9A7A1D5A6F221D1EDB4 /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F5AE8487E6024ABF4A174FCD9E7B7 /* EAIntroPage.m */; };
+		CCD230BC815C775651F2054A0DAE32E7 /* EARestrictedScrollView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD18F8F7D2FA46D47DF128466ECCA02 /* EARestrictedScrollView-dummy.m */; };
+		EA705D6826863CE9297E92D5673EEDCE /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 426EC58A75726FF57750AB34A6E536BE /* EAIntroView.m */; };
+		EABBB2F663609893680E5B6F1622F5E6 /* EARestrictedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4F997DC748B389E41214445696D92 /* EARestrictedScrollView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F288717F599960530F5BDE7B853E88C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E56F42BB48D77D056DA933BC0C3F555 /* Foundation.framework */; };
+		F3B8870A51612FE16508BA9448362CB9 /* EARestrictedScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1F131CC468F5D32B261BC052AEE9EF1 /* EARestrictedScrollView.framework */; };
+		FD254DEDD577A911AA0C34FF45D682CC /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB2C330E5965799C3E5C9E7920F17E /* SCLExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		917AF8A1D7C4587829ABDF52A5FD2A68 /* PBXContainerItemProxy */ = {
+		0629DCF9B454DEB8355BE0BAD9B043F1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A61A153D741349D484FEC7143E7DE13E;
+			remoteGlobalIDString = 822DA31A6A34C7EF41E1EC7A5EF8FC2F;
+			remoteInfo = EAIntroView;
+		};
+		13A47097495608C05D3C5FFCBDFB68B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58AAD2C9E898747F2F4ABF348E6325F2;
+			remoteInfo = EARestrictedScrollView;
+		};
+		3BD0AABA668B69C63611634E350F4621 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58AAD2C9E898747F2F4ABF348E6325F2;
+			remoteInfo = EARestrictedScrollView;
+		};
+		FE2A46359A5F039403F7FC6F0FCED336 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F966150C1DB00995E43CA5B6AB7C316;
 			remoteInfo = SCLAlertView;
-		};
-		A9F218743C4361EF5770428A87519B56 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4639FF81D97257EA7EAE0BD36A9BE62F;
-			remoteInfo = GestureRecognizerClosures;
-		};
-		B4DE9ADE824F324976DF807539161BE7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EAA82D31ED9C8467BA6C4239A02CACD1;
-			remoteInfo = WSCoachMarksView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		02AACC7AF90B16B98C1E922A74FD6821 /* Pods-gazer-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-gazer-frameworks.sh"; sourceTree = "<group>"; };
-		0AA992B85AE3984D5F798BB2909E0271 /* WSCoachMarksView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WSCoachMarksView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		15633E1C261C459B91E87D276FDF6AA1 /* SCLExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLExtensions.swift; path = SCLAlertView/SCLExtensions.swift; sourceTree = "<group>"; };
+		07A633C475CECA0B799411F342A06AA1 /* Pods_gazer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_gazer.framework; path = "Pods-gazer.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		10EB2C330E5965799C3E5C9E7920F17E /* SCLExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLExtensions.swift; path = SCLAlertView/SCLExtensions.swift; sourceTree = "<group>"; };
+		1735D314BDD9EB19F7C60EC5B0295778 /* EAIntroView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EAIntroView.h; path = EAIntroView/EAIntroView.h; sourceTree = "<group>"; };
+		1B00AE33876C73B4A692FA844595BFFD /* EAIntroView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EAIntroView.modulemap; sourceTree = "<group>"; };
 		1B10ABE9F969AB7CCC68740060189621 /* Pods-gazer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-gazer-dummy.m"; sourceTree = "<group>"; };
+		1C00D67ED4C8A6CA94ACDFD30E133F01 /* EAIntroView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EAIntroView-umbrella.h"; sourceTree = "<group>"; };
 		26A83ABFF7EBA9309C578F48B853253F /* Pods-gazer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-gazer-umbrella.h"; sourceTree = "<group>"; };
-		28B553E72E00E659A955DE6DCB60AE81 /* SCLAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SCLAlertView.modulemap; sourceTree = "<group>"; };
+		295786CD0DE9E56C35EC91C431FB9A1A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		295F58ACCF876D45F3304313C1457312 /* Pods-gazer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-gazer.modulemap"; sourceTree = "<group>"; };
-		2D8F35DB2C676EAB540EE87329DE565C /* SCLAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-umbrella.h"; sourceTree = "<group>"; };
-		315398C0C873A3720DFC56B8FA481F2D /* UIControl+Closures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIControl+Closures.swift"; path = "GestureRecognizerClosures/UIControl+Closures.swift"; sourceTree = "<group>"; };
-		37B117D00C73D1BF0FC5696331FED7D3 /* SCLAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SCLAlertView.xcconfig; sourceTree = "<group>"; };
-		37C473026796F8AFAA2ECD5A761494CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		3C8A186DCC2962962222A0B79BBEAA3F /* UIBarButtonItem+Closures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+Closures.swift"; path = "GestureRecognizerClosures/UIBarButtonItem+Closures.swift"; sourceTree = "<group>"; };
-		3CBC33D2E5B4460E50F6C245CFFDDA01 /* WSCoachMarksView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WSCoachMarksView-umbrella.h"; sourceTree = "<group>"; };
-		4632252E0593ED0356B6FF3351143B71 /* GestureRecognizerClosures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GestureRecognizerClosures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		47DFB81DDCAC7E1A5843616B1667CDD9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D1068A2659560D6FADEFE1246CDBDBE /* EAIntroView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EAIntroView-prefix.pch"; sourceTree = "<group>"; };
+		2FD18F8F7D2FA46D47DF128466ECCA02 /* EARestrictedScrollView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EARestrictedScrollView-dummy.m"; sourceTree = "<group>"; };
+		3AD32D7C2E8B7667ACB6ACC78BCF9EE8 /* SCLAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-umbrella.h"; sourceTree = "<group>"; };
+		426EC58A75726FF57750AB34A6E536BE /* EAIntroView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EAIntroView.m; path = EAIntroView/EAIntroView.m; sourceTree = "<group>"; };
+		46769169AA65118454B443EB2E549B01 /* EARestrictedScrollView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EARestrictedScrollView.modulemap; sourceTree = "<group>"; };
 		49F5E93DA12BB57776A48EB0D6F82A4D /* Pods-gazer-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-gazer-resources.sh"; sourceTree = "<group>"; };
+		4E74F4AF5D25C0BDA551E9BBA41E0520 /* EARestrictedScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EARestrictedScrollView.h; path = EARestrictedScrollView/EARestrictedScrollView.h; sourceTree = "<group>"; };
+		4F9F5AE8487E6024ABF4A174FCD9E7B7 /* EAIntroPage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EAIntroPage.m; path = EAIntroView/EAIntroPage.m; sourceTree = "<group>"; };
+		520F9D7B04DA14D688099D3951EF0239 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		542396CCCEE2115385632464DA1866D3 /* EAIntroPage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EAIntroPage.h; path = EAIntroView/EAIntroPage.h; sourceTree = "<group>"; };
 		5A55CB6F5298C5104C24D14EF218621D /* Pods-gazer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-gazer-acknowledgements.plist"; sourceTree = "<group>"; };
-		5C64C9CD04D020D52E30F91D7B9A7F85 /* WSCoachMarksView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WSCoachMarksView.xcconfig; sourceTree = "<group>"; };
-		69D085152E793ABEFE8F3A81B2885932 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D69DE1A608313290C8D79BBB7147317 /* WSCoachMarksView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WSCoachMarksView.modulemap; sourceTree = "<group>"; };
-		6FE0B6CE55AA00B2765ADA7CD8671D8B /* UIGestureRecognizer+Closures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIGestureRecognizer+Closures.swift"; path = "GestureRecognizerClosures/UIGestureRecognizer+Closures.swift"; sourceTree = "<group>"; };
-		801CDBE5DE549ABADB3D272C5DFA439F /* GestureRecognizerClosures.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GestureRecognizerClosures.xcconfig; sourceTree = "<group>"; };
-		804D138BBDF72364731119D8697BA56F /* SCLAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SCLAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		82838DF4E71CF11E45D15AD7A269403B /* SCLAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-prefix.pch"; sourceTree = "<group>"; };
-		888D085969B377092213CCF61F95304E /* WSCoachMarksView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WSCoachMarksView-prefix.pch"; sourceTree = "<group>"; };
-		8D13E68A1C95E94C72673EC6FEB71F1D /* SCLAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SCLAlertView-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D411D8903661EC1AFDF58C3100B5C60 /* SCLAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLAlertView.swift; path = SCLAlertView/SCLAlertView.swift; sourceTree = "<group>"; };
-		A6078F3DB1BE91BB8D20E39581122964 /* GestureRecognizerClosures.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GestureRecognizerClosures.modulemap; sourceTree = "<group>"; };
-		A6271BE6804A7E120905DB8D145B63E0 /* GestureClosure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GestureClosure.swift; path = GestureRecognizerClosures/GestureClosure.swift; sourceTree = "<group>"; };
+		6B16B2D99C174DB373979BDC963B324D /* SCLAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLAlertView.swift; path = SCLAlertView/SCLAlertView.swift; sourceTree = "<group>"; };
+		6E1179BDEDC8E6E7802EE7D86A135C01 /* SCLAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SCLAlertView-dummy.m"; sourceTree = "<group>"; };
+		6E7FE4C1B0227E4AD763C581DB2F3A03 /* EARestrictedScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EARestrictedScrollView.framework; path = EARestrictedScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F6FF6EC9CEC6EFFF6A2577603BBEAB4 /* SCLAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-prefix.pch"; sourceTree = "<group>"; };
+		74B94CC0172FF9048824A6FD3B2F3F01 /* EARestrictedScrollView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EARestrictedScrollView-umbrella.h"; sourceTree = "<group>"; };
+		8AA06A988DF61216DEFCAF6DDDCD4A07 /* EAIntroView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EAIntroView.xcconfig; sourceTree = "<group>"; };
+		8AA4F997DC748B389E41214445696D92 /* EARestrictedScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EARestrictedScrollView.m; path = EARestrictedScrollView/EARestrictedScrollView.m; sourceTree = "<group>"; };
+		8E56F42BB48D77D056DA933BC0C3F555 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A6318E9D020F310AE59A7182C81B60DC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF64AEB5D00328E0B39037EBB01D3E52 /* UIView+Closures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Closures.swift"; path = "GestureRecognizerClosures/UIView+Closures.swift"; sourceTree = "<group>"; };
-		B65E433A68C225D6FF6B2CE970853F1D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		BE78F396C9A0DDE610855CD70F480FDD /* WSCoachMarksView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WSCoachMarksView.m; sourceTree = "<group>"; };
-		C474939D4CD24226F315E3D6AD4A0FF7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C7EE4F87B8A361961288ACDCB46955D4 /* WSCoachMarksView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WSCoachMarksView-dummy.m"; sourceTree = "<group>"; };
+		B1F131CC468F5D32B261BC052AEE9EF1 /* EARestrictedScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EARestrictedScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B34654BF337A6A65CD14A521E1E650DB /* EAIntroView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EAIntroView.framework; path = EAIntroView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9F7806EF595600F7E2898A7364CD306 /* EAIntroView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EAIntroView-dummy.m"; sourceTree = "<group>"; };
+		CAF22BFDA7DCC3AEF170DB7E4DFB9A96 /* SCLAlertView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SCLAlertView.modulemap; sourceTree = "<group>"; };
+		CD1CBA514B8D2D8402E7005515E7D95B /* SCLAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SCLAlertView.framework; path = SCLAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8C9A7E0188C7201D3F2309F2BCE51F /* Pods-gazer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gazer.release.xcconfig"; sourceTree = "<group>"; };
-		CE1B477D68327B1A6A9239777E03268D /* WSCoachMarksView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WSCoachMarksView.h; sourceTree = "<group>"; };
-		D422B1C209768B349F7523970DD4F2C3 /* Pods_gazer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D8B16CF502FE97A953F4157A05BE9043 /* GestureRecognizerClosures-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GestureRecognizerClosures-dummy.m"; sourceTree = "<group>"; };
-		D992C039F6B01030B5D010C8C1CAD2F6 /* GestureRecognizerClosures-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GestureRecognizerClosures-umbrella.h"; sourceTree = "<group>"; };
 		DA2BD80468D075494A103CCD1EFE00DD /* Pods-gazer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gazer.debug.xcconfig"; sourceTree = "<group>"; };
+		DD8CA5BD4C15C53C5C8BE0F6CB9DEA81 /* EARestrictedScrollView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EARestrictedScrollView-prefix.pch"; sourceTree = "<group>"; };
+		DDCDBCEEB6E1F6F53AAAB02C1870BFE6 /* EARestrictedScrollView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EARestrictedScrollView.xcconfig; sourceTree = "<group>"; };
 		E2EAC852A23FAEEFD665BD02614EE493 /* Pods-gazer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-gazer-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E89163E94743FDDD60913C47150E225B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		EEE81DF489C59C5A4365EB135ADB8C64 /* GestureRecognizerClosures-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GestureRecognizerClosures-prefix.pch"; sourceTree = "<group>"; };
-		FEB7801CD02E36B13CA43980970583D7 /* ClosureHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClosureHandler.swift; path = GestureRecognizerClosures/ClosureHandler.swift; sourceTree = "<group>"; };
+		E95222DDC008E78C646C15E01669DEA3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F61551D0518832BF052631EBD34CDB82 /* SCLAlertView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SCLAlertView.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		85C3CB1DD8A68596B4F168E3F22D0185 /* Frameworks */ = {
+		11E6622B4205C08F393DA31941DF5122 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFBDA68F9B32F75AF861B23D45FFE6B8 /* Foundation.framework in Frameworks */,
+				5DB99A73EEE5C0AE02955B3906043BF6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA77EB3D1E68D800ADFC067081473EB6 /* Frameworks */ = {
+		5FCC41F4E90F2572E53B95EC40392A34 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CDF0D520333A0A7D8439627E7BD7E72 /* CoreGraphics.framework in Frameworks */,
-				948ECB2115794B61C682E36F2CF81E4C /* Foundation.framework in Frameworks */,
-				11DB506F0B73525DDBB30E2B80802CAA /* QuartzCore.framework in Frameworks */,
+				F3B8870A51612FE16508BA9448362CB9 /* EARestrictedScrollView.framework in Frameworks */,
+				6194D195FCD9253BBD2C640AD48A6532 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D4CC6539D8880FB66A71721235CEE488 /* Frameworks */ = {
+		81F2071FEA18BA5F26839B5D75E25F70 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22D7EB066F5BC57C4D51AD93B5FD788F /* Foundation.framework in Frameworks */,
-				3BFD3119A7299DE304ADD56157753211 /* UIKit.framework in Frameworks */,
+				F288717F599960530F5BDE7B853E88C7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE0665F099AE4F63DCE6088FA2E30922 /* Frameworks */ = {
+		8CC30C83184937C62545720BC56F71AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41ED0FA6AC3DFC8C6E5911F6B10CE395 /* Foundation.framework in Frameworks */,
+				282AB76495B526B5CFE619D88A5860A4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11195953A8E1EDDA88058EF1E0ACF235 /* Support Files */ = {
+		0460DB37E629896C5DF13BA682A83038 /* EAIntroView */ = {
 			isa = PBXGroup;
 			children = (
-				A6078F3DB1BE91BB8D20E39581122964 /* GestureRecognizerClosures.modulemap */,
-				801CDBE5DE549ABADB3D272C5DFA439F /* GestureRecognizerClosures.xcconfig */,
-				D8B16CF502FE97A953F4157A05BE9043 /* GestureRecognizerClosures-dummy.m */,
-				EEE81DF489C59C5A4365EB135ADB8C64 /* GestureRecognizerClosures-prefix.pch */,
-				D992C039F6B01030B5D010C8C1CAD2F6 /* GestureRecognizerClosures-umbrella.h */,
-				47DFB81DDCAC7E1A5843616B1667CDD9 /* Info.plist */,
+				542396CCCEE2115385632464DA1866D3 /* EAIntroPage.h */,
+				4F9F5AE8487E6024ABF4A174FCD9E7B7 /* EAIntroPage.m */,
+				1735D314BDD9EB19F7C60EC5B0295778 /* EAIntroView.h */,
+				426EC58A75726FF57750AB34A6E536BE /* EAIntroView.m */,
+				8CDF11D35F66090EFDF0FEDBFAEA728A /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GestureRecognizerClosures";
+			name = EAIntroView;
+			path = EAIntroView;
 			sourceTree = "<group>";
 		};
-		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
+		161092595C9F7FCC74AC9A68F699F491 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				53C8B4AB97860F06FE722851EA867B18 /* iOS */,
+				B1F131CC468F5D32B261BC052AEE9EF1 /* EARestrictedScrollView.framework */,
+				FB03058B372C5D7927F57E698CED30CA /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -177,99 +174,89 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		3436F83C0DC4C1D3AC9ADD00D3EBE7F7 /* WSCoachMarksView */ = {
+		2F5548D6E31BEDCDF23AD2DEC48C00BC /* EARestrictedScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				CE1B477D68327B1A6A9239777E03268D /* WSCoachMarksView.h */,
-				BE78F396C9A0DDE610855CD70F480FDD /* WSCoachMarksView.m */,
-				B24D4E79ED1A9DD02DFE81A1CDA35C63 /* Support Files */,
+				4E74F4AF5D25C0BDA551E9BBA41E0520 /* EARestrictedScrollView.h */,
+				8AA4F997DC748B389E41214445696D92 /* EARestrictedScrollView.m */,
+				6C7BA942E1D53C3632AFAB40398911AB /* Support Files */,
 			);
-			path = WSCoachMarksView;
+			name = EARestrictedScrollView;
+			path = EARestrictedScrollView;
 			sourceTree = "<group>";
 		};
-		3B5AC47A03F73E5E09B961C908EF3261 /* Support Files */ = {
+		6C7BA942E1D53C3632AFAB40398911AB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				69D085152E793ABEFE8F3A81B2885932 /* Info.plist */,
-				28B553E72E00E659A955DE6DCB60AE81 /* SCLAlertView.modulemap */,
-				37B117D00C73D1BF0FC5696331FED7D3 /* SCLAlertView.xcconfig */,
-				8D13E68A1C95E94C72673EC6FEB71F1D /* SCLAlertView-dummy.m */,
-				82838DF4E71CF11E45D15AD7A269403B /* SCLAlertView-prefix.pch */,
-				2D8F35DB2C676EAB540EE87329DE565C /* SCLAlertView-umbrella.h */,
+				46769169AA65118454B443EB2E549B01 /* EARestrictedScrollView.modulemap */,
+				DDCDBCEEB6E1F6F53AAAB02C1870BFE6 /* EARestrictedScrollView.xcconfig */,
+				2FD18F8F7D2FA46D47DF128466ECCA02 /* EARestrictedScrollView-dummy.m */,
+				DD8CA5BD4C15C53C5C8BE0F6CB9DEA81 /* EARestrictedScrollView-prefix.pch */,
+				74B94CC0172FF9048824A6FD3B2F3F01 /* EARestrictedScrollView-umbrella.h */,
+				520F9D7B04DA14D688099D3951EF0239 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/SCLAlertView";
-			sourceTree = "<group>";
-		};
-		53C8B4AB97860F06FE722851EA867B18 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				37C473026796F8AFAA2ECD5A761494CE /* CoreGraphics.framework */,
-				D56348597C0DD615177C5C15A774BCF2 /* Foundation.framework */,
-				B65E433A68C225D6FF6B2CE970853F1D /* QuartzCore.framework */,
-				E89163E94743FDDD60913C47150E225B /* UIKit.framework */,
-			);
-			name = iOS;
+			path = "../Target Support Files/EARestrictedScrollView";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
-				ED28749DE25A054FE24242AD9D0074B3 /* Pods */,
-				A2FF68153595FC60B25C52A75C6B160A /* Products */,
+				161092595C9F7FCC74AC9A68F699F491 /* Frameworks */,
+				C60681AE549A50E0410A535BD1399838 /* Pods */,
+				B8D5C35916F04E031B61B54775FD843E /* Products */,
 				1E3E409EA21B3E343DFCDA987F70AC24 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A2FF68153595FC60B25C52A75C6B160A /* Products */ = {
+		8CDF11D35F66090EFDF0FEDBFAEA728A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4632252E0593ED0356B6FF3351143B71 /* GestureRecognizerClosures.framework */,
-				D422B1C209768B349F7523970DD4F2C3 /* Pods_gazer.framework */,
-				804D138BBDF72364731119D8697BA56F /* SCLAlertView.framework */,
-				0AA992B85AE3984D5F798BB2909E0271 /* WSCoachMarksView.framework */,
+				1B00AE33876C73B4A692FA844595BFFD /* EAIntroView.modulemap */,
+				8AA06A988DF61216DEFCAF6DDDCD4A07 /* EAIntroView.xcconfig */,
+				B9F7806EF595600F7E2898A7364CD306 /* EAIntroView-dummy.m */,
+				2D1068A2659560D6FADEFE1246CDBDBE /* EAIntroView-prefix.pch */,
+				1C00D67ED4C8A6CA94ACDFD30E133F01 /* EAIntroView-umbrella.h */,
+				295786CD0DE9E56C35EC91C431FB9A1A /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/EAIntroView";
+			sourceTree = "<group>";
+		};
+		B8D5C35916F04E031B61B54775FD843E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B34654BF337A6A65CD14A521E1E650DB /* EAIntroView.framework */,
+				6E7FE4C1B0227E4AD763C581DB2F3A03 /* EARestrictedScrollView.framework */,
+				07A633C475CECA0B799411F342A06AA1 /* Pods_gazer.framework */,
+				CD1CBA514B8D2D8402E7005515E7D95B /* SCLAlertView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B24D4E79ED1A9DD02DFE81A1CDA35C63 /* Support Files */ = {
+		C4CFC83A23DB8F2DAABA3B4384DD69F2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C474939D4CD24226F315E3D6AD4A0FF7 /* Info.plist */,
-				6D69DE1A608313290C8D79BBB7147317 /* WSCoachMarksView.modulemap */,
-				5C64C9CD04D020D52E30F91D7B9A7F85 /* WSCoachMarksView.xcconfig */,
-				C7EE4F87B8A361961288ACDCB46955D4 /* WSCoachMarksView-dummy.m */,
-				888D085969B377092213CCF61F95304E /* WSCoachMarksView-prefix.pch */,
-				3CBC33D2E5B4460E50F6C245CFFDDA01 /* WSCoachMarksView-umbrella.h */,
+				E95222DDC008E78C646C15E01669DEA3 /* Info.plist */,
+				CAF22BFDA7DCC3AEF170DB7E4DFB9A96 /* SCLAlertView.modulemap */,
+				F61551D0518832BF052631EBD34CDB82 /* SCLAlertView.xcconfig */,
+				6E1179BDEDC8E6E7802EE7D86A135C01 /* SCLAlertView-dummy.m */,
+				6F6FF6EC9CEC6EFFF6A2577603BBEAB4 /* SCLAlertView-prefix.pch */,
+				3AD32D7C2E8B7667ACB6ACC78BCF9EE8 /* SCLAlertView-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/WSCoachMarksView";
+			path = "../Target Support Files/SCLAlertView";
 			sourceTree = "<group>";
 		};
-		BAA53D3AF2CD8F8812D9AB5F365CD6D5 /* SCLAlertView */ = {
+		C60681AE549A50E0410A535BD1399838 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9D411D8903661EC1AFDF58C3100B5C60 /* SCLAlertView.swift */,
-				15633E1C261C459B91E87D276FDF6AA1 /* SCLExtensions.swift */,
-				3B5AC47A03F73E5E09B961C908EF3261 /* Support Files */,
+				0460DB37E629896C5DF13BA682A83038 /* EAIntroView */,
+				2F5548D6E31BEDCDF23AD2DEC48C00BC /* EARestrictedScrollView */,
+				F7AC9576CF985D81EB14E314740C15D7 /* SCLAlertView */,
 			);
-			path = SCLAlertView;
-			sourceTree = "<group>";
-		};
-		D5B30BF196077962D0E09EEE222E5A2D /* GestureRecognizerClosures */ = {
-			isa = PBXGroup;
-			children = (
-				FEB7801CD02E36B13CA43980970583D7 /* ClosureHandler.swift */,
-				A6271BE6804A7E120905DB8D145B63E0 /* GestureClosure.swift */,
-				3C8A186DCC2962962222A0B79BBEAA3F /* UIBarButtonItem+Closures.swift */,
-				315398C0C873A3720DFC56B8FA481F2D /* UIControl+Closures.swift */,
-				6FE0B6CE55AA00B2765ADA7CD8671D8B /* UIGestureRecognizer+Closures.swift */,
-				AF64AEB5D00328E0B39037EBB01D3E52 /* UIView+Closures.swift */,
-				11195953A8E1EDDA88058EF1E0ACF235 /* Support Files */,
-			);
-			path = GestureRecognizerClosures;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		DBE71C1A38690C8B4F6AC78DDD32F49E /* Pods-gazer */ = {
@@ -290,99 +277,73 @@
 			path = "Target Support Files/Pods-gazer";
 			sourceTree = "<group>";
 		};
-		ED28749DE25A054FE24242AD9D0074B3 /* Pods */ = {
+		F7AC9576CF985D81EB14E314740C15D7 /* SCLAlertView */ = {
 			isa = PBXGroup;
 			children = (
-				D5B30BF196077962D0E09EEE222E5A2D /* GestureRecognizerClosures */,
-				BAA53D3AF2CD8F8812D9AB5F365CD6D5 /* SCLAlertView */,
-				3436F83C0DC4C1D3AC9ADD00D3EBE7F7 /* WSCoachMarksView */,
+				6B16B2D99C174DB373979BDC963B324D /* SCLAlertView.swift */,
+				10EB2C330E5965799C3E5C9E7920F17E /* SCLExtensions.swift */,
+				C4CFC83A23DB8F2DAABA3B4384DD69F2 /* Support Files */,
 			);
-			name = Pods;
+			name = SCLAlertView;
+			path = SCLAlertView;
+			sourceTree = "<group>";
+		};
+		FB03058B372C5D7927F57E698CED30CA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8E56F42BB48D77D056DA933BC0C3F555 /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3F2EEA240CFCC75D54816D070B73AD6A /* Headers */ = {
+		4B60AC997E12D82347539719B6792728 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4A9C25D83A6D70D7EC15DF26345F92D /* WSCoachMarksView-umbrella.h in Headers */,
-				C9048268B2A880372E4DAFC493045DBC /* WSCoachMarksView.h in Headers */,
+				0F0680093D16B2E2DC34021FC2DB1F4A /* SCLAlertView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6F88D9E3FA11BEB7D02B9E23455A7A6D /* Headers */ = {
+		AAD64AC95CE8324ED09680AC57CD5631 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E921C6D32BF2505E4D2BEEA7E2BEDEE /* Pods-gazer-umbrella.h in Headers */,
+				3C375F130838866610BB247AE8F61EB0 /* Pods-gazer-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		859ECED90153AA206C0F32BC3FEC1B88 /* Headers */ = {
+		C671F4065968BAC4CE3937952CAC2C1E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E084E5F68C68B9B8EC8A44521D00125A /* SCLAlertView-umbrella.h in Headers */,
+				35843D6B720611CD4E0BB4372C6E521A /* EAIntroPage.h in Headers */,
+				4EA4A852D1D8C36A63ED5E157029EC06 /* EAIntroView-umbrella.h in Headers */,
+				501396162015F7B2D3D6629BFB27F7C9 /* EAIntroView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EAD808C3EC55BC7A52393F4BCF8B7D11 /* Headers */ = {
+		CAE9E53F94A5B9290A44D40D09523886 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EE320796AD15FEFCAD5D8FFA20C8D6B /* GestureRecognizerClosures-umbrella.h in Headers */,
+				599EC797D93F4BEB8EC9C246DBC36125 /* EARestrictedScrollView-umbrella.h in Headers */,
+				49A40958B574F4AA0622B86E3DAA19F5 /* EARestrictedScrollView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		136851A62EDECD962D8CE6E07BE988C9 /* Pods-gazer */ = {
+		1F966150C1DB00995E43CA5B6AB7C316 /* SCLAlertView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5718DDA66367A5BE2FA875FFAA2D8CF1 /* Build configuration list for PBXNativeTarget "Pods-gazer" */;
+			buildConfigurationList = 42D36ADC84E975A9D9DC5BA7554ED77B /* Build configuration list for PBXNativeTarget "SCLAlertView" */;
 			buildPhases = (
-				57F9F949EECEB9BD1000CF40D2ABADAD /* Sources */,
-				85C3CB1DD8A68596B4F168E3F22D0185 /* Frameworks */,
-				6F88D9E3FA11BEB7D02B9E23455A7A6D /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				519FC3D8640DB065261FCBA50F111D50 /* PBXTargetDependency */,
-				2664A1310DD46F9620E9AE36EC560231 /* PBXTargetDependency */,
-				0214EF5A53E9B002A7A099B89C079C88 /* PBXTargetDependency */,
-			);
-			name = "Pods-gazer";
-			productName = "Pods-gazer";
-			productReference = D422B1C209768B349F7523970DD4F2C3 /* Pods_gazer.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		4639FF81D97257EA7EAE0BD36A9BE62F /* GestureRecognizerClosures */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3902550216DDECF0526EFD07CB175751 /* Build configuration list for PBXNativeTarget "GestureRecognizerClosures" */;
-			buildPhases = (
-				AC0D0F465A57EC08516E3FB4FDA702B1 /* Sources */,
-				D4CC6539D8880FB66A71721235CEE488 /* Frameworks */,
-				EAD808C3EC55BC7A52393F4BCF8B7D11 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = GestureRecognizerClosures;
-			productName = GestureRecognizerClosures;
-			productReference = 4632252E0593ED0356B6FF3351143B71 /* GestureRecognizerClosures.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A61A153D741349D484FEC7143E7DE13E /* SCLAlertView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1369E09CCE9D0333C4A438D0209E20CB /* Build configuration list for PBXNativeTarget "SCLAlertView" */;
-			buildPhases = (
-				51D6883B45EACA0691C2EF9CF366B1CB /* Sources */,
-				DE0665F099AE4F63DCE6088FA2E30922 /* Frameworks */,
-				859ECED90153AA206C0F32BC3FEC1B88 /* Headers */,
+				7AA1BA32AC2C4A12BBA96A30AC3BB909 /* Sources */,
+				81F2071FEA18BA5F26839B5D75E25F70 /* Frameworks */,
+				4B60AC997E12D82347539719B6792728 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -390,24 +351,62 @@
 			);
 			name = SCLAlertView;
 			productName = SCLAlertView;
-			productReference = 804D138BBDF72364731119D8697BA56F /* SCLAlertView.framework */;
+			productReference = CD1CBA514B8D2D8402E7005515E7D95B /* SCLAlertView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		EAA82D31ED9C8467BA6C4239A02CACD1 /* WSCoachMarksView */ = {
+		4F029F071E9E023D334CC0B26D7A0B6D /* Pods-gazer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8A351BC072C3682D14287C81EAD2A15F /* Build configuration list for PBXNativeTarget "WSCoachMarksView" */;
+			buildConfigurationList = C6740EF10BE0B0350E3D45F8602071C0 /* Build configuration list for PBXNativeTarget "Pods-gazer" */;
 			buildPhases = (
-				6CF4744C8B91BA60A998B9525D7B0472 /* Sources */,
-				BA77EB3D1E68D800ADFC067081473EB6 /* Frameworks */,
-				3F2EEA240CFCC75D54816D070B73AD6A /* Headers */,
+				1758EC524F247E9946BDA11C490ABCE3 /* Sources */,
+				8CC30C83184937C62545720BC56F71AE /* Frameworks */,
+				AAD64AC95CE8324ED09680AC57CD5631 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				75C40171698936C230B8F1DB5616BA85 /* PBXTargetDependency */,
+				F119CC4624BAD7CAB2D492F95CCF18FA /* PBXTargetDependency */,
+				36F14341AB1C2C5BE4824E0B925A0C01 /* PBXTargetDependency */,
+			);
+			name = "Pods-gazer";
+			productName = "Pods-gazer";
+			productReference = 07A633C475CECA0B799411F342A06AA1 /* Pods_gazer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		58AAD2C9E898747F2F4ABF348E6325F2 /* EARestrictedScrollView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8472F561CB64FB8CE3D0D392D30827E /* Build configuration list for PBXNativeTarget "EARestrictedScrollView" */;
+			buildPhases = (
+				0B21E6D709211D6DD0798D60E8EEEFAC /* Sources */,
+				11E6622B4205C08F393DA31941DF5122 /* Frameworks */,
+				CAE9E53F94A5B9290A44D40D09523886 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = WSCoachMarksView;
-			productName = WSCoachMarksView;
-			productReference = 0AA992B85AE3984D5F798BB2909E0271 /* WSCoachMarksView.framework */;
+			name = EARestrictedScrollView;
+			productName = EARestrictedScrollView;
+			productReference = 6E7FE4C1B0227E4AD763C581DB2F3A03 /* EARestrictedScrollView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		822DA31A6A34C7EF41E1EC7A5EF8FC2F /* EAIntroView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE33DA26C9464A33AF8F0E572B1F739E /* Build configuration list for PBXNativeTarget "EAIntroView" */;
+			buildPhases = (
+				0C0FDB7A17544A248D55BDCE0D5F06FE /* Sources */,
+				5FCC41F4E90F2572E53B95EC40392A34 /* Frameworks */,
+				C671F4065968BAC4CE3937952CAC2C1E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2EF0550E37222B5E47D0ED793E95D4F /* PBXTargetDependency */,
+			);
+			name = EAIntroView;
+			productName = EAIntroView;
+			productReference = B34654BF337A6A65CD14A521E1E650DB /* EAIntroView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -417,7 +416,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -427,87 +426,125 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = A2FF68153595FC60B25C52A75C6B160A /* Products */;
+			productRefGroup = B8D5C35916F04E031B61B54775FD843E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4639FF81D97257EA7EAE0BD36A9BE62F /* GestureRecognizerClosures */,
-				136851A62EDECD962D8CE6E07BE988C9 /* Pods-gazer */,
-				A61A153D741349D484FEC7143E7DE13E /* SCLAlertView */,
-				EAA82D31ED9C8467BA6C4239A02CACD1 /* WSCoachMarksView */,
+				822DA31A6A34C7EF41E1EC7A5EF8FC2F /* EAIntroView */,
+				58AAD2C9E898747F2F4ABF348E6325F2 /* EARestrictedScrollView */,
+				4F029F071E9E023D334CC0B26D7A0B6D /* Pods-gazer */,
+				1F966150C1DB00995E43CA5B6AB7C316 /* SCLAlertView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		51D6883B45EACA0691C2EF9CF366B1CB /* Sources */ = {
+		0B21E6D709211D6DD0798D60E8EEEFAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87CC55A6CD9EC375D0C12F57DE5BD7A1 /* SCLAlertView-dummy.m in Sources */,
-				4D44EB995B5FC1131F6EA47B9B98BAEC /* SCLAlertView.swift in Sources */,
-				95DCB0B0EAC6626E89B6BA4B7DF1018C /* SCLExtensions.swift in Sources */,
+				CCD230BC815C775651F2054A0DAE32E7 /* EARestrictedScrollView-dummy.m in Sources */,
+				EABBB2F663609893680E5B6F1622F5E6 /* EARestrictedScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		57F9F949EECEB9BD1000CF40D2ABADAD /* Sources */ = {
+		0C0FDB7A17544A248D55BDCE0D5F06FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37C0C276DAA02F43C3EAEA4DB9CB6CDA /* Pods-gazer-dummy.m in Sources */,
+				C41EB9232CC9C9A7A1D5A6F221D1EDB4 /* EAIntroPage.m in Sources */,
+				342FD0CF5A19992200CDCD679F2D71C6 /* EAIntroView-dummy.m in Sources */,
+				EA705D6826863CE9297E92D5673EEDCE /* EAIntroView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6CF4744C8B91BA60A998B9525D7B0472 /* Sources */ = {
+		1758EC524F247E9946BDA11C490ABCE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D138DAC7FD74BB2BA6ADF1DEADF5BB2F /* WSCoachMarksView-dummy.m in Sources */,
-				8AE20ED244F996DE6A7D92BDF1412F61 /* WSCoachMarksView.m in Sources */,
+				4E89828A9263BAFC69EABE925DFD0CA9 /* Pods-gazer-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC0D0F465A57EC08516E3FB4FDA702B1 /* Sources */ = {
+		7AA1BA32AC2C4A12BBA96A30AC3BB909 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F1473A99ACF025E482E63164EB7C94C /* ClosureHandler.swift in Sources */,
-				E903E7401E4D0A6BDF9C23B25E76A5EB /* GestureClosure.swift in Sources */,
-				A801326BAE795E04176A48C7EFE67C4F /* GestureRecognizerClosures-dummy.m in Sources */,
-				262CF8BB9931BA27D5257FA6AC03AFE2 /* UIBarButtonItem+Closures.swift in Sources */,
-				E36F0BFB2A545CC55C4A1ED72C0C65E1 /* UIControl+Closures.swift in Sources */,
-				FCA1786B8EC30696D96139D34B395C15 /* UIGestureRecognizer+Closures.swift in Sources */,
-				5A77F51572A9A369654AF69500D83AF6 /* UIView+Closures.swift in Sources */,
+				0FA2DBA2BFD9F183F4C1FDC58087B728 /* SCLAlertView-dummy.m in Sources */,
+				32D5DC7F6890B5795B4D326089D5727C /* SCLAlertView.swift in Sources */,
+				FD254DEDD577A911AA0C34FF45D682CC /* SCLExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0214EF5A53E9B002A7A099B89C079C88 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = WSCoachMarksView;
-			target = EAA82D31ED9C8467BA6C4239A02CACD1 /* WSCoachMarksView */;
-			targetProxy = B4DE9ADE824F324976DF807539161BE7 /* PBXContainerItemProxy */;
-		};
-		2664A1310DD46F9620E9AE36EC560231 /* PBXTargetDependency */ = {
+		36F14341AB1C2C5BE4824E0B925A0C01 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SCLAlertView;
-			target = A61A153D741349D484FEC7143E7DE13E /* SCLAlertView */;
-			targetProxy = 917AF8A1D7C4587829ABDF52A5FD2A68 /* PBXContainerItemProxy */;
+			target = 1F966150C1DB00995E43CA5B6AB7C316 /* SCLAlertView */;
+			targetProxy = FE2A46359A5F039403F7FC6F0FCED336 /* PBXContainerItemProxy */;
 		};
-		519FC3D8640DB065261FCBA50F111D50 /* PBXTargetDependency */ = {
+		75C40171698936C230B8F1DB5616BA85 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = GestureRecognizerClosures;
-			target = 4639FF81D97257EA7EAE0BD36A9BE62F /* GestureRecognizerClosures */;
-			targetProxy = A9F218743C4361EF5770428A87519B56 /* PBXContainerItemProxy */;
+			name = EAIntroView;
+			target = 822DA31A6A34C7EF41E1EC7A5EF8FC2F /* EAIntroView */;
+			targetProxy = 0629DCF9B454DEB8355BE0BAD9B043F1 /* PBXContainerItemProxy */;
+		};
+		D2EF0550E37222B5E47D0ED793E95D4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EARestrictedScrollView;
+			target = 58AAD2C9E898747F2F4ABF348E6325F2 /* EARestrictedScrollView */;
+			targetProxy = 3BD0AABA668B69C63611634E350F4621 /* PBXContainerItemProxy */;
+		};
+		F119CC4624BAD7CAB2D492F95CCF18FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EARestrictedScrollView;
+			target = 58AAD2C9E898747F2F4ABF348E6325F2 /* EARestrictedScrollView */;
+			targetProxy = 13A47097495608C05D3C5FFCBDFB68B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0302B4F5D5AD10B6B8475311C45FB50C /* Release */ = {
+		03BE16CB77AA0675A4649CD555163DD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 801CDBE5DE549ABADB3D272C5DFA439F /* GestureRecognizerClosures.xcconfig */;
+			baseConfigurationReference = DA2BD80468D075494A103CCD1EFE00DD /* Pods-gazer.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-gazer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-gazer/Pods-gazer.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2E282A435C8497803C76465A82D34060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDCDBCEEB6E1F6F53AAAB02C1870BFE6 /* EARestrictedScrollView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -518,18 +555,48 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GestureRecognizerClosures/GestureRecognizerClosures-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GestureRecognizerClosures/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/EARestrictedScrollView/EARestrictedScrollView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EARestrictedScrollView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GestureRecognizerClosures/GestureRecognizerClosures.modulemap";
-				PRODUCT_MODULE_NAME = GestureRecognizerClosures;
-				PRODUCT_NAME = GestureRecognizerClosures;
+				MODULEMAP_FILE = "Target Support Files/EARestrictedScrollView/EARestrictedScrollView.modulemap";
+				PRODUCT_MODULE_NAME = EARestrictedScrollView;
+				PRODUCT_NAME = EARestrictedScrollView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		364AC39219F8B6C66697F9A97D6A33A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDCDBCEEB6E1F6F53AAAB02C1870BFE6 /* EARestrictedScrollView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EARestrictedScrollView/EARestrictedScrollView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EARestrictedScrollView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EARestrictedScrollView/EARestrictedScrollView.modulemap";
+				PRODUCT_MODULE_NAME = EARestrictedScrollView;
+				PRODUCT_NAME = EARestrictedScrollView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -538,9 +605,9 @@
 			};
 			name = Release;
 		};
-		1FAE25AF522AE93F99D2EB11D4EBD42B /* Debug */ = {
+		4EC106F3764A8FA622492520077E8A60 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 801CDBE5DE549ABADB3D272C5DFA439F /* GestureRecognizerClosures.xcconfig */;
+			baseConfigurationReference = 8AA06A988DF61216DEFCAF6DDDCD4A07 /* EAIntroView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -551,18 +618,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GestureRecognizerClosures/GestureRecognizerClosures-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GestureRecognizerClosures/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/EAIntroView/EAIntroView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EAIntroView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GestureRecognizerClosures/GestureRecognizerClosures.modulemap";
-				PRODUCT_MODULE_NAME = GestureRecognizerClosures;
-				PRODUCT_NAME = GestureRecognizerClosures;
+				MODULEMAP_FILE = "Target Support Files/EAIntroView/EAIntroView.modulemap";
+				PRODUCT_MODULE_NAME = EAIntroView;
+				PRODUCT_NAME = EAIntroView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -570,7 +636,7 @@
 			};
 			name = Debug;
 		};
-		2AA109EE982AADDE33270ED67F80B7A7 /* Release */ = {
+		5D51A417148C41DA1AC7F5196A2EBD7C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CD8C9A7E0188C7201D3F2309F2BCE51F /* Pods-gazer.release.xcconfig */;
 			buildSettings = {
@@ -599,69 +665,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		4A80BF1DD2747176F2E4F28AE998D5E4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C64C9CD04D020D52E30F91D7B9A7F85 /* WSCoachMarksView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/WSCoachMarksView/WSCoachMarksView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/WSCoachMarksView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/WSCoachMarksView/WSCoachMarksView.modulemap";
-				PRODUCT_MODULE_NAME = WSCoachMarksView;
-				PRODUCT_NAME = WSCoachMarksView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		56A4E9182FC7AAFE4E8D303F2AF446A8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C64C9CD04D020D52E30F91D7B9A7F85 /* WSCoachMarksView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/WSCoachMarksView/WSCoachMarksView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/WSCoachMarksView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/WSCoachMarksView/WSCoachMarksView.modulemap";
-				PRODUCT_MODULE_NAME = WSCoachMarksView;
-				PRODUCT_NAME = WSCoachMarksView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -786,14 +789,13 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		877257A4FA38ABCEA4D7BB945B94F83E /* Release */ = {
+		90B6943CD1547A064E69F92640D7A0ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37B117D00C73D1BF0FC5696331FED7D3 /* SCLAlertView.xcconfig */;
+			baseConfigurationReference = F61551D0518832BF052631EBD34CDB82 /* SCLAlertView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -824,9 +826,41 @@
 			};
 			name = Release;
 		};
-		CA504960C6948FE5332DCBA77EE860F8 /* Debug */ = {
+		C261C52E52104EF358429DAD48E4625B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37B117D00C73D1BF0FC5696331FED7D3 /* SCLAlertView.xcconfig */;
+			baseConfigurationReference = 8AA06A988DF61216DEFCAF6DDDCD4A07 /* EAIntroView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EAIntroView/EAIntroView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EAIntroView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EAIntroView/EAIntroView.modulemap";
+				PRODUCT_MODULE_NAME = EAIntroView;
+				PRODUCT_NAME = EAIntroView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EA94083B4343E358D9A3C4771EE357C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F61551D0518832BF052631EBD34CDB82 /* SCLAlertView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -856,54 +890,9 @@
 			};
 			name = Debug;
 		};
-		F809D502DDC679E2A139E062A8608444 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA2BD80468D075494A103CCD1EFE00DD /* Pods-gazer.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-gazer/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-gazer/Pods-gazer.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1369E09CCE9D0333C4A438D0209E20CB /* Build configuration list for PBXNativeTarget "SCLAlertView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CA504960C6948FE5332DCBA77EE860F8 /* Debug */,
-				877257A4FA38ABCEA4D7BB945B94F83E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -913,29 +902,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3902550216DDECF0526EFD07CB175751 /* Build configuration list for PBXNativeTarget "GestureRecognizerClosures" */ = {
+		42D36ADC84E975A9D9DC5BA7554ED77B /* Build configuration list for PBXNativeTarget "SCLAlertView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1FAE25AF522AE93F99D2EB11D4EBD42B /* Debug */,
-				0302B4F5D5AD10B6B8475311C45FB50C /* Release */,
+				EA94083B4343E358D9A3C4771EE357C5 /* Debug */,
+				90B6943CD1547A064E69F92640D7A0ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5718DDA66367A5BE2FA875FFAA2D8CF1 /* Build configuration list for PBXNativeTarget "Pods-gazer" */ = {
+		C6740EF10BE0B0350E3D45F8602071C0 /* Build configuration list for PBXNativeTarget "Pods-gazer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F809D502DDC679E2A139E062A8608444 /* Debug */,
-				2AA109EE982AADDE33270ED67F80B7A7 /* Release */,
+				03BE16CB77AA0675A4649CD555163DD6 /* Debug */,
+				5D51A417148C41DA1AC7F5196A2EBD7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8A351BC072C3682D14287C81EAD2A15F /* Build configuration list for PBXNativeTarget "WSCoachMarksView" */ = {
+		E8472F561CB64FB8CE3D0D392D30827E /* Build configuration list for PBXNativeTarget "EARestrictedScrollView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4A80BF1DD2747176F2E4F28AE998D5E4 /* Debug */,
-				56A4E9182FC7AAFE4E8D303F2AF446A8 /* Release */,
+				2E282A435C8497803C76465A82D34060 /* Debug */,
+				364AC39219F8B6C66697F9A97D6A33A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE33DA26C9464A33AF8F0E572B1F739E /* Build configuration list for PBXNativeTarget "EAIntroView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EC106F3764A8FA622492520077E8A60 /* Debug */,
+				C261C52E52104EF358429DAD48E4625B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

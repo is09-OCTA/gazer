@@ -85,9 +85,6 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   }
   
   
-  
-  
-    
     // Camera
     private func getScreenShot() -> UIImage? {
         guard let view = self.view else {

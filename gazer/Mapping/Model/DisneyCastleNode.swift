@@ -78,7 +78,6 @@ class DisneyCastleNode: SCNNode {
     }
     return node
   }
-  
   // サウンド再生メソッド
   func playSound(name: String) {
     guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {

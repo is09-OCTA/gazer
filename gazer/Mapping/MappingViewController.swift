@@ -34,6 +34,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
         let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
         beforeMenu.modalTransitionStyle = .crossDissolve
         present(beforeMenu, animated: true, completion: nil)
+        if disneyCastleNode?.audioPlayer.isPlaying == true { disneyCastleNode?.audioPlayer.stop() }
     }
   
   override func viewDidLoad() {

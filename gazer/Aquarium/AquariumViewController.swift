@@ -89,7 +89,7 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
         if randomNum == 0 {
             waterTankNode = collada2SCNNode(filepath: "AquariumModel/set1.scn")
         } else {
-            waterTankNode = collada2SCNNode(filepath: "AquariumModel/case.scn")
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set2.scn")
         }
         
         node.addChildNode(waterTankNode)

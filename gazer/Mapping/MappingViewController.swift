@@ -11,11 +11,13 @@ import ARKit
 import SceneKit
 import AVFoundation
 import SCLAlertView
+import Floaty
 
-class MappingViewController: UIViewController, ARSCNViewDelegate {
+class MappingViewController: UIViewController, ARSCNViewDelegate, FloatyDelegate {
   
   @IBOutlet var sceneView: ARSCNView!
   var disneyCastleNode: DisneyCastleNode?
+  let floaty = Floaty()
     
     @IBOutlet weak var button: UIButton!
     
@@ -48,6 +50,8 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     
     // Set the scene to the view
     sceneView.scene = scene
+    Floaty.global.rtlMode = true
+    NodeSelectionButton()
     self.registerGestureRecognizer()
   }
   
@@ -69,6 +73,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   //tap設定
   private func registerGestureRecognizer() {
     let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MappingViewController.tapped))
+    tapGestureRecognizer.cancelsTouchesInView = false
     self.sceneView.addGestureRecognizer(tapGestureRecognizer)
   }
   
@@ -77,9 +82,8 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     if self.disneyCastleNode != nil {
       return
     }
-    self.addItem()
+    //self.addItem()
   }
-  
   private func addItem() {
     disneyCastleNode = DisneyCastleNode()
     sceneView.scene.rootNode.addChildNode(disneyCastleNode!)
@@ -99,4 +103,63 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
         
         return image
     }
+  
+  func NodeSelectionButton(){
+    self.floaty.buttonImage = UIImage(named: "MappingMenu2")
+    self.floaty.paddingX = 16
+    self.floaty.paddingY = 30
+    self.floaty.buttonColor = UIColor.init(white: 1, alpha: 0)
+    self.floaty.size = 50
+    
+    
+    
+    let item = FloatyItem()
+    item.buttonColor = UIColor.init(red: 1, green: 1, blue: 0.6, alpha: 1)
+    item.icon = UIImage(named: "castle")
+    item.title = "Scene1-1"
+    item.handler = {item in
+      
+    }
+    self.floaty.addItem(item: item)
+    
+    
+    let item4 = FloatyItem()
+    item4.buttonColor = UIColor.init(red: 1, green: 1, blue: 0.6, alpha: 1)
+    item4.icon = UIImage(named: "castle")
+    item4.title = "Scene1-2"
+    item4.handler = {item in
+      
+    }
+    self.floaty.addItem(item: item4)
+    
+    
+    let item2 = FloatyItem()
+    item2.buttonColor = UIColor.init(red: 0.6, green: 0.8, blue: 1, alpha: 1)
+    item2.icon = UIImage(named: "siro")
+    item2.title = "Scene2-1"
+    self.floaty.addItem(item: item2)
+    
+    
+    let item3 = FloatyItem()
+    item3.buttonColor = UIColor.init(red: 0.6, green: 0.8, blue: 1, alpha: 1)
+    item3.icon = UIImage(named: "siro")
+    item3.title = "Scene2-2"
+    self.floaty.addItem(item: item3)
+    
+    
+    let item5 = FloatyItem()
+    item5.buttonColor = UIColor.init(red: 1, green: 0.6, blue: 0.6, alpha: 1)
+    item5.icon = UIImage(named: "test")
+    item5.title = "Scene3-1"
+    self.floaty.addItem(item: item5)
+    
+    
+    let item6 = FloatyItem()
+    item6.buttonColor = UIColor.init(red: 1, green: 0.6, blue: 0.6, alpha: 1)
+    item6.icon = UIImage(named: "test")
+    item6.title = "Scene3-2"
+    self.floaty.addItem(item: item6)
+    
+    self.view.addSubview(floaty)
+  }
 }

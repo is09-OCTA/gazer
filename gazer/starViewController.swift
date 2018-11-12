@@ -42,6 +42,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     //音楽インスタンス
     var audioPlayer: AVAudioPlayer!
     
+    var textNode: SCNNode!
+    
     // 位置情報
     var locationManager: CLLocationManager!
     var myHedingLabel:UILabel!
@@ -151,6 +153,17 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     }
 
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        
+        if let camera = sceneView.pointOfView {
+            //オイラー角をカメラと同じにする
+            
+            textNode?.rotation = camera.rotation
+            
+            let x = Double(camera.eulerAngles.x) * 180 / Double.pi
+            let y = Double(camera.eulerAngles.y) * 180 / Double.pi
+            let z = Double(camera.eulerAngles.z) * 180 / Double.pi
+            print(String(format: "eulerAngles x:%.0f y:%.0f z:%.0f", x/10, y/10, z/10))
+        }
         
         // ARKit 設定時にカメラからの画像が空で渡されるのでその場合は処理しない
         guard let cuptureImage = sceneView.session.currentFrame?.capturedImage else {
@@ -332,16 +345,17 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             // 表示
             self.sceneView.scene.rootNode.addChildNode(starNode)
             
-//            let camera = sceneView.pointOfView
+            let camera = sceneView.pointOfView
             let str = stars[index].jpName
             let depth:CGFloat = 0.01
             let text = SCNText(string: str, extrusionDepth: depth)
             text.font = UIFont(name: "HiraginoSans-W3", size: 5)
-            let textNode = SCNNode(geometry: text)
+            textNode = SCNNode(geometry: text)
             let (min, max) = (textNode.boundingBox)
             let x = CGFloat(max.x - min.x)
 //            let y = CGFloat(max.y - min.y)
 //            let v = element[3] * (Double.pi / 180)
+            /*
             if 0...45 ~= element[4] || 315...360 ~= element[4] {
                 let z = 180 * (Double.pi / 180)
                 textNode.eulerAngles = SCNVector3(0,z,0)
@@ -354,6 +368,8 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
                 let z = 90 * (Double.pi / 180)
                 textNode.eulerAngles = SCNVector3(0,z,0)
             }
+ */
+            textNode.eulerAngles = camera!.eulerAngles
             textNode.position = SCNVector3((element[0] - Double(x)),element[1],element[2])
             
 //            print("textNode",textNode.eulerAngles)

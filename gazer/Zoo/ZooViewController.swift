@@ -44,7 +44,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
         beforeMenu.modalTransitionStyle = .crossDissolve
         present(beforeMenu, animated: true, completion: nil)
     }
-    
+    // 動物選択画面
     @IBAction func openButton(_ sender: UIButton) {
         let modalViewController = storyboard?.instantiateViewController(withIdentifier: "ZooModalViewController")
         modalViewController?.modalPresentationStyle = .custom
@@ -52,6 +52,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
         present(modalViewController!, animated: true, completion: nil)
     }
     
+    // オブジェクト選択画面
     @IBAction func objectOpenButton(_ sender: UIButton) {
         let modalViewController = storyboard?.instantiateViewController(withIdentifier: "ObjectModalViewController")
         modalViewController?.modalPresentationStyle = .custom

@@ -45,6 +45,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     // 位置情報
     var locationManager: CLLocationManager!
     var myHedingLabel:UILabel!
+    var magneticHeading: CLLocationDirection!
     
     var latitudeLocation: Double!
     var longitudeLocation: Double!
@@ -107,7 +108,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             locationManager.headingOrientation = .portrait
             
             locationManager.startUpdatingHeading()
-            locationManager.startUpdatingLocation()
         }
     }
     
@@ -254,7 +254,10 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         //self.textField.text = "".appendingFormat("%.2f", newHeading.magneticHeading)
-        print(newHeading.magneticHeading)
+        //print(newHeading.magneticHeading)
+        magneticHeading = newHeading.magneticHeading
+        locationManager.startUpdatingLocation()
+        locationManager.stopUpdatingHeading()
     }
 //    方位2ここまで
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -266,6 +269,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         longitudeLocation = longitude
         
         seturl(latitudeLocation: latitudeLocation!, longitudeLocation: longitudeLocation!)
+        locationManager.stopUpdatingLocation()
     }
     
     func seturl (latitudeLocation: Double, longitudeLocation: Double) {
@@ -382,7 +386,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         for (i, value) in stars.enumerated() {
             area.alfa = value.rightAscension
             area.delta = value.declination
-            
             // 高度、方位に変換
             starsLocation.append(hcCalc(date: date, area: area))
             starsXYZ.append(getXYZ(altitude: starsLocation[i][1], direction: starsLocation[i][0]))
@@ -433,8 +436,12 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         let direction = sa[..<sa.index(sa.startIndex, offsetBy: 7)]
         let altitude = sh[..<sh.index(sh.startIndex, offsetBy: 6)]
         
-        return [Double(direction)!, Double(altitude)!]
+        if Double(direction)! + 180.0 + Double(magneticHeading) < 360 {
         
+            return [Double(direction)! + 180 + Double(magneticHeading), Double(altitude)!]
+        }else{
+            return [Double(direction)! - 180 + Double(magneticHeading) , Double(altitude)!]
+        }
     }
     
     // calcMJD

@@ -42,8 +42,12 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     //音楽インスタンス
     var audioPlayer: AVAudioPlayer!
     
+    var textNode: SCNNode!
+    
     // 位置情報
     var locationManager: CLLocationManager!
+    var myHedingLabel:UILabel!
+    var magneticHeading: CLLocationDirection!
     
     var latitudeLocation: Double!
     var longitudeLocation: Double!
@@ -93,6 +97,20 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
 
         //BGM再生
         playSound(name: "star_bgm")
+        
+//        方位1
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            
+            // Specifies the minimum amount of change in degrees needed for a heading service update (default: 1 degree)
+            locationManager.headingFilter = 1
+            
+            // Specifies a physical device orientation from which heading calculation should be referenced
+            locationManager.headingOrientation = .portrait
+            
+            locationManager.startUpdatingHeading()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -135,6 +153,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     }
 
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        
         
         // ARKit 設定時にカメラからの画像が空で渡されるのでその場合は処理しない
         guard let cuptureImage = sceneView.session.currentFrame?.capturedImage else {
@@ -220,11 +239,29 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             locationManager.delegate = self
             locationManager.distanceFilter = 10
             locationManager.startUpdatingLocation()
-            //locationManager.stopUpdatingLocation()
-//            test
+            locationManager.stopUpdatingHeading()
+        }
+    }
+//    方位2
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted, .denied:
+            break
+        case .authorizedAlways, .authorizedWhenInUse:
+            break
         }
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        //self.textField.text = "".appendingFormat("%.2f", newHeading.magneticHeading)
+        //print(newHeading.magneticHeading)
+        magneticHeading = newHeading.magneticHeading
+        locationManager.startUpdatingLocation()
+        locationManager.stopUpdatingHeading()
+    }
+//    方位2ここまで
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.first
         let latitude = location?.coordinate.latitude
@@ -234,6 +271,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         longitudeLocation = longitude
         
         seturl(latitudeLocation: latitudeLocation!, longitudeLocation: longitudeLocation!)
+        locationManager.stopUpdatingLocation()
     }
     
     func seturl (latitudeLocation: Double, longitudeLocation: Double) {
@@ -301,26 +339,15 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             let depth:CGFloat = 0.01
             let text = SCNText(string: str, extrusionDepth: depth)
             text.font = UIFont(name: "HiraginoSans-W3", size: 5)
-            let textNode = SCNNode(geometry: text)
+            textNode = SCNNode(geometry: text)
             let (min, max) = (textNode.boundingBox)
             let x = CGFloat(max.x - min.x)
 //            let y = CGFloat(max.y - min.y)
-//            let v = element[3] * (Double.pi / 180)
-            if 0...45 ~= element[4] || 315...360 ~= element[4] {
-                let z = 180 * (Double.pi / 180)
-                textNode.eulerAngles = SCNVector3(0,z,0)
-            }else if 45...135 ~= element[4] {
-                let z = 90 * (Double.pi / -180)
-                textNode.eulerAngles = SCNVector3(0,z,0)
-            }else if 135...225 ~= element[4] {
-                textNode.eulerAngles = SCNVector3(0,0,0)
-            }else if 225...315 ~= element[4] {
-                let z = 90 * (Double.pi / 180)
-                textNode.eulerAngles = SCNVector3(0,z,0)
-            }
+            //オブジェクト向き調整 -4で180度反転
+            let z = element[4] * (Double.pi / 180) - 4
+            let y = element[3] * (Double.pi / 180)
+            textNode.eulerAngles = SCNVector3(y,z,0)
             textNode.position = SCNVector3((element[0] - Double(x)),element[1],element[2])
-            
-//            print("textNode",textNode.eulerAngles)
             sceneView.scene.rootNode.addChildNode(textNode)
         }
     }
@@ -350,7 +377,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         for (i, value) in stars.enumerated() {
             area.alfa = value.rightAscension
             area.delta = value.declination
-            
             // 高度、方位に変換
             starsLocation.append(hcCalc(date: date, area: area))
             starsXYZ.append(getXYZ(altitude: starsLocation[i][1], direction: starsLocation[i][0]))
@@ -401,8 +427,12 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         let direction = sa[..<sa.index(sa.startIndex, offsetBy: 7)]
         let altitude = sh[..<sh.index(sh.startIndex, offsetBy: 6)]
         
-        return [Double(direction)!, Double(altitude)!]
+        if Double(direction)! + 180.0 + Double(magneticHeading) < 360 {
         
+            return [Double(direction)! + 180 + Double(magneticHeading), Double(altitude)!]
+        }else{
+            return [Double(direction)! - 180 + Double(magneticHeading) , Double(altitude)!]
+        }
     }
     
     // calcMJD

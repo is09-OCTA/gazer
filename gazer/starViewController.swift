@@ -158,11 +158,12 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             //オイラー角をカメラと同じにする
             
             textNode?.rotation = camera.rotation
+            textNode?.eulerAngles = camera.eulerAngles
             
             let x = Double(camera.eulerAngles.x) * 180 / Double.pi
             let y = Double(camera.eulerAngles.y) * 180 / Double.pi
             let z = Double(camera.eulerAngles.z) * 180 / Double.pi
-            print(String(format: "eulerAngles x:%.0f y:%.0f z:%.0f", x/10, y/10, z/10))
+//            print(String(format: "eulerAngles x:%.0f y:%.0f z:%.0f", x/10, y/10, z/10))
         }
         
         // ARKit 設定時にカメラからの画像が空で渡されるのでその場合は処理しない
@@ -345,7 +346,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             // 表示
             self.sceneView.scene.rootNode.addChildNode(starNode)
             
-            let camera = sceneView.pointOfView
+//            let camera = sceneView.pointOfView
             let str = stars[index].jpName
             let depth:CGFloat = 0.01
             let text = SCNText(string: str, extrusionDepth: depth)
@@ -369,10 +370,14 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
                 textNode.eulerAngles = SCNVector3(0,z,0)
             }
  */
-            textNode.eulerAngles = camera!.eulerAngles
             textNode.position = SCNVector3((element[0] - Double(x)),element[1],element[2])
-            
-//            print("textNode",textNode.eulerAngles)
+            if element[4] > 180 {
+                textNode.rotation = SCNVector4(0, -0.022 * element[4], 0, 0.25 * Double.pi)
+                print("方位",element[4],"角度",textNode.rotation)
+            }else{
+                textNode.rotation = SCNVector4(0, 0.022 * element[4] - 180 ,0, 0.25 * Double.pi)
+                print("方位",element[4],"角度",textNode.rotation)
+            }
             sceneView.scene.rootNode.addChildNode(textNode)
         }
     }

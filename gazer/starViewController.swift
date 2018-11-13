@@ -154,17 +154,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
 
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
-        if let camera = sceneView.pointOfView {
-            //オイラー角をカメラと同じにする
-            
-            textNode?.rotation = camera.rotation
-            textNode?.eulerAngles = camera.eulerAngles
-            
-            let x = Double(camera.eulerAngles.x) * 180 / Double.pi
-            let y = Double(camera.eulerAngles.y) * 180 / Double.pi
-            let z = Double(camera.eulerAngles.z) * 180 / Double.pi
-//            print(String(format: "eulerAngles x:%.0f y:%.0f z:%.0f", x/10, y/10, z/10))
-        }
         
         // ARKit 設定時にカメラからの画像が空で渡されるのでその場合は処理しない
         guard let cuptureImage = sceneView.session.currentFrame?.capturedImage else {
@@ -355,29 +344,11 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             let (min, max) = (textNode.boundingBox)
             let x = CGFloat(max.x - min.x)
 //            let y = CGFloat(max.y - min.y)
-//            let v = element[3] * (Double.pi / 180)
-            /*
-            if 0...45 ~= element[4] || 315...360 ~= element[4] {
-                let z = 180 * (Double.pi / 180)
-                textNode.eulerAngles = SCNVector3(0,z,0)
-            }else if 45...135 ~= element[4] {
-                let z = 90 * (Double.pi / -180)
-                textNode.eulerAngles = SCNVector3(0,z,0)
-            }else if 135...225 ~= element[4] {
-                textNode.eulerAngles = SCNVector3(0,0,0)
-            }else if 225...315 ~= element[4] {
-                let z = 90 * (Double.pi / 180)
-                textNode.eulerAngles = SCNVector3(0,z,0)
-            }
- */
+            //オブジェクト向き調整 -4で180度反転
+            let z = element[4] * (Double.pi / 180) - 4
+            let y = element[3] * (Double.pi / 180)
+            textNode.eulerAngles = SCNVector3(y,z,0)
             textNode.position = SCNVector3((element[0] - Double(x)),element[1],element[2])
-            if element[4] > 180 {
-                textNode.rotation = SCNVector4(0, -0.022 * element[4], 0, 0.25 * Double.pi)
-                print("方位",element[4],"角度",textNode.rotation)
-            }else{
-                textNode.rotation = SCNVector4(0, 0.022 * element[4] - 180 ,0, 0.25 * Double.pi)
-                print("方位",element[4],"角度",textNode.rotation)
-            }
             sceneView.scene.rootNode.addChildNode(textNode)
         }
     }

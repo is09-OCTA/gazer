@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LYC-2Q-Xjj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Star View Controller-->
+        <scene sceneID="xAf-Mt-EZo">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="LYC-2Q-Xjj" customClass="StarViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="view" id="vgh-2s-Qp4" customClass="ARSCNView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndY-qo-1fj">
+                                <rect key="frame" x="162" y="587" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4FC-5u-A0I"/>
+                                    <constraint firstAttribute="width" constant="50" id="EWX-jg-RXm"/>
+                                </constraints>
+                                <state key="normal" image="cameraButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushCamera:" destination="LYC-2Q-Xjj" eventType="touchUpInside" id="lG1-5o-AIM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="UFy-2d-DuF" firstAttribute="bottom" secondItem="ndY-qo-1fj" secondAttribute="bottom" constant="30" id="PcQ-DL-bAE"/>
+                            <constraint firstItem="UFy-2d-DuF" firstAttribute="trailing" secondItem="ndY-qo-1fj" secondAttribute="trailing" constant="163" id="Wmf-2j-Ljt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UFy-2d-DuF"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="grn-mF-KkU" appends="YES" id="6NM-nv-HUl"/>
+                            <outletCollection property="gestureRecognizers" destination="udw-Wg-gm9" appends="YES" id="n8I-Bn-Khn"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="ndY-qo-1fj" id="mBz-bX-AG1"/>
+                        <outlet property="sceneView" destination="vgh-2s-Qp4" id="miJ-U4-RD4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jsZ-4n-vnE" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="grn-mF-KkU">
+                    <connections>
+                        <action selector="retunMenuSwipe:" destination="LYC-2Q-Xjj" id="9CE-Ph-QQw"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer id="udw-Wg-gm9"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="-175"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cameraButton" width="75" height="75"/>
+    </resources>
+</document>

@@ -52,7 +52,7 @@
                                     <constraint firstAttribute="height" constant="50" id="NrR-8K-U7u"/>
                                     <constraint firstAttribute="width" constant="50" id="kZ8-iG-bFV"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="animalMenu2"/>
+                                <state key="normal" title="Button" image="animalMenu4"/>
                                 <connections>
                                     <action selector="objectOpenButton:" destination="31F-TK-1mo" eventType="touchUpInside" id="Sm5-aX-QZv"/>
                                 </connections>
@@ -74,8 +74,9 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="animalButton" destination="BIs-gv-2a8" id="by7-EL-kHJ"/>
+                        <outlet property="animalButton" destination="BIs-gv-2a8" id="3sT-5z-Yqd"/>
                         <outlet property="cameraButton" destination="rkq-rZ-sxf" id="UFI-tR-8jJ"/>
+                        <outlet property="objectButton" destination="q6M-YQ-cDB" id="Uw4-yh-Yeq"/>
                         <outlet property="sceneView" destination="5GT-1R-Cc9" id="iho-X4-dgs"/>
                         <segue destination="9KX-r4-d7m" kind="presentation" id="nik-wX-JF3"/>
                         <segue destination="qcl-iZ-tmZ" kind="presentation" id="2qN-8E-q2H"/>
@@ -124,7 +125,7 @@
     </scenes>
     <resources>
         <image name="animalMenu" width="75" height="75"/>
-        <image name="animalMenu2" width="75" height="75"/>
+        <image name="animalMenu4" width="75" height="75"/>
         <image name="cameraButton" width="75" height="75"/>
     </resources>
 </document>

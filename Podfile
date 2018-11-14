@@ -6,12 +6,11 @@ target 'gazer' do
   use_frameworks!
   pod'SCLAlertView'
   pod'EAIntroView'
-  pod "Floaty"
-
+  pod 'Floaty'
 
 
   swift4_names = [
-  'Floaty'
+    'Floaty'
   ]
 
 post_install do |installer|

@@ -10,8 +10,9 @@
 #endif
 #endif
 
-#import "WSCoachMarksView.h"
+#import "EAIntroPage.h"
+#import "EAIntroView.h"
 
-FOUNDATION_EXPORT double WSCoachMarksViewVersionNumber;
-FOUNDATION_EXPORT const unsigned char WSCoachMarksViewVersionString[];
+FOUNDATION_EXPORT double EAIntroViewVersionNumber;
+FOUNDATION_EXPORT const unsigned char EAIntroViewVersionString[];
 

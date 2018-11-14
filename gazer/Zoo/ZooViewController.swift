@@ -18,10 +18,13 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
     
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var animalButton: UIButton!
+    @IBOutlet weak var objectButton: UIButton!
+    
     
     @IBAction func pushCamera(_ sender: Any) {
         cameraButton.isHidden = true //ボタン非表示
         animalButton.isHidden = true
+        objectButton.isHidden = true
         
         let image = getScreenShot()
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
@@ -29,6 +32,9 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
         SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
         cameraButton.isHidden = false //ボタン表示
         animalButton.isHidden = false
+        objectButton.isHidden = false
+
+        
     }
     
     // スワイプしたらメニュー画面戻る
@@ -38,7 +44,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
         beforeMenu.modalTransitionStyle = .crossDissolve
         present(beforeMenu, animated: true, completion: nil)
     }
-    
+    // 動物選択画面
     @IBAction func openButton(_ sender: UIButton) {
         let modalViewController = storyboard?.instantiateViewController(withIdentifier: "ZooModalViewController")
         modalViewController?.modalPresentationStyle = .custom
@@ -46,6 +52,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
         present(modalViewController!, animated: true, completion: nil)
     }
     
+    // オブジェクト選択画面
     @IBAction func objectOpenButton(_ sender: UIButton) {
         let modalViewController = storyboard?.instantiateViewController(withIdentifier: "ObjectModalViewController")
         modalViewController?.modalPresentationStyle = .custom

@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "EARestrictedScrollView.h"
 
-FOUNDATION_EXPORT double SwiftGifOriginVersionNumber;
-FOUNDATION_EXPORT const unsigned char SwiftGifOriginVersionString[];
+FOUNDATION_EXPORT double EARestrictedScrollViewVersionNumber;
+FOUNDATION_EXPORT const unsigned char EARestrictedScrollViewVersionString[];
 

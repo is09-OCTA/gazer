@@ -91,6 +91,9 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
         if let result = hitTestResult.first {
             let node = ZooViewController.collada2SCNNode(filepath: filepath)
             node.position = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
+            if let camera = sceneView.pointOfView {
+                node.eulerAngles.y = camera.eulerAngles.y  // カメラのオイラー角と同じにする
+            }
             sceneView.scene.rootNode.addChildNode(node)
         }
     }

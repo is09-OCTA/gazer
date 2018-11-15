@@ -16,7 +16,9 @@ import Floaty
 class MappingViewController: UIViewController, ARSCNViewDelegate {
   
   @IBOutlet var sceneView: ARSCNView!
-  var disneyCastleNode: DisneyCastleNode?
+  //var disneyCastleNode: DisneyCastleNode?
+  //var nodeTuple: (DisneyCastleNode,String)?
+  var node: Any?
   var buttonConf: ButtonConf?
   var sceneType: String?
     
@@ -37,7 +39,8 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
       let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
       beforeMenu.modalTransitionStyle = .crossDissolve
       present(beforeMenu, animated: true, completion: nil)
-      if disneyCastleNode?.audioPlayer.isPlaying == true { disneyCastleNode?.audioPlayer.stop() }
+      //if disneyCastleNode?.audioPlayer.isPlaying == true { disneyCastleNode?.audioPlayer.stop() }
+      if (node as! DisneyCastleNode).audioPlayer.isPlaying == true { (node as! DisneyCastleNode).audioPlayer.stop() }
   }
   
   override func viewDidLoad() {
@@ -79,7 +82,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   
   @objc func tapped(sender: UITapGestureRecognizer) {
     // すでに追加済みであれば無視
-    if (self.disneyCastleNode != nil) || (self.sceneType == nil) {
+    if (node != nil) || (self.sceneType == nil) {
       return
     }
     self.addItem()
@@ -89,8 +92,8 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     if sceneType != nil {
       switch sceneType {
       case "DisneyCastleNode":
-        disneyCastleNode = DisneyCastleNode()
-        sceneView.scene.rootNode.addChildNode(disneyCastleNode!)
+        node = DisneyCastleNode()
+        sceneView.scene.rootNode.addChildNode(node! as! DisneyCastleNode)
       default:
         break
       }

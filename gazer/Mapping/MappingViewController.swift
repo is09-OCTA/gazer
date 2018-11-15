@@ -37,7 +37,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
       let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
       beforeMenu.modalTransitionStyle = .crossDissolve
       present(beforeMenu, animated: true, completion: nil)
-      if disneyCastleNode?.audioPlayer.isPlaying == true { disneyCastleNode?.audioPlayer.stop() }
+      //if disneyCastleNode?.audioPlayer.isPlaying == true { disneyCastleNode?.audioPlayer.stop() }
   }
   
   override func viewDidLoad() {
@@ -67,7 +67,6 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-    
     sceneView.session.pause()
   }
   
@@ -85,9 +84,17 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     }
     self.addItem()
   }
+  
   private func addItem() {
-    disneyCastleNode = DisneyCastleNode()
-    sceneView.scene.rootNode.addChildNode(disneyCastleNode!)
+    if sceneType != nil {
+      switch sceneType {
+      case "DisneyCastleNode":
+        disneyCastleNode = DisneyCastleNode()
+        sceneView.scene.rootNode.addChildNode(disneyCastleNode!)
+      default:
+        break
+      }
+    }
   }
   
   

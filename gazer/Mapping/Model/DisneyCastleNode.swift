@@ -12,7 +12,7 @@ import ARKit
 import AVFoundation
 
 class DisneyCastleNode: SCNNode {
-  var audioPlayer: AVAudioPlayer!
+  public var audioPlayer: AVAudioPlayer!
   var collision: Bool = false
   override init() {
     super.init()

@@ -14,13 +14,13 @@ import SCLAlertView
 import AVFoundation
 import EAIntroView
 
-class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate, AVAudioPlayerDelegate, EAIntroDelegate{
+class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate, AVAudioPlayerDelegate, EAIntroDelegate{
     
     @IBOutlet var sceneView: ARSCNView!
 
     // スワイプしたらメニュー画面戻る
     @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
-        let storyboard : UIStoryboard = self.storyboard!
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
         beforeMenu.modalTransitionStyle = .crossDissolve
         present(beforeMenu, animated: true, completion: nil)
@@ -52,9 +52,6 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     var latitudeLocation: Double!
     var longitudeLocation: Double!
     var apiURL: URL!
-    
-    // 星のサンプル座標(北斗七星)
-    //let starPosition:[[Double]] = [[0,0,-10],[-0.3,1,-10],[-0.4,2,-10],[-1.5,3,-10],[-0.7,-0.7,-10],[0.1,-2,-10],[1.5,-1.6,-10]]
 
     // Date
     struct ReqDate {
@@ -79,7 +76,7 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     let RAD = 180 / 3.14159265358979
     
     //星データ
-    let stars = starData().stars
+    let stars = StarData().stars
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,14 +88,11 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         
         // 現在地を取得
         setupLocationManager()
-        
-        // 星表示(仮)
-        //setStar(starPosition: starPosition)
 
-        //BGM再生
+        // BGM再生
         playSound(name: "star_bgm")
         
-//        方位1
+        // 方位1
         if CLLocationManager.locationServicesEnabled() {
             locationManager = CLLocationManager()
             locationManager.delegate = self
@@ -318,15 +312,15 @@ class starViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             let material = SCNMaterial()
             let starRight = floor(stars[index].magnitude)
             if starRight <= 1 {
-                material.diffuse.contents = UIImage(named: "art.scnassets/1等星.png")
+                material.diffuse.contents = UIImage(named: "StarModel.scnassets/1等星.png")
             }else if starRight == 2 {
-                material.diffuse.contents = UIImage(named: "art.scnassets/2等星.png")
+                material.diffuse.contents = UIImage(named: "StarModel.scnassets/2等星.png")
             }else if starRight == 3 {
-                material.diffuse.contents = UIImage(named: "art.scnassets/3等星.png")
+                material.diffuse.contents = UIImage(named: "StarModel.scnassets/3等星.png")
             }else if starRight == 4 {
-                material.diffuse.contents = UIImage(named: "art.scnassets/4等星.png")
+                material.diffuse.contents = UIImage(named: "StarModel.scnassets/4等星.png")
             }else{
-                material.diffuse.contents = UIImage(named: "art.scnassets/5等星.png")
+                material.diffuse.contents = UIImage(named: "StarModel.scnassets/5等星.png")
             }
             starNode.geometry?.materials = [material]
             starNode.position = SCNVector3(element[0],element[1],element[2])

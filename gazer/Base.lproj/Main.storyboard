@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k6m-Zo-Mx5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k6m-Zo-Mx5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
                 <viewControllerPlaceholder storyboardName="Mapping" id="Qm5-wr-7rt" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tu6-Wq-I3K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-337" y="-463"/>
+            <point key="canvasLocation" x="54" y="-230"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="T3j-mk-y9D">
@@ -42,10 +42,10 @@
                         <viewLayoutGuide key="safeArea" id="l1E-aa-egg"/>
                     </view>
                     <connections>
-                        <segue destination="BV1-FR-VrT" kind="show" identifier="goStar" id="F4s-BC-sWf"/>
                         <segue destination="Qm5-wr-7rt" kind="show" identifier="goMapping" id="VDc-WT-fgh"/>
                         <segue destination="SIL-9F-TvK" kind="show" identifier="goZoo" id="36C-p9-wrl"/>
                         <segue destination="coz-ez-pcA" kind="show" identifier="goAquarium" id="MgM-3m-iNQ"/>
+                        <segue destination="NFI-HY-kQS" kind="show" identifier="goStar" id="eJ4-So-Fd4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GCg-n5-pbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -58,7 +58,15 @@
                 <viewControllerPlaceholder storyboardName="Aquarium" id="coz-ez-pcA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27E-9D-hfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-247" y="201"/>
+            <point key="canvasLocation" x="54" y="-103"/>
+        </scene>
+        <!--Star-->
+        <scene sceneID="aB1-NO-2Ad">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Star" id="NFI-HY-kQS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NXz-4w-0mo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="35"/>
         </scene>
         <!--Zoo-->
         <scene sceneID="Rfw-QQ-LgT">
@@ -66,60 +74,10 @@
                 <viewControllerPlaceholder storyboardName="Zoo" id="SIL-9F-TvK" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fpz-7T-r9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-648" y="694"/>
-        </scene>
-        <!--Star View Controller-->
-        <scene sceneID="tXr-a1-R10">
-            <objects>
-                <viewController storyboardIdentifier="star" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BV1-FR-VrT" customClass="starViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="view" id="RtJ-HJ-1VU" customClass="ARSCNView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ux2-AB-gTj">
-                                <rect key="frame" x="162" y="587" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="7qt-Jf-vwd"/>
-                                    <constraint firstAttribute="width" constant="50" id="PLr-tO-VvM"/>
-                                </constraints>
-                                <state key="normal" image="cameraButton">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pushCamera:" destination="BV1-FR-VrT" eventType="touchUpInside" id="dRc-Sb-3O1"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="4Yh-VM-yRr" firstAttribute="trailing" secondItem="ux2-AB-gTj" secondAttribute="trailing" constant="163" id="2kM-cs-2Wl"/>
-                            <constraint firstItem="4Yh-VM-yRr" firstAttribute="bottom" secondItem="ux2-AB-gTj" secondAttribute="bottom" constant="30" id="r8L-PO-Qmd"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="4Yh-VM-yRr"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="DoZ-45-e9U" appends="YES" id="dzN-T8-yNy"/>
-                            <outletCollection property="gestureRecognizers" destination="eLR-Sv-NXP" appends="YES" id="SEA-0K-qIe"/>
-                        </connections>
-                    </view>
-                    <connections>
-                        <outlet property="button" destination="ux2-AB-gTj" id="Pom-G8-JLH"/>
-                        <outlet property="sceneView" destination="RtJ-HJ-1VU" id="1Ep-Ue-0oG"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="DoZ-45-e9U">
-                    <connections>
-                        <action selector="retunMenuSwipe:" destination="BV1-FR-VrT" id="sfW-2z-TVh"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <tapGestureRecognizer id="eLR-Sv-NXP"/>
-            </objects>
-            <point key="canvasLocation" x="137" y="-175"/>
+            <point key="canvasLocation" x="54" y="208"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Header_ver 1.5.0" width="750" height="100"/>
-        <image name="cameraButton" width="150" height="150"/>
+        <image name="Header_ver 1.5.0" width="165.6441650390625" height="22.08588981628418"/>
     </resources>
 </document>

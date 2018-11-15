@@ -19,25 +19,25 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   var disneyCastleNode: DisneyCastleNode?
   var buttonConf: ButtonConf?
     
-    @IBOutlet weak var button: UIButton!
+  @IBOutlet weak var button: UIButton!
     
-    @IBAction func pushCamera(_ sender: Any) {
-        button.isHidden = true //ボタン非表示
-        let image = getScreenShot()
-        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+  @IBAction func pushCamera(_ sender: Any) {
+      button.isHidden = true //ボタン非表示
+      let image = getScreenShot()
+      UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
         
-        SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
-        button.isHidden = false //ボタン表示
-    }
+      SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
+      button.isHidden = false //ボタン表示
+  }
     
-    // スワイプしたらメニュー画面戻る
-    @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
-        beforeMenu.modalTransitionStyle = .crossDissolve
-        present(beforeMenu, animated: true, completion: nil)
-        if disneyCastleNode?.audioPlayer.isPlaying == true { disneyCastleNode?.audioPlayer.stop() }
-    }
+  // スワイプしたらメニュー画面戻る
+  @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
+      let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+      let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
+      beforeMenu.modalTransitionStyle = .crossDissolve
+      present(beforeMenu, animated: true, completion: nil)
+      if disneyCastleNode?.audioPlayer.isPlaying == true { disneyCastleNode?.audioPlayer.stop() }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -90,19 +90,19 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   }
   
   
-    // Camera
-    private func getScreenShot() -> UIImage? {
-        guard let view = self.view else {
-            return nil
-        }
+  // Camera
+  private func getScreenShot() -> UIImage? {
+      guard let view = self.view else {
+          return nil
+      }
         
-        UIGraphicsBeginImageContext(view.frame.size)
-        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
+      UIGraphicsBeginImageContext(view.frame.size)
+      view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+      let image = UIGraphicsGetImageFromCurrentImageContext()
+      UIGraphicsEndImageContext()
         
-        return image
-    }
+      return image
+  }
   
   
 }

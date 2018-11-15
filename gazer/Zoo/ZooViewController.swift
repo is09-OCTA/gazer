@@ -21,15 +21,16 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
     @IBOutlet weak var objectButton: UIButton!
     
     
+    var saveImage:UIImage! = nil
+    
     @IBAction func pushCamera(_ sender: Any) {
         cameraButton.isHidden = true //ボタン非表示
         animalButton.isHidden = true
         objectButton.isHidden = true
         
-        let image = getScreenShot()
-        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+        saveImage = getScreenShot()
+        performSegue(withIdentifier: "prevPhoto", sender: nil)
         
-        SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
         cameraButton.isHidden = false //ボタン表示
         animalButton.isHidden = false
         objectButton.isHidden = false
@@ -179,6 +180,11 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
     }
     
     func sessionInterruptionEnded(_ session: ARSession) {
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let photo = segue.destination as! ZooPhotoPreViewController
+        photo.screenImage = saveImage
     }
 }
 

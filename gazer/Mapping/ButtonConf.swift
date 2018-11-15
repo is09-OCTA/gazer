@@ -18,7 +18,7 @@ final class ButtonConf: FloatyDelegate {
     Floaty.global.rtlMode = true
   }
   
-  func NodeSelectionButton() -> Floaty{
+  func NodeSelectionButton(mappingViewController: MappingViewController) -> Floaty{
     self.floaty.buttonImage = UIImage(named: "MappingMenu2")
     self.floaty.paddingX = 16
     self.floaty.paddingY = 30
@@ -30,7 +30,7 @@ final class ButtonConf: FloatyDelegate {
     //item.icon = UIImage(named: "castle")
     item.title = "Scene1-1"
     item.handler = {item in
-      
+      mappingViewController.sceneType = "DisneyCastleNode"
     }
     
     self.floaty.addItem(item: item)

@@ -18,6 +18,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   @IBOutlet var sceneView: ARSCNView!
   var disneyCastleNode: DisneyCastleNode?
   var buttonConf: ButtonConf?
+  var sceneType: String?
     
   @IBOutlet weak var button: UIButton!
     
@@ -51,7 +52,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     // Set the scene to the view
     sceneView.scene = scene
     buttonConf = ButtonConf()
-    self.view.addSubview((buttonConf?.NodeSelectionButton())!)
+    self.view.addSubview((buttonConf?.NodeSelectionButton(mappingViewController: self))!)
     self.registerGestureRecognizer()
   }
   
@@ -79,10 +80,10 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   
   @objc func tapped(sender: UITapGestureRecognizer) {
     // すでに追加済みであれば無視
-    if self.disneyCastleNode != nil {
+    if (self.disneyCastleNode != nil) || (self.sceneType == nil) {
       return
     }
-    //self.addItem()
+    self.addItem()
   }
   private func addItem() {
     disneyCastleNode = DisneyCastleNode()

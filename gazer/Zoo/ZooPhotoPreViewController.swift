@@ -19,6 +19,9 @@ class ZooPhotoPreViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
         
     }
+    @IBAction func cancelButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     var screenImage:UIImage? = nil
     
@@ -27,10 +30,9 @@ class ZooPhotoPreViewController: UIViewController {
         
        previewImage.image = screenImage
         
+        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
-        
-        saveButton.layer.cornerRadius = 10.0 // 角丸のサイズ
+        saveButton.layer.cornerRadius = 20.0 // 角丸のサイズ
         
 
     }

@@ -28,6 +28,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header_ver 1.5.0" translatesAutoresizingMaskIntoConstraints="NO" id="FKr-PS-Wh9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" header="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="rzm-Yf-gdE"/>
                                 </constraints>

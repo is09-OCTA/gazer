@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OqQ-DJ-pfP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OqQ-DJ-pfP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,6 +46,7 @@
                     <connections>
                         <outlet property="button" destination="e7E-Vm-WP4" id="bHb-JW-OAF"/>
                         <outlet property="sceneView" destination="Qtx-ul-9MV" id="Cj8-9F-BY0"/>
+                        <segue destination="JTj-DL-usN" kind="presentation" identifier="prevPhoto" id="GcY-cD-Ubc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNl-9K-hJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -57,8 +58,23 @@
             </objects>
             <point key="canvasLocation" x="100" y="92.203898050974516"/>
         </scene>
+        <!--Zoo Photo Pre View Controller-->
+        <scene sceneID="qlx-8O-7Fb">
+            <objects>
+                <viewController id="JTj-DL-usN" customClass="ZooPhotoPreViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FQy-21-X4A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="nqA-aI-s6e"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f84-Ro-gVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1177" y="92"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="cameraButton" width="150" height="150"/>
+        <image name="cameraButton" width="75" height="75"/>
     </resources>
 </document>

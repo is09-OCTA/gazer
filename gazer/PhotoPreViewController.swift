@@ -1,5 +1,5 @@
 //
-//  ZooPhotoPreViewController.swift
+//  PhotoPreViewController.swift
 //  gazer
 //
 //  Created by 佐藤玲 on 2018/11/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZooPhotoPreViewController: UIViewController {
+class PhotoPreViewController: UIViewController {
 
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var previewImage: UIImageView!

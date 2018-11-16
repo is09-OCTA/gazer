@@ -193,7 +193,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let photo = segue.destination as! ZooPhotoPreViewController
+        let photo = segue.destination as! PhotoPreViewController
         photo.screenImage = saveImage
     }
 }

@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="186.95652173913044" y="141.84782608695653"/>
         </scene>
-        <!--Zoo Photo Pre View Controller-->
+        <!--Photo Pre View Controller-->
         <scene sceneID="lpY-aa-g9K">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="2fy-sv-3DZ" customClass="ZooPhotoPreViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="2fy-sv-3DZ" customClass="PhotoPreViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BMJ-1g-eS6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

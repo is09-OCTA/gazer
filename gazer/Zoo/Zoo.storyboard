@@ -80,6 +80,7 @@
                         <outlet property="sceneView" destination="5GT-1R-Cc9" id="iho-X4-dgs"/>
                         <segue destination="9KX-r4-d7m" kind="presentation" id="nik-wX-JF3"/>
                         <segue destination="qcl-iZ-tmZ" kind="presentation" id="2qN-8E-q2H"/>
+                        <segue destination="2fy-sv-3DZ" kind="presentation" identifier="prevPhoto" id="uGE-kC-aWr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="da6-Nm-gjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -90,6 +91,66 @@
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="186.95652173913044" y="141.84782608695653"/>
+        </scene>
+        <!--Zoo Photo Pre View Controller-->
+        <scene sceneID="lpY-aa-g9K">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="2fy-sv-3DZ" customClass="ZooPhotoPreViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BMJ-1g-eS6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTZ-4g-6s8">
+                                <rect key="frame" x="120" y="661" width="175" height="45"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButton:" destination="2fy-sv-3DZ" eventType="touchUpInside" id="g55-Zm-e9c"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRY-cW-lxv">
+                                <rect key="frame" x="43" y="97" width="329" height="543"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6a-wp-quB">
+                                <rect key="frame" x="43" y="58" width="30" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="T7B-Aq-yoX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="49"/>
+                                <state key="normal" title="×">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButton:" destination="2fy-sv-3DZ" eventType="touchUpInside" id="FK6-lO-bfu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jTZ-4g-6s8" firstAttribute="leading" secondItem="GBe-Su-bET" secondAttribute="leading" constant="120" id="5HG-LL-QxC"/>
+                            <constraint firstItem="jTZ-4g-6s8" firstAttribute="top" secondItem="hRY-cW-lxv" secondAttribute="bottom" constant="21" id="5Jy-Mb-79a"/>
+                            <constraint firstItem="GBe-Su-bET" firstAttribute="bottom" secondItem="jTZ-4g-6s8" secondAttribute="bottom" constant="30" id="5u9-0D-bi5"/>
+                            <constraint firstItem="w6a-wp-quB" firstAttribute="top" secondItem="GBe-Su-bET" secondAttribute="top" constant="38" id="DXa-U9-E3D"/>
+                            <constraint firstItem="w6a-wp-quB" firstAttribute="leading" secondItem="GBe-Su-bET" secondAttribute="leading" constant="43" id="GdS-IJ-F0C"/>
+                            <constraint firstItem="hRY-cW-lxv" firstAttribute="top" secondItem="w6a-wp-quB" secondAttribute="bottom" constant="8" symbolic="YES" id="JwU-G6-dyw"/>
+                            <constraint firstItem="hRY-cW-lxv" firstAttribute="centerX" secondItem="BMJ-1g-eS6" secondAttribute="centerX" id="bRg-CF-pkH"/>
+                            <constraint firstItem="hRY-cW-lxv" firstAttribute="centerY" secondItem="BMJ-1g-eS6" secondAttribute="centerY" id="ckd-NG-yr9"/>
+                            <constraint firstItem="hRY-cW-lxv" firstAttribute="centerX" secondItem="jTZ-4g-6s8" secondAttribute="centerX" id="uLG-Xw-X5D"/>
+                            <constraint firstItem="w6a-wp-quB" firstAttribute="leading" secondItem="hRY-cW-lxv" secondAttribute="leading" id="y2T-7j-cIy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GBe-Su-bET"/>
+                    </view>
+                    <connections>
+                        <outlet property="previewImage" destination="hRY-cW-lxv" id="0mG-iS-sJu"/>
+                        <outlet property="saveButton" destination="jTZ-4g-6s8" id="Gfa-F9-N8L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A86-4R-InN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="186.95652173913044" y="941.57608695652186"/>
         </scene>
         <!--Object Modal View Controller-->
         <scene sceneID="HzY-id-arX">

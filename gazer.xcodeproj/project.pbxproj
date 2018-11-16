@@ -1,841 +1,841 @@
 // !$*UTF8*$!
 {
-    archiveVersion = 1;
-    classes = {
-    };
-    objectVersion = 50;
-    objects = {
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
 
 /* Begin PBXBuildFile section */
-        09E610C2A13CBB0FDFD880FF /* Pods_gazer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */; };
-        2356AADF215DC8A800EAA4E8 /* aqua_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2356AADE215DC8A800EAA4E8 /* aqua_bgm.mp3 */; };
-        2356AAE1215DC8BC00EAA4E8 /* star_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2356AAE0215DC8BC00EAA4E8 /* star_bgm.mp3 */; };
-        235E628820902DF50054ACE2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235E628720902DF50054ACE2 /* CoreLocation.framework */; };
-        8D33D49F219D158B00BCE54F /* ButtonConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33D49E219D158B00BCE54F /* ButtonConf.swift */; };
-        8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */; };
-        8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */; };
-        8D4FC93C20FD8E0400A924E4 /* ZooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */; };
-        8D4FC93E20FD8E9000A924E4 /* MappingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */; };
-        8D7FA1D82193D1B800E8781F /* Disney.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FA1D72193D1B800E8781F /* Disney.mp3 */; };
-        8D7FA1DA2193D1CF00E8781F /* DisneyCastleAnaUp.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */; };
-        8D7FA1E22193D35200E8781F /* MappingModel.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FA1E12193D35200E8781F /* MappingModel.scnassets */; };
-        8D7FA1E52193D4BB00E8781F /* DisneyCastleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7FA1E42193D4BB00E8781F /* DisneyCastleNode.swift */; };
-        B1246649218FE5C300782D31 /* ObjectImage in Resources */ = {isa = PBXBuildFile; fileRef = B1246648218FE5C300782D31 /* ObjectImage */; };
-        B12C3B7A218FDF4A00B5EFE3 /* ObjectModel in Resources */ = {isa = PBXBuildFile; fileRef = B12C3B79218FDF4900B5EFE3 /* ObjectModel */; };
-        B1D11250215CCD2700B8FBCD /* ZooImage in Resources */ = {isa = PBXBuildFile; fileRef = B1D1124F215CCD2700B8FBCD /* ZooImage */; };
-        B1D79970218A9FBF00E28D55 /* ObjectModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D7996F218A9FBF00E28D55 /* ObjectModalViewController.swift */; };
-        B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */; };
-        B1FC7207219CFE890044AA47 /* ZooPhotoPreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FC7206219CFE890044AA47 /* ZooPhotoPreViewController.swift */; };
-        C70E7AA520D77FF900255FD3 /* AquariumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */; };
-        C724D123218819420063139F /* FishModel in Resources */ = {isa = PBXBuildFile; fileRef = C724D122218819420063139F /* FishModel */; };
-        C72D19D321520E450079C65D /* Aquarium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72D19D221520E450079C65D /* Aquarium.storyboard */; };
-        C72D1A2E2155E3440079C65D /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D1A2D2155E3440079C65D /* CustomPresentationController.swift */; };
-        C745865B216727CE000A4FC6 /* ZooModel in Resources */ = {isa = PBXBuildFile; fileRef = C745865A216727CE000A4FC6 /* ZooModel */; };
-        C75A04BA20B3D9EA00B0F36C /* decimalExpansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */; };
-        C7691FC721900280000B6D5C /* AquariumModel in Resources */ = {isa = PBXBuildFile; fileRef = C7691FC621900280000B6D5C /* AquariumModel */; };
-        C788DA73209023700006ED25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA72209023700006ED25 /* AppDelegate.swift */; };
-        C788DA75209023700006ED25 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C788DA74209023700006ED25 /* art.scnassets */; };
-        C788DA77209023700006ED25 /* StarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA76209023700006ED25 /* StarViewController.swift */; };
-        C788DA7A209023700006ED25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C788DA78209023700006ED25 /* Main.storyboard */; };
-        C788DA7C209023710006ED25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C788DA7B209023710006ED25 /* Assets.xcassets */; };
-        C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C788DA7D209023710006ED25 /* LaunchScreen.storyboard */; };
-        C788DA8A209023720006ED25 /* gazerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA89209023720006ED25 /* gazerTests.swift */; };
-        C788DA95209023720006ED25 /* gazerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA94209023720006ED25 /* gazerUITests.swift */; };
-        C7B940B62156113B00AC34FE /* ZooModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B940B52156113B00AC34FE /* ZooModalViewController.swift */; };
-        C7C32FAB219BC464003829DE /* Star.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C32FAA219BC464003829DE /* Star.storyboard */; };
-        C7C32FAF219BC8D2003829DE /* StarModel.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C7C32FAE219BC8D2003829DE /* StarModel.scnassets */; };
-        C7C32FB1219CF72F003829DE /* StarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C32FB0219CF72F003829DE /* StarData.swift */; };
+		09E610C2A13CBB0FDFD880FF /* Pods_gazer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */; };
+		2356AADF215DC8A800EAA4E8 /* aqua_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2356AADE215DC8A800EAA4E8 /* aqua_bgm.mp3 */; };
+		2356AAE1215DC8BC00EAA4E8 /* star_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2356AAE0215DC8BC00EAA4E8 /* star_bgm.mp3 */; };
+		235E628820902DF50054ACE2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235E628720902DF50054ACE2 /* CoreLocation.framework */; };
+		8D33D49F219D158B00BCE54F /* ButtonConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33D49E219D158B00BCE54F /* ButtonConf.swift */; };
+		8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */; };
+		8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */; };
+		8D4FC93C20FD8E0400A924E4 /* ZooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */; };
+		8D4FC93E20FD8E9000A924E4 /* MappingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */; };
+		8D7FA1D82193D1B800E8781F /* Disney.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FA1D72193D1B800E8781F /* Disney.mp3 */; };
+		8D7FA1DA2193D1CF00E8781F /* DisneyCastleAnaUp.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */; };
+		8D7FA1E22193D35200E8781F /* MappingModel.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FA1E12193D35200E8781F /* MappingModel.scnassets */; };
+		8D7FA1E52193D4BB00E8781F /* DisneyCastleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7FA1E42193D4BB00E8781F /* DisneyCastleNode.swift */; };
+		B1246649218FE5C300782D31 /* ObjectImage in Resources */ = {isa = PBXBuildFile; fileRef = B1246648218FE5C300782D31 /* ObjectImage */; };
+		B12C3B7A218FDF4A00B5EFE3 /* ObjectModel in Resources */ = {isa = PBXBuildFile; fileRef = B12C3B79218FDF4900B5EFE3 /* ObjectModel */; };
+		B1D11250215CCD2700B8FBCD /* ZooImage in Resources */ = {isa = PBXBuildFile; fileRef = B1D1124F215CCD2700B8FBCD /* ZooImage */; };
+		B1D79970218A9FBF00E28D55 /* ObjectModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D7996F218A9FBF00E28D55 /* ObjectModalViewController.swift */; };
+		B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */; };
+		B1FC7207219CFE890044AA47 /* ZooPhotoPreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FC7206219CFE890044AA47 /* ZooPhotoPreViewController.swift */; };
+		C70E7AA520D77FF900255FD3 /* AquariumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */; };
+		C724D123218819420063139F /* FishModel in Resources */ = {isa = PBXBuildFile; fileRef = C724D122218819420063139F /* FishModel */; };
+		C72D19D321520E450079C65D /* Aquarium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72D19D221520E450079C65D /* Aquarium.storyboard */; };
+		C72D1A2E2155E3440079C65D /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72D1A2D2155E3440079C65D /* CustomPresentationController.swift */; };
+		C745865B216727CE000A4FC6 /* ZooModel in Resources */ = {isa = PBXBuildFile; fileRef = C745865A216727CE000A4FC6 /* ZooModel */; };
+		C75A04BA20B3D9EA00B0F36C /* decimalExpansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */; };
+		C7691FC721900280000B6D5C /* AquariumModel in Resources */ = {isa = PBXBuildFile; fileRef = C7691FC621900280000B6D5C /* AquariumModel */; };
+		C788DA73209023700006ED25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA72209023700006ED25 /* AppDelegate.swift */; };
+		C788DA75209023700006ED25 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C788DA74209023700006ED25 /* art.scnassets */; };
+		C788DA77209023700006ED25 /* StarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA76209023700006ED25 /* StarViewController.swift */; };
+		C788DA7A209023700006ED25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C788DA78209023700006ED25 /* Main.storyboard */; };
+		C788DA7C209023710006ED25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C788DA7B209023710006ED25 /* Assets.xcassets */; };
+		C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C788DA7D209023710006ED25 /* LaunchScreen.storyboard */; };
+		C788DA8A209023720006ED25 /* gazerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA89209023720006ED25 /* gazerTests.swift */; };
+		C788DA95209023720006ED25 /* gazerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA94209023720006ED25 /* gazerUITests.swift */; };
+		C7B940B62156113B00AC34FE /* ZooModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B940B52156113B00AC34FE /* ZooModalViewController.swift */; };
+		C7C32FAB219BC464003829DE /* Star.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C32FAA219BC464003829DE /* Star.storyboard */; };
+		C7C32FAF219BC8D2003829DE /* StarModel.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C7C32FAE219BC8D2003829DE /* StarModel.scnassets */; };
+		C7C32FB1219CF72F003829DE /* StarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C32FB0219CF72F003829DE /* StarData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-        C788DA86209023720006ED25 /* PBXContainerItemProxy */ = {
-            isa = PBXContainerItemProxy;
-            containerPortal = C788DA67209023700006ED25 /* Project object */;
-            proxyType = 1;
-            remoteGlobalIDString = C788DA6E209023700006ED25;
-            remoteInfo = gazer;
-        };
-        C788DA91209023720006ED25 /* PBXContainerItemProxy */ = {
-            isa = PBXContainerItemProxy;
-            containerPortal = C788DA67209023700006ED25 /* Project object */;
-            proxyType = 1;
-            remoteGlobalIDString = C788DA6E209023700006ED25;
-            remoteInfo = gazer;
-        };
+		C788DA86209023720006ED25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C788DA67209023700006ED25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C788DA6E209023700006ED25;
+			remoteInfo = gazer;
+		};
+		C788DA91209023720006ED25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C788DA67209023700006ED25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C788DA6E209023700006ED25;
+			remoteInfo = gazer;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-        2356AADE215DC8A800EAA4E8 /* aqua_bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = aqua_bgm.mp3; sourceTree = "<group>"; };
-        2356AAE0215DC8BC00EAA4E8 /* star_bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = star_bgm.mp3; sourceTree = "<group>"; };
-        235E628720902DF50054ACE2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-        528B2B857C8684EC0C142CDD /* Pods_gazerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-        6B4886E88D8C79D7F80446BC /* Pods_gazerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-        8AC02151997CBC19E35D75DF /* Pods-gazer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gazer.release.xcconfig"; path = "Pods/Target Support Files/Pods-gazer/Pods-gazer.release.xcconfig"; sourceTree = "<group>"; };
-        8D33D49E219D158B00BCE54F /* ButtonConf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConf.swift; sourceTree = "<group>"; };
-        8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Zoo.storyboard; sourceTree = "<group>"; };
-        8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mapping.storyboard; sourceTree = "<group>"; };
-        8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooViewController.swift; sourceTree = "<group>"; };
-        8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingViewController.swift; sourceTree = "<group>"; };
-        8D7FA1D72193D1B800E8781F /* Disney.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Disney.mp3; sourceTree = "<group>"; };
-        8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = DisneyCastleAnaUp.mp4; sourceTree = "<group>"; };
-        8D7FA1E12193D35200E8781F /* MappingModel.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = MappingModel.scnassets; sourceTree = "<group>"; };
-        8D7FA1E42193D4BB00E8781F /* DisneyCastleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisneyCastleNode.swift; sourceTree = "<group>"; };
-        B1246648218FE5C300782D31 /* ObjectImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ObjectImage; sourceTree = "<group>"; };
-        B12C3B79218FDF4900B5EFE3 /* ObjectModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ObjectModel; sourceTree = "<group>"; };
-        B1D1124F215CCD2700B8FBCD /* ZooImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZooImage; sourceTree = "<group>"; };
-        B1D7996F218A9FBF00E28D55 /* ObjectModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModalViewController.swift; sourceTree = "<group>"; };
-        B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-        B1FC7206219CFE890044AA47 /* ZooPhotoPreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooPhotoPreViewController.swift; sourceTree = "<group>"; };
-        B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-        C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumViewController.swift; sourceTree = "<group>"; };
-        C724D122218819420063139F /* FishModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FishModel; sourceTree = "<group>"; };
-        C72D19D221520E450079C65D /* Aquarium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Aquarium.storyboard; sourceTree = "<group>"; };
-        C72D1A2D2155E3440079C65D /* CustomPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
-        C745865A216727CE000A4FC6 /* ZooModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZooModel; sourceTree = "<group>"; };
-        C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decimalExpansion.swift; sourceTree = "<group>"; };
-        C7691FC621900280000B6D5C /* AquariumModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AquariumModel; sourceTree = "<group>"; };
-        C788DA6F209023700006ED25 /* gazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-        C788DA72209023700006ED25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-        C788DA74209023700006ED25 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-        C788DA76209023700006ED25 /* StarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarViewController.swift; sourceTree = "<group>"; };
-        C788DA79209023700006ED25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-        C788DA7B209023710006ED25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-        C788DA7E209023710006ED25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-        C788DA80209023710006ED25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-        C788DA85209023720006ED25 /* gazerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gazerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-        C788DA89209023720006ED25 /* gazerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gazerTests.swift; sourceTree = "<group>"; };
-        C788DA8B209023720006ED25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-        C788DA90209023720006ED25 /* gazerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gazerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-        C788DA94209023720006ED25 /* gazerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gazerUITests.swift; sourceTree = "<group>"; };
-        C788DA96209023720006ED25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-        C7B940B52156113B00AC34FE /* ZooModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooModalViewController.swift; sourceTree = "<group>"; };
-        C7C32FAA219BC464003829DE /* Star.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Star.storyboard; sourceTree = "<group>"; };
-        C7C32FAE219BC8D2003829DE /* StarModel.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = StarModel.scnassets; sourceTree = "<group>"; };
-        C7C32FB0219CF72F003829DE /* StarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarData.swift; sourceTree = "<group>"; };
-        E675FB51F971A5FE35ABCC72 /* Pods-gazer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gazer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gazer/Pods-gazer.debug.xcconfig"; sourceTree = "<group>"; };
+		2356AADE215DC8A800EAA4E8 /* aqua_bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = aqua_bgm.mp3; sourceTree = "<group>"; };
+		2356AAE0215DC8BC00EAA4E8 /* star_bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = star_bgm.mp3; sourceTree = "<group>"; };
+		235E628720902DF50054ACE2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		528B2B857C8684EC0C142CDD /* Pods_gazerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B4886E88D8C79D7F80446BC /* Pods_gazerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AC02151997CBC19E35D75DF /* Pods-gazer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gazer.release.xcconfig"; path = "Pods/Target Support Files/Pods-gazer/Pods-gazer.release.xcconfig"; sourceTree = "<group>"; };
+		8D33D49E219D158B00BCE54F /* ButtonConf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConf.swift; sourceTree = "<group>"; };
+		8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Zoo.storyboard; sourceTree = "<group>"; };
+		8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mapping.storyboard; sourceTree = "<group>"; };
+		8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooViewController.swift; sourceTree = "<group>"; };
+		8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingViewController.swift; sourceTree = "<group>"; };
+		8D7FA1D72193D1B800E8781F /* Disney.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Disney.mp3; sourceTree = "<group>"; };
+		8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = DisneyCastleAnaUp.mp4; sourceTree = "<group>"; };
+		8D7FA1E12193D35200E8781F /* MappingModel.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = MappingModel.scnassets; sourceTree = "<group>"; };
+		8D7FA1E42193D4BB00E8781F /* DisneyCastleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisneyCastleNode.swift; sourceTree = "<group>"; };
+		B1246648218FE5C300782D31 /* ObjectImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ObjectImage; sourceTree = "<group>"; };
+		B12C3B79218FDF4900B5EFE3 /* ObjectModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ObjectModel; sourceTree = "<group>"; };
+		B1D1124F215CCD2700B8FBCD /* ZooImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZooImage; sourceTree = "<group>"; };
+		B1D7996F218A9FBF00E28D55 /* ObjectModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModalViewController.swift; sourceTree = "<group>"; };
+		B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B1FC7206219CFE890044AA47 /* ZooPhotoPreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooPhotoPreViewController.swift; sourceTree = "<group>"; };
+		B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumViewController.swift; sourceTree = "<group>"; };
+		C724D122218819420063139F /* FishModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FishModel; sourceTree = "<group>"; };
+		C72D19D221520E450079C65D /* Aquarium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Aquarium.storyboard; sourceTree = "<group>"; };
+		C72D1A2D2155E3440079C65D /* CustomPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
+		C745865A216727CE000A4FC6 /* ZooModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZooModel; sourceTree = "<group>"; };
+		C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = decimalExpansion.swift; sourceTree = "<group>"; };
+		C7691FC621900280000B6D5C /* AquariumModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AquariumModel; sourceTree = "<group>"; };
+		C788DA6F209023700006ED25 /* gazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C788DA72209023700006ED25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C788DA74209023700006ED25 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		C788DA76209023700006ED25 /* StarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarViewController.swift; sourceTree = "<group>"; };
+		C788DA79209023700006ED25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C788DA7B209023710006ED25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C788DA7E209023710006ED25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C788DA80209023710006ED25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C788DA85209023720006ED25 /* gazerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gazerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C788DA89209023720006ED25 /* gazerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gazerTests.swift; sourceTree = "<group>"; };
+		C788DA8B209023720006ED25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C788DA90209023720006ED25 /* gazerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gazerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C788DA94209023720006ED25 /* gazerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gazerUITests.swift; sourceTree = "<group>"; };
+		C788DA96209023720006ED25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7B940B52156113B00AC34FE /* ZooModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooModalViewController.swift; sourceTree = "<group>"; };
+		C7C32FAA219BC464003829DE /* Star.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Star.storyboard; sourceTree = "<group>"; };
+		C7C32FAE219BC8D2003829DE /* StarModel.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = StarModel.scnassets; sourceTree = "<group>"; };
+		C7C32FB0219CF72F003829DE /* StarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarData.swift; sourceTree = "<group>"; };
+		E675FB51F971A5FE35ABCC72 /* Pods-gazer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gazer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gazer/Pods-gazer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-        C788DA6C209023700006ED25 /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                235E628820902DF50054ACE2 /* CoreLocation.framework in Frameworks */,
-                09E610C2A13CBB0FDFD880FF /* Pods_gazer.framework in Frameworks */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        C788DA82209023720006ED25 /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        C788DA8D209023720006ED25 /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+		C788DA6C209023700006ED25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				235E628820902DF50054ACE2 /* CoreLocation.framework in Frameworks */,
+				09E610C2A13CBB0FDFD880FF /* Pods_gazer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C788DA82209023720006ED25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C788DA8D209023720006ED25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-        235E628620902DF40054ACE2 /* Frameworks */ = {
-            isa = PBXGroup;
-            children = (
-                235E628720902DF50054ACE2 /* CoreLocation.framework */,
-                B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */,
-                6B4886E88D8C79D7F80446BC /* Pods_gazerTests.framework */,
-                528B2B857C8684EC0C142CDD /* Pods_gazerUITests.framework */,
-            );
-            name = Frameworks;
-            sourceTree = "<group>";
-        };
-        6D6676301B19657B3E4EAADB /* Pods */ = {
-            isa = PBXGroup;
-            children = (
-                E675FB51F971A5FE35ABCC72 /* Pods-gazer.debug.xcconfig */,
-                8AC02151997CBC19E35D75DF /* Pods-gazer.release.xcconfig */,
-            );
-            name = Pods;
-            sourceTree = "<group>";
-        };
-        8D4FC93920FD8D7500A924E4 /* Zoo */ = {
-            isa = PBXGroup;
-            children = (
-                B12C3B79218FDF4900B5EFE3 /* ObjectModel */,
-                C7B940B52156113B00AC34FE /* ZooModalViewController.swift */,
-                B1246648218FE5C300782D31 /* ObjectImage */,
-                8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */,
-                C72D1A2D2155E3440079C65D /* CustomPresentationController.swift */,
-                8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */,
-                B1D7996F218A9FBF00E28D55 /* ObjectModalViewController.swift */,
-                C745865A216727CE000A4FC6 /* ZooModel */,
-                B1D1124F215CCD2700B8FBCD /* ZooImage */,
-                B1FC7206219CFE890044AA47 /* ZooPhotoPreViewController.swift */,
-            );
-            path = Zoo;
-            sourceTree = "<group>";
-        };
-        8D4FC93A20FD8D7C00A924E4 /* Mapping */ = {
-            isa = PBXGroup;
-            children = (
-                8D7FA1E32193D4A400E8781F /* Model */,
-                8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */,
-                8D7FA1D72193D1B800E8781F /* Disney.mp3 */,
-                8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */,
-                8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */,
-                8D7FA1E12193D35200E8781F /* MappingModel.scnassets */,
-                8D33D49E219D158B00BCE54F /* ButtonConf.swift */,
-            );
-            path = Mapping;
-            sourceTree = "<group>";
-        };
-        8D7FA1E32193D4A400E8781F /* Model */ = {
-            isa = PBXGroup;
-            children = (
-                8D7FA1E42193D4BB00E8781F /* DisneyCastleNode.swift */,
-            );
-            path = Model;
-            sourceTree = "<group>";
-        };
-        C7109F7820FDB661009161A7 /* Aquarium */ = {
-            isa = PBXGroup;
-            children = (
-                C7691FC621900280000B6D5C /* AquariumModel */,
-                2356AADE215DC8A800EAA4E8 /* aqua_bgm.mp3 */,
-                C724D122218819420063139F /* FishModel */,
-                C72D19D221520E450079C65D /* Aquarium.storyboard */,
-                C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */,
-            );
-            path = Aquarium;
-            sourceTree = "<group>";
-        };
-        C75A04B820B3D9C900B0F36C /* src */ = {
-            isa = PBXGroup;
-            children = (
-                C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */,
-            );
-            path = src;
-            sourceTree = "<group>";
-        };
-        C788DA66209023700006ED25 = {
-            isa = PBXGroup;
-            children = (
-                C788DA71209023700006ED25 /* gazer */,
-                C788DA88209023720006ED25 /* gazerTests */,
-                C788DA93209023720006ED25 /* gazerUITests */,
-                C788DA70209023700006ED25 /* Products */,
-                235E628620902DF40054ACE2 /* Frameworks */,
-                6D6676301B19657B3E4EAADB /* Pods */,
-            );
-            sourceTree = "<group>";
-        };
-        C788DA70209023700006ED25 /* Products */ = {
-            isa = PBXGroup;
-            children = (
-                C788DA6F209023700006ED25 /* gazer.app */,
-                C788DA85209023720006ED25 /* gazerTests.xctest */,
-                C788DA90209023720006ED25 /* gazerUITests.xctest */,
-            );
-            name = Products;
-            sourceTree = "<group>";
-        };
-        C788DA71209023700006ED25 /* gazer */ = {
-            isa = PBXGroup;
-            children = (
-                8D4FC93920FD8D7500A924E4 /* Zoo */,
-                C7109F7820FDB661009161A7 /* Aquarium */,
-                C7C32FA9219BC364003829DE /* Star */,
-                8D4FC93A20FD8D7C00A924E4 /* Mapping */,
-                C75A04B820B3D9C900B0F36C /* src */,
-                C788DA72209023700006ED25 /* AppDelegate.swift */,
-                C788DA74209023700006ED25 /* art.scnassets */,
-                C788DA78209023700006ED25 /* Main.storyboard */,
-                B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */,
-                C788DA7B209023710006ED25 /* Assets.xcassets */,
-                C788DA7D209023710006ED25 /* LaunchScreen.storyboard */,
-                C788DA80209023710006ED25 /* Info.plist */,
-            );
-            path = gazer;
-            sourceTree = "<group>";
-        };
-        C788DA88209023720006ED25 /* gazerTests */ = {
-            isa = PBXGroup;
-            children = (
-                C788DA89209023720006ED25 /* gazerTests.swift */,
-                C788DA8B209023720006ED25 /* Info.plist */,
-            );
-            path = gazerTests;
-            sourceTree = "<group>";
-        };
-        C788DA93209023720006ED25 /* gazerUITests */ = {
-            isa = PBXGroup;
-            children = (
-                C788DA94209023720006ED25 /* gazerUITests.swift */,
-                C788DA96209023720006ED25 /* Info.plist */,
-            );
-            path = gazerUITests;
-            sourceTree = "<group>";
-        };
-        C7C32FA9219BC364003829DE /* Star */ = {
-            isa = PBXGroup;
-            children = (
-                2356AAE0215DC8BC00EAA4E8 /* star_bgm.mp3 */,
-                C7C32FAA219BC464003829DE /* Star.storyboard */,
-                C788DA76209023700006ED25 /* StarViewController.swift */,
-                C7C32FAE219BC8D2003829DE /* StarModel.scnassets */,
-                C7C32FB0219CF72F003829DE /* StarData.swift */,
-            );
-            path = Star;
-            sourceTree = "<group>";
-        };
+		235E628620902DF40054ACE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				235E628720902DF50054ACE2 /* CoreLocation.framework */,
+				B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */,
+				6B4886E88D8C79D7F80446BC /* Pods_gazerTests.framework */,
+				528B2B857C8684EC0C142CDD /* Pods_gazerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D6676301B19657B3E4EAADB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E675FB51F971A5FE35ABCC72 /* Pods-gazer.debug.xcconfig */,
+				8AC02151997CBC19E35D75DF /* Pods-gazer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8D4FC93920FD8D7500A924E4 /* Zoo */ = {
+			isa = PBXGroup;
+			children = (
+				B12C3B79218FDF4900B5EFE3 /* ObjectModel */,
+				C7B940B52156113B00AC34FE /* ZooModalViewController.swift */,
+				B1246648218FE5C300782D31 /* ObjectImage */,
+				8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */,
+				C72D1A2D2155E3440079C65D /* CustomPresentationController.swift */,
+				8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */,
+				B1D7996F218A9FBF00E28D55 /* ObjectModalViewController.swift */,
+				C745865A216727CE000A4FC6 /* ZooModel */,
+				B1D1124F215CCD2700B8FBCD /* ZooImage */,
+				B1FC7206219CFE890044AA47 /* ZooPhotoPreViewController.swift */,
+			);
+			path = Zoo;
+			sourceTree = "<group>";
+		};
+		8D4FC93A20FD8D7C00A924E4 /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				8D7FA1E32193D4A400E8781F /* Model */,
+				8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */,
+				8D7FA1D72193D1B800E8781F /* Disney.mp3 */,
+				8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */,
+				8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */,
+				8D7FA1E12193D35200E8781F /* MappingModel.scnassets */,
+				8D33D49E219D158B00BCE54F /* ButtonConf.swift */,
+			);
+			path = Mapping;
+			sourceTree = "<group>";
+		};
+		8D7FA1E32193D4A400E8781F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8D7FA1E42193D4BB00E8781F /* DisneyCastleNode.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C7109F7820FDB661009161A7 /* Aquarium */ = {
+			isa = PBXGroup;
+			children = (
+				C7691FC621900280000B6D5C /* AquariumModel */,
+				2356AADE215DC8A800EAA4E8 /* aqua_bgm.mp3 */,
+				C724D122218819420063139F /* FishModel */,
+				C72D19D221520E450079C65D /* Aquarium.storyboard */,
+				C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */,
+			);
+			path = Aquarium;
+			sourceTree = "<group>";
+		};
+		C75A04B820B3D9C900B0F36C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C75A04B920B3D9EA00B0F36C /* decimalExpansion.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		C788DA66209023700006ED25 = {
+			isa = PBXGroup;
+			children = (
+				C788DA71209023700006ED25 /* gazer */,
+				C788DA88209023720006ED25 /* gazerTests */,
+				C788DA93209023720006ED25 /* gazerUITests */,
+				C788DA70209023700006ED25 /* Products */,
+				235E628620902DF40054ACE2 /* Frameworks */,
+				6D6676301B19657B3E4EAADB /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		C788DA70209023700006ED25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C788DA6F209023700006ED25 /* gazer.app */,
+				C788DA85209023720006ED25 /* gazerTests.xctest */,
+				C788DA90209023720006ED25 /* gazerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C788DA71209023700006ED25 /* gazer */ = {
+			isa = PBXGroup;
+			children = (
+				8D4FC93920FD8D7500A924E4 /* Zoo */,
+				C7109F7820FDB661009161A7 /* Aquarium */,
+				C7C32FA9219BC364003829DE /* Star */,
+				8D4FC93A20FD8D7C00A924E4 /* Mapping */,
+				C75A04B820B3D9C900B0F36C /* src */,
+				C788DA72209023700006ED25 /* AppDelegate.swift */,
+				C788DA74209023700006ED25 /* art.scnassets */,
+				C788DA78209023700006ED25 /* Main.storyboard */,
+				B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */,
+				C788DA7B209023710006ED25 /* Assets.xcassets */,
+				C788DA7D209023710006ED25 /* LaunchScreen.storyboard */,
+				C788DA80209023710006ED25 /* Info.plist */,
+			);
+			path = gazer;
+			sourceTree = "<group>";
+		};
+		C788DA88209023720006ED25 /* gazerTests */ = {
+			isa = PBXGroup;
+			children = (
+				C788DA89209023720006ED25 /* gazerTests.swift */,
+				C788DA8B209023720006ED25 /* Info.plist */,
+			);
+			path = gazerTests;
+			sourceTree = "<group>";
+		};
+		C788DA93209023720006ED25 /* gazerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C788DA94209023720006ED25 /* gazerUITests.swift */,
+				C788DA96209023720006ED25 /* Info.plist */,
+			);
+			path = gazerUITests;
+			sourceTree = "<group>";
+		};
+		C7C32FA9219BC364003829DE /* Star */ = {
+			isa = PBXGroup;
+			children = (
+				2356AAE0215DC8BC00EAA4E8 /* star_bgm.mp3 */,
+				C7C32FAA219BC464003829DE /* Star.storyboard */,
+				C788DA76209023700006ED25 /* StarViewController.swift */,
+				C7C32FAE219BC8D2003829DE /* StarModel.scnassets */,
+				C7C32FB0219CF72F003829DE /* StarData.swift */,
+			);
+			path = Star;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-        C788DA6E209023700006ED25 /* gazer */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = C788DA99209023720006ED25 /* Build configuration list for PBXNativeTarget "gazer" */;
-            buildPhases = (
-                306FFFC1A7F6DD2F89E52DB2 /* [CP] Check Pods Manifest.lock */,
-                C788DA6B209023700006ED25 /* Sources */,
-                C788DA6C209023700006ED25 /* Frameworks */,
-                C788DA6D209023700006ED25 /* Resources */,
-                73F63EE25828B4A8B716A00F /* [CP] Embed Pods Frameworks */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-            );
-            name = gazer;
-            productName = gazer;
-            productReference = C788DA6F209023700006ED25 /* gazer.app */;
-            productType = "com.apple.product-type.application";
-        };
-        C788DA84209023720006ED25 /* gazerTests */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = C788DA9C209023720006ED25 /* Build configuration list for PBXNativeTarget "gazerTests" */;
-            buildPhases = (
-                C788DA81209023720006ED25 /* Sources */,
-                C788DA82209023720006ED25 /* Frameworks */,
-                C788DA83209023720006ED25 /* Resources */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-                C788DA87209023720006ED25 /* PBXTargetDependency */,
-            );
-            name = gazerTests;
-            productName = gazerTests;
-            productReference = C788DA85209023720006ED25 /* gazerTests.xctest */;
-            productType = "com.apple.product-type.bundle.unit-test";
-        };
-        C788DA8F209023720006ED25 /* gazerUITests */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = C788DA9F209023720006ED25 /* Build configuration list for PBXNativeTarget "gazerUITests" */;
-            buildPhases = (
-                C788DA8C209023720006ED25 /* Sources */,
-                C788DA8D209023720006ED25 /* Frameworks */,
-                C788DA8E209023720006ED25 /* Resources */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-                C788DA92209023720006ED25 /* PBXTargetDependency */,
-            );
-            name = gazerUITests;
-            productName = gazerUITests;
-            productReference = C788DA90209023720006ED25 /* gazerUITests.xctest */;
-            productType = "com.apple.product-type.bundle.ui-testing";
-        };
+		C788DA6E209023700006ED25 /* gazer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C788DA99209023720006ED25 /* Build configuration list for PBXNativeTarget "gazer" */;
+			buildPhases = (
+				306FFFC1A7F6DD2F89E52DB2 /* [CP] Check Pods Manifest.lock */,
+				C788DA6B209023700006ED25 /* Sources */,
+				C788DA6C209023700006ED25 /* Frameworks */,
+				C788DA6D209023700006ED25 /* Resources */,
+				73F63EE25828B4A8B716A00F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gazer;
+			productName = gazer;
+			productReference = C788DA6F209023700006ED25 /* gazer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C788DA84209023720006ED25 /* gazerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C788DA9C209023720006ED25 /* Build configuration list for PBXNativeTarget "gazerTests" */;
+			buildPhases = (
+				C788DA81209023720006ED25 /* Sources */,
+				C788DA82209023720006ED25 /* Frameworks */,
+				C788DA83209023720006ED25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C788DA87209023720006ED25 /* PBXTargetDependency */,
+			);
+			name = gazerTests;
+			productName = gazerTests;
+			productReference = C788DA85209023720006ED25 /* gazerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C788DA8F209023720006ED25 /* gazerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C788DA9F209023720006ED25 /* Build configuration list for PBXNativeTarget "gazerUITests" */;
+			buildPhases = (
+				C788DA8C209023720006ED25 /* Sources */,
+				C788DA8D209023720006ED25 /* Frameworks */,
+				C788DA8E209023720006ED25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C788DA92209023720006ED25 /* PBXTargetDependency */,
+			);
+			name = gazerUITests;
+			productName = gazerUITests;
+			productReference = C788DA90209023720006ED25 /* gazerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-        C788DA67209023700006ED25 /* Project object */ = {
-            isa = PBXProject;
-            attributes = {
-                LastSwiftUpdateCheck = 0930;
-                LastUpgradeCheck = 0930;
-                ORGANIZATIONNAME = OCTA;
-                TargetAttributes = {
-                    C788DA6E209023700006ED25 = {
-                        CreatedOnToolsVersion = 9.3;
-                        SystemCapabilities = {
-                            com.apple.BackgroundModes = {
-                                enabled = 1;
-                            };
-                        };
-                    };
-                    C788DA84209023720006ED25 = {
-                        CreatedOnToolsVersion = 9.3;
-                        TestTargetID = C788DA6E209023700006ED25;
-                    };
-                    C788DA8F209023720006ED25 = {
-                        CreatedOnToolsVersion = 9.3;
-                        TestTargetID = C788DA6E209023700006ED25;
-                    };
-                };
-            };
-            buildConfigurationList = C788DA6A209023700006ED25 /* Build configuration list for PBXProject "gazer" */;
-            compatibilityVersion = "Xcode 9.3";
-            developmentRegion = en;
-            hasScannedForEncodings = 0;
-            knownRegions = (
-                en,
-                Base,
-            );
-            mainGroup = C788DA66209023700006ED25;
-            productRefGroup = C788DA70209023700006ED25 /* Products */;
-            projectDirPath = "";
-            projectRoot = "";
-            targets = (
-                C788DA6E209023700006ED25 /* gazer */,
-                C788DA84209023720006ED25 /* gazerTests */,
-                C788DA8F209023720006ED25 /* gazerUITests */,
-            );
-        };
+		C788DA67209023700006ED25 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = OCTA;
+				TargetAttributes = {
+					C788DA6E209023700006ED25 = {
+						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					C788DA84209023720006ED25 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = C788DA6E209023700006ED25;
+					};
+					C788DA8F209023720006ED25 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = C788DA6E209023700006ED25;
+					};
+				};
+			};
+			buildConfigurationList = C788DA6A209023700006ED25 /* Build configuration list for PBXProject "gazer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C788DA66209023700006ED25;
+			productRefGroup = C788DA70209023700006ED25 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C788DA6E209023700006ED25 /* gazer */,
+				C788DA84209023720006ED25 /* gazerTests */,
+				C788DA8F209023720006ED25 /* gazerUITests */,
+			);
+		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-        C788DA6D209023700006ED25 /* Resources */ = {
-            isa = PBXResourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                C788DA75209023700006ED25 /* art.scnassets in Resources */,
-                C7691FC721900280000B6D5C /* AquariumModel in Resources */,
-                2356AAE1215DC8BC00EAA4E8 /* star_bgm.mp3 in Resources */,
-                B1246649218FE5C300782D31 /* ObjectImage in Resources */,
-                8D7FA1D82193D1B800E8781F /* Disney.mp3 in Resources */,
-                B12C3B7A218FDF4A00B5EFE3 /* ObjectModel in Resources */,
-                C72D19D321520E450079C65D /* Aquarium.storyboard in Resources */,
-                8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */,
-                C7C32FAB219BC464003829DE /* Star.storyboard in Resources */,
-                C724D123218819420063139F /* FishModel in Resources */,
-                C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */,
-                B1D11250215CCD2700B8FBCD /* ZooImage in Resources */,
-                C745865B216727CE000A4FC6 /* ZooModel in Resources */,
-                8D7FA1E22193D35200E8781F /* MappingModel.scnassets in Resources */,
-                C788DA7C209023710006ED25 /* Assets.xcassets in Resources */,
-                8D7FA1DA2193D1CF00E8781F /* DisneyCastleAnaUp.mp4 in Resources */,
-                8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */,
-                2356AADF215DC8A800EAA4E8 /* aqua_bgm.mp3 in Resources */,
-                C788DA7A209023700006ED25 /* Main.storyboard in Resources */,
-                C7C32FAF219BC8D2003829DE /* StarModel.scnassets in Resources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        C788DA83209023720006ED25 /* Resources */ = {
-            isa = PBXResourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        C788DA8E209023720006ED25 /* Resources */ = {
-            isa = PBXResourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+		C788DA6D209023700006ED25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C788DA75209023700006ED25 /* art.scnassets in Resources */,
+				C7691FC721900280000B6D5C /* AquariumModel in Resources */,
+				2356AAE1215DC8BC00EAA4E8 /* star_bgm.mp3 in Resources */,
+				B1246649218FE5C300782D31 /* ObjectImage in Resources */,
+				8D7FA1D82193D1B800E8781F /* Disney.mp3 in Resources */,
+				B12C3B7A218FDF4A00B5EFE3 /* ObjectModel in Resources */,
+				C72D19D321520E450079C65D /* Aquarium.storyboard in Resources */,
+				8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */,
+				C7C32FAB219BC464003829DE /* Star.storyboard in Resources */,
+				C724D123218819420063139F /* FishModel in Resources */,
+				C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */,
+				B1D11250215CCD2700B8FBCD /* ZooImage in Resources */,
+				C745865B216727CE000A4FC6 /* ZooModel in Resources */,
+				8D7FA1E22193D35200E8781F /* MappingModel.scnassets in Resources */,
+				C788DA7C209023710006ED25 /* Assets.xcassets in Resources */,
+				8D7FA1DA2193D1CF00E8781F /* DisneyCastleAnaUp.mp4 in Resources */,
+				8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */,
+				2356AADF215DC8A800EAA4E8 /* aqua_bgm.mp3 in Resources */,
+				C788DA7A209023700006ED25 /* Main.storyboard in Resources */,
+				C7C32FAF219BC8D2003829DE /* StarModel.scnassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C788DA83209023720006ED25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C788DA8E209023720006ED25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-        306FFFC1A7F6DD2F89E52DB2 /* [CP] Check Pods Manifest.lock */ = {
-            isa = PBXShellScriptBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            inputPaths = (
-                "${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-                "${PODS_ROOT}/Manifest.lock",
-            );
-            name = "[CP] Check Pods Manifest.lock";
-            outputPaths = (
-                "$(DERIVED_FILE_DIR)/Pods-gazer-checkManifestLockResult.txt",
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-            shellPath = /bin/sh;
-            shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-            showEnvVarsInLog = 0;
-        };
-        73F63EE25828B4A8B716A00F /* [CP] Embed Pods Frameworks */ = {
-            isa = PBXShellScriptBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            inputPaths = (
-                "${SRCROOT}/Pods/Target Support Files/Pods-gazer/Pods-gazer-frameworks.sh",
-                "${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework",
-                "${BUILT_PRODUCTS_DIR}/EARestrictedScrollView/EARestrictedScrollView.framework",
-                "${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
-                "${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
-            );
-            name = "[CP] Embed Pods Frameworks";
-            outputPaths = (
-                "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EAIntroView.framework",
-                "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EARestrictedScrollView.framework",
-                "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Floaty.framework",
-                "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-            shellPath = /bin/sh;
-            shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-gazer/Pods-gazer-frameworks.sh\"\n";
-            showEnvVarsInLog = 0;
-        };
+		306FFFC1A7F6DD2F89E52DB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gazer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73F63EE25828B4A8B716A00F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-gazer/Pods-gazer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework",
+				"${BUILT_PRODUCTS_DIR}/EARestrictedScrollView/EARestrictedScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EAIntroView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EARestrictedScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Floaty.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-gazer/Pods-gazer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-        C788DA6B209023700006ED25 /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                C72D1A2E2155E3440079C65D /* CustomPresentationController.swift in Sources */,
-                B1FC7207219CFE890044AA47 /* ZooPhotoPreViewController.swift in Sources */,
-                B1D79970218A9FBF00E28D55 /* ObjectModalViewController.swift in Sources */,
-                B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */,
-                8D33D49F219D158B00BCE54F /* ButtonConf.swift in Sources */,
-                8D7FA1E52193D4BB00E8781F /* DisneyCastleNode.swift in Sources */,
-                C75A04BA20B3D9EA00B0F36C /* decimalExpansion.swift in Sources */,
-                C7C32FB1219CF72F003829DE /* StarData.swift in Sources */,
-                C70E7AA520D77FF900255FD3 /* AquariumViewController.swift in Sources */,
-                C7B940B62156113B00AC34FE /* ZooModalViewController.swift in Sources */,
-                C788DA77209023700006ED25 /* StarViewController.swift in Sources */,
-                8D4FC93E20FD8E9000A924E4 /* MappingViewController.swift in Sources */,
-                C788DA73209023700006ED25 /* AppDelegate.swift in Sources */,
-                8D4FC93C20FD8E0400A924E4 /* ZooViewController.swift in Sources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        C788DA81209023720006ED25 /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                C788DA8A209023720006ED25 /* gazerTests.swift in Sources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        C788DA8C209023720006ED25 /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                C788DA95209023720006ED25 /* gazerUITests.swift in Sources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+		C788DA6B209023700006ED25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C72D1A2E2155E3440079C65D /* CustomPresentationController.swift in Sources */,
+				B1FC7207219CFE890044AA47 /* ZooPhotoPreViewController.swift in Sources */,
+				B1D79970218A9FBF00E28D55 /* ObjectModalViewController.swift in Sources */,
+				B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */,
+				8D33D49F219D158B00BCE54F /* ButtonConf.swift in Sources */,
+				8D7FA1E52193D4BB00E8781F /* DisneyCastleNode.swift in Sources */,
+				C75A04BA20B3D9EA00B0F36C /* decimalExpansion.swift in Sources */,
+				C7C32FB1219CF72F003829DE /* StarData.swift in Sources */,
+				C70E7AA520D77FF900255FD3 /* AquariumViewController.swift in Sources */,
+				C7B940B62156113B00AC34FE /* ZooModalViewController.swift in Sources */,
+				C788DA77209023700006ED25 /* StarViewController.swift in Sources */,
+				8D4FC93E20FD8E9000A924E4 /* MappingViewController.swift in Sources */,
+				C788DA73209023700006ED25 /* AppDelegate.swift in Sources */,
+				8D4FC93C20FD8E0400A924E4 /* ZooViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C788DA81209023720006ED25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C788DA8A209023720006ED25 /* gazerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C788DA8C209023720006ED25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C788DA95209023720006ED25 /* gazerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-        C788DA87209023720006ED25 /* PBXTargetDependency */ = {
-            isa = PBXTargetDependency;
-            target = C788DA6E209023700006ED25 /* gazer */;
-            targetProxy = C788DA86209023720006ED25 /* PBXContainerItemProxy */;
-        };
-        C788DA92209023720006ED25 /* PBXTargetDependency */ = {
-            isa = PBXTargetDependency;
-            target = C788DA6E209023700006ED25 /* gazer */;
-            targetProxy = C788DA91209023720006ED25 /* PBXContainerItemProxy */;
-        };
+		C788DA87209023720006ED25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C788DA6E209023700006ED25 /* gazer */;
+			targetProxy = C788DA86209023720006ED25 /* PBXContainerItemProxy */;
+		};
+		C788DA92209023720006ED25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C788DA6E209023700006ED25 /* gazer */;
+			targetProxy = C788DA91209023720006ED25 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-        C788DA78209023700006ED25 /* Main.storyboard */ = {
-            isa = PBXVariantGroup;
-            children = (
-                C788DA79209023700006ED25 /* Base */,
-            );
-            name = Main.storyboard;
-            sourceTree = "<group>";
-        };
-        C788DA7D209023710006ED25 /* LaunchScreen.storyboard */ = {
-            isa = PBXVariantGroup;
-            children = (
-                C788DA7E209023710006ED25 /* Base */,
-            );
-            name = LaunchScreen.storyboard;
-            sourceTree = "<group>";
-        };
+		C788DA78209023700006ED25 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C788DA79209023700006ED25 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C788DA7D209023710006ED25 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C788DA7E209023710006ED25 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-        C788DA97209023720006ED25 /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ALWAYS_SEARCH_USER_PATHS = NO;
-                CLANG_ANALYZER_NONNULL = YES;
-                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-                CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-                CLANG_CXX_LIBRARY = "libc++";
-                CLANG_ENABLE_MODULES = YES;
-                CLANG_ENABLE_OBJC_ARC = YES;
-                CLANG_ENABLE_OBJC_WEAK = YES;
-                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-                CLANG_WARN_BOOL_CONVERSION = YES;
-                CLANG_WARN_COMMA = YES;
-                CLANG_WARN_CONSTANT_CONVERSION = YES;
-                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-                CLANG_WARN_EMPTY_BODY = YES;
-                CLANG_WARN_ENUM_CONVERSION = YES;
-                CLANG_WARN_INFINITE_RECURSION = YES;
-                CLANG_WARN_INT_CONVERSION = YES;
-                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-                CLANG_WARN_STRICT_PROTOTYPES = YES;
-                CLANG_WARN_SUSPICIOUS_MOVE = YES;
-                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-                CLANG_WARN_UNREACHABLE_CODE = YES;
-                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-                CODE_SIGN_IDENTITY = "iPhone Developer";
-                COPY_PHASE_STRIP = NO;
-                DEBUG_INFORMATION_FORMAT = dwarf;
-                ENABLE_STRICT_OBJC_MSGSEND = YES;
-                ENABLE_TESTABILITY = YES;
-                GCC_C_LANGUAGE_STANDARD = gnu11;
-                GCC_DYNAMIC_NO_PIC = NO;
-                GCC_NO_COMMON_BLOCKS = YES;
-                GCC_OPTIMIZATION_LEVEL = 0;
-                GCC_PREPROCESSOR_DEFINITIONS = (
-                    "DEBUG=1",
-                    "$(inherited)",
-                );
-                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-                GCC_WARN_UNDECLARED_SELECTOR = YES;
-                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-                GCC_WARN_UNUSED_FUNCTION = YES;
-                GCC_WARN_UNUSED_VARIABLE = YES;
-                IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-                MTL_ENABLE_DEBUG_INFO = YES;
-                ONLY_ACTIVE_ARCH = YES;
-                SDKROOT = iphoneos;
-                SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-                SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-            };
-            name = Debug;
-        };
-        C788DA98209023720006ED25 /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ALWAYS_SEARCH_USER_PATHS = NO;
-                CLANG_ANALYZER_NONNULL = YES;
-                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-                CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-                CLANG_CXX_LIBRARY = "libc++";
-                CLANG_ENABLE_MODULES = YES;
-                CLANG_ENABLE_OBJC_ARC = YES;
-                CLANG_ENABLE_OBJC_WEAK = YES;
-                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-                CLANG_WARN_BOOL_CONVERSION = YES;
-                CLANG_WARN_COMMA = YES;
-                CLANG_WARN_CONSTANT_CONVERSION = YES;
-                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-                CLANG_WARN_EMPTY_BODY = YES;
-                CLANG_WARN_ENUM_CONVERSION = YES;
-                CLANG_WARN_INFINITE_RECURSION = YES;
-                CLANG_WARN_INT_CONVERSION = YES;
-                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-                CLANG_WARN_STRICT_PROTOTYPES = YES;
-                CLANG_WARN_SUSPICIOUS_MOVE = YES;
-                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-                CLANG_WARN_UNREACHABLE_CODE = YES;
-                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-                CODE_SIGN_IDENTITY = "iPhone Developer";
-                COPY_PHASE_STRIP = NO;
-                DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-                ENABLE_NS_ASSERTIONS = NO;
-                ENABLE_STRICT_OBJC_MSGSEND = YES;
-                GCC_C_LANGUAGE_STANDARD = gnu11;
-                GCC_NO_COMMON_BLOCKS = YES;
-                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-                GCC_WARN_UNDECLARED_SELECTOR = YES;
-                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-                GCC_WARN_UNUSED_FUNCTION = YES;
-                GCC_WARN_UNUSED_VARIABLE = YES;
-                IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-                MTL_ENABLE_DEBUG_INFO = NO;
-                SDKROOT = iphoneos;
-                SWIFT_COMPILATION_MODE = wholemodule;
-                SWIFT_OPTIMIZATION_LEVEL = "-O";
-                VALIDATE_PRODUCT = YES;
-            };
-            name = Release;
-        };
-        C788DA9A209023720006ED25 /* Debug */ = {
-            isa = XCBuildConfiguration;
-            baseConfigurationReference = E675FB51F971A5FE35ABCC72 /* Pods-gazer.debug.xcconfig */;
-            buildSettings = {
-                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-                CODE_SIGN_IDENTITY = "iPhone Developer";
-                CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = URT7G4TP66;
-                INFOPLIST_FILE = gazer/Info.plist;
-                LD_RUNPATH_SEARCH_PATHS = (
-                    "$(inherited)",
-                    "@executable_path/Frameworks",
-                );
-				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-dorudorujr";
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                PROVISIONING_PROFILE_SPECIFIER = "";
-                SWIFT_OBJC_BRIDGING_HEADER = "";
-                SWIFT_VERSION = 4.0;
-                TARGETED_DEVICE_FAMILY = "1,2";
-            };
-            name = Debug;
-        };
-        C788DA9B209023720006ED25 /* Release */ = {
-            isa = XCBuildConfiguration;
-            baseConfigurationReference = 8AC02151997CBC19E35D75DF /* Pods-gazer.release.xcconfig */;
-            buildSettings = {
-                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-                CODE_SIGN_IDENTITY = "iPhone Developer";
-                CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = URT7G4TP66;
-                INFOPLIST_FILE = gazer/Info.plist;
-                LD_RUNPATH_SEARCH_PATHS = (
-                    "$(inherited)",
-                    "@executable_path/Frameworks",
-                );
-				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-dorudorujr";
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                PROVISIONING_PROFILE_SPECIFIER = "";
-                SWIFT_OBJC_BRIDGING_HEADER = "";
-                SWIFT_VERSION = 4.0;
-                TARGETED_DEVICE_FAMILY = "1,2";
-            };
-            name = Release;
-        };
-        C788DA9D209023720006ED25 /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-                BUNDLE_LOADER = "$(TEST_HOST)";
-                CODE_SIGN_STYLE = Automatic;
-                INFOPLIST_FILE = gazerTests/Info.plist;
-                LD_RUNPATH_SEARCH_PATHS = (
-                    "$(inherited)",
-                    "@executable_path/Frameworks",
-                    "@loader_path/Frameworks",
-                );
-                PRODUCT_BUNDLE_IDENTIFIER = com.octa.gazerTests;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SWIFT_VERSION = 4.0;
-                TARGETED_DEVICE_FAMILY = "1,2";
-                TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gazer.app/gazer";
-            };
-            name = Debug;
-        };
-        C788DA9E209023720006ED25 /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-                BUNDLE_LOADER = "$(TEST_HOST)";
-                CODE_SIGN_STYLE = Automatic;
-                INFOPLIST_FILE = gazerTests/Info.plist;
-                LD_RUNPATH_SEARCH_PATHS = (
-                    "$(inherited)",
-                    "@executable_path/Frameworks",
-                    "@loader_path/Frameworks",
-                );
-                PRODUCT_BUNDLE_IDENTIFIER = com.octa.gazerTests;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SWIFT_VERSION = 4.0;
-                TARGETED_DEVICE_FAMILY = "1,2";
-                TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gazer.app/gazer";
-            };
-            name = Release;
-        };
-        C788DAA0209023720006ED25 /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-                CODE_SIGN_STYLE = Automatic;
-                INFOPLIST_FILE = gazerUITests/Info.plist;
-                LD_RUNPATH_SEARCH_PATHS = (
-                    "$(inherited)",
-                    "@executable_path/Frameworks",
-                    "@loader_path/Frameworks",
-                );
-                PRODUCT_BUNDLE_IDENTIFIER = com.octa.gazerUITests;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SWIFT_VERSION = 4.0;
-                TARGETED_DEVICE_FAMILY = "1,2";
-                TEST_TARGET_NAME = gazer;
-            };
-            name = Debug;
-        };
-        C788DAA1209023720006ED25 /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-                CODE_SIGN_STYLE = Automatic;
-                INFOPLIST_FILE = gazerUITests/Info.plist;
-                LD_RUNPATH_SEARCH_PATHS = (
-                    "$(inherited)",
-                    "@executable_path/Frameworks",
-                    "@loader_path/Frameworks",
-                );
-                PRODUCT_BUNDLE_IDENTIFIER = com.octa.gazerUITests;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SWIFT_VERSION = 4.0;
-                TARGETED_DEVICE_FAMILY = "1,2";
-                TEST_TARGET_NAME = gazer;
-            };
-            name = Release;
-        };
+		C788DA97209023720006ED25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C788DA98209023720006ED25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C788DA9A209023720006ED25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E675FB51F971A5FE35ABCC72 /* Pods-gazer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = APV6HHN9C6;
+				INFOPLIST_FILE = gazer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-rei";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C788DA9B209023720006ED25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AC02151997CBC19E35D75DF /* Pods-gazer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = APV6HHN9C6;
+				INFOPLIST_FILE = gazer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-rei";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C788DA9D209023720006ED25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = gazerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.octa.gazerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gazer.app/gazer";
+			};
+			name = Debug;
+		};
+		C788DA9E209023720006ED25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = gazerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.octa.gazerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gazer.app/gazer";
+			};
+			name = Release;
+		};
+		C788DAA0209023720006ED25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = gazerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.octa.gazerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gazer;
+			};
+			name = Debug;
+		};
+		C788DAA1209023720006ED25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = gazerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.octa.gazerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gazer;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-        C788DA6A209023700006ED25 /* Build configuration list for PBXProject "gazer" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                C788DA97209023720006ED25 /* Debug */,
-                C788DA98209023720006ED25 /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        C788DA99209023720006ED25 /* Build configuration list for PBXNativeTarget "gazer" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                C788DA9A209023720006ED25 /* Debug */,
-                C788DA9B209023720006ED25 /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        C788DA9C209023720006ED25 /* Build configuration list for PBXNativeTarget "gazerTests" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                C788DA9D209023720006ED25 /* Debug */,
-                C788DA9E209023720006ED25 /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        C788DA9F209023720006ED25 /* Build configuration list for PBXNativeTarget "gazerUITests" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                C788DAA0209023720006ED25 /* Debug */,
-                C788DAA1209023720006ED25 /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
+		C788DA6A209023700006ED25 /* Build configuration list for PBXProject "gazer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C788DA97209023720006ED25 /* Debug */,
+				C788DA98209023720006ED25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C788DA99209023720006ED25 /* Build configuration list for PBXNativeTarget "gazer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C788DA9A209023720006ED25 /* Debug */,
+				C788DA9B209023720006ED25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C788DA9C209023720006ED25 /* Build configuration list for PBXNativeTarget "gazerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C788DA9D209023720006ED25 /* Debug */,
+				C788DA9E209023720006ED25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C788DA9F209023720006ED25 /* Build configuration list for PBXNativeTarget "gazerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C788DAA0209023720006ED25 /* Debug */,
+				C788DAA1209023720006ED25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
-    };
-    rootObject = C788DA67209023700006ED25 /* Project object */;
+	};
+	rootObject = C788DA67209023700006ED25 /* Project object */;
 }

@@ -308,20 +308,28 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         for (index,element) in starPosition.enumerated() {
             
             // 表示する情報
-            let starNode = SCNNode(geometry: SCNSphere(radius: 1))
+            var starRadius = 1.0
             let material = SCNMaterial()
             let starRight = floor(stars[index].magnitude)
             if starRight <= 1 {
-                material.diffuse.contents = UIImage(named: "StarModel.scnassets/1等星.png")
-            }else if starRight == 2 {
-                material.diffuse.contents = UIImage(named: "StarModel.scnassets/2等星.png")
+                material.diffuse.contents = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+                starRadius = 1.4
+            }else if starRight <= 2 {
+                material.diffuse.contents = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+                starRadius = 1.2
             }else if starRight == 3 {
-                material.diffuse.contents = UIImage(named: "StarModel.scnassets/3等星.png")
+                material.diffuse.contents = UIColor(red: 210/255, green: 210/255, blue: 210/255, alpha: 1)
             }else if starRight == 4 {
-                material.diffuse.contents = UIImage(named: "StarModel.scnassets/4等星.png")
+                material.diffuse.contents = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1)
+                starRadius = 0.8
             }else{
-                material.diffuse.contents = UIImage(named: "StarModel.scnassets/5等星.png")
+                material.diffuse.contents = UIColor(red: 170/255, green: 170/255, blue: 170/255, alpha: 1)
+                starRadius = 0.6
             }
+            let sphere = SCNSphere(radius: CGFloat(starRadius))
+            sphere.isGeodesic = true
+            sphere.segmentCount = 3
+            let starNode = SCNNode(geometry: sphere)
             starNode.geometry?.materials = [material]
             starNode.position = SCNVector3(element[0],element[1],element[2])
             star.append(starNode)

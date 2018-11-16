@@ -12,7 +12,7 @@ import SceneKit
 import SCLAlertView
 import EAIntroView
 
-class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
+class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
   
     @IBOutlet weak var sceneView: ARSCNView!
     
@@ -21,20 +21,31 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
     @IBOutlet weak var objectButton: UIButton!
     
     
+    var saveImage:UIImage! = nil
+    
     @IBAction func pushCamera(_ sender: Any) {
-        cameraButton.isHidden = true //ボタン非表示
-        animalButton.isHidden = true
-        objectButton.isHidden = true
-        
-        let image = getScreenShot()
-        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
-        
-        SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
-        cameraButton.isHidden = false //ボタン表示
-        animalButton.isHidden = false
-        objectButton.isHidden = false
-
-        
+        if UIImagePickerController.isSourceTypeAvailable(
+            UIImagePickerController.SourceType.camera){
+            
+            cameraButton.isHidden = true //ボタン非表示
+            animalButton.isHidden = true
+            objectButton.isHidden = true
+            
+            saveImage = getScreenShot()
+            performSegue(withIdentifier: "prevPhoto", sender: nil)
+            
+            cameraButton.isHidden = false //ボタン表示
+            animalButton.isHidden = false
+            objectButton.isHidden = false
+            
+        }
+        else{
+            
+            let alert = UIAlertController(title: "カメラへのアクセスが拒否されています。", message: "設定画面よりアクセスを許可してください。", preferredStyle:.alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+        }
     }
     
     // スワイプしたらメニュー画面戻る
@@ -179,6 +190,11 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
     }
     
     func sessionInterruptionEnded(_ session: ARSession) {
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let photo = segue.destination as! ZooPhotoPreViewController
+        photo.screenImage = saveImage
     }
 }
 

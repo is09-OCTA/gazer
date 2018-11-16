@@ -13,31 +13,35 @@ import AVFoundation
 import SCLAlertView
 import Floaty
 
-class MappingViewController: UIViewController, ARSCNViewDelegate, FloatyDelegate {
+class MappingViewController: UIViewController, ARSCNViewDelegate {
   
   @IBOutlet var sceneView: ARSCNView!
-  var disneyCastleNode: DisneyCastleNode?
-  var floaty = Floaty()
+  //var disneyCastleNode: DisneyCastleNode?
+  //var nodeTuple: (DisneyCastleNode,String)?
+  var node: Any?
+  var buttonConf: ButtonConf?
+  var sceneType: String?
     
-    @IBOutlet weak var button: UIButton!
+  @IBOutlet weak var button: UIButton!
     
-    @IBAction func pushCamera(_ sender: Any) {
-        button.isHidden = true //ボタン非表示
-        let image = getScreenShot()
-        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+  @IBAction func pushCamera(_ sender: Any) {
+      button.isHidden = true //ボタン非表示
+      let image = getScreenShot()
+      UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
         
-        SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
-        button.isHidden = false //ボタン表示
-    }
+      SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
+      button.isHidden = false //ボタン表示
+  }
     
-    // スワイプしたらメニュー画面戻る
-    @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
-        beforeMenu.modalTransitionStyle = .crossDissolve
-        present(beforeMenu, animated: true, completion: nil)
-        if disneyCastleNode?.audioPlayer.isPlaying == true { disneyCastleNode?.audioPlayer.stop() }
-    }
+  // スワイプしたらメニュー画面戻る
+  @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
+      let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+      let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
+      beforeMenu.modalTransitionStyle = .crossDissolve
+      present(beforeMenu, animated: true, completion: nil)
+      //if disneyCastleNode?.audioPlayer.isPlaying == true { disneyCastleNode?.audioPlayer.stop() }
+      if (node as! DisneyCastleNode).audioPlayer.isPlaying == true { (node as! DisneyCastleNode).audioPlayer.stop() }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -50,8 +54,8 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, FloatyDelegate
     
     // Set the scene to the view
     sceneView.scene = scene
-    Floaty.global.rtlMode = true
-    NodeSelectionButton()
+    buttonConf = ButtonConf()
+    self.view.addSubview((buttonConf?.NodeSelectionButton(mappingViewController: self))!)
     self.registerGestureRecognizer()
   }
   
@@ -66,7 +70,6 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, FloatyDelegate
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-    
     sceneView.session.pause()
   }
   
@@ -79,81 +82,38 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, FloatyDelegate
   
   @objc func tapped(sender: UITapGestureRecognizer) {
     // すでに追加済みであれば無視
-    if self.disneyCastleNode != nil {
+    if (node != nil) || (self.sceneType == nil) {
       return
     }
-    //self.addItem()
+    self.addItem()
   }
+  
   private func addItem() {
-    disneyCastleNode = DisneyCastleNode()
-    sceneView.scene.rootNode.addChildNode(disneyCastleNode!)
+    if sceneType != nil {
+      switch sceneType {
+      case "DisneyCastleNode":
+        node = DisneyCastleNode()
+        sceneView.scene.rootNode.addChildNode(node! as! DisneyCastleNode)
+      default:
+        break
+      }
+    }
   }
   
   
-    // Camera
-    private func getScreenShot() -> UIImage? {
-        guard let view = self.view else {
-            return nil
-        }
+  // Camera
+  private func getScreenShot() -> UIImage? {
+      guard let view = self.view else {
+          return nil
+      }
         
-        UIGraphicsBeginImageContext(view.frame.size)
-        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
+      UIGraphicsBeginImageContext(view.frame.size)
+      view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+      let image = UIGraphicsGetImageFromCurrentImageContext()
+      UIGraphicsEndImageContext()
         
-        return image
-    }
-  
-  func NodeSelectionButton(){
-    self.floaty.buttonImage = UIImage(named: "MappingMenu2")
-    self.floaty.paddingX = 16
-    self.floaty.paddingY = 30
-    self.floaty.buttonColor = UIColor.init(white: 1, alpha: 0)
-    self.floaty.size = 50
-  
-    let item = FloatyItem()
-    item.buttonColor = UIColor.init(red: 1, green: 1, blue: 0.6, alpha: 1)
-    //item.icon = UIImage(named: "castle")
-    item.title = "Scene1-1"
-    item.handler = {item in
-      
-    }
-
-    self.floaty.addItem(item: item)    
-    let item4 = FloatyItem()
-    item4.buttonColor = UIColor.init(red: 1, green: 1, blue: 0.6, alpha: 1)
-    //item4.icon = UIImage(named: "castle")
-    item4.title = "Scene1-2"
-    item4.handler = {item in
-      
-    }
-
-    self.floaty.addItem(item: item4)
-    
-    let item2 = FloatyItem()
-    item2.buttonColor = UIColor.init(red: 0.6, green: 0.8, blue: 1, alpha: 1)
-    //item2.icon = UIImage(named: "siro")
-    item2.title = "Scene2-1"
-    self.floaty.addItem(item: item2)
-    
-    let item3 = FloatyItem()
-    item3.buttonColor = UIColor.init(red: 0.6, green: 0.8, blue: 1, alpha: 1)
-    //item3.icon = UIImage(named: "siro")
-    item3.title = "Scene2-2"
-    self.floaty.addItem(item: item3)
-
-    let item5 = FloatyItem()
-    item5.buttonColor = UIColor.init(red: 1, green: 0.6, blue: 0.6, alpha: 1)
-    //item5.icon = UIImage(named: "test")
-    item5.title = "Scene3-1"
-    self.floaty.addItem(item: item5)
-    
-    let item6 = FloatyItem()
-    item6.buttonColor = UIColor.init(red: 1, green: 0.6, blue: 0.6, alpha: 1)
-    //item6.icon = UIImage(named: "test")
-    item6.title = "Scene3-2"
-    self.floaty.addItem(item: item6)
-    
-    self.view.addSubview(floaty)
+      return image
   }
+  
+  
 }

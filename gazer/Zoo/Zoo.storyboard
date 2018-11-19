@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="31F-TK-1mo">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="31F-TK-1mo" customClass="ZooViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tzH-tv-4em" customClass="ARSCNView">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5GT-1R-Cc9">
@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIs-gv-2a8">
-                                <rect key="frame" x="16" y="656" width="50" height="50"/>
+                                <rect key="frame" x="16" y="587" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="LEI-7D-8uZ"/>
                                     <constraint firstAttribute="height" constant="50" id="aBY-VM-8pB"/>
@@ -34,7 +34,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkq-rZ-sxf">
-                                <rect key="frame" x="201" y="656" width="50" height="50"/>
+                                <rect key="frame" x="162" y="587" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="15y-5E-iK0"/>
                                     <constraint firstAttribute="width" constant="50" id="QWC-hd-H4t"/>
@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6M-YQ-cDB">
-                                <rect key="frame" x="348" y="656" width="50" height="50"/>
+                                <rect key="frame" x="309" y="587" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="NrR-8K-U7u"/>
                                     <constraint firstAttribute="width" constant="50" id="kZ8-iG-bFV"/>
@@ -97,11 +97,11 @@
             <objects>
                 <viewController modalPresentationStyle="overCurrentContext" id="2fy-sv-3DZ" customClass="PhotoPreViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BMJ-1g-eS6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTZ-4g-6s8">
-                                <rect key="frame" x="120" y="661" width="175" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTZ-4g-6s8">
+                                <rect key="frame" x="93" y="592" width="189" height="39"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="保存">
@@ -111,17 +111,17 @@
                                     <action selector="zooSaveButton:" destination="2fy-sv-3DZ" eventType="touchUpInside" id="nUs-bZ-Zsk"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRY-cW-lxv">
-                                <rect key="frame" x="43" y="97" width="329" height="543"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hRY-cW-lxv">
+                                <rect key="frame" x="21" y="129" width="333" height="439"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6a-wp-quB">
-                                <rect key="frame" x="43" y="58" width="30" height="31"/>
+                                <rect key="frame" x="21" y="77" width="30" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="T7B-Aq-yoX"/>
+                                    <constraint firstAttribute="height" constant="44" id="l5p-9p-cbD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="49"/>
                                 <state key="normal" title="×">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="zooCancelButton:" destination="2fy-sv-3DZ" eventType="touchUpInside" id="QWX-zN-gU7"/>
@@ -130,16 +130,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jTZ-4g-6s8" firstAttribute="leading" secondItem="GBe-Su-bET" secondAttribute="leading" constant="120" id="5HG-LL-QxC"/>
-                            <constraint firstItem="jTZ-4g-6s8" firstAttribute="top" secondItem="hRY-cW-lxv" secondAttribute="bottom" constant="21" id="5Jy-Mb-79a"/>
-                            <constraint firstItem="GBe-Su-bET" firstAttribute="bottom" secondItem="jTZ-4g-6s8" secondAttribute="bottom" constant="30" id="5u9-0D-bi5"/>
-                            <constraint firstItem="w6a-wp-quB" firstAttribute="top" secondItem="GBe-Su-bET" secondAttribute="top" constant="38" id="DXa-U9-E3D"/>
-                            <constraint firstItem="w6a-wp-quB" firstAttribute="leading" secondItem="GBe-Su-bET" secondAttribute="leading" constant="43" id="GdS-IJ-F0C"/>
-                            <constraint firstItem="hRY-cW-lxv" firstAttribute="top" secondItem="w6a-wp-quB" secondAttribute="bottom" constant="8" symbolic="YES" id="JwU-G6-dyw"/>
-                            <constraint firstItem="hRY-cW-lxv" firstAttribute="centerX" secondItem="BMJ-1g-eS6" secondAttribute="centerX" id="bRg-CF-pkH"/>
-                            <constraint firstItem="hRY-cW-lxv" firstAttribute="centerY" secondItem="BMJ-1g-eS6" secondAttribute="centerY" id="ckd-NG-yr9"/>
-                            <constraint firstItem="hRY-cW-lxv" firstAttribute="centerX" secondItem="jTZ-4g-6s8" secondAttribute="centerX" id="uLG-Xw-X5D"/>
-                            <constraint firstItem="w6a-wp-quB" firstAttribute="leading" secondItem="hRY-cW-lxv" secondAttribute="leading" id="y2T-7j-cIy"/>
+                            <constraint firstItem="hRY-cW-lxv" firstAttribute="top" secondItem="w6a-wp-quB" secondAttribute="bottom" constant="8" symbolic="YES" id="6cm-gV-ZsA"/>
+                            <constraint firstItem="w6a-wp-quB" firstAttribute="leading" secondItem="GBe-Su-bET" secondAttribute="leading" constant="21" id="9uM-9O-fsB"/>
+                            <constraint firstItem="hRY-cW-lxv" firstAttribute="centerX" secondItem="BMJ-1g-eS6" secondAttribute="centerX" id="DSY-da-tJr"/>
+                            <constraint firstItem="jTZ-4g-6s8" firstAttribute="leading" secondItem="GBe-Su-bET" secondAttribute="leading" constant="93" id="J8e-4v-BYX"/>
+                            <constraint firstItem="GBe-Su-bET" firstAttribute="bottom" secondItem="jTZ-4g-6s8" secondAttribute="bottom" constant="36" id="OCR-kH-fQl"/>
+                            <constraint firstItem="w6a-wp-quB" firstAttribute="top" secondItem="GBe-Su-bET" secondAttribute="top" constant="57" id="Sif-fP-cDi"/>
+                            <constraint firstItem="jTZ-4g-6s8" firstAttribute="top" secondItem="hRY-cW-lxv" secondAttribute="bottom" constant="24" id="UYi-RA-XKF"/>
+                            <constraint firstItem="hRY-cW-lxv" firstAttribute="centerX" secondItem="jTZ-4g-6s8" secondAttribute="centerX" id="hcf-wC-5d7"/>
+                            <constraint firstItem="w6a-wp-quB" firstAttribute="leading" secondItem="hRY-cW-lxv" secondAttribute="leading" id="pz9-Ph-S9G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GBe-Su-bET"/>
                     </view>
@@ -150,14 +149,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A86-4R-InN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="186.95652173913044" y="941.57608695652186"/>
+            <point key="canvasLocation" x="186.40000000000001" y="941.37931034482767"/>
         </scene>
         <!--Object Modal View Controller-->
         <scene sceneID="HzY-id-arX">
             <objects>
                 <viewController storyboardIdentifier="ObjectModalViewController" id="qcl-iZ-tmZ" customClass="ObjectModalViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QJ0-gr-Os3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rkM-ji-tBJ"/>
@@ -172,7 +171,7 @@
             <objects>
                 <viewController storyboardIdentifier="ZooModalViewController" id="9KX-r4-d7m" customClass="ZooModalViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hUe-iZ-lQp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>

@@ -16,6 +16,7 @@ import EAIntroView
 
 class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManagerDelegate, XMLParserDelegate,UIPageViewControllerDelegate, UIGestureRecognizerDelegate, AVAudioPlayerDelegate, EAIntroDelegate{
     
+    @IBOutlet weak var effectButton: UISwitch!
     @IBOutlet var sceneView: ARSCNView!
 
     // スワイプしたらメニュー画面戻る
@@ -148,6 +149,8 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
 
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         
+        let changeEffect = DispatchGroup()
+        
         
         // ARKit 設定時にカメラからの画像が空で渡されるのでその場合は処理しない
         guard let cuptureImage = sceneView.session.currentFrame?.capturedImage else {
@@ -159,7 +162,11 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         let filter:CIFilter = CIFilter(name: "CIColorControls")!
         filter.setValue(ciImage, forKey: kCIInputImageKey)
         //filter.setValue(CIColor(red: 0.2, green: 0.2, blue: 0.2), forKey: "inputColor")
-        filter.setValue(-0.2, forKey: kCIInputBrightnessKey)
+        if effectButton.isOn == true {
+            filter.setValue(-0.2, forKey: kCIInputBrightnessKey)
+        }else{
+            filter.setValue(0, forKey: kCIInputBrightnessKey)
+        }
         
         //　CIImage を CGImage に変換して背景に適応
         //　カメラ画像はホーム右のランドスケープの状態で画像が渡されるため、CGImagePropertyOrientation(rawValue: 6) でポートレートで正しい向きに表示されるよう変換
@@ -168,7 +175,6 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         if let cgImage = context.createCGImage(result, from: result.extent) {
             sceneView.scene.background.contents = cgImage
         }
-        
     }
     
     

@@ -31,12 +31,17 @@
                                     <action selector="pushCamera:" destination="LYC-2Q-Xjj" eventType="touchUpInside" id="lG1-5o-AIM"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="roy-ew-eGt">
+                                <rect key="frame" x="308" y="597" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="UFy-2d-DuF" firstAttribute="bottom" secondItem="roy-ew-eGt" secondAttribute="bottom" constant="39" id="O7e-Gs-Nsz"/>
                             <constraint firstItem="UFy-2d-DuF" firstAttribute="bottom" secondItem="ndY-qo-1fj" secondAttribute="bottom" constant="30" id="PcQ-DL-bAE"/>
                             <constraint firstItem="UFy-2d-DuF" firstAttribute="trailing" secondItem="ndY-qo-1fj" secondAttribute="trailing" constant="163" id="Wmf-2j-Ljt"/>
+                            <constraint firstItem="UFy-2d-DuF" firstAttribute="trailing" secondItem="roy-ew-eGt" secondAttribute="trailing" constant="18" id="nq7-We-m55"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UFy-2d-DuF"/>
                         <connections>
@@ -46,6 +51,7 @@
                     </view>
                     <connections>
                         <outlet property="button" destination="ndY-qo-1fj" id="mBz-bX-AG1"/>
+                        <outlet property="effectButton" destination="roy-ew-eGt" id="4l2-EW-LRz"/>
                         <outlet property="sceneView" destination="vgh-2s-Qp4" id="miJ-U4-RD4"/>
                     </connections>
                 </viewController>

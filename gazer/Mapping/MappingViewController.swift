@@ -16,11 +16,10 @@ import Floaty
 class MappingViewController: UIViewController, ARSCNViewDelegate {
   
   @IBOutlet var sceneView: ARSCNView!
-  //var disneyCastleNode: DisneyCastleNode?
-  //var nodeTuple: (DisneyCastleNode,String)?
   var node: Any?
   var buttonConf: ButtonConf?
   var sceneType: String?
+  var beforeSceneType: String?
     
   @IBOutlet weak var button: UIButton!
     
@@ -39,7 +38,6 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
       let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
       beforeMenu.modalTransitionStyle = .crossDissolve
       present(beforeMenu, animated: true, completion: nil)
-      //if disneyCastleNode?.audioPlayer.isPlaying == true { disneyCastleNode?.audioPlayer.stop() }
       if (node as! DisneyCastleNode).audioPlayer.isPlaying == true { (node as! DisneyCastleNode).audioPlayer.stop() }
   }
   
@@ -81,21 +79,29 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   }
   
   @objc func tapped(sender: UITapGestureRecognizer) {
-    // すでに追加済みであれば無視
-    if (node != nil) || (self.sceneType == nil) {
+    // すでに追加済み、シーン未選択、前回のシーンと一致であれば無視
+    if (beforeSceneType == sceneType) || (self.sceneType == nil) {
       return
     }
     self.addItem()
   }
   
   private func addItem() {
+    sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
+      node.removeFromParentNode()
+    }
+    sceneView.scene.rootNode.removeFromParentNode()
     switch sceneType {
     case "DisneyCastleNode":
       node = DisneyCastleNode()
       sceneView.scene.rootNode.addChildNode(node! as! DisneyCastleNode)
+    case "PictureNode":
+      node = PictureNode()
+      sceneView.scene.rootNode.addChildNode(node! as! PictureNode)
     default:
       break
     }
+    beforeSceneType = sceneType
   }
   
   

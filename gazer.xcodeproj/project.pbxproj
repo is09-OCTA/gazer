@@ -26,7 +26,6 @@
 		B1D11250215CCD2700B8FBCD /* ZooImage in Resources */ = {isa = PBXBuildFile; fileRef = B1D1124F215CCD2700B8FBCD /* ZooImage */; };
 		B1D79970218A9FBF00E28D55 /* ObjectModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D7996F218A9FBF00E28D55 /* ObjectModalViewController.swift */; };
 		B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */; };
-		B1FC7207219CFE890044AA47 /* ZooPhotoPreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FC7206219CFE890044AA47 /* ZooPhotoPreViewController.swift */; };
 		C70E7AA520D77FF900255FD3 /* AquariumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */; };
 		C724D123218819420063139F /* FishModel in Resources */ = {isa = PBXBuildFile; fileRef = C724D122218819420063139F /* FishModel */; };
 		C72D19D321520E450079C65D /* Aquarium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72D19D221520E450079C65D /* Aquarium.storyboard */; };
@@ -87,7 +86,6 @@
 		B1D1124F215CCD2700B8FBCD /* ZooImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZooImage; sourceTree = "<group>"; };
 		B1D7996F218A9FBF00E28D55 /* ObjectModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModalViewController.swift; sourceTree = "<group>"; };
 		B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B1FC7206219CFE890044AA47 /* ZooPhotoPreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooPhotoPreViewController.swift; sourceTree = "<group>"; };
 		B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70E7AA420D77FF900255FD3 /* AquariumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumViewController.swift; sourceTree = "<group>"; };
 		C724D122218819420063139F /* FishModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FishModel; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 				B1D7996F218A9FBF00E28D55 /* ObjectModalViewController.swift */,
 				C745865A216727CE000A4FC6 /* ZooModel */,
 				B1D1124F215CCD2700B8FBCD /* ZooImage */,
-				B1FC7206219CFE890044AA47 /* ZooPhotoPreViewController.swift */,
 			);
 			path = Zoo;
 			sourceTree = "<group>";
@@ -496,7 +493,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C72D1A2E2155E3440079C65D /* CustomPresentationController.swift in Sources */,
-				B1FC7207219CFE890044AA47 /* ZooPhotoPreViewController.swift in Sources */,
 				B1D79970218A9FBF00E28D55 /* ObjectModalViewController.swift in Sources */,
 				B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */,
 				8D33D49F219D158B00BCE54F /* ButtonConf.swift in Sources */,

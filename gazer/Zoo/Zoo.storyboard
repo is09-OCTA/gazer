@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="186.95652173913044" y="141.84782608695653"/>
         </scene>
-        <!--Photo Pre View Controller-->
+        <!--Zoo Photo Pre View Controller-->
         <scene sceneID="lpY-aa-g9K">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="2fy-sv-3DZ" customClass="PhotoPreViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="2fy-sv-3DZ" customClass="ZooPhotoPreViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BMJ-1g-eS6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,7 +108,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="zooSaveButton:" destination="2fy-sv-3DZ" eventType="touchUpInside" id="1SM-SU-NI8"/>
+                                    <action selector="saveButton:" destination="2fy-sv-3DZ" eventType="touchUpInside" id="g55-Zm-e9c"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRY-cW-lxv">
@@ -124,7 +124,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="zooCancelButton:" destination="2fy-sv-3DZ" eventType="touchUpInside" id="3E7-iD-cFe"/>
+                                    <action selector="cancelButton:" destination="2fy-sv-3DZ" eventType="touchUpInside" id="FK6-lO-bfu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -144,8 +144,8 @@
                         <viewLayoutGuide key="safeArea" id="GBe-Su-bET"/>
                     </view>
                     <connections>
-                        <outlet property="zooPreviewImage" destination="hRY-cW-lxv" id="2S2-zN-LgL"/>
-                        <outlet property="zooSaveButton" destination="jTZ-4g-6s8" id="dzf-Ij-fRM"/>
+                        <outlet property="previewImage" destination="hRY-cW-lxv" id="0mG-iS-sJu"/>
+                        <outlet property="saveButton" destination="jTZ-4g-6s8" id="Gfa-F9-N8L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A86-4R-InN" userLabel="First Responder" sceneMemberID="firstResponder"/>

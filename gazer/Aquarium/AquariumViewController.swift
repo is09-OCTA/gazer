@@ -19,25 +19,13 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
     
     @IBOutlet weak var button: UIButton!
     
-    var aquaSaveImage:UIImage! = nil
-    
     @IBAction func pushCamera(_ sender: Any) {
-            if UIImagePickerController.isSourceTypeAvailable(
-            UIImagePickerController.SourceType.camera){
-            
-            button.isHidden = true //ボタン非表示
-            
-            aquaSaveImage = aquaGetScreenShot()
-            performSegue(withIdentifier: "prevPhoto", sender: nil)
-
-            button.isHidden = false //ボタン表示
-            
-        }else{
-            
-            let alert = UIAlertController(title: "カメラへのアクセスが拒否されています。", message: "設定画面よりアクセスを許可してください。", preferredStyle:.alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(okAction)
-        }
+        button.isHidden = true //ボタン非表示
+        let image = getScreenShot()
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+        
+        SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
+        button.isHidden = false //ボタン表示
     }
     
     // スワイプしたらメニュー画面戻る
@@ -172,22 +160,16 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
     }
     
     // Camera
-    private func aquaGetScreenShot() -> UIImage? {
+    private func getScreenShot() -> UIImage? {
         guard let view = self.view else {
             return nil
         }
         
-        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0)
+        UIGraphicsBeginImageContext(view.frame.size)
         view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         return image
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let photo = segue.destination as! PhotoPreViewController
-        photo.screenImage = aquaSaveImage
-        photo.addImage = 2
     }
 }

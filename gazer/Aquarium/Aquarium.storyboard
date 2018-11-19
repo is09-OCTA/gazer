@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OqQ-DJ-pfP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OqQ-DJ-pfP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,6 +46,7 @@
                     <connections>
                         <outlet property="button" destination="e7E-Vm-WP4" id="bHb-JW-OAF"/>
                         <outlet property="sceneView" destination="Qtx-ul-9MV" id="Cj8-9F-BY0"/>
+                        <segue destination="hPW-32-Q1e" kind="presentation" identifier="prevPhoto" id="AWr-4M-KkO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNl-9K-hJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -57,8 +58,67 @@
             </objects>
             <point key="canvasLocation" x="100" y="92.203898050974516"/>
         </scene>
+        <!--Photo Pre View Controller-->
+        <scene sceneID="VsG-Xf-r0Z">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="hPW-32-Q1e" customClass="PhotoPreViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AZ0-wg-Khj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWn-hm-KaX">
+                                <rect key="frame" x="93" y="592" width="189" height="39"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="aquaSaveButton:" destination="hPW-32-Q1e" eventType="touchUpInside" id="tor-qG-fu3"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oTE-j8-qpJ">
+                                <rect key="frame" x="21" y="129" width="333" height="439"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pd-Dk-YXG">
+                                <rect key="frame" x="21" y="77" width="30" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="97t-Wz-QVq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="49"/>
+                                <state key="normal" title="×">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="aquaCancelButton:" destination="hPW-32-Q1e" eventType="touchUpInside" id="54K-XR-jie"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9pd-Dk-YXG" firstAttribute="leading" secondItem="mpo-sx-t7V" secondAttribute="leading" constant="21" id="4zG-kb-R0I"/>
+                            <constraint firstItem="oTE-j8-qpJ" firstAttribute="centerX" secondItem="JWn-hm-KaX" secondAttribute="centerX" id="DHO-xV-fBi"/>
+                            <constraint firstItem="9pd-Dk-YXG" firstAttribute="top" secondItem="mpo-sx-t7V" secondAttribute="top" constant="57" id="EnT-xc-gd4"/>
+                            <constraint firstItem="JWn-hm-KaX" firstAttribute="leading" secondItem="mpo-sx-t7V" secondAttribute="leading" constant="93" id="F5c-AX-NKi"/>
+                            <constraint firstItem="oTE-j8-qpJ" firstAttribute="top" secondItem="9pd-Dk-YXG" secondAttribute="bottom" constant="8" symbolic="YES" id="JTn-g8-E8O"/>
+                            <constraint firstItem="9pd-Dk-YXG" firstAttribute="leading" secondItem="oTE-j8-qpJ" secondAttribute="leading" id="Yol-hY-pST"/>
+                            <constraint firstItem="mpo-sx-t7V" firstAttribute="bottom" secondItem="JWn-hm-KaX" secondAttribute="bottom" constant="36" id="YxK-nh-f6K"/>
+                            <constraint firstItem="JWn-hm-KaX" firstAttribute="top" secondItem="oTE-j8-qpJ" secondAttribute="bottom" constant="24" id="c0P-nh-Feu"/>
+                            <constraint firstItem="oTE-j8-qpJ" firstAttribute="centerX" secondItem="AZ0-wg-Khj" secondAttribute="centerX" id="wno-We-CHl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mpo-sx-t7V"/>
+                    </view>
+                    <connections>
+                        <outlet property="aquaPreviewImage" destination="oTE-j8-qpJ" id="xZk-8i-0LG"/>
+                        <outlet property="aquaSaveButton" destination="JWn-hm-KaX" id="e1h-sG-Vdd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9jK-n9-RhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="974" y="92"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="cameraButton" width="150" height="150"/>
+        <image name="cameraButton" width="75" height="75"/>
     </resources>
 </document>

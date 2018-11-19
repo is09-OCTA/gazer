@@ -21,7 +21,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
     @IBOutlet weak var objectButton: UIButton!
     
     
-    var zooSaveImage:UIImage! = nil
+    var saveImage:UIImage! = nil
     
     @IBAction func pushCamera(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(
@@ -31,7 +31,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
             animalButton.isHidden = true
             objectButton.isHidden = true
             
-            zooSaveImage = zooGetScreenShot()
+            saveImage = getScreenShot()
             performSegue(withIdentifier: "prevPhoto", sender: nil)
             
             cameraButton.isHidden = false //ボタン表示
@@ -170,12 +170,12 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
     }
     
     // Camera
-    private func zooGetScreenShot() -> UIImage? {
+    private func getScreenShot() -> UIImage? {
         guard let view = self.view else {
             return nil
         }
         
-        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0)
+        UIGraphicsBeginImageContext(view.frame.size)
         view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -193,9 +193,8 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let photo = segue.destination as! PhotoPreViewController
-        photo.screenImage = zooSaveImage
-        photo.addImage = 1
+        let photo = segue.destination as! ZooPhotoPreViewController
+        photo.screenImage = saveImage
     }
 }
 

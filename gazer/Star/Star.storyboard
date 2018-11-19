@@ -47,6 +47,7 @@
                     <connections>
                         <outlet property="button" destination="ndY-qo-1fj" id="mBz-bX-AG1"/>
                         <outlet property="sceneView" destination="vgh-2s-Qp4" id="miJ-U4-RD4"/>
+                        <segue destination="I2U-IN-xar" kind="presentation" identifier="prevPhoto" id="Jam-f5-YRq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsZ-4n-vnE" sceneMemberID="firstResponder"/>
@@ -58,6 +59,65 @@
                 <tapGestureRecognizer id="udw-Wg-gm9"/>
             </objects>
             <point key="canvasLocation" x="137" y="-175"/>
+        </scene>
+        <!--Photo Pre View Controller-->
+        <scene sceneID="TVx-VU-5TZ">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="I2U-IN-xar" customClass="PhotoPreViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X9N-uA-fHg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lya-z1-E6q">
+                                <rect key="frame" x="93" y="592" width="189" height="39"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="starSaveButton:" destination="I2U-IN-xar" eventType="touchUpInside" id="K2w-PP-Sh5"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bCX-qm-Nhx">
+                                <rect key="frame" x="21" y="129" width="333" height="439"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhA-9N-FTr">
+                                <rect key="frame" x="21" y="77" width="30" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="izm-BO-aln"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="49"/>
+                                <state key="normal" title="×">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="starCancelButton:" destination="I2U-IN-xar" eventType="touchUpInside" id="J6A-lq-9Hx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="giO-6n-sba" firstAttribute="bottom" secondItem="lya-z1-E6q" secondAttribute="bottom" constant="36" id="3AL-PR-EYq"/>
+                            <constraint firstItem="lya-z1-E6q" firstAttribute="leading" secondItem="giO-6n-sba" secondAttribute="leading" constant="93" id="3UJ-7r-W9L"/>
+                            <constraint firstItem="bCX-qm-Nhx" firstAttribute="centerX" secondItem="lya-z1-E6q" secondAttribute="centerX" id="8XM-I5-hs2"/>
+                            <constraint firstItem="JhA-9N-FTr" firstAttribute="leading" secondItem="giO-6n-sba" secondAttribute="leading" constant="21" id="Lqr-Wg-S3Q"/>
+                            <constraint firstItem="lya-z1-E6q" firstAttribute="top" secondItem="bCX-qm-Nhx" secondAttribute="bottom" constant="24" id="Lwj-L6-GN5"/>
+                            <constraint firstItem="bCX-qm-Nhx" firstAttribute="top" secondItem="JhA-9N-FTr" secondAttribute="bottom" constant="8" symbolic="YES" id="QFg-hH-Cwm"/>
+                            <constraint firstItem="bCX-qm-Nhx" firstAttribute="centerX" secondItem="X9N-uA-fHg" secondAttribute="centerX" id="RUA-4O-Z5d"/>
+                            <constraint firstItem="JhA-9N-FTr" firstAttribute="leading" secondItem="bCX-qm-Nhx" secondAttribute="leading" id="U1V-hU-Ug4"/>
+                            <constraint firstItem="JhA-9N-FTr" firstAttribute="top" secondItem="giO-6n-sba" secondAttribute="top" constant="57" id="Xqd-cC-f6e"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="giO-6n-sba"/>
+                    </view>
+                    <connections>
+                        <outlet property="starPreviewImage" destination="bCX-qm-Nhx" id="wjD-VF-M5a"/>
+                        <outlet property="starSaveButton" destination="lya-z1-E6q" id="sRI-Yr-V1f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Aj-dp-HxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1022" y="-176"/>
         </scene>
     </scenes>
     <resources>

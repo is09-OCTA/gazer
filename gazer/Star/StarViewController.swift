@@ -29,14 +29,27 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     @IBOutlet weak var button: UIButton!
     
+    var starSaveImage:UIImage! = nil
+    
     @IBAction func pushCamera(_ sender: Any) {
-        button.isHidden = true //ボタン非表示
-        let image = getScreenShot()
-        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
-        
-       SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
-        button.isHidden = false //ボタン表示
-
+        if UIImagePickerController.isSourceTypeAvailable(
+            UIImagePickerController.SourceType.camera){
+            
+            button.isHidden = true //ボタン非表示
+            
+            starSaveImage = starGetScreenShot()
+            performSegue(withIdentifier: "prevPhoto", sender: nil)
+            
+            button.isHidden = false //ボタン表示
+            
+        }
+        else{
+            
+            let alert = UIAlertController(title: "カメラへのアクセスが拒否されています。", message: "設定画面よりアクセスを許可してください。", preferredStyle:.alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+        }
     }
 
     //音楽インスタンス
@@ -355,12 +368,12 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     }
     
     // Camera
-    private func getScreenShot() -> UIImage? {
+    private func starGetScreenShot() -> UIImage? {
         guard let view = self.view else {
             return nil
         }
 
-        UIGraphicsBeginImageContext(view.frame.size)
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0)
         view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -482,6 +495,12 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     }
     
     func sessionInterruptionEnded(_ session: ARSession) {
+    }
+    // PhotoPreViewControllerに受け渡し
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let photo = segue.destination as! PhotoPreViewController
+        photo.screenImage = starSaveImage
+        photo.addImage = 3
     }
     
 }

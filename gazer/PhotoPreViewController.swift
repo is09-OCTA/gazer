@@ -14,6 +14,8 @@ class PhotoPreViewController: UIViewController {
     @IBOutlet weak var zooPreviewImage: UIImageView!
     @IBOutlet weak var aquaPreviewImage: UIImageView!
     @IBOutlet weak var aquaSaveButton: UIButton!
+    @IBOutlet weak var starPreviewImage: UIImageView!
+    @IBOutlet weak var starSaveButton: UIButton!
     
     
     @IBAction func zooSaveButton(_ sender: UIButton) {
@@ -33,6 +35,14 @@ class PhotoPreViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func starSaveButton(_ sender: UIButton) {
+        UIImageWriteToSavedPhotosAlbum(screenImage!, nil, nil, nil)
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func starCancelButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     var screenImage:UIImage? = nil
     var addImage = 0
     
@@ -49,6 +59,10 @@ class PhotoPreViewController: UIViewController {
         case 2:// 水族館
             aquaPreviewImage.image = screenImage
             aquaSaveButton.layer.cornerRadius = 20.0 // 角丸のサイズ
+            
+        case 3:// 星
+            starPreviewImage.image = screenImage
+            starSaveButton.layer.cornerRadius = 20.0 // 角丸のサイズ
 
         default:// エラー
             print("Error")

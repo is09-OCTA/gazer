@@ -185,6 +185,7 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
         return image
     }
     
+    // PhotoPreViewControllerに受け渡し
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let photo = segue.destination as! PhotoPreViewController
         photo.screenImage = aquaSaveImage

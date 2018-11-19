@@ -192,6 +192,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
     }
     
+    // PhotoPreViewControllerに受け渡し
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let photo = segue.destination as! PhotoPreViewController
         photo.screenImage = zooSaveImage

@@ -38,21 +38,6 @@ class PhotoPreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-/*
-        // スクリーンの横縦幅取得
-        let screenWidth:CGFloat = self.view.frame.width
-        let screenHeight:CGFloat = self.view.frame.height
-        // 保存ボタン生成
-        let saveButton = UIButton()
-        saveButton.frame = CGRect(x:screenWidth/4, y:screenHeight/2,
-                                  width:screenWidth/2, height:50)
-        saveButton.setTitle("保存", for:UIControlState.normal)
-        saveButton.setTitleColor(UIColor.white, for: .normal)
-        saveButton.titleLabel?.font =  UIFont.systemFont(ofSize: 22)
-        saveButton.backgroundColor = UIColor.init(
-            red:0.9, green: 0.9, blue: 0.9, alpha: 1)
-        
-*/
         
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         
@@ -65,10 +50,8 @@ class PhotoPreViewController: UIViewController {
             aquaSaveButton.layer.cornerRadius = 20.0 // 角丸のサイズ
 
         default:
-            print("error")
+            print("Error")
         }
-        //aquaPreviewImage.image = screenImage
-        // aquaSaveButton.layer.cornerRadius = 20.0 // 角丸のサイズ
     }
     
 }

@@ -38,7 +38,9 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
       let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
       beforeMenu.modalTransitionStyle = .crossDissolve
       present(beforeMenu, animated: true, completion: nil)
-      if (node as! DisneyCastleNode).audioPlayer.isPlaying == true { (node as! DisneyCastleNode).audioPlayer.stop() }
+      if let test = node {
+       if (node as! DisneyCastleNode).audioPlayer.isPlaying == true { (node as! DisneyCastleNode).audioPlayer.stop() }
+      }
   }
   
   override func viewDidLoad() {
@@ -46,6 +48,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     
     // Set the view's delegate
     sceneView.delegate = self as ARSCNViewDelegate
+    sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints
     
     // Create a new scene
     let scene = SCNScene()
@@ -61,6 +64,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     super.viewWillAppear(animated)
     
     let configuration = ARWorldTrackingConfiguration()
+    //configuration.planeDetection = .vertical
     configuration.planeDetection = .horizontal
     
     sceneView.session.run(configuration)

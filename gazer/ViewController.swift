@@ -18,7 +18,7 @@ class ViewController: UIViewController, UIScrollViewDelegate, UIPageViewControll
     var prevButton:CGFloat = 20
     
     // gazerヘッダー高さ
-    let gazerHedder:CGFloat = 50
+    let gazerHedder:CGFloat = 60
     
     // ボタン画像の読み込み
     let starButtonImage:UIImage = UIImage(named: "StarButton002")!

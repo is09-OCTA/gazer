@@ -89,14 +89,12 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   }
   
   private func addItem() {
-    if sceneType != nil {
-      switch sceneType {
-      case "DisneyCastleNode":
-        node = DisneyCastleNode()
-        sceneView.scene.rootNode.addChildNode(node! as! DisneyCastleNode)
-      default:
-        break
-      }
+    switch sceneType {
+    case "DisneyCastleNode":
+      node = DisneyCastleNode()
+      sceneView.scene.rootNode.addChildNode(node! as! DisneyCastleNode)
+    default:
+      break
     }
   }
   

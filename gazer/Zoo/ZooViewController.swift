@@ -13,7 +13,7 @@ import SCLAlertView
 import EAIntroView
 
 class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
-  
+    
     @IBOutlet weak var sceneView: ARSCNView!
     
     @IBOutlet weak var cameraButton: UIButton!
@@ -21,7 +21,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
     @IBOutlet weak var objectButton: UIButton!
     
     
-    var saveImage:UIImage! = nil
+    var zooSaveImage:UIImage! = nil
     
     @IBAction func pushCamera(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(
@@ -31,7 +31,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
             animalButton.isHidden = true
             objectButton.isHidden = true
             
-            saveImage = getScreenShot()
+            zooSaveImage = zooGetScreenShot()
             performSegue(withIdentifier: "prevPhoto", sender: nil)
             
             cameraButton.isHidden = false //ボタン表示
@@ -72,12 +72,12 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
     }
     
     
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         zooIntroView()
-    
+        
         sceneView.delegate = self
         // 特徴点表示
         sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints
@@ -170,12 +170,12 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
     }
     
     // Camera
-    private func getScreenShot() -> UIImage? {
+    private func zooGetScreenShot() -> UIImage? {
         guard let view = self.view else {
             return nil
         }
         
-        UIGraphicsBeginImageContext(view.frame.size)
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0)
         view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -192,9 +192,11 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
     }
     
+    // PhotoPreViewControllerに受け渡し
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let photo = segue.destination as! ZooPhotoPreViewController
-        photo.screenImage = saveImage
+        let photo = segue.destination as! PhotoPreViewController
+        photo.screenImage = zooSaveImage
+        photo.addImage = 1
     }
 }
 

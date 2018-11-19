@@ -31,7 +31,7 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     @IBAction func pushCamera(_ sender: Any) {
         button.isHidden = true //ボタン非表示
-        let image = getScreenShot()
+        let image = starGetScreenShot()
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
         
        SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
@@ -347,12 +347,12 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     }
     
     // Camera
-    private func getScreenShot() -> UIImage? {
+    private func starGetScreenShot() -> UIImage? {
         guard let view = self.view else {
             return nil
         }
 
-        UIGraphicsBeginImageContext(view.frame.size)
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0)
         view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

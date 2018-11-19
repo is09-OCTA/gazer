@@ -245,7 +245,6 @@
 		C788DA71209023700006ED25 /* gazer */ = {
 			isa = PBXGroup;
 			children = (
-				B1FC7206219CFE890044AA47 /* PhotoPreViewController.swift */,
 				8D4FC93920FD8D7500A924E4 /* Zoo */,
 				C7109F7820FDB661009161A7 /* Aquarium */,
 				C7C32FA9219BC364003829DE /* Star */,
@@ -254,6 +253,7 @@
 				C788DA72209023700006ED25 /* AppDelegate.swift */,
 				C788DA74209023700006ED25 /* art.scnassets */,
 				C788DA78209023700006ED25 /* Main.storyboard */,
+				B1FC7206219CFE890044AA47 /* PhotoPreViewController.swift */,
 				B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */,
 				C788DA7B209023710006ED25 /* Assets.xcassets */,
 				C788DA7D209023710006ED25 /* LaunchScreen.storyboard */,

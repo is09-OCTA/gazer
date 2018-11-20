@@ -18,6 +18,9 @@ class PictureNode: SCNNode {
   override init() {
     super.init()
     let node = DisneyCastleNode.collada2SCNNode(filepath: "MappingModel.scnassets/Monitor.scn")
+    let cinderellaCastleVideoUrl = Bundle.main.url(forResource: "blackwaves", withExtension: "mp4")!
+    let cinderellaCastleMaterial = self.createMaterial(videoUrl: cinderellaCastleVideoUrl, alpha: 1.0,angle: 0.0)
+    node.childNodes[0].geometry?.firstMaterial = cinderellaCastleMaterial
     self.addChildNode(node)
   }
   

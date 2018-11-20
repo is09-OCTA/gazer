@@ -12,6 +12,10 @@
 		2356AAE1215DC8BC00EAA4E8 /* star_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2356AAE0215DC8BC00EAA4E8 /* star_bgm.mp3 */; };
 		235E628820902DF50054ACE2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235E628720902DF50054ACE2 /* CoreLocation.framework */; };
 		8D33D49F219D158B00BCE54F /* ButtonConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33D49E219D158B00BCE54F /* ButtonConf.swift */; };
+		8D34CE4D21A3D9C1006434DA /* blackwaves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D34CE4C21A3D9C1006434DA /* blackwaves.mp4 */; };
+		8D34CE5321A3DEA3006434DA /* Mapping.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D34CE5221A3DEA3006434DA /* Mapping.xcassets */; };
+		8D34CE5521A3DEC6006434DA /* Base Texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D34CE5421A3DEC6006434DA /* Base Texture.png */; };
+		8D34CE5721A3DEFC006434DA /* MonitorTexture2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D34CE5621A3DEFC006434DA /* MonitorTexture2.png */; };
 		8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */; };
 		8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */; };
 		8D4FC93C20FD8E0400A924E4 /* ZooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */; };
@@ -73,6 +77,10 @@
 		6B4886E88D8C79D7F80446BC /* Pods_gazerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC02151997CBC19E35D75DF /* Pods-gazer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gazer.release.xcconfig"; path = "Pods/Target Support Files/Pods-gazer/Pods-gazer.release.xcconfig"; sourceTree = "<group>"; };
 		8D33D49E219D158B00BCE54F /* ButtonConf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConf.swift; sourceTree = "<group>"; };
+		8D34CE4C21A3D9C1006434DA /* blackwaves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = blackwaves.mp4; sourceTree = "<group>"; };
+		8D34CE5221A3DEA3006434DA /* Mapping.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Mapping.xcassets; sourceTree = "<group>"; };
+		8D34CE5421A3DEC6006434DA /* Base Texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Base Texture.png"; sourceTree = "<group>"; };
+		8D34CE5621A3DEFC006434DA /* MonitorTexture2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MonitorTexture2.png; sourceTree = "<group>"; };
 		8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Zoo.storyboard; sourceTree = "<group>"; };
 		8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mapping.storyboard; sourceTree = "<group>"; };
 		8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +192,8 @@
 		8D4FC93A20FD8D7C00A924E4 /* Mapping */ = {
 			isa = PBXGroup;
 			children = (
+				8D34CE5621A3DEFC006434DA /* MonitorTexture2.png */,
+				8D34CE4C21A3D9C1006434DA /* blackwaves.mp4 */,
 				8D7FA1E32193D4A400E8781F /* Model */,
 				8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */,
 				8D7FA1D72193D1B800E8781F /* Disney.mp3 */,
@@ -191,6 +201,8 @@
 				8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */,
 				8D7FA1E12193D35200E8781F /* MappingModel.scnassets */,
 				8D33D49E219D158B00BCE54F /* ButtonConf.swift */,
+				8D34CE5221A3DEA3006434DA /* Mapping.xcassets */,
+				8D34CE5421A3DEC6006434DA /* Base Texture.png */,
 			);
 			path = Mapping;
 			sourceTree = "<group>";
@@ -409,6 +421,7 @@
 				C788DA75209023700006ED25 /* art.scnassets in Resources */,
 				C7691FC721900280000B6D5C /* AquariumModel in Resources */,
 				2356AAE1215DC8BC00EAA4E8 /* star_bgm.mp3 in Resources */,
+				8D34CE5521A3DEC6006434DA /* Base Texture.png in Resources */,
 				B1246649218FE5C300782D31 /* ObjectImage in Resources */,
 				8D7FA1D82193D1B800E8781F /* Disney.mp3 in Resources */,
 				B12C3B7A218FDF4A00B5EFE3 /* ObjectModel in Resources */,
@@ -417,14 +430,17 @@
 				C7C32FAB219BC464003829DE /* Star.storyboard in Resources */,
 				C724D123218819420063139F /* FishModel in Resources */,
 				C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */,
+				8D34CE4D21A3D9C1006434DA /* blackwaves.mp4 in Resources */,
 				B1D11250215CCD2700B8FBCD /* ZooImage in Resources */,
 				C745865B216727CE000A4FC6 /* ZooModel in Resources */,
 				8D7FA1E22193D35200E8781F /* MappingModel.scnassets in Resources */,
 				C788DA7C209023710006ED25 /* Assets.xcassets in Resources */,
+				8D34CE5721A3DEFC006434DA /* MonitorTexture2.png in Resources */,
 				8D7FA1DA2193D1CF00E8781F /* DisneyCastleAnaUp.mp4 in Resources */,
 				8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */,
 				2356AADF215DC8A800EAA4E8 /* aqua_bgm.mp3 in Resources */,
 				C788DA7A209023700006ED25 /* Main.storyboard in Resources */,
+				8D34CE5321A3DEA3006434DA /* Mapping.xcassets in Resources */,
 				C7C32FAF219BC8D2003829DE /* StarModel.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,7 @@ import Floaty
 class MappingViewController: UIViewController, ARSCNViewDelegate {
   
   @IBOutlet var sceneView: ARSCNView!
-  var node: Any?
+  var objectNode: Any?
   var buttonConf: ButtonConf?
   var sceneType: String?
   var beforeSceneType: String?
@@ -38,8 +38,8 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
       let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
       beforeMenu.modalTransitionStyle = .crossDissolve
       present(beforeMenu, animated: true, completion: nil)
-      if node != nil {
-       if (node as! DisneyCastleNode).audioPlayer.isPlaying == true { (node as! DisneyCastleNode).audioPlayer.stop() }
+      if objectNode != nil {
+       if (objectNode as! DisneyCastleNode).audioPlayer.isPlaying == true { (objectNode as! DisneyCastleNode).audioPlayer.stop() }
       }
   }
   
@@ -48,7 +48,6 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     
     // Set the view's delegate
     sceneView.delegate = self as ARSCNViewDelegate
-    sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints
     
     // Create a new scene
     let scene = SCNScene()
@@ -64,8 +63,6 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     super.viewWillAppear(animated)
     
     let configuration = ARWorldTrackingConfiguration()
-    //configuration.planeDetection = .vertical
-    configuration.planeDetection = .horizontal
     
     sceneView.session.run(configuration)
   }
@@ -83,7 +80,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   }
   
   @objc func tapped(sender: UITapGestureRecognizer) {
-    // すでに追加済み、シーン未選択、前回のシーンと一致であれば無視
+    // シーン未選択、前回のシーンと一致であれば無視
     if (beforeSceneType == sceneType) || (self.sceneType == nil) {
       return
     }
@@ -97,11 +94,11 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     sceneView.scene.rootNode.removeFromParentNode()
     switch sceneType {
     case "DisneyCastleNode":
-      node = DisneyCastleNode()
-      sceneView.scene.rootNode.addChildNode(node! as! DisneyCastleNode)
+      objectNode = DisneyCastleNode()
+      sceneView.scene.rootNode.addChildNode(objectNode! as! DisneyCastleNode)
     case "PictureNode":
-      node = PictureNode()
-      sceneView.scene.rootNode.addChildNode(node! as! PictureNode)
+      objectNode = PictureNode()
+      sceneView.scene.rootNode.addChildNode(objectNode! as! PictureNode)
     default:
       break
     }

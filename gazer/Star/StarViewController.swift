@@ -18,6 +18,13 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     @IBOutlet var sceneView: ARSCNView!
 
+    @IBAction func effectSwitch(_ sender: UISwitch) {
+        if sender.isOn == true {
+            effectValue = -0.2
+        }else{
+            effectValue = 0
+        }
+    }
     // スワイプしたらメニュー画面戻る
     @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -56,6 +63,8 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     var audioPlayer: AVAudioPlayer!
     
     var textNode: SCNNode!
+    //エフェクトのデフォルト値
+    var effectValue: Double = -0.2
     
     // 位置情報
     var locationManager: CLLocationManager!
@@ -172,7 +181,7 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         let filter:CIFilter = CIFilter(name: "CIColorControls")!
         filter.setValue(ciImage, forKey: kCIInputImageKey)
         //filter.setValue(CIColor(red: 0.2, green: 0.2, blue: 0.2), forKey: "inputColor")
-        filter.setValue(-0.2, forKey: kCIInputBrightnessKey)
+        filter.setValue(effectValue, forKey: kCIInputBrightnessKey)
         
         //　CIImage を CGImage に変換して背景に適応
         //　カメラ画像はホーム右のランドスケープの状態で画像が渡されるため、CGImagePropertyOrientation(rawValue: 6) でポートレートで正しい向きに表示されるよう変換

@@ -100,24 +100,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTZ-4g-6s8">
-                                <rect key="frame" x="93" y="592" width="189" height="39"/>
-                                <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="保存">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="zooSaveButton:" destination="2fy-sv-3DZ" eventType="touchUpInside" id="nUs-bZ-Zsk"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hRY-cW-lxv">
-                                <rect key="frame" x="21" y="129" width="333" height="439"/>
+                                <rect key="frame" x="37" y="67" width="300" height="533"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="RzO-jF-SFh"/>
+                                    <constraint firstAttribute="height" constant="533" id="nQH-jV-PSn"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6a-wp-quB">
-                                <rect key="frame" x="21" y="77" width="30" height="44"/>
+                                <rect key="frame" x="37" y="29" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="l5p-9p-cbD"/>
+                                    <constraint firstAttribute="height" constant="30" id="fsi-Yi-eRa"/>
+                                    <constraint firstAttribute="width" constant="30" id="ksm-gg-G1c"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="49"/>
                                 <state key="normal" title="×">
@@ -127,18 +121,31 @@
                                     <action selector="zooCancelButton:" destination="2fy-sv-3DZ" eventType="touchUpInside" id="QWX-zN-gU7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTZ-4g-6s8">
+                                <rect key="frame" x="93" y="614" width="189" height="39"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="189" id="M6q-ac-uTh"/>
+                                    <constraint firstAttribute="height" constant="39" id="TLH-gq-63P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="zooSaveButton:" destination="2fy-sv-3DZ" eventType="touchUpInside" id="nUs-bZ-Zsk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hRY-cW-lxv" firstAttribute="top" secondItem="w6a-wp-quB" secondAttribute="bottom" constant="8" symbolic="YES" id="6cm-gV-ZsA"/>
-                            <constraint firstItem="w6a-wp-quB" firstAttribute="leading" secondItem="GBe-Su-bET" secondAttribute="leading" constant="21" id="9uM-9O-fsB"/>
-                            <constraint firstItem="hRY-cW-lxv" firstAttribute="centerX" secondItem="BMJ-1g-eS6" secondAttribute="centerX" id="DSY-da-tJr"/>
-                            <constraint firstItem="jTZ-4g-6s8" firstAttribute="leading" secondItem="GBe-Su-bET" secondAttribute="leading" constant="93" id="J8e-4v-BYX"/>
-                            <constraint firstItem="GBe-Su-bET" firstAttribute="bottom" secondItem="jTZ-4g-6s8" secondAttribute="bottom" constant="36" id="OCR-kH-fQl"/>
-                            <constraint firstItem="w6a-wp-quB" firstAttribute="top" secondItem="GBe-Su-bET" secondAttribute="top" constant="57" id="Sif-fP-cDi"/>
-                            <constraint firstItem="jTZ-4g-6s8" firstAttribute="top" secondItem="hRY-cW-lxv" secondAttribute="bottom" constant="24" id="UYi-RA-XKF"/>
-                            <constraint firstItem="hRY-cW-lxv" firstAttribute="centerX" secondItem="jTZ-4g-6s8" secondAttribute="centerX" id="hcf-wC-5d7"/>
-                            <constraint firstItem="w6a-wp-quB" firstAttribute="leading" secondItem="hRY-cW-lxv" secondAttribute="leading" id="pz9-Ph-S9G"/>
+                            <constraint firstItem="GBe-Su-bET" firstAttribute="trailing" secondItem="jTZ-4g-6s8" secondAttribute="trailing" constant="93" id="7E0-4k-IVD"/>
+                            <constraint firstItem="hRY-cW-lxv" firstAttribute="top" secondItem="w6a-wp-quB" secondAttribute="bottom" constant="8" id="8jL-YX-Ka8"/>
+                            <constraint firstItem="jTZ-4g-6s8" firstAttribute="top" secondItem="hRY-cW-lxv" secondAttribute="bottom" constant="14" id="EeJ-rc-xUn"/>
+                            <constraint firstItem="w6a-wp-quB" firstAttribute="leading" secondItem="GBe-Su-bET" secondAttribute="leading" constant="37" id="dNC-Oa-SYc"/>
+                            <constraint firstItem="w6a-wp-quB" firstAttribute="top" secondItem="GBe-Su-bET" secondAttribute="top" constant="9" id="dR6-99-hqI"/>
+                            <constraint firstItem="GBe-Su-bET" firstAttribute="bottom" secondItem="jTZ-4g-6s8" secondAttribute="bottom" constant="14" id="nML-s5-dvk"/>
+                            <constraint firstItem="GBe-Su-bET" firstAttribute="trailing" secondItem="hRY-cW-lxv" secondAttribute="trailing" constant="38" id="uCJ-hK-kvd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GBe-Su-bET"/>
                     </view>

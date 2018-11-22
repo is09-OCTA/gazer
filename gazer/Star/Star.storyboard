@@ -78,8 +78,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lya-z1-E6q">
-                                <rect key="frame" x="93" y="592" width="189" height="39"/>
+                                <rect key="frame" x="93" y="614" width="189" height="39"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="189" id="NhJ-Vf-AaQ"/>
+                                    <constraint firstAttribute="height" constant="39" id="i4S-fa-Hng"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="保存">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -89,12 +93,17 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bCX-qm-Nhx">
-                                <rect key="frame" x="21" y="129" width="333" height="439"/>
+                                <rect key="frame" x="37" y="67" width="300" height="533"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="533" id="BX2-wZ-8bY"/>
+                                    <constraint firstAttribute="width" constant="300" id="Wcq-Th-eJd"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhA-9N-FTr">
-                                <rect key="frame" x="21" y="77" width="30" height="44"/>
+                                <rect key="frame" x="37" y="29" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="izm-BO-aln"/>
+                                    <constraint firstAttribute="width" constant="30" id="4TW-vw-hno"/>
+                                    <constraint firstAttribute="height" constant="30" id="RgB-gI-b7y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="49"/>
                                 <state key="normal" title="×">
@@ -107,15 +116,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="giO-6n-sba" firstAttribute="bottom" secondItem="lya-z1-E6q" secondAttribute="bottom" constant="36" id="3AL-PR-EYq"/>
-                            <constraint firstItem="lya-z1-E6q" firstAttribute="leading" secondItem="giO-6n-sba" secondAttribute="leading" constant="93" id="3UJ-7r-W9L"/>
-                            <constraint firstItem="bCX-qm-Nhx" firstAttribute="centerX" secondItem="lya-z1-E6q" secondAttribute="centerX" id="8XM-I5-hs2"/>
-                            <constraint firstItem="JhA-9N-FTr" firstAttribute="leading" secondItem="giO-6n-sba" secondAttribute="leading" constant="21" id="Lqr-Wg-S3Q"/>
-                            <constraint firstItem="lya-z1-E6q" firstAttribute="top" secondItem="bCX-qm-Nhx" secondAttribute="bottom" constant="24" id="Lwj-L6-GN5"/>
-                            <constraint firstItem="bCX-qm-Nhx" firstAttribute="top" secondItem="JhA-9N-FTr" secondAttribute="bottom" constant="8" symbolic="YES" id="QFg-hH-Cwm"/>
-                            <constraint firstItem="bCX-qm-Nhx" firstAttribute="centerX" secondItem="X9N-uA-fHg" secondAttribute="centerX" id="RUA-4O-Z5d"/>
-                            <constraint firstItem="JhA-9N-FTr" firstAttribute="leading" secondItem="bCX-qm-Nhx" secondAttribute="leading" id="U1V-hU-Ug4"/>
-                            <constraint firstItem="JhA-9N-FTr" firstAttribute="top" secondItem="giO-6n-sba" secondAttribute="top" constant="57" id="Xqd-cC-f6e"/>
+                            <constraint firstItem="JhA-9N-FTr" firstAttribute="leading" secondItem="giO-6n-sba" secondAttribute="leading" constant="37" id="DFQ-rO-1AW"/>
+                            <constraint firstItem="lya-z1-E6q" firstAttribute="top" secondItem="bCX-qm-Nhx" secondAttribute="bottom" constant="14" id="Fov-Tj-ff3"/>
+                            <constraint firstItem="bCX-qm-Nhx" firstAttribute="top" secondItem="JhA-9N-FTr" secondAttribute="bottom" constant="8" id="LOC-2Z-aTe"/>
+                            <constraint firstItem="giO-6n-sba" firstAttribute="trailing" secondItem="bCX-qm-Nhx" secondAttribute="trailing" constant="38" id="R2s-Ck-pJl"/>
+                            <constraint firstItem="giO-6n-sba" firstAttribute="trailing" secondItem="lya-z1-E6q" secondAttribute="trailing" constant="93" id="SLZ-9r-gd0"/>
+                            <constraint firstItem="giO-6n-sba" firstAttribute="bottom" secondItem="lya-z1-E6q" secondAttribute="bottom" constant="14" id="b8X-Yl-C6u"/>
+                            <constraint firstItem="JhA-9N-FTr" firstAttribute="top" secondItem="giO-6n-sba" secondAttribute="top" constant="9" id="cVa-nh-KH1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="giO-6n-sba"/>
                     </view>

@@ -54,6 +54,7 @@
                     </view>
                     <connections>
                         <outlet property="button" destination="ndY-qo-1fj" id="mBz-bX-AG1"/>
+                        <outlet property="effectSwichButton" destination="Rom-C0-uo7" id="ynt-wA-lfG"/>
                         <outlet property="sceneView" destination="vgh-2s-Qp4" id="miJ-U4-RD4"/>
                         <segue destination="I2U-IN-xar" kind="presentation" identifier="prevPhoto" id="Jam-f5-YRq"/>
                     </connections>

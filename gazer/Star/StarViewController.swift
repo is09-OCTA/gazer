@@ -18,6 +18,7 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     @IBOutlet var sceneView: ARSCNView!
 
+    @IBOutlet weak var effectSwichButton: UISwitch!
     @IBAction func effectSwitch(_ sender: UISwitch) {
         if sender.isOn == true {
             effectValue = -0.2
@@ -43,11 +44,13 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             UIImagePickerController.SourceType.camera){
             
             button.isHidden = true //ボタン非表示
+            effectSwichButton.isHidden = true
             
             starSaveImage = starGetScreenShot()
             performSegue(withIdentifier: "prevPhoto", sender: nil)
             
             button.isHidden = false //ボタン表示
+            effectSwichButton.isHidden = false
             
         }
         else{

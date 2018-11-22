@@ -67,8 +67,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWn-hm-KaX">
-                                <rect key="frame" x="93" y="592" width="189" height="39"/>
+                                <rect key="frame" x="93" y="614" width="189" height="39"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="189" id="Bue-Ya-vlX"/>
+                                    <constraint firstAttribute="height" constant="39" id="huB-tr-e45"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="保存">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,13 +81,11 @@
                                     <action selector="aquaSaveButton:" destination="hPW-32-Q1e" eventType="touchUpInside" id="tor-qG-fu3"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oTE-j8-qpJ">
-                                <rect key="frame" x="21" y="129" width="333" height="439"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pd-Dk-YXG">
-                                <rect key="frame" x="21" y="77" width="30" height="44"/>
+                                <rect key="frame" x="37" y="29" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="97t-Wz-QVq"/>
+                                    <constraint firstAttribute="width" constant="30" id="ims-as-I8E"/>
+                                    <constraint firstAttribute="height" constant="30" id="sca-FK-FPr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="49"/>
                                 <state key="normal" title="×">
@@ -93,18 +95,23 @@
                                     <action selector="aquaCancelButton:" destination="hPW-32-Q1e" eventType="touchUpInside" id="54K-XR-jie"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oTE-j8-qpJ">
+                                <rect key="frame" x="37" y="67" width="300" height="533"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="o5R-cq-WvO"/>
+                                    <constraint firstAttribute="height" constant="533" id="vXQ-dG-Xaz"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="9pd-Dk-YXG" firstAttribute="leading" secondItem="mpo-sx-t7V" secondAttribute="leading" constant="21" id="4zG-kb-R0I"/>
-                            <constraint firstItem="oTE-j8-qpJ" firstAttribute="centerX" secondItem="JWn-hm-KaX" secondAttribute="centerX" id="DHO-xV-fBi"/>
-                            <constraint firstItem="9pd-Dk-YXG" firstAttribute="top" secondItem="mpo-sx-t7V" secondAttribute="top" constant="57" id="EnT-xc-gd4"/>
-                            <constraint firstItem="JWn-hm-KaX" firstAttribute="leading" secondItem="mpo-sx-t7V" secondAttribute="leading" constant="93" id="F5c-AX-NKi"/>
-                            <constraint firstItem="oTE-j8-qpJ" firstAttribute="top" secondItem="9pd-Dk-YXG" secondAttribute="bottom" constant="8" symbolic="YES" id="JTn-g8-E8O"/>
-                            <constraint firstItem="9pd-Dk-YXG" firstAttribute="leading" secondItem="oTE-j8-qpJ" secondAttribute="leading" id="Yol-hY-pST"/>
-                            <constraint firstItem="mpo-sx-t7V" firstAttribute="bottom" secondItem="JWn-hm-KaX" secondAttribute="bottom" constant="36" id="YxK-nh-f6K"/>
-                            <constraint firstItem="JWn-hm-KaX" firstAttribute="top" secondItem="oTE-j8-qpJ" secondAttribute="bottom" constant="24" id="c0P-nh-Feu"/>
-                            <constraint firstItem="oTE-j8-qpJ" firstAttribute="centerX" secondItem="AZ0-wg-Khj" secondAttribute="centerX" id="wno-We-CHl"/>
+                            <constraint firstItem="mpo-sx-t7V" firstAttribute="trailing" secondItem="oTE-j8-qpJ" secondAttribute="trailing" constant="38" id="44z-UP-5gp"/>
+                            <constraint firstItem="9pd-Dk-YXG" firstAttribute="top" secondItem="mpo-sx-t7V" secondAttribute="top" constant="9" id="6QX-1k-fVX"/>
+                            <constraint firstItem="mpo-sx-t7V" firstAttribute="bottom" secondItem="JWn-hm-KaX" secondAttribute="bottom" constant="14" id="8kl-6L-eiE"/>
+                            <constraint firstItem="mpo-sx-t7V" firstAttribute="trailing" secondItem="JWn-hm-KaX" secondAttribute="trailing" constant="93" id="BqU-4G-NgF"/>
+                            <constraint firstItem="9pd-Dk-YXG" firstAttribute="leading" secondItem="mpo-sx-t7V" secondAttribute="leading" constant="37" id="Eaw-yb-2FR"/>
+                            <constraint firstItem="JWn-hm-KaX" firstAttribute="top" secondItem="oTE-j8-qpJ" secondAttribute="bottom" constant="14" id="kIR-tT-R6k"/>
+                            <constraint firstItem="oTE-j8-qpJ" firstAttribute="top" secondItem="9pd-Dk-YXG" secondAttribute="bottom" constant="8" id="zNi-NC-k0P"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mpo-sx-t7V"/>
                     </view>

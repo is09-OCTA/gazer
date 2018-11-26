@@ -46,13 +46,10 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Set the view's delegate
     sceneView.delegate = self as ARSCNViewDelegate
     
-    // Create a new scene
     let scene = SCNScene()
     
-    // Set the scene to the view
     sceneView.scene = scene
     buttonConf = ButtonConf()
     self.view.addSubview((buttonConf?.NodeSelectionButton(mappingViewController: self))!)

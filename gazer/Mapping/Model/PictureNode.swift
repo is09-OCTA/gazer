@@ -29,11 +29,11 @@ class PictureNode: SCNNode {
       videoRotation = 0.0
       videoEulerAngles = 0.0
     case 1:
-      videoName = "lifesurvives"
+      videoName = "Lifesurvives"
       videoRotation = 90 * (Float.pi / 180)
       videoEulerAngles = 90 * (Float.pi / 180)
     case 2:
-      videoName = "flower"
+      videoName = "Flower"
       videoRotation = 90 * (Float.pi / 180)
       videoEulerAngles = 90 * (Float.pi / 180)
     default:

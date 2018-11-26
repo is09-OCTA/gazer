@@ -18,11 +18,35 @@ class PictureNode: SCNNode {
   init(position: SCNVector3,nodeEulerAnglesY: Float) {
     super.init()
     let node = DisneyCastleNode.collada2SCNNode(filepath: "MappingModel.scnassets/Monitor.scn")
-    let cinderellaCastleVideoUrl = Bundle.main.url(forResource: "blackwaves", withExtension: "mp4")!
-    let cinderellaCastleMaterial = self.createMaterial(videoUrl: cinderellaCastleVideoUrl, alpha: 1.0,angle: 0.0)
+    
+    var videoName: String?
+    var videoRotation: Float?
+    var videoEulerAngles: Float?
+    let randomNum = arc4random_uniform(3)
+    switch randomNum {
+    case 0:
+      videoName = "blackwaves"
+      videoRotation = 0.0
+      videoEulerAngles = 0.0
+    case 1:
+      videoName = "lifesurvives"
+      videoRotation = 90.0
+      videoEulerAngles = 90.0
+    case 2:
+      videoName = "flower"
+      videoRotation = 90.0
+      videoEulerAngles = 90.0
+    default:
+      break
+    }
+    
+    
+    let cinderellaCastleVideoUrl = Bundle.main.url(forResource: videoName!, withExtension: "mp4")!
+    let cinderellaCastleMaterial = self.createMaterial(videoUrl: cinderellaCastleVideoUrl, alpha: 1.0,angle: videoRotation!)
     node.childNodes[0].geometry?.firstMaterial = cinderellaCastleMaterial
     node.position = position
     node.eulerAngles.y = nodeEulerAnglesY
+    node.eulerAngles.z = videoEulerAngles!
     self.addChildNode(node)
   }
   

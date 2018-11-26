@@ -14,6 +14,8 @@
 		8D33D49F219D158B00BCE54F /* ButtonConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33D49E219D158B00BCE54F /* ButtonConf.swift */; };
 		8D34CE4D21A3D9C1006434DA /* blackwaves.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D34CE4C21A3D9C1006434DA /* blackwaves.mp4 */; };
 		8D34CE5321A3DEA3006434DA /* Mapping.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D34CE5221A3DEA3006434DA /* Mapping.xcassets */; };
+		8D34CE5B21ABB164006434DA /* lifesurvives.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D34CE5A21ABB164006434DA /* lifesurvives.mp4 */; };
+		8D34CE5D21ABB171006434DA /* flower.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D34CE5C21ABB171006434DA /* flower.mp4 */; };
 		8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */; };
 		8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */; };
 		8D4FC93C20FD8E0400A924E4 /* ZooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */; };
@@ -77,6 +79,8 @@
 		8D33D49E219D158B00BCE54F /* ButtonConf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConf.swift; sourceTree = "<group>"; };
 		8D34CE4C21A3D9C1006434DA /* blackwaves.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = blackwaves.mp4; sourceTree = "<group>"; };
 		8D34CE5221A3DEA3006434DA /* Mapping.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Mapping.xcassets; sourceTree = "<group>"; };
+		8D34CE5A21ABB164006434DA /* lifesurvives.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lifesurvives.mp4; sourceTree = "<group>"; };
+		8D34CE5C21ABB171006434DA /* flower.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = flower.mp4; sourceTree = "<group>"; };
 		8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Zoo.storyboard; sourceTree = "<group>"; };
 		8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mapping.storyboard; sourceTree = "<group>"; };
 		8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 		8D34CE5821A7B6FE006434DA /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				8D34CE5C21ABB171006434DA /* flower.mp4 */,
+				8D34CE5A21ABB164006434DA /* lifesurvives.mp4 */,
 				8D34CE4C21A3D9C1006434DA /* blackwaves.mp4 */,
 				8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */,
 			);
@@ -429,12 +435,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C788DA75209023700006ED25 /* art.scnassets in Resources */,
+				8D34CE5B21ABB164006434DA /* lifesurvives.mp4 in Resources */,
 				C7691FC721900280000B6D5C /* AquariumModel in Resources */,
 				2356AAE1215DC8BC00EAA4E8 /* star_bgm.mp3 in Resources */,
 				B1246649218FE5C300782D31 /* ObjectImage in Resources */,
 				8D7FA1D82193D1B800E8781F /* Disney.mp3 in Resources */,
 				B12C3B7A218FDF4A00B5EFE3 /* ObjectModel in Resources */,
 				C72D19D321520E450079C65D /* Aquarium.storyboard in Resources */,
+				8D34CE5D21ABB171006434DA /* flower.mp4 in Resources */,
 				8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */,
 				C7C32FAB219BC464003829DE /* Star.storyboard in Resources */,
 				C724D123218819420063139F /* FishModel in Resources */,

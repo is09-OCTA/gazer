@@ -25,15 +25,15 @@ class PictureNode: SCNNode {
     let randomNum = arc4random_uniform(3)
     switch randomNum {
     case 0:
-      videoName = "blackwaves"
+      videoName = "BlackwavesVideo"
       videoRotation = 0.0
       videoEulerAngles = 0.0
     case 1:
-      videoName = "Lifesurvives"
+      videoName = "LifesurvivesVideo"
       videoRotation = 90 * (Float.pi / 180)
       videoEulerAngles = 90 * (Float.pi / 180)
     case 2:
-      videoName = "Flower"
+      videoName = "FlowerVideo"
       videoRotation = 90 * (Float.pi / 180)
       videoEulerAngles = 90 * (Float.pi / 180)
     default:

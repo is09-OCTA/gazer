@@ -65,18 +65,15 @@ class PictureNode: SCNNode {
     // AVPlayerからSKVideoNodeの生成する
     let skNode = SKVideoNode(avPlayer: avPlayer)
     // シーンと同じサイズとし、中央に配置する
-    //skNode.position = CGPoint(x: (skScene.size.width / 2.0) + 22, y: (skScene.size.height / 2.0) - 40)  //フルバージョン
     skNode.position = CGPoint(x: (skScene.size.width / 2.0), y: (skScene.size.height / 2.0))
     skNode.size.height = skScene.size.height
     skNode.size.width = skScene.size.width
-    //skNode.yScale = -1.07 //フルバージョン
-    //skNode.xScale = 0.8 //フルバージョン
     skNode.yScale = -1
     skNode.xScale = 1
     skNode.zRotation = CGFloat(angle)
     skNode.play() // 再生開始
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-      //self.playSound(name: "Disney")
+      //self.playSound(name: "")
     }
     // SKSceneに、SKVideoNodeを追加する
     skScene.addChild(skNode)

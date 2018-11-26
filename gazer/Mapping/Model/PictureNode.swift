@@ -15,12 +15,14 @@ class PictureNode: SCNNode {
   public var audioPlayer: AVAudioPlayer!
   
   
-  override init() {
+  init(position: SCNVector3,nodeEulerAnglesY: Float) {
     super.init()
     let node = DisneyCastleNode.collada2SCNNode(filepath: "MappingModel.scnassets/Monitor.scn")
     let cinderellaCastleVideoUrl = Bundle.main.url(forResource: "blackwaves", withExtension: "mp4")!
     let cinderellaCastleMaterial = self.createMaterial(videoUrl: cinderellaCastleVideoUrl, alpha: 1.0,angle: 0.0)
     node.childNodes[0].geometry?.firstMaterial = cinderellaCastleMaterial
+    node.position = position
+    node.eulerAngles.y = nodeEulerAnglesY
     self.addChildNode(node)
   }
   

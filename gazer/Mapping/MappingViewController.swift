@@ -63,6 +63,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     super.viewWillAppear(animated)
     
     let configuration = ARWorldTrackingConfiguration()
+    configuration.planeDetection = [.horizontal,.vertical]
     
     sceneView.session.run(configuration)
   }
@@ -80,25 +81,46 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   }
   
   @objc func tapped(sender: UITapGestureRecognizer) {
+    var nodePosition: SCNVector3?
+    var nodeEulerAnglesY: Float?
+    
+    
     // シーン未選択、前回のシーンと一致であれば無視
-    if (beforeSceneType == sceneType) || (self.sceneType == nil) {
+    if sceneType == "PictureNode" {
+      
+    } else if (beforeSceneType == sceneType) || (self.sceneType == nil) {
       return
     }
-    self.addItem()
+    
+    // sceneView上でタップした座標を検出
+    let location = sender.location(in: sceneView)
+    //現実座標取得
+    let hitTestResult = sceneView.hitTest(location, types: .existingPlane)
+    //アンラップ
+    if let result = hitTestResult.first {
+      nodePosition = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
+      if let camera = sceneView.pointOfView {
+        nodeEulerAnglesY = camera.eulerAngles.y  // カメラのオイラー角と同じにする
+      }
+      self.addItem(position: nodePosition!, nodeEulerAnglesY: nodeEulerAnglesY!)
+    }
+    
   }
   
-  private func addItem() {
-    sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
-      node.removeFromParentNode()
+  private func addItem(position: SCNVector3,nodeEulerAnglesY: Float) {
+    if (sceneType != "PictureNode") || (sceneView.scene.rootNode.childNodes.filter({ $0.name == "pictureNode" }).count == 0){
+      sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
+        node.removeFromParentNode()
+      }
     }
-    sceneView.scene.rootNode.removeFromParentNode()
     switch sceneType {
     case "DisneyCastleNode":
-      objectNode = DisneyCastleNode()
+      objectNode = DisneyCastleNode(position: position, nodeEulerAnglesY: nodeEulerAnglesY)
       sceneView.scene.rootNode.addChildNode(objectNode! as! DisneyCastleNode)
     case "PictureNode":
-      objectNode = PictureNode()
-      sceneView.scene.rootNode.addChildNode(objectNode! as! PictureNode)
+      let pictureNode = PictureNode(position: position, nodeEulerAnglesY: nodeEulerAnglesY)
+      pictureNode.name = "pictureNode"
+      sceneView.scene.rootNode.addChildNode(pictureNode)
     default:
       break
     }
@@ -119,6 +141,5 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
         
       return image
   }
-  
   
 }

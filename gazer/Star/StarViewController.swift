@@ -18,6 +18,14 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     @IBOutlet var sceneView: ARSCNView!
 
+    @IBOutlet weak var effectSwichButton: UISwitch!
+    @IBAction func effectSwitch(_ sender: UISwitch) {
+        if sender.isOn == true {
+            effectValue = -0.2
+        }else{
+            effectValue = 0
+        }
+    }
     // スワイプしたらメニュー画面戻る
     @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -29,20 +37,37 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     
     @IBOutlet weak var button: UIButton!
     
+    var starSaveImage:UIImage! = nil
+    
     @IBAction func pushCamera(_ sender: Any) {
-        button.isHidden = true //ボタン非表示
-        let image = getScreenShot()
-        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
-        
-       SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
-        button.isHidden = false //ボタン表示
-
+        if UIImagePickerController.isSourceTypeAvailable(
+            UIImagePickerController.SourceType.camera){
+            
+            button.isHidden = true //ボタン非表示
+            effectSwichButton.isHidden = true
+            
+            starSaveImage = starGetScreenShot()
+            performSegue(withIdentifier: "prevPhoto", sender: nil)
+            
+            button.isHidden = false //ボタン表示
+            effectSwichButton.isHidden = false
+            
+        }
+        else{
+            
+            let alert = UIAlertController(title: "カメラへのアクセスが拒否されています。", message: "設定画面よりアクセスを許可してください。", preferredStyle:.alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+        }
     }
 
     //音楽インスタンス
     var audioPlayer: AVAudioPlayer!
     
     var textNode: SCNNode!
+    //エフェクトのデフォルト値
+    var effectValue: Double = -0.2
     
     // 位置情報
     var locationManager: CLLocationManager!
@@ -159,7 +184,7 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         let filter:CIFilter = CIFilter(name: "CIColorControls")!
         filter.setValue(ciImage, forKey: kCIInputImageKey)
         //filter.setValue(CIColor(red: 0.2, green: 0.2, blue: 0.2), forKey: "inputColor")
-        filter.setValue(-0.2, forKey: kCIInputBrightnessKey)
+        filter.setValue(effectValue, forKey: kCIInputBrightnessKey)
         
         //　CIImage を CGImage に変換して背景に適応
         //　カメラ画像はホーム右のランドスケープの状態で画像が渡されるため、CGImagePropertyOrientation(rawValue: 6) でポートレートで正しい向きに表示されるよう変換
@@ -355,12 +380,12 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     }
     
     // Camera
-    private func getScreenShot() -> UIImage? {
+    private func starGetScreenShot() -> UIImage? {
         guard let view = self.view else {
             return nil
         }
 
-        UIGraphicsBeginImageContext(view.frame.size)
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0)
         view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -482,6 +507,12 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     }
     
     func sessionInterruptionEnded(_ session: ARSession) {
+    }
+    // PhotoPreViewControllerに受け渡し
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let photo = segue.destination as! PhotoPreViewController
+        photo.screenImage = starSaveImage
+        photo.addImage = 3
     }
     
 }

@@ -25,6 +25,7 @@
 		8D7FA1DA2193D1CF00E8781F /* DisneyCastleAnaUp.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */; };
 		8D7FA1E22193D35200E8781F /* MappingModel.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FA1E12193D35200E8781F /* MappingModel.scnassets */; };
 		8D7FA1E52193D4BB00E8781F /* DisneyCastleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7FA1E42193D4BB00E8781F /* DisneyCastleNode.swift */; };
+		B11E94AB21A2757400C0CD4A /* PhotoPreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11E94AA21A2757400C0CD4A /* PhotoPreViewController.swift */; };
 		B1246649218FE5C300782D31 /* ObjectImage in Resources */ = {isa = PBXBuildFile; fileRef = B1246648218FE5C300782D31 /* ObjectImage */; };
 		B12C3B7A218FDF4A00B5EFE3 /* ObjectModel in Resources */ = {isa = PBXBuildFile; fileRef = B12C3B79218FDF4900B5EFE3 /* ObjectModel */; };
 		B1D11250215CCD2700B8FBCD /* ZooImage in Resources */ = {isa = PBXBuildFile; fileRef = B1D1124F215CCD2700B8FBCD /* ZooImage */; };
@@ -90,6 +91,7 @@
 		8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = DisneyCastleAnaUp.mp4; sourceTree = "<group>"; };
 		8D7FA1E12193D35200E8781F /* MappingModel.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = MappingModel.scnassets; sourceTree = "<group>"; };
 		8D7FA1E42193D4BB00E8781F /* DisneyCastleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisneyCastleNode.swift; sourceTree = "<group>"; };
+		B11E94AA21A2757400C0CD4A /* PhotoPreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreViewController.swift; sourceTree = "<group>"; };
 		B1246648218FE5C300782D31 /* ObjectImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ObjectImage; sourceTree = "<group>"; };
 		B12C3B79218FDF4900B5EFE3 /* ObjectModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ObjectModel; sourceTree = "<group>"; };
 		B1D1124F215CCD2700B8FBCD /* ZooImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZooImage; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				C788DA7B209023710006ED25 /* Assets.xcassets */,
 				C788DA7D209023710006ED25 /* LaunchScreen.storyboard */,
 				C788DA80209023710006ED25 /* Info.plist */,
+				B11E94AA21A2757400C0CD4A /* PhotoPreViewController.swift */,
 			);
 			path = gazer;
 			sourceTree = "<group>";

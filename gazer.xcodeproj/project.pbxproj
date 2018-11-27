@@ -162,6 +162,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8D4D482621AD498D002D04BF /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		8D4D482721AD49A1002D04BF /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				8D7FA1D72193D1B800E8781F /* Disney.mp3 */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		8D4FC93920FD8D7500A924E4 /* Zoo */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,9 +197,9 @@
 		8D4FC93A20FD8D7C00A924E4 /* Mapping */ = {
 			isa = PBXGroup;
 			children = (
+				8D4D482721AD49A1002D04BF /* Music */,
+				8D4D482621AD498D002D04BF /* Video */,
 				8D7FA1E32193D4A400E8781F /* Model */,
-				8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */,
-				8D7FA1D72193D1B800E8781F /* Disney.mp3 */,
 				8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */,
 				8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */,
 				8D7FA1E12193D35200E8781F /* MappingModel.scnassets */,

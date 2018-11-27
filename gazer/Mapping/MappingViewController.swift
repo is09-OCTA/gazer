@@ -16,43 +16,40 @@ import Floaty
 class MappingViewController: UIViewController, ARSCNViewDelegate {
   
   @IBOutlet var sceneView: ARSCNView!
-  //var disneyCastleNode: DisneyCastleNode?
-  //var nodeTuple: (DisneyCastleNode,String)?
-  var node: Any?
+  var objectNode: Any?
   var buttonConf: ButtonConf?
   var sceneType: String?
-    
+  var beforeSceneType: String?
+  
   @IBOutlet weak var button: UIButton!
-    
+  
   @IBAction func pushCamera(_ sender: Any) {
-      button.isHidden = true //ボタン非表示
-      let image = getScreenShot()
-      UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
-        
-      SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
-      button.isHidden = false //ボタン表示
-  }
+    button.isHidden = true //ボタン非表示
+    let image = getScreenShot()
+    UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
     
+    SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
+    button.isHidden = false //ボタン表示
+  }
+  
   // スワイプしたらメニュー画面戻る
   @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
-      let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-      let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
-      beforeMenu.modalTransitionStyle = .crossDissolve
-      present(beforeMenu, animated: true, completion: nil)
-      //if disneyCastleNode?.audioPlayer.isPlaying == true { disneyCastleNode?.audioPlayer.stop() }
-      if (node as! DisneyCastleNode).audioPlayer.isPlaying == true { (node as! DisneyCastleNode).audioPlayer.stop() }
+    let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
+    beforeMenu.modalTransitionStyle = .crossDissolve
+    present(beforeMenu, animated: true, completion: nil)
+    if objectNode != nil {
+      if (objectNode as! DisneyCastleNode).audioPlayer.isPlaying == true { (objectNode as! DisneyCastleNode).audioPlayer.stop() }
+    }
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Set the view's delegate
     sceneView.delegate = self as ARSCNViewDelegate
     
-    // Create a new scene
     let scene = SCNScene()
     
-    // Set the scene to the view
     sceneView.scene = scene
     buttonConf = ButtonConf()
     self.view.addSubview((buttonConf?.NodeSelectionButton(mappingViewController: self))!)
@@ -63,7 +60,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     super.viewWillAppear(animated)
     
     let configuration = ARWorldTrackingConfiguration()
-    configuration.planeDetection = .horizontal
+    configuration.planeDetection = [.horizontal,.vertical]
     
     sceneView.session.run(configuration)
   }
@@ -81,39 +78,65 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   }
   
   @objc func tapped(sender: UITapGestureRecognizer) {
-    // すでに追加済みであれば無視
-    if (node != nil) || (self.sceneType == nil) {
+    var nodePosition: SCNVector3?
+    var nodeEulerAnglesY: Float?
+    
+    
+    // シーン未選択、前回のシーンと一致であれば無視
+    if sceneType == "PictureNode" {
+      
+    } else if (beforeSceneType == sceneType) || (self.sceneType == nil) {
       return
     }
-    self.addItem()
+    
+    // sceneView上でタップした座標を検出
+    let location = sender.location(in: sceneView)
+    //現実座標取得
+    let hitTestResult = sceneView.hitTest(location, types: .existingPlane)
+    //アンラップ
+    if let result = hitTestResult.first {
+      nodePosition = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
+      if let camera = sceneView.pointOfView {
+        nodeEulerAnglesY = camera.eulerAngles.y  // カメラのオイラー角と同じにする
+      }
+      self.addItem(position: nodePosition!, nodeEulerAnglesY: nodeEulerAnglesY!)
+    }
+    
   }
   
-  private func addItem() {
-    if sceneType != nil {
-      switch sceneType {
-      case "DisneyCastleNode":
-        node = DisneyCastleNode()
-        sceneView.scene.rootNode.addChildNode(node! as! DisneyCastleNode)
-      default:
-        break
+  private func addItem(position: SCNVector3,nodeEulerAnglesY: Float) {
+    if (sceneType != "PictureNode") || (sceneView.scene.rootNode.childNodes.filter({ $0.name == "pictureNode" }).count == 0){
+      sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
+        node.removeFromParentNode()
       }
     }
+    switch sceneType {
+    case "DisneyCastleNode":
+      objectNode = DisneyCastleNode(position: position, nodeEulerAnglesY: nodeEulerAnglesY)
+      sceneView.scene.rootNode.addChildNode(objectNode! as! DisneyCastleNode)
+    case "PictureNode":
+      let pictureNode = PictureNode(position: position, nodeEulerAnglesY: nodeEulerAnglesY)
+      pictureNode.name = "pictureNode"
+      sceneView.scene.rootNode.addChildNode(pictureNode)
+    default:
+      break
+    }
+    beforeSceneType = sceneType
   }
   
   
   // Camera
   private func getScreenShot() -> UIImage? {
-      guard let view = self.view else {
-          return nil
-      }
-        
-      UIGraphicsBeginImageContext(view.frame.size)
-      view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-      let image = UIGraphicsGetImageFromCurrentImageContext()
-      UIGraphicsEndImageContext()
-        
-      return image
+    guard let view = self.view else {
+      return nil
+    }
+    
+    UIGraphicsBeginImageContext(view.frame.size)
+    view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return image
   }
-  
   
 }

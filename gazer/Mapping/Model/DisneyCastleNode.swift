@@ -14,12 +14,14 @@ import AVFoundation
 class DisneyCastleNode: SCNNode {
   public var audioPlayer: AVAudioPlayer!
   var collision: Bool = false
-  override init() {
+  init(position: SCNVector3,nodeEulerAnglesY: Float) {
     super.init()
     let node = DisneyCastleNode.collada2SCNNode(filepath: "MappingModel.scnassets/DisneyCastleDefaultAna.scn")
     let cinderellaCastleVideoUrl = Bundle.main.url(forResource: "DisneyCastleAnaUp", withExtension: "mp4")!
     let cinderellaCastleMaterial = self.createMaterial(videoUrl: cinderellaCastleVideoUrl, alpha: 1.0,angle: 0.0)
     node.childNodes[0].geometry?.firstMaterial = cinderellaCastleMaterial
+    node.position = position
+    node.eulerAngles.y = nodeEulerAnglesY
     
     //ライト
     let lightNode = SCNNode()

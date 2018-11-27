@@ -15,6 +15,7 @@
 		8D4D482921AD49CA002D04BF /* BlackwavesVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D482821AD49CA002D04BF /* BlackwavesVideo.mp4 */; };
 		8D4D482B21AD49D3002D04BF /* FlowerVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D482A21AD49D3002D04BF /* FlowerVideo.mp4 */; };
 		8D4D482D21AD49DC002D04BF /* LifesurvivesVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D482C21AD49DC002D04BF /* LifesurvivesVideo.mp4 */; };
+		8D4D482F21AD4D8B002D04BF /* PictureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D482E21AD4D8B002D04BF /* PictureNode.swift */; };
 		8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */; };
 		8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */; };
 		8D4FC93C20FD8E0400A924E4 /* ZooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */; };
@@ -78,6 +79,7 @@
 		8D4D482821AD49CA002D04BF /* BlackwavesVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = BlackwavesVideo.mp4; sourceTree = "<group>"; };
 		8D4D482A21AD49D3002D04BF /* FlowerVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FlowerVideo.mp4; sourceTree = "<group>"; };
 		8D4D482C21AD49DC002D04BF /* LifesurvivesVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LifesurvivesVideo.mp4; sourceTree = "<group>"; };
+		8D4D482E21AD4D8B002D04BF /* PictureNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureNode.swift; sourceTree = "<group>"; };
 		8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Zoo.storyboard; sourceTree = "<group>"; };
 		8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mapping.storyboard; sourceTree = "<group>"; };
 		8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				8D7FA1E42193D4BB00E8781F /* DisneyCastleNode.swift */,
+				8D4D482E21AD4D8B002D04BF /* PictureNode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				8D7FA1E52193D4BB00E8781F /* DisneyCastleNode.swift in Sources */,
 				C75A04BA20B3D9EA00B0F36C /* decimalExpansion.swift in Sources */,
 				C7C32FB1219CF72F003829DE /* StarData.swift in Sources */,
+				8D4D482F21AD4D8B002D04BF /* PictureNode.swift in Sources */,
 				B11E94AB21A2757400C0CD4A /* PhotoPreViewController.swift in Sources */,
 				C70E7AA520D77FF900255FD3 /* AquariumViewController.swift in Sources */,
 				C7B940B62156113B00AC34FE /* ZooModalViewController.swift in Sources */,

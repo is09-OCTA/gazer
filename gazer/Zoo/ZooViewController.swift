@@ -9,7 +9,6 @@
 import UIKit
 import ARKit
 import SceneKit
-import SCLAlertView
 import EAIntroView
 
 class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {

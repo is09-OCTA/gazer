@@ -10,7 +10,6 @@ import UIKit
 import ARKit
 import SceneKit
 import AVFoundation
-import SCLAlertView
 import Floaty
 
 class MappingViewController: UIViewController, ARSCNViewDelegate {

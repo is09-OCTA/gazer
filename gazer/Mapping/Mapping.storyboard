@@ -46,6 +46,7 @@
                     <connections>
                         <outlet property="button" destination="sq6-5f-7Mm" id="v9G-Yu-Pxe"/>
                         <outlet property="sceneView" destination="70m-a5-hCs" id="u8W-2L-hWZ"/>
+                        <segue destination="TCh-lW-Ul9" kind="presentation" identifier="prevPhoto" id="9Jj-T2-XeD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLg-Kp-T9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -57,8 +58,74 @@
             </objects>
             <point key="canvasLocation" x="158" y="136"/>
         </scene>
+        <!--Photo Pre View Controller-->
+        <scene sceneID="uGi-sh-OW6">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="TCh-lW-Ul9" customClass="PhotoPreViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YJp-la-95t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s74-wx-qLS">
+                                <rect key="frame" x="37" y="67" width="300" height="533"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Y5x-Sp-IsJ"/>
+                                    <constraint firstAttribute="height" constant="533" id="ZlJ-rh-MWV"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jo-Ia-38m">
+                                <rect key="frame" x="37" y="29" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="I84-xa-j78"/>
+                                    <constraint firstAttribute="width" constant="30" id="nJA-x1-gz4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="49"/>
+                                <state key="normal" title="×">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="mappingCancelButton:" destination="TCh-lW-Ul9" eventType="touchUpInside" id="CLd-zg-gjs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUG-R0-nfL">
+                                <rect key="frame" x="93" y="614" width="189" height="39"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="JKH-Rw-sdx"/>
+                                    <constraint firstAttribute="width" constant="189" id="ZUf-dS-Mmv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="mappingSaveButton:" destination="TCh-lW-Ul9" eventType="touchUpInside" id="p8N-yE-SVR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kAK-e7-D2k" firstAttribute="trailing" secondItem="s74-wx-qLS" secondAttribute="trailing" constant="38" id="2wi-nz-cZ3"/>
+                            <constraint firstItem="kAK-e7-D2k" firstAttribute="bottom" secondItem="TUG-R0-nfL" secondAttribute="bottom" constant="14" id="HSh-V3-5fv"/>
+                            <constraint firstItem="kAK-e7-D2k" firstAttribute="trailing" secondItem="TUG-R0-nfL" secondAttribute="trailing" constant="93" id="V1z-ga-y9g"/>
+                            <constraint firstItem="9Jo-Ia-38m" firstAttribute="top" secondItem="kAK-e7-D2k" secondAttribute="top" constant="9" id="d4g-nh-xPl"/>
+                            <constraint firstItem="s74-wx-qLS" firstAttribute="top" secondItem="9Jo-Ia-38m" secondAttribute="bottom" constant="8" id="d5V-PL-Zoe"/>
+                            <constraint firstItem="9Jo-Ia-38m" firstAttribute="leading" secondItem="kAK-e7-D2k" secondAttribute="leading" constant="37" id="utD-97-Q0d"/>
+                            <constraint firstItem="TUG-R0-nfL" firstAttribute="top" secondItem="s74-wx-qLS" secondAttribute="bottom" constant="14" id="wim-LM-Q9z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kAK-e7-D2k"/>
+                    </view>
+                    <connections>
+                        <outlet property="mappingPreviewImage" destination="s74-wx-qLS" id="1nD-cM-7q8"/>
+                        <outlet property="mappingSaveButton" destination="TUG-R0-nfL" id="8wM-LT-hsq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ikk-aP-BzN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976.79999999999995" y="134.48275862068968"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="cameraButton" width="150" height="150"/>
+        <image name="cameraButton" width="75" height="75"/>
     </resources>
 </document>

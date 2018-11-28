@@ -30,13 +30,13 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
         UIImagePickerController.SourceType.camera){
         
         button.isHidden = true //ボタン非表示
-       // ButtonConf.isHidden = true
+        buttonConf!.floaty.isHidden = true
         
         mappingSaveImage = getScreenShot()
         performSegue(withIdentifier: "prevPhoto", sender: nil)
         
         button.isHidden = false //ボタン表示
-      //  ButtonConf.floaty.isHidden = false
+        buttonConf!.floaty.isHidden = false
         
     }
     else{

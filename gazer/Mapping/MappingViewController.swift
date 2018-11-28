@@ -10,7 +10,6 @@ import UIKit
 import ARKit
 import SceneKit
 import AVFoundation
-import SCLAlertView
 import Floaty
 
 class MappingViewController: UIViewController, ARSCNViewDelegate {
@@ -22,14 +21,30 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   var beforeSceneType: String?
   
   @IBOutlet weak var button: UIButton!
+    
+  var mappingSaveImage:UIImage! = nil
   
   @IBAction func pushCamera(_ sender: Any) {
-    button.isHidden = true //ボタン非表示
-    let image = getScreenShot()
-    UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
-    
-    SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
-    button.isHidden = false //ボタン表示
+    if UIImagePickerController.isSourceTypeAvailable(
+        UIImagePickerController.SourceType.camera){
+        
+        button.isHidden = true //ボタン非表示
+        buttonConf!.floaty.isHidden = true
+        
+        mappingSaveImage = getScreenShot()
+        performSegue(withIdentifier: "prevPhoto", sender: nil)
+        
+        button.isHidden = false //ボタン表示
+        buttonConf!.floaty.isHidden = false
+        
+    }
+    else{
+        
+        let alert = UIAlertController(title: "カメラへのアクセスが拒否されています。", message: "設定画面よりアクセスを許可してください。", preferredStyle:.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+    }
   }
   
   // スワイプしたらメニュー画面戻る
@@ -131,12 +146,19 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
       return nil
     }
     
-    UIGraphicsBeginImageContext(view.frame.size)
+    UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0)
     view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
     let image = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     
     return image
   }
+    
+    // PhotoPreViewControllerに受け渡し
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let photo = segue.destination as! PhotoPreViewController
+        photo.screenImage = mappingSaveImage
+        photo.addImage = 4
+    }
   
 }

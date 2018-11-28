@@ -22,10 +22,8 @@ class PhotoPreViewController: UIViewController {
     @IBOutlet weak var starSaveButton: UIButton!
     
     // プロマ
-/*
     @IBOutlet weak var mappingPreviewImage: UIImageView!
     @IBOutlet weak var mappingSaveButton: UIButton!
-*/
     
     // 動物園
     @IBAction func zooSaveButton(_ sender: UIButton) {
@@ -56,7 +54,6 @@ class PhotoPreViewController: UIViewController {
     }
     
     //プロマ
-/*
      @IBAction func mappingSaveButton(_ sender: UIButton) {
      UIImageWriteToSavedPhotosAlbum(screenImage!, nil, nil, nil)
      self.dismiss(animated: true, completion: nil)
@@ -64,7 +61,7 @@ class PhotoPreViewController: UIViewController {
      @IBAction func mappingCancelButton(_ sender: UIButton) {
      self.dismiss(animated: true, completion: nil)
      }
-*/
+    
     var screenImage:UIImage? = nil
     var addImage = 0
     
@@ -85,11 +82,11 @@ class PhotoPreViewController: UIViewController {
         case 3:// 星
             starPreviewImage.image = screenImage
             starSaveButton.layer.cornerRadius = 20.0 // 保存ボタン角丸角丸
-/*
+            
         case 4:// プロマ
              mappingPreviewImage.image = screenImage
              mappingSaveButton.layer.cornerRadius = 20.0 // 保存ボタン角丸
-*/
+
         default:// エラー
             print("PhotoPreviewControllerError")
         }

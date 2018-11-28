@@ -10,7 +10,6 @@ import UIKit
 import SceneKit
 import ARKit
 import CoreLocation
-import SCLAlertView
 import AVFoundation
 import EAIntroView
 

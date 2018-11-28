@@ -4,7 +4,6 @@
 target 'gazer' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod'SCLAlertView'
   pod'EAIntroView'
   pod 'Floaty'
 
@@ -26,6 +25,7 @@ post_install do |installer|
 end
   # pod'WSCoachMarksView'
   # pod'SwiftGifOrigin'
+  # pod'SCLAlertView'
 
   # Pods for gazer
 

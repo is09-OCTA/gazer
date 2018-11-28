@@ -10,7 +10,6 @@ import UIKit
 import ARKit
 import SceneKit
 import AVFoundation
-import SCLAlertView
 import EAIntroView
 
 class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate, EAIntroDelegate{

@@ -10,7 +10,6 @@ import UIKit
 import ARKit
 import SceneKit
 import AVFoundation
-import SCLAlertView
 import EAIntroView
 
 class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayerDelegate, EAIntroDelegate{
@@ -19,13 +18,27 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
     
     @IBOutlet weak var button: UIButton!
     
+    var aquaSaveImage:UIImage! = nil
+    
     @IBAction func pushCamera(_ sender: Any) {
-        button.isHidden = true //ボタン非表示
-        let image = getScreenShot()
-        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
-        
-        SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
-        button.isHidden = false //ボタン表示
+        if UIImagePickerController.isSourceTypeAvailable(
+            UIImagePickerController.SourceType.camera){
+            
+            button.isHidden = true //ボタン非表示
+            
+            aquaSaveImage = aquaGetScreenShot()
+            performSegue(withIdentifier: "prevPhoto", sender: nil)
+            
+            button.isHidden = false //ボタン表示
+            
+        }
+        else{
+            
+            let alert = UIAlertController(title: "カメラへのアクセスが拒否されています。", message: "設定画面よりアクセスを許可してください。", preferredStyle:.alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+        }
     }
     
     // スワイプしたらメニュー画面戻る
@@ -83,13 +96,15 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         print("垂直検知")
         
-        let randomNum = arc4random_uniform(2)
+        let randomNum = arc4random_uniform(3)
         var waterTankNode = collada2SCNNode(filepath: "AquariumModel/case.scn")
         
         if randomNum == 0 {
             waterTankNode = collada2SCNNode(filepath: "AquariumModel/set1.scn")
-        } else {
+        } else if randomNum == 1 {
             waterTankNode = collada2SCNNode(filepath: "AquariumModel/set2.scn")
+        } else {
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set3.scn")
         }
         
         node.addChildNode(waterTankNode)
@@ -160,16 +175,22 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
     }
     
     // Camera
-    private func getScreenShot() -> UIImage? {
+    private func aquaGetScreenShot() -> UIImage? {
         guard let view = self.view else {
             return nil
         }
         
-        UIGraphicsBeginImageContext(view.frame.size)
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0)
         view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         return image
+    }
+    // PhotoPreViewControllerに受け渡し
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let photo = segue.destination as! PhotoPreViewController
+        photo.screenImage = aquaSaveImage
+        photo.addImage = 2
     }
 }

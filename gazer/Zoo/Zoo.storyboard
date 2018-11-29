@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="31F-TK-1mo">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="31F-TK-1mo" customClass="ZooViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tzH-tv-4em" customClass="ARSCNView">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5GT-1R-Cc9">
@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIs-gv-2a8">
-                                <rect key="frame" x="16" y="656" width="50" height="50"/>
+                                <rect key="frame" x="16" y="587" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="LEI-7D-8uZ"/>
                                     <constraint firstAttribute="height" constant="50" id="aBY-VM-8pB"/>
@@ -34,7 +34,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkq-rZ-sxf">
-                                <rect key="frame" x="201" y="656" width="50" height="50"/>
+                                <rect key="frame" x="162" y="587" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="15y-5E-iK0"/>
                                     <constraint firstAttribute="width" constant="50" id="QWC-hd-H4t"/>
@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6M-YQ-cDB">
-                                <rect key="frame" x="348" y="656" width="50" height="50"/>
+                                <rect key="frame" x="309" y="587" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="NrR-8K-U7u"/>
                                     <constraint firstAttribute="width" constant="50" id="kZ8-iG-bFV"/>
@@ -80,6 +80,7 @@
                         <outlet property="sceneView" destination="5GT-1R-Cc9" id="iho-X4-dgs"/>
                         <segue destination="9KX-r4-d7m" kind="presentation" id="nik-wX-JF3"/>
                         <segue destination="qcl-iZ-tmZ" kind="presentation" id="2qN-8E-q2H"/>
+                        <segue destination="2fy-sv-3DZ" kind="presentation" identifier="prevPhoto" id="uGE-kC-aWr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="da6-Nm-gjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -91,12 +92,78 @@
             </objects>
             <point key="canvasLocation" x="186.95652173913044" y="141.84782608695653"/>
         </scene>
+        <!--Photo Pre View Controller-->
+        <scene sceneID="lpY-aa-g9K">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="2fy-sv-3DZ" customClass="PhotoPreViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BMJ-1g-eS6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hRY-cW-lxv">
+                                <rect key="frame" x="37" y="67" width="300" height="533"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="RzO-jF-SFh"/>
+                                    <constraint firstAttribute="height" constant="533" id="nQH-jV-PSn"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6a-wp-quB">
+                                <rect key="frame" x="37" y="29" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fsi-Yi-eRa"/>
+                                    <constraint firstAttribute="width" constant="30" id="ksm-gg-G1c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="49"/>
+                                <state key="normal" title="×">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="zooCancelButton:" destination="2fy-sv-3DZ" eventType="touchUpInside" id="QWX-zN-gU7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTZ-4g-6s8">
+                                <rect key="frame" x="93" y="614" width="189" height="39"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="189" id="M6q-ac-uTh"/>
+                                    <constraint firstAttribute="height" constant="39" id="TLH-gq-63P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="zooSaveButton:" destination="2fy-sv-3DZ" eventType="touchUpInside" id="nUs-bZ-Zsk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GBe-Su-bET" firstAttribute="trailing" secondItem="jTZ-4g-6s8" secondAttribute="trailing" constant="93" id="7E0-4k-IVD"/>
+                            <constraint firstItem="hRY-cW-lxv" firstAttribute="top" secondItem="w6a-wp-quB" secondAttribute="bottom" constant="8" id="8jL-YX-Ka8"/>
+                            <constraint firstItem="jTZ-4g-6s8" firstAttribute="top" secondItem="hRY-cW-lxv" secondAttribute="bottom" constant="14" id="EeJ-rc-xUn"/>
+                            <constraint firstItem="w6a-wp-quB" firstAttribute="leading" secondItem="GBe-Su-bET" secondAttribute="leading" constant="37" id="dNC-Oa-SYc"/>
+                            <constraint firstItem="w6a-wp-quB" firstAttribute="top" secondItem="GBe-Su-bET" secondAttribute="top" constant="9" id="dR6-99-hqI"/>
+                            <constraint firstItem="GBe-Su-bET" firstAttribute="bottom" secondItem="jTZ-4g-6s8" secondAttribute="bottom" constant="14" id="nML-s5-dvk"/>
+                            <constraint firstItem="GBe-Su-bET" firstAttribute="trailing" secondItem="hRY-cW-lxv" secondAttribute="trailing" constant="38" id="uCJ-hK-kvd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GBe-Su-bET"/>
+                    </view>
+                    <connections>
+                        <outlet property="zooPreviewImage" destination="hRY-cW-lxv" id="KJG-mQ-do4"/>
+                        <outlet property="zooSaveButton" destination="jTZ-4g-6s8" id="7rm-Qr-ifR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A86-4R-InN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="186.40000000000001" y="941.37931034482767"/>
+        </scene>
         <!--Object Modal View Controller-->
         <scene sceneID="HzY-id-arX">
             <objects>
                 <viewController storyboardIdentifier="ObjectModalViewController" id="qcl-iZ-tmZ" customClass="ObjectModalViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QJ0-gr-Os3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="rkM-ji-tBJ"/>
@@ -111,7 +178,7 @@
             <objects>
                 <viewController storyboardIdentifier="ZooModalViewController" id="9KX-r4-d7m" customClass="ZooModalViewController" customModule="gazer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hUe-iZ-lQp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>

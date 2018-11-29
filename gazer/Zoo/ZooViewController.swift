@@ -9,11 +9,10 @@
 import UIKit
 import ARKit
 import SceneKit
-import SCLAlertView
 import EAIntroView
 
-class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
-  
+class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
+    
     @IBOutlet weak var sceneView: ARSCNView!
     
     @IBOutlet weak var cameraButton: UIButton!
@@ -21,20 +20,31 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
     @IBOutlet weak var objectButton: UIButton!
     
     
+    var zooSaveImage:UIImage! = nil
+    
     @IBAction func pushCamera(_ sender: Any) {
-        cameraButton.isHidden = true //ボタン非表示
-        animalButton.isHidden = true
-        objectButton.isHidden = true
-        
-        let image = getScreenShot()
-        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
-        
-        SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
-        cameraButton.isHidden = false //ボタン表示
-        animalButton.isHidden = false
-        objectButton.isHidden = false
-
-        
+        if UIImagePickerController.isSourceTypeAvailable(
+            UIImagePickerController.SourceType.camera){
+            
+            cameraButton.isHidden = true //ボタン非表示
+            animalButton.isHidden = true
+            objectButton.isHidden = true
+            
+            zooSaveImage = zooGetScreenShot()
+            performSegue(withIdentifier: "prevPhoto", sender: nil)
+            
+            cameraButton.isHidden = false //ボタン表示
+            animalButton.isHidden = false
+            objectButton.isHidden = false
+            
+        }
+        else{
+            
+            let alert = UIAlertController(title: "カメラへのアクセスが拒否されています。", message: "設定画面よりアクセスを許可してください。", preferredStyle:.alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+        }
     }
     
     // スワイプしたらメニュー画面戻る
@@ -61,12 +71,12 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
     }
     
     
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         zooIntroView()
-    
+        
         sceneView.delegate = self
         // 特徴点表示
         sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints
@@ -91,6 +101,9 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
         if let result = hitTestResult.first {
             let node = ZooViewController.collada2SCNNode(filepath: filepath)
             node.position = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
+            if let camera = sceneView.pointOfView {
+                node.eulerAngles.y = camera.eulerAngles.y  // カメラのオイラー角と同じにする
+            }
             sceneView.scene.rootNode.addChildNode(node)
         }
     }
@@ -156,12 +169,12 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
     }
     
     // Camera
-    private func getScreenShot() -> UIImage? {
+    private func zooGetScreenShot() -> UIImage? {
         guard let view = self.view else {
             return nil
         }
         
-        UIGraphicsBeginImageContext(view.frame.size)
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0)
         view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -176,6 +189,13 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate{
     }
     
     func sessionInterruptionEnded(_ session: ARSession) {
+    }
+    
+    // PhotoPreViewControllerに受け渡し
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let photo = segue.destination as! PhotoPreViewController
+        photo.screenImage = zooSaveImage
+        photo.addImage = 1
     }
 }
 

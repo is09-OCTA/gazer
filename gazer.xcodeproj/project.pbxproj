@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		09E610C2A13CBB0FDFD880FF /* Pods_gazer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58BCAA8333C2D827F086D3E /* Pods_gazer.framework */; };
-		234C4D9D21882C300035B51C /* starData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234C4D9C21882C300035B51C /* starData.swift */; };
 		2356AADF215DC8A800EAA4E8 /* aqua_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2356AADE215DC8A800EAA4E8 /* aqua_bgm.mp3 */; };
 		2356AAE1215DC8BC00EAA4E8 /* star_bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2356AAE0215DC8BC00EAA4E8 /* star_bgm.mp3 */; };
 		235E628820902DF50054ACE2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235E628720902DF50054ACE2 /* CoreLocation.framework */; };
+		8D33D49F219D158B00BCE54F /* ButtonConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33D49E219D158B00BCE54F /* ButtonConf.swift */; };
+		8D4D482921AD49CA002D04BF /* BlackwavesVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D482821AD49CA002D04BF /* BlackwavesVideo.mp4 */; };
+		8D4D482B21AD49D3002D04BF /* FlowerVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D482A21AD49D3002D04BF /* FlowerVideo.mp4 */; };
+		8D4D482D21AD49DC002D04BF /* LifesurvivesVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D482C21AD49DC002D04BF /* LifesurvivesVideo.mp4 */; };
+		8D4D482F21AD4D8B002D04BF /* PictureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D482E21AD4D8B002D04BF /* PictureNode.swift */; };
 		8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */; };
 		8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */; };
 		8D4FC93C20FD8E0400A924E4 /* ZooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */; };
@@ -20,6 +24,7 @@
 		8D7FA1DA2193D1CF00E8781F /* DisneyCastleAnaUp.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */; };
 		8D7FA1E22193D35200E8781F /* MappingModel.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FA1E12193D35200E8781F /* MappingModel.scnassets */; };
 		8D7FA1E52193D4BB00E8781F /* DisneyCastleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7FA1E42193D4BB00E8781F /* DisneyCastleNode.swift */; };
+		B11E94AB21A2757400C0CD4A /* PhotoPreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11E94AA21A2757400C0CD4A /* PhotoPreViewController.swift */; };
 		B1246649218FE5C300782D31 /* ObjectImage in Resources */ = {isa = PBXBuildFile; fileRef = B1246648218FE5C300782D31 /* ObjectImage */; };
 		B12C3B7A218FDF4A00B5EFE3 /* ObjectModel in Resources */ = {isa = PBXBuildFile; fileRef = B12C3B79218FDF4900B5EFE3 /* ObjectModel */; };
 		B1D11250215CCD2700B8FBCD /* ZooImage in Resources */ = {isa = PBXBuildFile; fileRef = B1D1124F215CCD2700B8FBCD /* ZooImage */; };
@@ -34,13 +39,16 @@
 		C7691FC721900280000B6D5C /* AquariumModel in Resources */ = {isa = PBXBuildFile; fileRef = C7691FC621900280000B6D5C /* AquariumModel */; };
 		C788DA73209023700006ED25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA72209023700006ED25 /* AppDelegate.swift */; };
 		C788DA75209023700006ED25 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C788DA74209023700006ED25 /* art.scnassets */; };
-		C788DA77209023700006ED25 /* starViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA76209023700006ED25 /* starViewController.swift */; };
+		C788DA77209023700006ED25 /* StarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA76209023700006ED25 /* StarViewController.swift */; };
 		C788DA7A209023700006ED25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C788DA78209023700006ED25 /* Main.storyboard */; };
 		C788DA7C209023710006ED25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C788DA7B209023710006ED25 /* Assets.xcassets */; };
 		C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C788DA7D209023710006ED25 /* LaunchScreen.storyboard */; };
 		C788DA8A209023720006ED25 /* gazerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA89209023720006ED25 /* gazerTests.swift */; };
 		C788DA95209023720006ED25 /* gazerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788DA94209023720006ED25 /* gazerUITests.swift */; };
 		C7B940B62156113B00AC34FE /* ZooModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B940B52156113B00AC34FE /* ZooModalViewController.swift */; };
+		C7C32FAB219BC464003829DE /* Star.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C32FAA219BC464003829DE /* Star.storyboard */; };
+		C7C32FAF219BC8D2003829DE /* StarModel.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C7C32FAE219BC8D2003829DE /* StarModel.scnassets */; };
+		C7C32FB1219CF72F003829DE /* StarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C32FB0219CF72F003829DE /* StarData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,13 +69,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		234C4D9C21882C300035B51C /* starData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = starData.swift; sourceTree = "<group>"; };
 		2356AADE215DC8A800EAA4E8 /* aqua_bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = aqua_bgm.mp3; sourceTree = "<group>"; };
 		2356AAE0215DC8BC00EAA4E8 /* star_bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = star_bgm.mp3; sourceTree = "<group>"; };
 		235E628720902DF50054ACE2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		528B2B857C8684EC0C142CDD /* Pods_gazerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4886E88D8C79D7F80446BC /* Pods_gazerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC02151997CBC19E35D75DF /* Pods-gazer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gazer.release.xcconfig"; path = "Pods/Target Support Files/Pods-gazer/Pods-gazer.release.xcconfig"; sourceTree = "<group>"; };
+		8D33D49E219D158B00BCE54F /* ButtonConf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConf.swift; sourceTree = "<group>"; };
+		8D4D482821AD49CA002D04BF /* BlackwavesVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = BlackwavesVideo.mp4; sourceTree = "<group>"; };
+		8D4D482A21AD49D3002D04BF /* FlowerVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FlowerVideo.mp4; sourceTree = "<group>"; };
+		8D4D482C21AD49DC002D04BF /* LifesurvivesVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LifesurvivesVideo.mp4; sourceTree = "<group>"; };
+		8D4D482E21AD4D8B002D04BF /* PictureNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureNode.swift; sourceTree = "<group>"; };
 		8D4FC93520FD8C7600A924E4 /* Zoo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Zoo.storyboard; sourceTree = "<group>"; };
 		8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mapping.storyboard; sourceTree = "<group>"; };
 		8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +88,7 @@
 		8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = DisneyCastleAnaUp.mp4; sourceTree = "<group>"; };
 		8D7FA1E12193D35200E8781F /* MappingModel.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = MappingModel.scnassets; sourceTree = "<group>"; };
 		8D7FA1E42193D4BB00E8781F /* DisneyCastleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisneyCastleNode.swift; sourceTree = "<group>"; };
+		B11E94AA21A2757400C0CD4A /* PhotoPreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreViewController.swift; sourceTree = "<group>"; };
 		B1246648218FE5C300782D31 /* ObjectImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ObjectImage; sourceTree = "<group>"; };
 		B12C3B79218FDF4900B5EFE3 /* ObjectModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ObjectModel; sourceTree = "<group>"; };
 		B1D1124F215CCD2700B8FBCD /* ZooImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZooImage; sourceTree = "<group>"; };
@@ -92,7 +105,7 @@
 		C788DA6F209023700006ED25 /* gazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C788DA72209023700006ED25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C788DA74209023700006ED25 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		C788DA76209023700006ED25 /* starViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = starViewController.swift; sourceTree = "<group>"; };
+		C788DA76209023700006ED25 /* StarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarViewController.swift; sourceTree = "<group>"; };
 		C788DA79209023700006ED25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C788DA7B209023710006ED25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C788DA7E209023710006ED25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -104,6 +117,9 @@
 		C788DA94209023720006ED25 /* gazerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gazerUITests.swift; sourceTree = "<group>"; };
 		C788DA96209023720006ED25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7B940B52156113B00AC34FE /* ZooModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooModalViewController.swift; sourceTree = "<group>"; };
+		C7C32FAA219BC464003829DE /* Star.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Star.storyboard; sourceTree = "<group>"; };
+		C7C32FAE219BC8D2003829DE /* StarModel.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = StarModel.scnassets; sourceTree = "<group>"; };
+		C7C32FB0219CF72F003829DE /* StarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarData.swift; sourceTree = "<group>"; };
 		E675FB51F971A5FE35ABCC72 /* Pods-gazer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gazer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gazer/Pods-gazer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +170,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8D4D482621AD498D002D04BF /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				8D4D482C21AD49DC002D04BF /* LifesurvivesVideo.mp4 */,
+				8D4D482A21AD49D3002D04BF /* FlowerVideo.mp4 */,
+				8D4D482821AD49CA002D04BF /* BlackwavesVideo.mp4 */,
+				8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		8D4D482721AD49A1002D04BF /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				8D7FA1D72193D1B800E8781F /* Disney.mp3 */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		8D4FC93920FD8D7500A924E4 /* Zoo */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,12 +208,13 @@
 		8D4FC93A20FD8D7C00A924E4 /* Mapping */ = {
 			isa = PBXGroup;
 			children = (
+				8D4D482721AD49A1002D04BF /* Music */,
+				8D4D482621AD498D002D04BF /* Video */,
 				8D7FA1E32193D4A400E8781F /* Model */,
-				8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */,
-				8D7FA1D72193D1B800E8781F /* Disney.mp3 */,
 				8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */,
 				8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */,
 				8D7FA1E12193D35200E8781F /* MappingModel.scnassets */,
+				8D33D49E219D158B00BCE54F /* ButtonConf.swift */,
 			);
 			path = Mapping;
 			sourceTree = "<group>";
@@ -187,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				8D7FA1E42193D4BB00E8781F /* DisneyCastleNode.swift */,
+				8D4D482E21AD4D8B002D04BF /* PictureNode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,19 +274,18 @@
 			isa = PBXGroup;
 			children = (
 				8D4FC93920FD8D7500A924E4 /* Zoo */,
-				2356AAE0215DC8BC00EAA4E8 /* star_bgm.mp3 */,
 				C7109F7820FDB661009161A7 /* Aquarium */,
+				C7C32FA9219BC364003829DE /* Star */,
 				8D4FC93A20FD8D7C00A924E4 /* Mapping */,
 				C75A04B820B3D9C900B0F36C /* src */,
 				C788DA72209023700006ED25 /* AppDelegate.swift */,
 				C788DA74209023700006ED25 /* art.scnassets */,
-				C788DA76209023700006ED25 /* starViewController.swift */,
 				C788DA78209023700006ED25 /* Main.storyboard */,
 				B1EC2DFB20AEBBA400F61E2F /* ViewController.swift */,
-				234C4D9C21882C300035B51C /* starData.swift */,
 				C788DA7B209023710006ED25 /* Assets.xcassets */,
 				C788DA7D209023710006ED25 /* LaunchScreen.storyboard */,
 				C788DA80209023710006ED25 /* Info.plist */,
+				B11E94AA21A2757400C0CD4A /* PhotoPreViewController.swift */,
 			);
 			path = gazer;
 			sourceTree = "<group>";
@@ -270,6 +306,18 @@
 				C788DA96209023720006ED25 /* Info.plist */,
 			);
 			path = gazerUITests;
+			sourceTree = "<group>";
+		};
+		C7C32FA9219BC364003829DE /* Star */ = {
+			isa = PBXGroup;
+			children = (
+				2356AAE0215DC8BC00EAA4E8 /* star_bgm.mp3 */,
+				C7C32FAA219BC464003829DE /* Star.storyboard */,
+				C788DA76209023700006ED25 /* StarViewController.swift */,
+				C7C32FAE219BC8D2003829DE /* StarModel.scnassets */,
+				C7C32FB0219CF72F003829DE /* StarData.swift */,
+			);
+			path = Star;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,16 +439,21 @@
 				B12C3B7A218FDF4A00B5EFE3 /* ObjectModel in Resources */,
 				C72D19D321520E450079C65D /* Aquarium.storyboard in Resources */,
 				8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */,
+				C7C32FAB219BC464003829DE /* Star.storyboard in Resources */,
+				8D4D482921AD49CA002D04BF /* BlackwavesVideo.mp4 in Resources */,
 				C724D123218819420063139F /* FishModel in Resources */,
 				C788DA7F209023710006ED25 /* LaunchScreen.storyboard in Resources */,
 				B1D11250215CCD2700B8FBCD /* ZooImage in Resources */,
 				C745865B216727CE000A4FC6 /* ZooModel in Resources */,
+				8D4D482D21AD49DC002D04BF /* LifesurvivesVideo.mp4 in Resources */,
+				8D4D482B21AD49D3002D04BF /* FlowerVideo.mp4 in Resources */,
 				8D7FA1E22193D35200E8781F /* MappingModel.scnassets in Resources */,
 				C788DA7C209023710006ED25 /* Assets.xcassets in Resources */,
 				8D7FA1DA2193D1CF00E8781F /* DisneyCastleAnaUp.mp4 in Resources */,
 				8D4FC93620FD8C7600A924E4 /* Zoo.storyboard in Resources */,
 				2356AADF215DC8A800EAA4E8 /* aqua_bgm.mp3 in Resources */,
 				C788DA7A209023700006ED25 /* Main.storyboard in Resources */,
+				C7C32FAF219BC8D2003829DE /* StarModel.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,14 +502,12 @@
 				"${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework",
 				"${BUILT_PRODUCTS_DIR}/EARestrictedScrollView/EARestrictedScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EAIntroView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EARestrictedScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Floaty.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -473,15 +524,18 @@
 				C72D1A2E2155E3440079C65D /* CustomPresentationController.swift in Sources */,
 				B1D79970218A9FBF00E28D55 /* ObjectModalViewController.swift in Sources */,
 				B1EC2DFC20AEBBA400F61E2F /* ViewController.swift in Sources */,
+				8D33D49F219D158B00BCE54F /* ButtonConf.swift in Sources */,
 				8D7FA1E52193D4BB00E8781F /* DisneyCastleNode.swift in Sources */,
 				C75A04BA20B3D9EA00B0F36C /* decimalExpansion.swift in Sources */,
+				C7C32FB1219CF72F003829DE /* StarData.swift in Sources */,
+				8D4D482F21AD4D8B002D04BF /* PictureNode.swift in Sources */,
+				B11E94AB21A2757400C0CD4A /* PhotoPreViewController.swift in Sources */,
 				C70E7AA520D77FF900255FD3 /* AquariumViewController.swift in Sources */,
 				C7B940B62156113B00AC34FE /* ZooModalViewController.swift in Sources */,
-				C788DA77209023700006ED25 /* starViewController.swift in Sources */,
+				C788DA77209023700006ED25 /* StarViewController.swift in Sources */,
 				8D4FC93E20FD8E9000A924E4 /* MappingViewController.swift in Sources */,
 				C788DA73209023700006ED25 /* AppDelegate.swift in Sources */,
 				8D4FC93C20FD8E0400A924E4 /* ZooViewController.swift in Sources */,
-				234C4D9D21882C300035B51C /* starData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,13 +711,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BA4T8M2RT6;
+				DEVELOPMENT_TEAM = LLR2Y6RVR8;
 				INFOPLIST_FILE = gazer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-legal";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-kesk";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -679,13 +733,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BA4T8M2RT6;
+				DEVELOPMENT_TEAM = LLR2Y6RVR8;
 				INFOPLIST_FILE = gazer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-legal";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-kesk";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

@@ -10,48 +10,64 @@ import UIKit
 import ARKit
 import SceneKit
 import AVFoundation
-import SCLAlertView
 import Floaty
 
-class MappingViewController: UIViewController, ARSCNViewDelegate, FloatyDelegate {
+class MappingViewController: UIViewController, ARSCNViewDelegate {
   
   @IBOutlet var sceneView: ARSCNView!
-  var disneyCastleNode: DisneyCastleNode?
-  var floaty = Floaty()
+  var objectNode: Any?
+  var buttonConf: ButtonConf?
+  var sceneType: String?
+  var beforeSceneType: String?
+  
+  @IBOutlet weak var button: UIButton!
     
-    @IBOutlet weak var button: UIButton!
-    
-    @IBAction func pushCamera(_ sender: Any) {
-        button.isHidden = true //ボタン非表示
-        let image = getScreenShot()
-        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+  var mappingSaveImage:UIImage! = nil
+  
+  @IBAction func pushCamera(_ sender: Any) {
+    if UIImagePickerController.isSourceTypeAvailable(
+        UIImagePickerController.SourceType.camera){
         
-        SCLAlertView().showSuccess("お知らせ", subTitle: "写真を保存しました！", closeButtonTitle: "OK")
+        button.isHidden = true //ボタン非表示
+        buttonConf!.floaty.isHidden = true
+        
+        mappingSaveImage = getScreenShot()
+        performSegue(withIdentifier: "prevPhoto", sender: nil)
+        
         button.isHidden = false //ボタン表示
+        buttonConf!.floaty.isHidden = false
+        
     }
-    
-    // スワイプしたらメニュー画面戻る
-    @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
-        beforeMenu.modalTransitionStyle = .crossDissolve
-        present(beforeMenu, animated: true, completion: nil)
-        if disneyCastleNode?.audioPlayer.isPlaying == true { disneyCastleNode?.audioPlayer.stop() }
+    else{
+        
+        let alert = UIAlertController(title: "カメラへのアクセスが拒否されています。", message: "設定画面よりアクセスを許可してください。", preferredStyle:.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
     }
+  }
+  
+  // スワイプしたらメニュー画面戻る
+  @IBAction func retunMenuSwipe(_ sender: UISwipeGestureRecognizer) {
+    let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
+    beforeMenu.modalTransitionStyle = .crossDissolve
+    present(beforeMenu, animated: true, completion: nil)
+    if objectNode != nil {
+      if (objectNode as! DisneyCastleNode).audioPlayer.isPlaying == true { (objectNode as! DisneyCastleNode).audioPlayer.stop() }
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Set the view's delegate
     sceneView.delegate = self as ARSCNViewDelegate
     
-    // Create a new scene
     let scene = SCNScene()
     
-    // Set the scene to the view
     sceneView.scene = scene
-    Floaty.global.rtlMode = true
-    NodeSelectionButton()
+    buttonConf = ButtonConf()
+    self.view.addSubview((buttonConf?.NodeSelectionButton(mappingViewController: self))!)
     self.registerGestureRecognizer()
   }
   
@@ -59,14 +75,13 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, FloatyDelegate
     super.viewWillAppear(animated)
     
     let configuration = ARWorldTrackingConfiguration()
-    configuration.planeDetection = .horizontal
+    configuration.planeDetection = [.horizontal,.vertical]
     
     sceneView.session.run(configuration)
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-    
     sceneView.session.pause()
   }
   
@@ -78,82 +93,72 @@ class MappingViewController: UIViewController, ARSCNViewDelegate, FloatyDelegate
   }
   
   @objc func tapped(sender: UITapGestureRecognizer) {
-    // すでに追加済みであれば無視
-    if self.disneyCastleNode != nil {
+    var nodePosition: SCNVector3?
+    var nodeEulerAnglesY: Float?
+    
+    
+    // シーン未選択、前回のシーンと一致であれば無視
+    if sceneType == "PictureNode" {
+      
+    } else if (beforeSceneType == sceneType) || (self.sceneType == nil) {
       return
     }
-    //self.addItem()
+    
+    // sceneView上でタップした座標を検出
+    let location = sender.location(in: sceneView)
+    //現実座標取得
+    let hitTestResult = sceneView.hitTest(location, types: .existingPlane)
+    //アンラップ
+    if let result = hitTestResult.first {
+      nodePosition = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
+      if let camera = sceneView.pointOfView {
+        nodeEulerAnglesY = camera.eulerAngles.y  // カメラのオイラー角と同じにする
+      }
+      self.addItem(position: nodePosition!, nodeEulerAnglesY: nodeEulerAnglesY!)
+    }
+    
   }
-  private func addItem() {
-    disneyCastleNode = DisneyCastleNode()
-    sceneView.scene.rootNode.addChildNode(disneyCastleNode!)
+  
+  private func addItem(position: SCNVector3,nodeEulerAnglesY: Float) {
+    if (sceneType != "PictureNode") || (sceneView.scene.rootNode.childNodes.filter({ $0.name == "pictureNode" }).count == 0){
+      sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
+        node.removeFromParentNode()
+      }
+    }
+    switch sceneType {
+    case "DisneyCastleNode":
+      objectNode = DisneyCastleNode(position: position, nodeEulerAnglesY: nodeEulerAnglesY)
+      sceneView.scene.rootNode.addChildNode(objectNode! as! DisneyCastleNode)
+    case "PictureNode":
+      let pictureNode = PictureNode(position: position, nodeEulerAnglesY: nodeEulerAnglesY)
+      pictureNode.name = "pictureNode"
+      sceneView.scene.rootNode.addChildNode(pictureNode)
+    default:
+      break
+    }
+    beforeSceneType = sceneType
   }
   
   
-    // Camera
-    private func getScreenShot() -> UIImage? {
-        guard let view = self.view else {
-            return nil
-        }
-        
-        UIGraphicsBeginImageContext(view.frame.size)
-        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return image
+  // Camera
+  private func getScreenShot() -> UIImage? {
+    guard let view = self.view else {
+      return nil
+    }
+    
+    UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0)
+    view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return image
+  }
+    
+    // PhotoPreViewControllerに受け渡し
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let photo = segue.destination as! PhotoPreViewController
+        photo.screenImage = mappingSaveImage
+        photo.addImage = 4
     }
   
-  func NodeSelectionButton(){
-    self.floaty.buttonImage = UIImage(named: "MappingMenu2")
-    self.floaty.paddingX = 16
-    self.floaty.paddingY = 30
-    self.floaty.buttonColor = UIColor.init(white: 1, alpha: 0)
-    self.floaty.size = 50
-  
-    let item = FloatyItem()
-    item.buttonColor = UIColor.init(red: 1, green: 1, blue: 0.6, alpha: 1)
-    //item.icon = UIImage(named: "castle")
-    item.title = "Scene1-1"
-    item.handler = {item in
-      
-    }
-
-    self.floaty.addItem(item: item)    
-    let item4 = FloatyItem()
-    item4.buttonColor = UIColor.init(red: 1, green: 1, blue: 0.6, alpha: 1)
-    //item4.icon = UIImage(named: "castle")
-    item4.title = "Scene1-2"
-    item4.handler = {item in
-      
-    }
-
-    self.floaty.addItem(item: item4)
-    
-    let item2 = FloatyItem()
-    item2.buttonColor = UIColor.init(red: 0.6, green: 0.8, blue: 1, alpha: 1)
-    //item2.icon = UIImage(named: "siro")
-    item2.title = "Scene2-1"
-    self.floaty.addItem(item: item2)
-    
-    let item3 = FloatyItem()
-    item3.buttonColor = UIColor.init(red: 0.6, green: 0.8, blue: 1, alpha: 1)
-    //item3.icon = UIImage(named: "siro")
-    item3.title = "Scene2-2"
-    self.floaty.addItem(item: item3)
-
-    let item5 = FloatyItem()
-    item5.buttonColor = UIColor.init(red: 1, green: 0.6, blue: 0.6, alpha: 1)
-    //item5.icon = UIImage(named: "test")
-    item5.title = "Scene3-1"
-    self.floaty.addItem(item: item5)
-    
-    let item6 = FloatyItem()
-    item6.buttonColor = UIColor.init(red: 1, green: 0.6, blue: 0.6, alpha: 1)
-    //item6.icon = UIImage(named: "test")
-    item6.title = "Scene3-2"
-    self.floaty.addItem(item: item6)
-    
-    self.view.addSubview(floaty)
-  }
 }

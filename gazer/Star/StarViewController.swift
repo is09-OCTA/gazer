@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  StarViewController.swift
 //  gazer
 //
 //  Created by Keisuke Kitamura on 2018/04/25.
@@ -154,24 +154,11 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         // Release any cached data, images, etc that aren't in use.
     }
 
-    // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
-    
-    func setExposureTargetBias(_ bias: Float,
-                               completionHandler handler: ((CMTime) -> Void)? = nil){
+    func setExposureTargetBias(_ bias: Float, completionHandler handler: ((CMTime) -> Void)? = nil){
         return;
     }
 
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        
         
         // ARKit 設定時にカメラからの画像が空で渡されるのでその場合は処理しない
         guard let cuptureImage = sceneView.session.currentFrame?.capturedImage else {
@@ -194,7 +181,6 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         }
         
     }
-    
     
     // EAIntroView
     func starIntroView(){
@@ -237,7 +223,7 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             // AVAudioPlayerのデリゲートをセット
             audioPlayer.delegate = self
             
-            //ループ再生
+            // ループ再生
             audioPlayer.numberOfLoops = -1
             
             // 音声の再生
@@ -260,7 +246,7 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             locationManager.stopUpdatingHeading()
         }
     }
-//    方位2
+    // 方位2
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined:
@@ -279,7 +265,7 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         locationManager.startUpdatingLocation()
         locationManager.stopUpdatingHeading()
     }
-//    方位2ここまで
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.first
         let latitude = location?.coordinate.latitude
@@ -359,8 +345,6 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             star.append(starNode)
             // 表示
             self.sceneView.scene.rootNode.addChildNode(starNode)
-            
-//            let camera = sceneView.pointOfView
             let str = stars[index].jpName
             let depth:CGFloat = 0.01
             let text = SCNText(string: str, extrusionDepth: depth)
@@ -368,7 +352,7 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             textNode = SCNNode(geometry: text)
             let (min, max) = (textNode.boundingBox)
             let x = CGFloat(max.x - min.x)
-//            let y = CGFloat(max.y - min.y)
+            
             //オブジェクト向き調整 -4で180度反転
             let z = element[4] * (Double.pi / 180) - 4
             let y = element[3] * (Double.pi / 180)
@@ -376,6 +360,7 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             textNode.position = SCNVector3((element[0] - Double(x)),element[1],element[2])
             sceneView.scene.rootNode.addChildNode(textNode)
         }
+        
     }
     
     // Camera

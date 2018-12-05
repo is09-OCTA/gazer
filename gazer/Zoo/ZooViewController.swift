@@ -85,6 +85,9 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
         // tapアクション追加
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tapView))
         sceneView.addGestureRecognizer(gesture)
+        
+        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(longTapView))
+        sceneView.addGestureRecognizer(longTap)
     }
     
     @objc func tapView(sender: UITapGestureRecognizer) {
@@ -107,6 +110,18 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
             sceneView.scene.rootNode.addChildNode(node)
         }
     }
+
+    @objc func longTapView(_ sender: UILongPressGestureRecognizer){
+        if sender.state == .began {
+            let location = sender.location(in: sceneView)
+            let hitTest  = sceneView.hitTest(location)
+            if let result = hitTest.first  {
+                // タップしたとき、モデルが感知できればモデルを削除
+                result.node.removeFromParentNode();
+            }
+        }
+    }
+    
     
     // collada2SCNNode
     class func collada2SCNNode(filepath:String) -> SCNNode {

@@ -96,7 +96,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
         // sceneView上でタップした座標を検出
         let location = sender.location(in: sceneView)
         //現実座標取得
-        let hitTestResult = sceneView.hitTest(location, types: .existingPlane)
+        let hitTestResult = sceneView.hitTest(location, types: .existingPlaneUsingExtent)
         //アンラップ
         if let result = hitTestResult.first {
             let node = ZooViewController.collada2SCNNode(filepath: filepath)

@@ -10,6 +10,7 @@ import UIKit
 import ARKit
 import SceneKit
 import EAIntroView
+import AudioToolbox
 
 class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
     
@@ -116,12 +117,20 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
             let location = sender.location(in: sceneView)
             let hitTest  = sceneView.hitTest(location)
             if let result = hitTest.first  {
-                // タップしたとき、モデルが感知できればモデルを削除
-                result.node.removeFromParentNode();
+                if result.node.name != nil {
+                    // タップしたとき、モデルが感知できればモデルを削除
+                    result.node.removeFromParentNode();
+                    shortVibrate()
+                }
+                
             }
         }
     }
     
+    func shortVibrate() {
+        AudioServicesPlaySystemSound(1519);
+        AudioServicesDisposeSystemSoundID(1519);
+    }
     
     // collada2SCNNode
     class func collada2SCNNode(filepath:String) -> SCNNode {

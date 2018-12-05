@@ -113,17 +113,14 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
 
     @objc func longTapView(_ sender: UILongPressGestureRecognizer){
         if sender.state == .began {
-            // 開始は認知される
-            print("LongTap")
-        }
-        else if sender.state == .ended {
-            /*
-            // sceneView上でタップした座標を検出
             let location = sender.location(in: sceneView)
-            let targetNode = sceneView.hitTest(location, options: nil).first?.node
-            */
+            let hitTest  = sceneView.hitTest(location)
+            if let result = hitTest.first  {
+                result.node.removeFromParentNode();
+            }
         }
     }
+    
     
     // collada2SCNNode
     class func collada2SCNNode(filepath:String) -> SCNNode {

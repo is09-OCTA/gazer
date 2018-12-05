@@ -85,6 +85,9 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
         // tapアクション追加
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tapView))
         sceneView.addGestureRecognizer(gesture)
+        
+        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(longTapView))
+        sceneView.addGestureRecognizer(longTap)
     }
     
     @objc func tapView(sender: UITapGestureRecognizer) {
@@ -105,6 +108,20 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
                 node.eulerAngles.y = camera.eulerAngles.y  // カメラのオイラー角と同じにする
             }
             sceneView.scene.rootNode.addChildNode(node)
+        }
+    }
+
+    @objc func longTapView(_ sender: UILongPressGestureRecognizer){
+        if sender.state == .began {
+            // 開始は認知される
+            print("LongTap")
+        }
+        else if sender.state == .ended {
+            /*
+            // sceneView上でタップした座標を検出
+            let location = sender.location(in: sceneView)
+            let targetNode = sceneView.hitTest(location, options: nil).first?.node
+            */
         }
     }
     

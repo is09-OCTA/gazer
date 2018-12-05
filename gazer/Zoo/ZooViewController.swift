@@ -116,6 +116,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
             let location = sender.location(in: sceneView)
             let hitTest  = sceneView.hitTest(location)
             if let result = hitTest.first  {
+                // タップしたとき、モデルが感知できればモデルを削除
                 result.node.removeFromParentNode();
             }
         }

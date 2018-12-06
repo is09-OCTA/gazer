@@ -43,6 +43,9 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
     let batImage:UIImage = UIImage(named: "ZooImage/Bat")!
     let elephantImage:UIImage = UIImage(named: "ZooImage/Elephant")!
     let chimpanzeeImage:UIImage = UIImage(named: "ZooImage/Chimpanzee")!
+    let anteaterImage:UIImage = UIImage(named: "ZooImage/Anteater")!
+    let armadiloImage:UIImage = UIImage(named: "ZooImage/Armadilo")!
+    let penguinImage:UIImage = UIImage(named: "ZooImage/Penguin")!
     
     // ボタン配置変数
     var prevButton:CGFloat = 20
@@ -374,6 +377,39 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 scrollView.addSubview(chimpanzeeButton)
                 
                 chimpanzeeButton.addTarget(self, action: #selector(ZooModalViewController.buttonEvent(sender: )), for: .touchUpInside)
+                
+                // 右上
+                let armadilloButton = UIButton()
+                armadilloButton.setBackgroundImage(armadiloImage, for: [])
+                armadilloButton.layer.cornerRadius = 5
+                armadilloButton.layer.masksToBounds  = true
+                armadilloButton.frame = CGRect(x: ((width / 30) * 4  + buttonSide) + widthPage, y: (width / 30) * 4, width: buttonSide, height: buttonSide)
+                armadilloButton.setTitle("Armadillo", for: .disabled)
+                scrollView.addSubview(armadilloButton)
+                
+                armadilloButton.addTarget(self, action: #selector(ZooModalViewController.buttonEvent(sender: )), for: .touchUpInside)
+                
+                // 左下
+                let anteaterButton = UIButton()
+                anteaterButton.setBackgroundImage(anteaterImage, for: [])
+                anteaterButton.layer.cornerRadius = 5
+                anteaterButton.layer.masksToBounds  = true
+                anteaterButton.frame = CGRect(x: ((width / 30) * 2) + widthPage, y: (width / 30) * 6 + buttonSide, width: buttonSide, height: buttonSide)
+                anteaterButton.setTitle("Anteater", for: .disabled)
+                scrollView.addSubview(anteaterButton)
+                
+                anteaterButton.addTarget(self, action: #selector(ZooModalViewController.buttonEvent(sender: )), for: .touchUpInside)
+                
+                // 右下
+                let penguinButton = UIButton()
+                penguinButton.setBackgroundImage(penguinImage, for: [])
+                penguinButton.layer.cornerRadius = 5
+                penguinButton.layer.masksToBounds  = true
+                penguinButton.frame = CGRect(x: ((width / 30) * 4 + buttonSide) + widthPage, y: (width / 30) * 6 + buttonSide, width: buttonSide, height: buttonSide)
+                penguinButton.setTitle("Penguin", for: .disabled)
+                scrollView.addSubview(penguinButton)
+                
+                penguinButton.addTarget(self, action: #selector(ZooModalViewController.buttonEvent(sender: )), for: .touchUpInside)
             }
         }
         

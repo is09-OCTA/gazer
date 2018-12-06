@@ -43,6 +43,9 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
     let batImage:UIImage = UIImage(named: "ZooImage/Bat")!
     let elephantImage:UIImage = UIImage(named: "ZooImage/Elephant")!
     let chimpanzeeImage:UIImage = UIImage(named: "ZooImage/Chimpanzee")!
+    let anteaterImage:UIImage = UIImage(named: "ZooImage/Anteater")!
+    let armadiloImage:UIImage = UIImage(named: "ZooImage/Armadilo")!
+    let penguinImage:UIImage = UIImage(named: "ZooImage/Penguin")!
     
     // ボタン配置変数
     var prevButton:CGFloat = 20
@@ -377,7 +380,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 
                 // 右上
                 let armadilloButton = UIButton()
-                armadilloButton.setBackgroundImage(chimpanzeeImage, for: [])
+                armadilloButton.setBackgroundImage(armadiloImage, for: [])
                 armadilloButton.layer.cornerRadius = 5
                 armadilloButton.layer.masksToBounds  = true
                 armadilloButton.frame = CGRect(x: ((width / 30) * 4  + buttonSide) + widthPage, y: (width / 30) * 4, width: buttonSide, height: buttonSide)
@@ -388,7 +391,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 
                 // 左下
                 let anteaterButton = UIButton()
-                anteaterButton.setBackgroundImage(chimpanzeeImage, for: [])
+                anteaterButton.setBackgroundImage(anteaterImage, for: [])
                 anteaterButton.layer.cornerRadius = 5
                 anteaterButton.layer.masksToBounds  = true
                 anteaterButton.frame = CGRect(x: ((width / 30) * 2) + widthPage, y: (width / 30) * 6 + buttonSide, width: buttonSide, height: buttonSide)
@@ -399,7 +402,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 
                 // 右下
                 let penguinButton = UIButton()
-                penguinButton.setBackgroundImage(chimpanzeeImage, for: [])
+                penguinButton.setBackgroundImage(penguinImage, for: [])
                 penguinButton.layer.cornerRadius = 5
                 penguinButton.layer.masksToBounds  = true
                 penguinButton.frame = CGRect(x: ((width / 30) * 4 + buttonSide) + widthPage, y: (width / 30) * 6 + buttonSide, width: buttonSide, height: buttonSide)

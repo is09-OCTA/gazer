@@ -99,6 +99,8 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
         // AppDelegateのインスタンスを取得
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let filepath = appDelegate.path
+        var soundName = filepath.replacingOccurrences(of:"ZooModel/", with:"")
+        soundName = soundName.replacingOccurrences(of: ".scn", with: "")
         
         // sceneView上でタップした座標を検出
         let location = sender.location(in: sceneView)
@@ -112,6 +114,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
                 node.eulerAngles.y = camera.eulerAngles.y  // カメラのオイラー角と同じにする
             }
             sceneView.scene.rootNode.addChildNode(node)
+            playSound(name: soundName)
         }
     }
 
@@ -125,7 +128,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
                     result.node.removeFromParentNode();
                     shortVibrate()
                 }
-                
+
             }
         }
     }
@@ -237,7 +240,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
             
             // AVAudioPlayerのデリゲートをセット
-            audioPlayer.delegate = self as! AVAudioPlayerDelegate
+            audioPlayer.delegate = self as? AVAudioPlayerDelegate
             
             // 音声の再生
             audioPlayer.play()

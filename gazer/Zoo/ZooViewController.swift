@@ -11,6 +11,7 @@ import ARKit
 import SceneKit
 import EAIntroView
 import AudioToolbox
+import AVFoundation
 
 class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
     
@@ -20,6 +21,8 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
     @IBOutlet weak var animalButton: UIButton!
     @IBOutlet weak var objectButton: UIButton!
     
+    //音楽インスタンス
+    var audioPlayer: AVAudioPlayer!
     
     var zooSaveImage:UIImage! = nil
     
@@ -96,6 +99,8 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
         // AppDelegateのインスタンスを取得
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let filepath = appDelegate.path
+        var soundName = filepath.replacingOccurrences(of:"ZooModel/", with:"")
+        soundName = soundName.replacingOccurrences(of: ".scn", with: "")
         
         // sceneView上でタップした座標を検出
         let location = sender.location(in: sceneView)
@@ -109,6 +114,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
                 node.eulerAngles.y = camera.eulerAngles.y  // カメラのオイラー角と同じにする
             }
             sceneView.scene.rootNode.addChildNode(node)
+            playSound(name: soundName)
         }
     }
 
@@ -122,7 +128,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
                     result.node.removeFromParentNode();
                     shortVibrate()
                 }
-                
+
             }
         }
     }
@@ -220,6 +226,26 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
         let photo = segue.destination as! PhotoPreViewController
         photo.screenImage = zooSaveImage
         photo.addImage = 1
+    }
+    
+    //BGM
+    func playSound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+        
+        do {
+            // AVAudioPlayerのインスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            
+            // AVAudioPlayerのデリゲートをセット
+            audioPlayer.delegate = self as? AVAudioPlayerDelegate
+            
+            // 音声の再生
+            audioPlayer.play()
+        } catch {
+        }
     }
 }
 

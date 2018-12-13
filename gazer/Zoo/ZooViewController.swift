@@ -74,8 +74,6 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
         present(modalViewController!, animated: true, completion: nil)
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -99,6 +97,7 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
         // AppDelegateのインスタンスを取得
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let filepath = appDelegate.path
+        //パスを音楽ファイル名へ変換
         var soundName = filepath.replacingOccurrences(of:"ZooModel/", with:"")
         soundName = soundName.replacingOccurrences(of: ".scn", with: "")
         

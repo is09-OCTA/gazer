@@ -15,35 +15,37 @@ import Floaty
 class MappingViewController: UIViewController, ARSCNViewDelegate {
   
   @IBOutlet var sceneView: ARSCNView!
-  var objectNode: Any?
+  //var objectNode: SCNNode?
   var buttonConf: ButtonConf?
   var sceneType: String?
   var beforeSceneType: String?
+  var disneyCastleNode: DisneyCastleNode?
+  var boxNode: BoxNode?
   
   @IBOutlet weak var button: UIButton!
-    
+  
   var mappingSaveImage:UIImage! = nil
   
   @IBAction func pushCamera(_ sender: Any) {
     if UIImagePickerController.isSourceTypeAvailable(
-        UIImagePickerController.SourceType.camera){
-        
-        button.isHidden = true //ボタン非表示
-        buttonConf!.floaty.isHidden = true
-        
-        mappingSaveImage = getScreenShot()
-        performSegue(withIdentifier: "prevPhoto", sender: nil)
-        
-        button.isHidden = false //ボタン表示
-        buttonConf!.floaty.isHidden = false
-        
+      UIImagePickerController.SourceType.camera){
+      
+      button.isHidden = true //ボタン非表示
+      buttonConf!.floaty.isHidden = true
+      
+      mappingSaveImage = getScreenShot()
+      performSegue(withIdentifier: "prevPhoto", sender: nil)
+      
+      button.isHidden = false //ボタン表示
+      buttonConf!.floaty.isHidden = false
+      
     }
     else{
-        
-        let alert = UIAlertController(title: "カメラへのアクセスが拒否されています。", message: "設定画面よりアクセスを許可してください。", preferredStyle:.alert)
-        
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(okAction)
+      
+      let alert = UIAlertController(title: "カメラへのアクセスが拒否されています。", message: "設定画面よりアクセスを許可してください。", preferredStyle:.alert)
+      
+      let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+      alert.addAction(okAction)
     }
   }
   
@@ -53,9 +55,7 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     let beforeMenu = storyboard.instantiateViewController(withIdentifier:"menu")
     beforeMenu.modalTransitionStyle = .crossDissolve
     present(beforeMenu, animated: true, completion: nil)
-    if objectNode != nil {
-      if (objectNode as! DisneyCastleNode).audioPlayer.isPlaying == true { (objectNode as! DisneyCastleNode).audioPlayer.stop() }
-    }
+    musicStop()
   }
   
   override func viewDidLoad() {
@@ -121,24 +121,38 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   
   private func addItem(position: SCNVector3,nodeEulerAnglesY: Float) {
     if (sceneType != "PictureNode") || (sceneView.scene.rootNode.childNodes.filter({ $0.name == "pictureNode" }).count == 0){
+      musicStop()
       sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
         node.removeFromParentNode()
       }
     }
     switch sceneType {
     case "DisneyCastleNode":
-      objectNode = DisneyCastleNode(position: position, nodeEulerAnglesY: nodeEulerAnglesY)
-      sceneView.scene.rootNode.addChildNode(objectNode! as! DisneyCastleNode)
+      disneyCastleNode = DisneyCastleNode(position: position, nodeEulerAnglesY: nodeEulerAnglesY)
+      disneyCastleNode?.name = "disneyCastleNode"
+      sceneView.scene.rootNode.addChildNode(disneyCastleNode!)
     case "PictureNode":
       let pictureNode = PictureNode(position: position, nodeEulerAnglesY: nodeEulerAnglesY)
       pictureNode.name = "pictureNode"
       sceneView.scene.rootNode.addChildNode(pictureNode)
+    case "BoxNode":
+      boxNode = BoxNode(position: position, nodeEulerAnglesY: nodeEulerAnglesY)
+      boxNode?.name = "boxNode"
+      boxNode?.playVideo()
+      sceneView.scene.rootNode.addChildNode(boxNode!)
     default:
       break
     }
     beforeSceneType = sceneType
   }
   
+  func musicStop() {
+    if sceneView.scene.rootNode.childNodes.filter({ $0.name == "disneyCastleNode" }).count > 0 {
+      disneyCastleNode?.audioPlayer.stop()
+    } else if sceneView.scene.rootNode.childNodes.filter({ $0.name == "boxNode" }).count > 0 {
+      boxNode?.audioPlayer.stop()
+    }
+  }
   
   // Camera
   private func getScreenShot() -> UIImage? {
@@ -153,12 +167,12 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     
     return image
   }
-    
-    // PhotoPreViewControllerに受け渡し
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let photo = segue.destination as! PhotoPreViewController
-        photo.screenImage = mappingSaveImage
-        photo.addImage = 4
-    }
+  
+  // PhotoPreViewControllerに受け渡し
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let photo = segue.destination as! PhotoPreViewController
+    photo.screenImage = mappingSaveImage
+    photo.addImage = 4
+  }
   
 }

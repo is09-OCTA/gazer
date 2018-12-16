@@ -84,21 +84,9 @@ class PictureNode: SCNNode {
     return material
   }
   
-  // scnファイルをnode化
-  public class func collada2SCNNode(filepath:String) -> SCNNode {
-    let node = SCNNode()
-    let scene = SCNScene(named: filepath)
-    let nodeArray = scene!.rootNode.childNodes
-    
-    for childNode in nodeArray {
-      node.addChildNode(childNode as SCNNode)
-    }
-    return node
-  }
   // サウンド再生メソッド
   func playSound(name: String) {
     guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
-      print("音源ファイルが見つかりません")
       return
     }
     

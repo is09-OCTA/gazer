@@ -63,6 +63,9 @@ final class ButtonConf: FloatyDelegate {
     item5.buttonColor = UIColor.init(red: 1, green: 0.6, blue: 0.6, alpha: 1)
     //item5.icon = UIImage(named: "test")
     item5.title = "Scene3-1"
+    item5.handler = {item in
+      mappingViewController.sceneType = "BoxNode"
+    }
     self.floaty.addItem(item: item5)
     
     let item6 = FloatyItem()

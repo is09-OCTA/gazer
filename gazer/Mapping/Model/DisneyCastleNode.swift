@@ -47,12 +47,9 @@ class DisneyCastleNode: SCNNode {
     // AVPlayerからSKVideoNodeの生成する
     let skNode = SKVideoNode(avPlayer: avPlayer)
     // シーンと同じサイズとし、中央に配置する
-    //skNode.position = CGPoint(x: (skScene.size.width / 2.0) + 22, y: (skScene.size.height / 2.0) - 40)  //フルバージョン
     skNode.position = CGPoint(x: (skScene.size.width / 2.0) + 45, y: (skScene.size.height / 2.0) - 20)
     skNode.size.height = skScene.size.height
     skNode.size.width = skScene.size.width + 300
-    //skNode.yScale = -1.07 //フルバージョン
-    //skNode.xScale = 0.8 //フルバージョン
     skNode.yScale = -0.95
     skNode.xScale = 0.9
     skNode.zRotation = CGFloat(angle)
@@ -69,21 +66,9 @@ class DisneyCastleNode: SCNNode {
     return material
   }
   
-  // scnファイルをnode化
-  public class func collada2SCNNode(filepath:String) -> SCNNode {
-    let node = SCNNode()
-    let scene = SCNScene(named: filepath)
-    let nodeArray = scene!.rootNode.childNodes
-    
-    for childNode in nodeArray {
-      node.addChildNode(childNode as SCNNode)
-    }
-    return node
-  }
   // サウンド再生メソッド
   func playSound(name: String) {
     guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
-      print("音源ファイルが見つかりません")
       return
     }
     

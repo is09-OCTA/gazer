@@ -43,7 +43,6 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     else{
       
       let alert = UIAlertController(title: "カメラへのアクセスが拒否されています。", message: "設定画面よりアクセスを許可してください。", preferredStyle:.alert)
-      
       let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
       alert.addAction(okAction)
     }

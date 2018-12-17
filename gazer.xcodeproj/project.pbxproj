@@ -34,6 +34,7 @@
 		8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */; };
 		8D4FC93C20FD8E0400A924E4 /* ZooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */; };
 		8D4FC93E20FD8E9000A924E4 /* MappingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */; };
+		8D5EE95021C744AA0008CADC /* Scene3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D5EE94F21C744AA0008CADC /* Scene3.mp3 */; };
 		8D7FA1D82193D1B800E8781F /* Disney.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FA1D72193D1B800E8781F /* Disney.mp3 */; };
 		8D7FA1DA2193D1CF00E8781F /* DisneyCastleAnaUp.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */; };
 		8D7FA1E22193D35200E8781F /* MappingModel.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D7FA1E12193D35200E8781F /* MappingModel.scnassets */; };
@@ -104,7 +105,6 @@
 		8D49AC8821C6A30400725B9D /* Box.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Box.mp4; sourceTree = "<group>"; };
 		8D49AC8A21C6A31800725B9D /* BoxNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxNode.swift; sourceTree = "<group>"; };
 		8D49AC8D21C6A37A00725B9D /* NodeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeExtension.swift; sourceTree = "<group>"; };
-		8D49AC8F21C6A3CB00725B9D /* Scene3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Scene3.mp3; sourceTree = "<group>"; };
 		8D4D482821AD49CA002D04BF /* BlackwavesVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = BlackwavesVideo.mp4; sourceTree = "<group>"; };
 		8D4D482A21AD49D3002D04BF /* FlowerVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = FlowerVideo.mp4; sourceTree = "<group>"; };
 		8D4D482C21AD49DC002D04BF /* LifesurvivesVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LifesurvivesVideo.mp4; sourceTree = "<group>"; };
@@ -113,6 +113,7 @@
 		8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mapping.storyboard; sourceTree = "<group>"; };
 		8D4FC93B20FD8E0400A924E4 /* ZooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooViewController.swift; sourceTree = "<group>"; };
 		8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingViewController.swift; sourceTree = "<group>"; };
+		8D5EE94F21C744AA0008CADC /* Scene3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Scene3.mp3; sourceTree = "<group>"; };
 		8D7FA1D72193D1B800E8781F /* Disney.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Disney.mp3; sourceTree = "<group>"; };
 		8D7FA1D92193D1CF00E8781F /* DisneyCastleAnaUp.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = DisneyCastleAnaUp.mp4; sourceTree = "<group>"; };
 		8D7FA1E12193D35200E8781F /* MappingModel.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = MappingModel.scnassets; sourceTree = "<group>"; };
@@ -240,7 +241,7 @@
 		8D4D482721AD49A1002D04BF /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				8D49AC8F21C6A3CB00725B9D /* Scene3.mp3 */,
+				8D5EE94F21C744AA0008CADC /* Scene3.mp3 */,
 				8D7FA1D72193D1B800E8781F /* Disney.mp3 */,
 			);
 			path = Music;
@@ -525,6 +526,7 @@
 				23BFD49D21BF7868000F83E9 /* Chimpanzee.mp3 in Resources */,
 				23BFD49F21BF7868000F83E9 /* Zebra.mp3 in Resources */,
 				C788DA7C209023710006ED25 /* Assets.xcassets in Resources */,
+				8D5EE95021C744AA0008CADC /* Scene3.mp3 in Resources */,
 				23BFD49B21BF7868000F83E9 /* GreatEgret.mp3 in Resources */,
 				8D7FA1DA2193D1CF00E8781F /* DisneyCastleAnaUp.mp4 in Resources */,
 				23BFD49121BE494F000F83E9 /* Sheep.mp3 in Resources */,

@@ -32,17 +32,7 @@ final class ButtonConf: FloatyDelegate {
     item.handler = {item in
       mappingViewController.sceneType = "DisneyCastleNode"
     }
-    
     self.floaty.addItem(item: item)
-    let item4 = FloatyItem()
-    item4.buttonColor = UIColor.init(red: 1, green: 1, blue: 0.6, alpha: 1)
-    //item4.icon = UIImage(named: "castle")
-    item4.title = "Scene1-2"
-    item4.handler = {item in
-      
-    }
-    
-    self.floaty.addItem(item: item4)
     
     let item2 = FloatyItem()
     item2.buttonColor = UIColor.init(red: 0.6, green: 0.8, blue: 1, alpha: 1)
@@ -53,11 +43,6 @@ final class ButtonConf: FloatyDelegate {
     }
     self.floaty.addItem(item: item2)
     
-    let item3 = FloatyItem()
-    item3.buttonColor = UIColor.init(red: 0.6, green: 0.8, blue: 1, alpha: 1)
-    //item3.icon = UIImage(named: "siro")
-    item3.title = "Scene2-2"
-    self.floaty.addItem(item: item3)
     
     let item5 = FloatyItem()
     item5.buttonColor = UIColor.init(red: 1, green: 0.6, blue: 0.6, alpha: 1)
@@ -67,12 +52,6 @@ final class ButtonConf: FloatyDelegate {
       mappingViewController.sceneType = "BoxNode"
     }
     self.floaty.addItem(item: item5)
-    
-    let item6 = FloatyItem()
-    item6.buttonColor = UIColor.init(red: 1, green: 0.6, blue: 0.6, alpha: 1)
-    //item6.icon = UIImage(named: "test")
-    item6.title = "Scene3-2"
-    self.floaty.addItem(item: item6)
     
     return self.floaty
   }

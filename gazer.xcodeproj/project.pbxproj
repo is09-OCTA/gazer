@@ -26,7 +26,6 @@
 		8D49AC8921C6A30400725B9D /* Box.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D49AC8821C6A30400725B9D /* Box.mp4 */; };
 		8D49AC8B21C6A31800725B9D /* BoxNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49AC8A21C6A31800725B9D /* BoxNode.swift */; };
 		8D49AC8E21C6A37A00725B9D /* NodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49AC8D21C6A37A00725B9D /* NodeExtension.swift */; };
-		8D49AC9021C6A3CB00725B9D /* Scene3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8D49AC8F21C6A3CB00725B9D /* Scene3.mp3 */; };
 		8D4D482921AD49CA002D04BF /* BlackwavesVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D482821AD49CA002D04BF /* BlackwavesVideo.mp4 */; };
 		8D4D482B21AD49D3002D04BF /* FlowerVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D482A21AD49D3002D04BF /* FlowerVideo.mp4 */; };
 		8D4D482D21AD49DC002D04BF /* LifesurvivesVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D482C21AD49DC002D04BF /* LifesurvivesVideo.mp4 */; };
@@ -267,6 +266,7 @@
 		8D4FC93A20FD8D7C00A924E4 /* Mapping */ = {
 			isa = PBXGroup;
 			children = (
+				8D5EE94E21C738C80008CADC /* UI */,
 				8D49AC8C21C6A35600725B9D /* Extension */,
 				8D4D482721AD49A1002D04BF /* Music */,
 				8D4D482621AD498D002D04BF /* Video */,
@@ -274,9 +274,16 @@
 				8D4FC93720FD8C8600A924E4 /* Mapping.storyboard */,
 				8D4FC93D20FD8E9000A924E4 /* MappingViewController.swift */,
 				8D7FA1E12193D35200E8781F /* MappingModel.scnassets */,
-				8D33D49E219D158B00BCE54F /* ButtonConf.swift */,
 			);
 			path = Mapping;
+			sourceTree = "<group>";
+		};
+		8D5EE94E21C738C80008CADC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8D33D49E219D158B00BCE54F /* ButtonConf.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		8D7FA1E32193D4A400E8781F /* Model */ = {

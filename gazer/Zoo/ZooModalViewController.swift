@@ -415,7 +415,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 
                 // 左上
                 let batButton = UIButton()
-                batButton.setBackgroundImage(chimpanzeeImage, for: [])
+                batButton.setBackgroundImage(batImage, for: [])
                 batButton.layer.cornerRadius = 5
                 batButton.layer.masksToBounds  = true
                 batButton.frame = CGRect(x: ((width / 30) * 2) + widthPage, y: (width / 30) * 4, width: buttonSide, height: buttonSide)

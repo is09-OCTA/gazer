@@ -20,7 +20,7 @@
 		23BFD49B21BF7868000F83E9 /* GreatEgret.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 23BFD49621BF7868000F83E9 /* GreatEgret.mp3 */; };
 		23BFD49C21BF7868000F83E9 /* TRex.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 23BFD49721BF7868000F83E9 /* TRex.mp3 */; };
 		23BFD49D21BF7868000F83E9 /* Chimpanzee.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 23BFD49821BF7868000F83E9 /* Chimpanzee.mp3 */; };
-		23BFD49E21BF7868000F83E9 /* uma.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 23BFD49921BF7868000F83E9 /* uma.mp3 */; };
+		23BFD49E21BF7868000F83E9 /* Unicorn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 23BFD49921BF7868000F83E9 /* Unicorn.mp3 */; };
 		23BFD49F21BF7868000F83E9 /* Zebra.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 23BFD49A21BF7868000F83E9 /* Zebra.mp3 */; };
 		8D33D49F219D158B00BCE54F /* ButtonConf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33D49E219D158B00BCE54F /* ButtonConf.swift */; };
 		8D49AC8921C6A30400725B9D /* Box.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8D49AC8821C6A30400725B9D /* Box.mp4 */; };
@@ -96,7 +96,7 @@
 		23BFD49621BF7868000F83E9 /* GreatEgret.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GreatEgret.mp3; sourceTree = "<group>"; };
 		23BFD49721BF7868000F83E9 /* TRex.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TRex.mp3; sourceTree = "<group>"; };
 		23BFD49821BF7868000F83E9 /* Chimpanzee.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Chimpanzee.mp3; sourceTree = "<group>"; };
-		23BFD49921BF7868000F83E9 /* uma.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = uma.mp3; sourceTree = "<group>"; };
+		23BFD49921BF7868000F83E9 /* Unicorn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Unicorn.mp3; sourceTree = "<group>"; };
 		23BFD49A21BF7868000F83E9 /* Zebra.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Zebra.mp3; sourceTree = "<group>"; };
 		528B2B857C8684EC0C142CDD /* Pods_gazerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4886E88D8C79D7F80446BC /* Pods_gazerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gazerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,7 +197,7 @@
 				23BFD49821BF7868000F83E9 /* Chimpanzee.mp3 */,
 				23BFD49621BF7868000F83E9 /* GreatEgret.mp3 */,
 				23BFD49721BF7868000F83E9 /* TRex.mp3 */,
-				23BFD49921BF7868000F83E9 /* uma.mp3 */,
+				23BFD49921BF7868000F83E9 /* Unicorn.mp3 */,
 				23BFD49A21BF7868000F83E9 /* Zebra.mp3 */,
 				23BFD48A21BE494F000F83E9 /* Pig.mp3 */,
 				23BFD48B21BE494F000F83E9 /* Sheep.mp3 */,
@@ -508,7 +508,7 @@
 				B1246649218FE5C300782D31 /* ObjectImage in Resources */,
 				8D7FA1D82193D1B800E8781F /* Disney.mp3 in Resources */,
 				B12C3B7A218FDF4A00B5EFE3 /* ObjectModel in Resources */,
-				23BFD49E21BF7868000F83E9 /* uma.mp3 in Resources */,
+				23BFD49E21BF7868000F83E9 /* Unicorn.mp3 in Resources */,
 				23BFD49521BE494F000F83E9 /* Lion.mp3 in Resources */,
 				C72D19D321520E450079C65D /* Aquarium.storyboard in Resources */,
 				8D4FC93820FD8C8600A924E4 /* Mapping.storyboard in Resources */,
@@ -795,13 +795,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = URT7G4TP66;
+				DEVELOPMENT_TEAM = APV6HHN9C6;
 				INFOPLIST_FILE = gazer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-dorudoru";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-rei";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -817,13 +817,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = URT7G4TP66;
+				DEVELOPMENT_TEAM = APV6HHN9C6;
 				INFOPLIST_FILE = gazer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-dorudoru";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.octa.gazer-rei";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

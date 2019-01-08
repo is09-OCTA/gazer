@@ -19,7 +19,6 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
     
     // ボタンの画像
     let zebraImage:UIImage = UIImage(named:"ZooImage/Zebra")!
-    let unicornImage:UIImage = UIImage(named:"ZooImage/Unicorn")!
     let sheepImage:UIImage = UIImage(named: "ZooImage/Sheep")!
     let hippopotamusImage:UIImage = UIImage(named: "ZooImage/Hippopotamus")!
     let gorillaImage:UIImage = UIImage(named: "ZooImage/Gorilla")!
@@ -38,9 +37,6 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
     let rhinocerosImage:UIImage = UIImage(named: "ZooImage/Rhinoceros")!
     let cottontailRabbitImage:UIImage = UIImage(named: "ZooImage/CottontailRabbit")!
     let tRexImage:UIImage = UIImage(named: "ZooImage/T-Rex")!
-    let dogImage:UIImage = UIImage(named: "ZooImage/Dog")!
-    let catImage:UIImage = UIImage(named: "ZooImage/Cat")!
-    let batImage:UIImage = UIImage(named: "ZooImage/Bat")!
     let elephantImage:UIImage = UIImage(named: "ZooImage/Elephant")!
     let chimpanzeeImage:UIImage = UIImage(named: "ZooImage/Chimpanzee")!
     let anteaterImage:UIImage = UIImage(named: "ZooImage/Anteater")!
@@ -56,7 +52,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let page = 8
+        let page = 7
         
         //UIScrollViewの設定
         scrollView = UIScrollView()
@@ -366,97 +362,15 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 
                 let widthPage = width * 6
                 
-                // 左上
-                let dogButton = UIButton()
-                dogButton.setBackgroundImage(dogImage, for: [])
-                dogButton.layer.cornerRadius = 5
-                dogButton.layer.masksToBounds  = true
-                dogButton.frame = CGRect(x: ((width / 30) * 2) + widthPage, y: (width / 30) * 4, width: buttonSide, height: buttonSide)
-                dogButton.setTitle("Dog", for: .disabled)
-                scrollView.addSubview(dogButton)
-                
-                dogButton.addTarget(self, action: #selector(ZooModalViewController.buttonEvent(sender: )), for: .touchUpInside)
-                
-                // 右上
-                let catButton = UIButton()
-                catButton.setBackgroundImage(catImage, for: [])
-                catButton.layer.cornerRadius = 5
-                catButton.layer.masksToBounds  = true
-                catButton.frame = CGRect(x: ((width / 30) * 4  + buttonSide) + widthPage, y: (width / 30) * 4, width: buttonSide, height: buttonSide)
-                catButton.setTitle("Cat", for: .disabled)
-                scrollView.addSubview(catButton)
-                
-                catButton.addTarget(self, action: #selector(ZooModalViewController.buttonEvent(sender: )), for: .touchUpInside)
-                
-                // 左下
                 let tRexButton = UIButton()
                 tRexButton.setBackgroundImage(tRexImage, for: [])
                 tRexButton.layer.cornerRadius = 5
                 tRexButton.layer.masksToBounds  = true
-                tRexButton.frame = CGRect(x: ((width / 30) * 2) + widthPage, y: (width / 30) * 6 + buttonSide, width: buttonSide, height: buttonSide)
+                tRexButton.frame = CGRect(x: ((width / 30) * 2) + widthPage, y: (width / 30) * 4, width: buttonSide, height: buttonSide)
                 tRexButton.setTitle("TRex", for: .disabled)
                 scrollView.addSubview(tRexButton)
                 
                 tRexButton.addTarget(self, action: #selector(ZooModalViewController.buttonEvent(sender: )), for: .touchUpInside)
-                
-                // 右下
-                let unicornButton = UIButton()
-                unicornButton.setBackgroundImage(unicornImage, for: [])
-                unicornButton.layer.cornerRadius = 5
-                unicornButton.layer.masksToBounds  = true
-                unicornButton.frame = CGRect(x: ((width / 30) * 4 + buttonSide) + widthPage, y: (width / 30) * 6 + buttonSide, width: buttonSide, height: buttonSide)
-                unicornButton.setTitle("Unicorn", for: .disabled)
-                scrollView.addSubview(unicornButton)
-                
-                unicornButton.addTarget(self, action: #selector(ZooModalViewController.buttonEvent(sender: )), for: .touchUpInside)
-            } else if i == 7 {
-                
-                let widthPage = width * 7
-                
-                // 左上
-                let batButton = UIButton()
-                batButton.setBackgroundImage(batImage, for: [])
-                batButton.layer.cornerRadius = 5
-                batButton.layer.masksToBounds  = true
-                batButton.frame = CGRect(x: ((width / 30) * 2) + widthPage, y: (width / 30) * 4, width: buttonSide, height: buttonSide)
-                batButton.setTitle("Bat", for: .disabled)
-                scrollView.addSubview(batButton)
-                
-                batButton.addTarget(self, action: #selector(ZooModalViewController.buttonEvent(sender: )), for: .touchUpInside)
-/*
-                // 右上
-                let armadilloButton = UIButton()
-                armadilloButton.setBackgroundImage(armadiloImage, for: [])
-                armadilloButton.layer.cornerRadius = 5
-                armadilloButton.layer.masksToBounds  = true
-                armadilloButton.frame = CGRect(x: ((width / 30) * 4  + buttonSide) + widthPage, y: (width / 30) * 4, width: buttonSide, height: buttonSide)
-                armadilloButton.setTitle("Armadillo", for: .disabled)
-                scrollView.addSubview(armadilloButton)
-                
-                armadilloButton.addTarget(self, action: #selector(ZooModalViewController.buttonEvent(sender: )), for: .touchUpInside)
-                
-                // 左下
-                let anteaterButton = UIButton()
-                anteaterButton.setBackgroundImage(anteaterImage, for: [])
-                anteaterButton.layer.cornerRadius = 5
-                anteaterButton.layer.masksToBounds  = true
-                anteaterButton.frame = CGRect(x: ((width / 30) * 2) + widthPage, y: (width / 30) * 6 + buttonSide, width: buttonSide, height: buttonSide)
-                anteaterButton.setTitle("Anteater", for: .disabled)
-                scrollView.addSubview(anteaterButton)
-                
-                anteaterButton.addTarget(self, action: #selector(ZooModalViewController.buttonEvent(sender: )), for: .touchUpInside)
-                
-                // 右下
-                let penguinButton = UIButton()
-                penguinButton.setBackgroundImage(penguinImage, for: [])
-                penguinButton.layer.cornerRadius = 5
-                penguinButton.layer.masksToBounds  = true
-                penguinButton.frame = CGRect(x: ((width / 30) * 4 + buttonSide) + widthPage, y: (width / 30) * 6 + buttonSide, width: buttonSide, height: buttonSide)
-                penguinButton.setTitle("Penguin", for: .disabled)
-                scrollView.addSubview(penguinButton)
-                
-                penguinButton.addTarget(self, action: #selector(ZooModalViewController.buttonEvent(sender: )), for: .touchUpInside)
- */
             }
         }
         

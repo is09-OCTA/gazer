@@ -101,19 +101,19 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
         
         switch randomNum {
         case 0:
-            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set1.scn")
         case 1:
-            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set2.scn")
         case 2:
-            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set3.scn")
         case 3:
-            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set4.scn")
         case 4:
-            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set5.scn")
         case 5:
-            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set6.scn")
         case 6:
-            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set7.scn")
         case 7:
             waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
         default:

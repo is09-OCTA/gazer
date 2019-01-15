@@ -96,22 +96,26 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         print("垂直検知")
         
-        let randomNum = arc4random_uniform(6)
+        let randomNum = arc4random_uniform(7)
         var waterTankNode = collada2SCNNode(filepath: "AquariumModel/case.scn")
         
         switch randomNum {
         case 0:
-            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set1.scn")
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
         case 1:
-            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set2.scn")
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
         case 2:
-            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set3.scn")
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
         case 3:
-            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set4.scn")
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
         case 4:
-            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set5.scn")
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
         case 5:
-            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set6.scn")
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
+        case 6:
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
+        case 7:
+            waterTankNode = collada2SCNNode(filepath: "AquariumModel/set8.scn")
         default:
             print("")
         }

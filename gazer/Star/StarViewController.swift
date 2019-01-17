@@ -192,10 +192,10 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         firstIntro.alpha = 0.9
         switch (UIScreen.main.nativeBounds.height) {
         case 2436:
-            firstIntro.bgImage = UIImage(named:"wtStar10")
+            firstIntro.bgImage = UIImage(named:"wt_Star10")
             break
         default:
-            firstIntro.bgImage = UIImage(named:"wtStar")
+            firstIntro.bgImage = UIImage(named:"wt_Star")
             break
         }
         

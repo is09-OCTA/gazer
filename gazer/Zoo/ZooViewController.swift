@@ -177,10 +177,10 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
         firstIntro.alpha = 0.9
         switch (UIScreen.main.nativeBounds.height) {
         case 2436:
-            firstIntro.bgImage = UIImage(named:"wtAnimal10")
+            firstIntro.bgImage = UIImage(named:"wt_Zoo10")
             break
         default:
-            firstIntro.bgImage = UIImage(named:"wtAnimal")
+            firstIntro.bgImage = UIImage(named:"wt_Zoo")
             break
         }
         

@@ -99,6 +99,7 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
         let randomNum = arc4random_uniform(1)
         var waterTankNode = collada2SCNNode(filepath: "AquariumModel/case.scn")
         
+        
         switch randomNum {
         case 0:
             waterTankNode = collada2SCNNode(filepath: "AquariumModel/set1.scn")

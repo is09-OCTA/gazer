@@ -11,8 +11,9 @@ import ARKit
 import SceneKit
 import AVFoundation
 import Floaty
+import EAIntroView
 
-class MappingViewController: UIViewController, ARSCNViewDelegate {
+class MappingViewController: UIViewController, ARSCNViewDelegate, EAIntroDelegate{
   
   @IBOutlet var sceneView: ARSCNView!
   //var objectNode: SCNNode?
@@ -59,6 +60,8 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    promaIntroView()
     
     sceneView.delegate = self as ARSCNViewDelegate
     
@@ -173,5 +176,32 @@ class MappingViewController: UIViewController, ARSCNViewDelegate {
     photo.screenImage = mappingSaveImage
     photo.addImage = 4
   }
+    
+    // EAIntroView
+    func promaIntroView(){
+        // １ページ目
+        let firstIntro = EAIntroPage()
+        firstIntro.alpha = 0.9
+        switch (UIScreen.main.nativeBounds.height) {
+        case 2436:
+            firstIntro.bgImage = UIImage(named:"wt_Proma10")
+            break
+        default:
+            firstIntro.bgImage = UIImage(named:"wt_Proma")
+            break
+        }
+        
+        let introView = EAIntroView(frame: self.view.bounds, andPages: [firstIntro])
+        
+        // スキップボタン、ページコントロールを不可視化
+        introView?.skipButton.setTitle("", for: UIControl.State.normal)
+        introView?.delegate = self
+        introView?.pageControlY = -300
+        
+        // タップで次へ進む
+        introView?.tapToNext = true
+        // 画面立ち上げ
+        introView?.show(in: self.view, animateDuration: 1.0)
+    }
   
 }

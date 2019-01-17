@@ -42,6 +42,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
     let anteaterImage:UIImage = UIImage(named: "ZooImage/Anteater")!
     let armadiloImage:UIImage = UIImage(named: "ZooImage/Armadilo")!
     let penguinImage:UIImage = UIImage(named: "ZooImage/Penguin")!
+    let pigImage:UIImage = UIImage(named: "ZooImage/Pig")!
     
     // ボタン配置変数
     var prevButton:CGFloat = 20
@@ -221,7 +222,7 @@ class ZooModalViewController: UIViewController, UIScrollViewDelegate {
                 
                 // 左上
                 let pigButton = UIButton()
-                pigButton.setBackgroundImage(cottontailRabbitImage, for: [])
+                pigButton.setBackgroundImage(pigImage, for: [])
                 pigButton.layer.cornerRadius = 5
                 pigButton.layer.masksToBounds  = true
                 pigButton.frame = CGRect(x: ((width / 30) * 2) + widthPage, y: (width / 30) * 4, width: buttonSide, height: buttonSide)

@@ -23,20 +23,5 @@ post_install do |installer|
         end
     end
 end
-  # pod'WSCoachMarksView'
-  # pod'SwiftGifOrigin'
-  # pod'SCLAlertView'
-
-  # Pods for gazer
-
- # target 'gazerTests' do
-   # inherit! :search_paths
-    # Pods for testing
- # end
-
-  #target 'gazerUITests' do
-    #inherit! :search_paths
-    # Pods for testing
-  #end
 
 end

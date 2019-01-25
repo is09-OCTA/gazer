@@ -21,7 +21,11 @@ final class ButtonConf: FloatyDelegate {
   func NodeSelectionButton(mappingViewController: MappingViewController) -> Floaty{
     self.floaty.buttonImage = UIImage(named: "MappingMenu2")
     self.floaty.paddingX = 16
-    self.floaty.paddingY = 30
+    if #available(iOS 11.0, *) {
+      self.floaty.paddingY = 30 + (UIApplication.shared.keyWindow?.rootViewController?.view.safeAreaInsets.bottom)!
+    } else {
+      self.floaty.paddingY = 30
+    }
     self.floaty.buttonColor = UIColor.init(white: 1, alpha: 0)
     self.floaty.size = 50
     

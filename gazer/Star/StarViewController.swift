@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  StarViewController.swift
 //  gazer
 //
 //  Created by Keisuke Kitamura on 2018/04/25.
@@ -99,8 +99,11 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     let PI = 3.14159265358979
     let RAD = 180 / 3.14159265358979
     
-    //星データ
+    // 星データ
     let stars = StarData().stars
+    
+    // 星座線データ
+    let constellationLines = ConstellationLineData().constellationLines
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,24 +157,11 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         // Release any cached data, images, etc that aren't in use.
     }
 
-    // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
-    
-    func setExposureTargetBias(_ bias: Float,
-                               completionHandler handler: ((CMTime) -> Void)? = nil){
+    func setExposureTargetBias(_ bias: Float, completionHandler handler: ((CMTime) -> Void)? = nil){
         return;
     }
 
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        
         
         // ARKit 設定時にカメラからの画像が空で渡されるのでその場合は処理しない
         guard let cuptureImage = sceneView.session.currentFrame?.capturedImage else {
@@ -195,7 +185,6 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         
     }
     
-    
     // EAIntroView
     func starIntroView(){
         // １ページ目
@@ -203,10 +192,10 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         firstIntro.alpha = 0.9
         switch (UIScreen.main.nativeBounds.height) {
         case 2436:
-            firstIntro.bgImage = UIImage(named:"wtStar10")
+            firstIntro.bgImage = UIImage(named:"wt_Star10")
             break
         default:
-            firstIntro.bgImage = UIImage(named:"wtStar")
+            firstIntro.bgImage = UIImage(named:"wt_Star")
             break
         }
         
@@ -237,7 +226,7 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             // AVAudioPlayerのデリゲートをセット
             audioPlayer.delegate = self
             
-            //ループ再生
+            // ループ再生
             audioPlayer.numberOfLoops = -1
             
             // 音声の再生
@@ -260,7 +249,7 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             locationManager.stopUpdatingHeading()
         }
     }
-//    方位2
+    // 方位2
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined:
@@ -279,7 +268,7 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
         locationManager.startUpdatingLocation()
         locationManager.stopUpdatingHeading()
     }
-//    方位2ここまで
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.first
         let latitude = location?.coordinate.latitude
@@ -329,7 +318,17 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
     func setStar(starPosition: [[Double]]) -> Void {
         var star = [SCNNode]()
         self.sceneView.scene = SCNScene()
-        for (index,element) in starPosition.enumerated() {
+        
+        // 星の座標構造体
+        struct starCoordinate {
+            let id: Int
+            let x:  Double
+            let y:  Double
+            let z:  Double
+        }
+        var starCoordinates = [starCoordinate]()
+        
+        for (index, element) in starPosition.enumerated() {
             
             // 表示する情報
             var starRadius = 1.0
@@ -359,8 +358,6 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             star.append(starNode)
             // 表示
             self.sceneView.scene.rootNode.addChildNode(starNode)
-            
-//            let camera = sceneView.pointOfView
             let str = stars[index].jpName
             let depth:CGFloat = 0.01
             let text = SCNText(string: str, extrusionDepth: depth)
@@ -368,14 +365,73 @@ class StarViewController: UIViewController, ARSCNViewDelegate, CLLocationManager
             textNode = SCNNode(geometry: text)
             let (min, max) = (textNode.boundingBox)
             let x = CGFloat(max.x - min.x)
-//            let y = CGFloat(max.y - min.y)
+            
             //オブジェクト向き調整 -4で180度反転
             let z = element[4] * (Double.pi / 180) - 4
             let y = element[3] * (Double.pi / 180)
             textNode.eulerAngles = SCNVector3(y,z,0)
             textNode.position = SCNVector3((element[0] - Double(x)),element[1],element[2])
+            
+            // 星のIDをと座標を配列に格納
+            starCoordinates.append(starCoordinate(
+                id: stars[index].hipId,
+                x:  Double(textNode.position.x),
+                y:  Double(textNode.position.y),
+                z:  Double(textNode.position.z)))
+            
             sceneView.scene.rootNode.addChildNode(textNode)
         }
+        
+        // 星座線
+        for (i, _) in constellationLines.enumerated() {
+    
+            // 線の頂点の座標を検索
+            var startStarNum = 0, endStarNum = 0
+            for (j, _) in starCoordinates.enumerated() {
+                if constellationLines[i].startStarID == starCoordinates[j].id {
+                    startStarNum = j
+                } else if constellationLines[i].endStarID == starCoordinates[j].id {
+                    endStarNum = j
+                }
+            }
+            
+            let startPosition = SCNVector3(starCoordinates[startStarNum].x, starCoordinates[startStarNum].y, starCoordinates[startStarNum].z)
+            let endPosition = SCNVector3(starCoordinates[endStarNum].x, starCoordinates[endStarNum].y, starCoordinates[endStarNum].z)
+            
+            sceneView.scene.rootNode.addChildNode(createCylinderNode(startPosition: startPosition, endPosition: endPosition, radius: 0.1, color: UIColor.gray, transparency: 1))
+            
+        }
+    }
+    
+    // 円柱（星座線の始点と終点を結ぶ）
+    func createCylinderNode(startPosition: SCNVector3, endPosition: SCNVector3, radius: CGFloat , color: UIColor, transparency: CGFloat) -> SCNNode {
+        
+        let height = CGFloat(GLKVector3Distance(SCNVector3ToGLKVector3(startPosition), SCNVector3ToGLKVector3(endPosition)))
+        
+        let cylinderNode = SCNNode()
+        cylinderNode.eulerAngles.x = Float(Double.pi / 2)
+        
+        let cylinderGeometry = SCNCylinder(radius: radius, height: height)
+        cylinderGeometry.firstMaterial?.diffuse.contents = color
+        let cylinder = SCNNode(geometry: cylinderGeometry)
+        
+        cylinder.position.y = Float(-height/2)
+        cylinderNode.addChildNode(cylinder)
+        
+        let node = SCNNode()
+        let targetNode = SCNNode()
+        
+        if (startPosition.z < 0.0 && endPosition.z > 0.0) {
+            node.position = endPosition
+            targetNode.position = startPosition
+        } else {
+            node.position = startPosition
+            targetNode.position = endPosition
+        }
+        node.addChildNode(cylinderNode)
+        node.constraints = [ SCNLookAtConstraint(target: targetNode) ]
+        
+        return node
     }
     
     // Camera

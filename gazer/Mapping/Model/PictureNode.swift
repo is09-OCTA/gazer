@@ -17,7 +17,7 @@ class PictureNode: SCNNode {
   
   init(position: SCNVector3,nodeEulerAnglesY: Float) {
     super.init()
-    let node = DisneyCastleNode.collada2SCNNode(filepath: "MappingModel.scnassets/Monitor.scn")
+    let node = PictureNode.collada2SCNNode(filepath: "MappingModel.scnassets/Monitor.scn")
     
     var videoName: String?
     var videoRotation: Float?
@@ -41,9 +41,9 @@ class PictureNode: SCNNode {
     }
     
     
-    let cinderellaCastleVideoUrl = Bundle.main.url(forResource: videoName!, withExtension: "mp4")!
-    let cinderellaCastleMaterial = self.createMaterial(videoUrl: cinderellaCastleVideoUrl, alpha: 1.0,angle: videoRotation!)
-    node.childNodes[0].geometry?.firstMaterial = cinderellaCastleMaterial
+    let pictureVideoUrl = Bundle.main.url(forResource: videoName!, withExtension: "mp4")!
+    let pictureMaterial = self.createMaterial(videoUrl: pictureVideoUrl, alpha: 1.0,angle: videoRotation!)
+    node.childNodes[0].geometry?.firstMaterial = pictureMaterial
     node.position = position
     node.eulerAngles.y = nodeEulerAnglesY
     node.eulerAngles.z = videoEulerAngles!
@@ -84,21 +84,9 @@ class PictureNode: SCNNode {
     return material
   }
   
-  // scnファイルをnode化
-  public class func collada2SCNNode(filepath:String) -> SCNNode {
-    let node = SCNNode()
-    let scene = SCNScene(named: filepath)
-    let nodeArray = scene!.rootNode.childNodes
-    
-    for childNode in nodeArray {
-      node.addChildNode(childNode as SCNNode)
-    }
-    return node
-  }
   // サウンド再生メソッド
   func playSound(name: String) {
     guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
-      print("音源ファイルが見つかりません")
       return
     }
     

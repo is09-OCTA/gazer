@@ -10,6 +10,8 @@ import UIKit
 import ARKit
 import SceneKit
 import EAIntroView
+import AudioToolbox
+import AVFoundation
 
 class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
     
@@ -19,6 +21,8 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
     @IBOutlet weak var animalButton: UIButton!
     @IBOutlet weak var objectButton: UIButton!
     
+    //音楽インスタンス
+    var audioPlayer: AVAudioPlayer!
     
     var zooSaveImage:UIImage! = nil
     
@@ -70,8 +74,6 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
         present(modalViewController!, animated: true, completion: nil)
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -85,6 +87,9 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
         // tapアクション追加
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tapView))
         sceneView.addGestureRecognizer(gesture)
+        
+        let longTap = UILongPressGestureRecognizer(target: self, action: #selector(longTapView))
+        sceneView.addGestureRecognizer(longTap)
     }
     
     @objc func tapView(sender: UITapGestureRecognizer) {
@@ -92,11 +97,14 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
         // AppDelegateのインスタンスを取得
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         let filepath = appDelegate.path
+        //パスを音楽ファイル名へ変換
+        var soundName = filepath.replacingOccurrences(of:"ZooModel/", with:"")
+        soundName = soundName.replacingOccurrences(of: ".scn", with: "")
         
         // sceneView上でタップした座標を検出
         let location = sender.location(in: sceneView)
         //現実座標取得
-        let hitTestResult = sceneView.hitTest(location, types: .existingPlane)
+        let hitTestResult = sceneView.hitTest(location, types: .existingPlaneUsingExtent)
         //アンラップ
         if let result = hitTestResult.first {
             let node = ZooViewController.collada2SCNNode(filepath: filepath)
@@ -105,7 +113,28 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
                 node.eulerAngles.y = camera.eulerAngles.y  // カメラのオイラー角と同じにする
             }
             sceneView.scene.rootNode.addChildNode(node)
+            playSound(name: soundName)
         }
+    }
+
+    @objc func longTapView(_ sender: UILongPressGestureRecognizer){
+        if sender.state == .began {
+            let location = sender.location(in: sceneView)
+            let hitTest  = sceneView.hitTest(location)
+            if let result = hitTest.first  {
+                if result.node.name != nil {
+                    // タップしたとき、モデルが感知できればモデルを削除
+                    result.node.removeFromParentNode();
+                    shortVibrate()
+                }
+
+            }
+        }
+    }
+    
+    func shortVibrate() {
+        AudioServicesPlaySystemSound(1519);
+        AudioServicesDisposeSystemSoundID(1519);
     }
     
     // collada2SCNNode
@@ -148,10 +177,10 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
         firstIntro.alpha = 0.9
         switch (UIScreen.main.nativeBounds.height) {
         case 2436:
-            firstIntro.bgImage = UIImage(named:"wtAnimal10")
+            firstIntro.bgImage = UIImage(named:"wt_Zoo10")
             break
         default:
-            firstIntro.bgImage = UIImage(named:"wtAnimal")
+            firstIntro.bgImage = UIImage(named:"wt_Zoo")
             break
         }
         
@@ -196,6 +225,26 @@ class ZooViewController: UIViewController, ARSCNViewDelegate ,EAIntroDelegate {
         let photo = segue.destination as! PhotoPreViewController
         photo.screenImage = zooSaveImage
         photo.addImage = 1
+    }
+    
+    //BGM
+    func playSound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+        
+        do {
+            // AVAudioPlayerのインスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            
+            // AVAudioPlayerのデリゲートをセット
+            audioPlayer.delegate = self as? AVAudioPlayerDelegate
+            
+            // 音声の再生
+            audioPlayer.play()
+        } catch {
+        }
     }
 }
 

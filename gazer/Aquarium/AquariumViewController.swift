@@ -96,7 +96,7 @@ class AquariumViewController: UIViewController, ARSCNViewDelegate, AVAudioPlayer
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         print("垂直検知")
         
-        let randomNum = arc4random_uniform(1)
+        let randomNum = arc4random_uniform(9)
         var waterTankNode = collada2SCNNode(filepath: "AquariumModel/case.scn")
         
         
